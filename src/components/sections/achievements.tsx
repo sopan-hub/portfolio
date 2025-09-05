@@ -25,7 +25,7 @@ const AchievementsSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-2xl"></div>
+                <div className="absolute -inset-2 rounded-lg bg-red-500/20 blur-xl"></div>
                 <Card className="relative overflow-hidden shadow-2xl shadow-black/70">
                   <div className="flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
