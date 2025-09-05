@@ -22,12 +22,6 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'share.text-image.com',
-        port: '',
-        pathname: '/**',
-      }
     ],
   },
 };

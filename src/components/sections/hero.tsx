@@ -13,16 +13,9 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden"
+      className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-background"
     >
       <div className="absolute inset-0 z-0">
-         <Image
-            src="https://share.text-image.com/e4a1abfb4a784aca"
-            alt="Hero background"
-            fill
-            className="object-cover"
-            data-ai-hint="galaxy stars"
-          />
          <div className="absolute inset-0 bg-background/60"></div>
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-background" />
       </div>
