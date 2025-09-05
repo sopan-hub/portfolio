@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    // This is required to allow the Next.js dev server to accept requests from a different host.
+    allowedDevOrigins: [
+      'https://6000-firebase-studio-1757078021811.cluster-52r6vzs3ujeoctkkxpjif3x34a.cloudworkstations.dev',
+    ],
+  },
   images: {
     remotePatterns: [
       {
