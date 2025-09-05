@@ -14,9 +14,7 @@ const HeroSection = () => {
       id="home"
       className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-background"></div>
-      </div>
+      <div className="absolute inset-0 z-0 bg-background"></div>
       <div className="container z-10 grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
         <div className="flex flex-col items-center md:items-start">
             <motion.h1 
@@ -61,13 +59,13 @@ const HeroSection = () => {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           whileHover={{ scale: 1.05 }}
         >
-          <div className="absolute -inset-4 rounded-full bg-red-500/40 blur-3xl"></div>
+          <div className="absolute -inset-4 rounded-full bg-red-500/50 blur-3xl"></div>
             <div className="relative h-full w-full overflow-hidden rounded-full p-2 shadow-lg">
               <Image
                 src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/file_00000000dc0461f9b1a884202d5845c2.png"
                 alt="Profile Photo"
                 fill
-                className="object-cover rounded-full"
+                className="rounded-full object-cover"
                 data-ai-hint="profile photo"
               />
             </div>
