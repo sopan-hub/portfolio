@@ -34,9 +34,9 @@ const HeroSection = () => {
             >
               <Typewriter
                 texts={[
-                  'A CS & AIML Student.',
-                  'An Aspiring Developer.',
-                  'A Tech Innovator.',
+                  'A Computer Science & AI/ML Student.',
+                  'Building intelligent applications.',
+                  'Passionate about problem-solving.',
                 ]}
               />
             </motion.div>
@@ -59,7 +59,7 @@ const HeroSection = () => {
             </motion.div>
         </div>
          <motion.div
-          className="relative mx-auto flex h-[300px] w-[300px] items-center justify-center md:h-[400px] md:w-[400px]"
+          className="relative mx-auto flex h-[250px] w-[250px] items-center justify-center md:h-[300px] md:w-[300px]"
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
