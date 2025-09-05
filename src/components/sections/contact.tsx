@@ -94,7 +94,7 @@ const ContactSection = () => {
           <h2 className="mb-8 text-center text-4xl font-bold">Get In Touch</h2>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             <div className='relative'>
-              <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-3xl dark:bg-red-500/20"></div>
+              <div className="absolute -inset-4 rounded-lg bg-red-500/40 blur-3xl dark:bg-red-500/30"></div>
               <div className='relative'>
                 <h3 className="mb-4 text-2xl font-semibold">Contact Me</h3>
                 <p className="mb-6 text-muted-foreground">
@@ -137,7 +137,7 @@ const ContactSection = () => {
             </div>
 
             <div className='relative'>
-              <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-3xl dark:bg-red-500/20"></div>
+              <div className="absolute -inset-4 rounded-lg bg-red-500/40 blur-3xl dark:bg-red-500/30"></div>
               <div className='relative'>
                 <div className="flex items-center justify-between">
                   <h3 className="mb-4 text-2xl font-semibold">Message Analysis</h3>
