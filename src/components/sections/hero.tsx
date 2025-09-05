@@ -16,10 +16,15 @@ const HeroSection = () => {
       className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 z-0">
-         <div className="absolute inset-0 bg-background" />
-         <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+         <Image
+            src="https://share.text-image.com/e4a1abfb4a784aca"
+            alt="Hero background"
+            fill
+            className="object-cover"
+            data-ai-hint="galaxy stars"
+          />
+         <div className="absolute inset-0 bg-background/60"></div>
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-background" />
-        <div className="absolute left-1/2 top-1/4 h-64 w-64 -translate-x-1/2 animate-pulse rounded-full bg-primary/20 blur-3xl" />
       </div>
 
       <div className="container z-20 flex flex-col items-center text-center">
