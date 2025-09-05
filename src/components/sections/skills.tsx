@@ -20,13 +20,13 @@ const SkillsSection = () => {
               <motion.div
                 key={category}
                 initial={{ opacity: 0, y: 50 }}
-                whileInVew={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-3xl dark:bg-red-500/20"></div>
-                <Card className="relative h-full text-center shadow-2xl shadow-black/70">
+                <div className="absolute -inset-4 rounded-lg bg-red-500/10 blur-3xl dark:bg-red-500/5"></div>
+                <Card className="relative h-full text-center shadow-[0_0_20px_5px_rgba(0,0,0,0.3)]">
                   <CardHeader>
                     <CardTitle className="text-2xl">{category}</CardTitle>
                   </CardHeader>

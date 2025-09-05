@@ -1,4 +1,4 @@
-import { Codepen, Database, Briefcase, Bot, Paintbrush, Mic, PenTool, GitFork, Linkedin, Github, Award, Users } from 'lucide-react';
+import { Codepen, Database, Bot, GitFork, Linkedin, Github, Award, Users, Paintbrush, PenTool } from 'lucide-react';
 
 export const navLinks = [
   { href: '#about', label: 'About' },
@@ -23,6 +23,7 @@ export const skills = {
     { name: 'Node.js', icon: Database },
     { name: 'Firebase', icon: Database },
     { name: 'Python', icon: Codepen },
+    { name: 'Express', icon: Database },
   ],
   'AI/ML': [
     { name: 'Genkit', icon: Bot },
@@ -34,6 +35,7 @@ export const skills = {
     { name: 'Git', icon: GitFork },
     { name: 'Docker', icon: GitFork },
     { name: 'Figma', icon: PenTool },
+    { name: 'Webpack', icon: GitFork },
   ],
 };
 
