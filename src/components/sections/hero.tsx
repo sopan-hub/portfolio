@@ -69,10 +69,16 @@ const HeroSection = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <div
-            className="absolute inset-0 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] bg-gradient-to-r from-primary to-purple-500/50 p-2 shadow-lg glow"
+          <div className="absolute inset-0 rounded-[40%_60%_60%_40%/30%_30%_70%_70%] bg-gradient-to-r from-primary to-purple-500/50 p-2 shadow-lg glow"
+            style={{
+                clipPath: 'url(#cloud-shape)'
+            }}
           >
-            <div className="h-full w-full overflow-hidden rounded-[60%_40%_30%_70%/60%_30%_70%_40%]">
+            <div className="h-full w-full overflow-hidden" 
+                 style={{
+                    clipPath: 'url(#cloud-shape)'
+                }}
+            >
               <Image
                 src="https://i.postimg.cc/mPDwYW4C/image.png"
                 alt="Profile Photo"
@@ -82,6 +88,13 @@ const HeroSection = () => {
               />
             </div>
           </div>
+          <svg width="0" height="0">
+            <defs>
+                <clipPath id="cloud-shape" clipPathUnits="objectBoundingBox">
+                <path d="M0.77,0.857 C0.958,0.857,1,0.775,1,0.612 C1,0.449,0.838,0.418,0.788,0.31 C0.737,0.202,0.821,0.031,0.654,0.016 C0.487,0,0.457,0.187,0.33,0.187 C0.203,0.187,0.174,0.031,0.076,0.125 C-0.022,0.22,0.026,0.505,0.179,0.562 C0.332,0.62,0.22,0.826,0.363,0.871 C0.506,0.916,0.582,0.857,0.77,0.857 Z"></path>
+                </clipPath>
+            </defs>
+          </svg>
         </motion.div>
       </div>
     </section>
