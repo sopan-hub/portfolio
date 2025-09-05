@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import Typewriter from '../typewriter';
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -62,7 +61,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           whileHover={{ scale: 1.05 }}
         >
-          <div className="absolute inset-0 rounded-full bg-primary/30 blur-2xl animate-pulse"></div>
+          <div className="absolute inset-0 rounded-full bg-red-500/30 blur-2xl animate-pulse"></div>
             <div className="relative h-full w-full overflow-hidden rounded-full p-2 shadow-lg">
               <Image
                 src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/file_00000000dc0461f9b1a884202d5845c2.png"
