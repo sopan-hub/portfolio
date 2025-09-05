@@ -5,7 +5,6 @@ import SkillsSection from '@/components/sections/skills';
 import ProjectsSection from '@/components/sections/projects';
 import ResumeSection from '@/components/sections/resume';
 import AchievementsSection from '@/components/sections/achievements';
-import TestimonialsSection from '@/components/sections/testimonials';
 import ContactSection from '@/components/sections/contact';
 import Footer from '@/components/layout/footer';
 
@@ -20,7 +19,6 @@ export default function Home() {
         <ProjectsSection />
         <ResumeSection />
         <AchievementsSection />
-        <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />

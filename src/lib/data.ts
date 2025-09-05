@@ -41,16 +41,6 @@ export const skills = {
 
 export const projects = [
   {
-    title: 'Course Project Alpha',
-    description: 'A web-based platform for visualizing complex sorting algorithms, built for a data structures course.',
-    tech: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    image: 'https://picsum.photos/400/300',
-    category: 'Web',
-    github: 'https://github.com',
-    live: 'https://github.com',
-    dataAiHint: 'web application',
-  },
-  {
     title: 'AI Chatbot Beta',
     description: 'A research project exploring natural language understanding with a custom-trained chatbot model.',
     tech: ['Genkit', 'Gemini', 'React'],
@@ -90,29 +80,5 @@ export const achievements = [
     year: 'Ongoing',
     icon: GitFork,
     description: 'Active contributor to several popular open-source AI and web development projects on GitHub.',
-  },
-];
-
-export const testimonials = [
-  {
-    name: 'Dr. Alan Grant',
-    title: 'Professor of AI',
-    quote: "Sopan is one of the brightest students I've had the pleasure of teaching. Their grasp of complex AI concepts is truly impressive.",
-    image: 'https://picsum.photos/100/100?q=5',
-    dataAiHint: 'man professor',
-  },
-  {
-    name: 'Ellie Sattler',
-    title: 'Group Project Lead',
-    quote: "An incredibly dedicated teammate. Sopan's problem-solving skills were crucial to our project's success. Always willing to help.",
-    image: 'https://picsum.photos/100/100?q=6',
-    dataAiHint: 'woman student',
-  },
-  {
-    name: 'Ian Malcolm',
-    title: 'Hackathon Judge',
-    quote: "Their project was a standout. The technical implementation was solid, and the presentation was clear and compelling. A well-deserved win.",
-    image: 'https://picsum.photos/100/100?q=7',
-    dataAiHint: 'man professional',
   },
 ];
