@@ -72,7 +72,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-purple-500 to-pink-500/50 p-2 shadow-lg">
             <div className="relative h-full w-full overflow-hidden rounded-full">
               <Image
-                src="https://i.postimg.cc/8FwNdsw7/image.png"
+                src="https://i.postimg.cc/8FwNdsw7/file-000000001eb061f6a9042f1022c5dcd3.png"
                 alt="Profile Photo"
                 fill
                 className="object-cover"
