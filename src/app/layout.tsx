@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
   title: 'PortfolioPulse | Sopan Patil',
-  description: 'A personal portfolio website built with Next.js and Firebase.',
+  description: 'The personal portfolio of Sopan Patil, a computer science and AI/ML student.',
 };
 
 export default function RootLayout({

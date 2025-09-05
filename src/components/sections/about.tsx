@@ -15,22 +15,13 @@ const AboutSection = () => {
           <h2 className="mb-8 text-center text-4xl font-bold">About Me</h2>
           <div className="mx-auto max-w-3xl space-y-6 rounded-lg border bg-card p-8 text-center text-lg text-card-foreground shadow-lg">
             <p>
-              I'm a passionate developer with a knack for building beautiful,
-              functional, and scalable web applications. My journey into tech started
-              with a fascination for how things work, which quickly evolved into a
-              deep love for coding and problem-solving.
+              I am a passionate and driven Computer Science student with a deep specialization in Artificial Intelligence and Machine Learning. My journey into tech is fueled by a curiosity for building intelligent systems that can solve real-world problems.
             </p>
             <p>
-              With a background in both frontend and backend development, I enjoy
-              bringing ideas to life, from the initial concept and design in Figma to a
-              fully deployed application. I'm always eager to learn new technologies and
-              explore the frontiers of what's possible, especially in the exciting field
-              of AI.
+              From theoretical foundations in algorithms to hands-on projects in neural networks, I am constantly exploring the vast landscape of technology. I enjoy bridging the gap between complex AI concepts and practical, user-friendly applications. I'm always eager to learn and apply new techniques to my work.
             </p>
             <p>
-              What sets me apart is my focus on user experience and my commitment to
-              writing clean, maintainable code. I believe that the best products are
-              not just powerful, but also a joy to use.
+              My goal is to leverage my skills in software development and AI to contribute to innovative projects and build technology that makes a difference. I believe that the best solutions are not just technically robust, but also thoughtfully designed with the user in mind.
             </p>
           </div>
         </motion.div>

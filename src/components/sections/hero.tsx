@@ -16,6 +16,12 @@ const HeroSection = () => {
       className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-background"
     >
        <div className="absolute inset-0 z-0">
+        <Image
+          src="https://share.text-image.com/e4a1abfb4a784aca"
+          alt="Background"
+          fill
+          className="object-cover"
+        />
          <div className="absolute inset-0 bg-background/60"></div>
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-background" />
       </div>
@@ -39,9 +45,9 @@ const HeroSection = () => {
             >
               <Typewriter
                 texts={[
-                  'A Full-Stack Developer.',
-                  'An AI Enthusiast.',
-                  'A Creative Problem-Solver.',
+                  'A CS & AIML Student.',
+                  'An Aspiring Developer.',
+                  'A Tech Innovator.',
                 ]}
               />
             </motion.div>

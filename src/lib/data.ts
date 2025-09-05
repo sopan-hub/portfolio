@@ -1,4 +1,4 @@
-import { Codepen, Database, Briefcase, Bot, Paintbrush, Mic, PenTool, GitFork, Linkedin, Github } from 'lucide-react';
+import { Codepen, Database, Briefcase, Bot, Paintbrush, Mic, PenTool, GitFork, Linkedin, Github, Award, Users } from 'lucide-react';
 
 export const navLinks = [
   { href: '#about', label: 'About' },
@@ -22,23 +22,26 @@ export const skills = {
   'Backend': [
     { name: 'Node.js', icon: Database },
     { name: 'Firebase', icon: Database },
-    { name: 'SQL', icon: Database },
+    { name: 'Python', icon: Codepen },
   ],
   'AI/ML': [
     { name: 'Genkit', icon: Bot },
-    { name: 'Gemini', icon: Bot },
+    { name: 'TensorFlow', icon: Bot },
+    { name: 'PyTorch', icon: Bot },
+    { name: 'Scikit-learn', icon: Bot },
   ],
   'Tools': [
     { name: 'Git', icon: GitFork },
+    { name: 'Docker', icon: GitFork },
     { name: 'Figma', icon: PenTool },
   ],
 };
 
 export const projects = [
   {
-    title: 'Project Alpha',
-    description: 'A cutting-edge web application that solves a modern problem with an elegant solution.',
-    tech: ['Next.js', 'Tailwind CSS', 'Firebase'],
+    title: 'Course Project Alpha',
+    description: 'A web-based platform for visualizing complex sorting algorithms, built for a data structures course.',
+    tech: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
     image: 'https://picsum.photos/400/300',
     category: 'Web',
     github: 'https://github.com',
@@ -46,8 +49,8 @@ export const projects = [
     dataAiHint: 'web application',
   },
   {
-    title: 'AI Assistant Beta',
-    description: 'An intelligent AI assistant designed to streamline daily tasks and boost productivity.',
+    title: 'AI Chatbot Beta',
+    description: 'A research project exploring natural language understanding with a custom-trained chatbot model.',
     tech: ['Genkit', 'Gemini', 'React'],
     image: 'https://picsum.photos/400/300?q=2',
     category: 'AI',
@@ -56,68 +59,68 @@ export const projects = [
     dataAiHint: 'artificial intelligence',
   },
   {
-    title: 'Project Gamma',
-    description: 'A versatile tool for developers, enhancing workflow and code quality.',
-    tech: ['React', 'Node.js', 'SQL'],
+    title: 'Hackathon Project Gamma',
+    description: 'A mobile-first web app to connect students with local volunteer opportunities, built in a 48-hour hackathon.',
+    tech: ['React', 'Firebase', 'Node.js'],
     image: 'https://picsum.photos/400/300?q=3',
     category: 'Web',
     github: 'https://github.com',
     live: 'https://github.com',
-    dataAiHint: 'developer tool',
+    dataAiHint: 'mobile app',
   },
   {
-    title: 'Other Project Delta',
-    description: 'A unique project outside the main categories, showcasing diverse skills.',
-    tech: ['Figma', 'React'],
+    title: 'Personal Project Delta',
+    description: 'A creative coding project exploring generative art with p5.js and React.',
+    tech: ['p5.js', 'React'],
     image: 'https://picsum.photos/400/300?q=4',
     category: 'Other',
     github: 'https://github.com',
     live: 'https://github.com',
-    dataAiHint: 'design system',
+    dataAiHint: 'generative art',
   },
 ];
 
 export const achievements = [
   {
-    title: 'Certified React Developer',
+    title: 'Hackathon Winner',
     year: 2023,
-    icon: Codepen,
-    description: 'Completed an intensive certification program focusing on advanced React patterns.',
+    icon: Award,
+    description: 'First place at the university hackathon for creating an innovative solution for campus sustainability.',
   },
   {
-    title: 'AI Innovation Award',
-    year: 2024,
-    icon: Bot,
-    description: 'Recognized for developing a novel AI application with significant real-world impact.',
+    title: 'Dean\'s List',
+    year: '2022-2023',
+    icon: Award,
+    description: 'Achieved academic excellence by maintaining a GPA in the top 10% of the computer science department.',
   },
   {
     title: 'Open Source Contributor',
     year: 'Ongoing',
     icon: GitFork,
-    description: 'Active contributor to several popular open-source projects on GitHub.',
+    description: 'Active contributor to several popular open-source AI and web development projects on GitHub.',
   },
 ];
 
 export const testimonials = [
   {
-    name: 'Jane Doe',
-    title: 'CEO, Tech Corp',
-    quote: "Working with them was a game-changer. Their expertise and dedication are unparalleled. I can't recommend them enough.",
+    name: 'Dr. Alan Grant',
+    title: 'Professor of AI',
+    quote: "Sopan is one of the brightest students I've had the pleasure of teaching. Their grasp of complex AI concepts is truly impressive.",
     image: 'https://picsum.photos/100/100?q=5',
-    dataAiHint: 'woman portrait',
+    dataAiHint: 'man professor',
   },
   {
-    name: 'John Smith',
-    title: 'Lead Developer, Innovate LLC',
-    quote: "An incredibly talented developer who brings not just skill, but also a creative and problem-solving mindset to the table.",
+    name: 'Ellie Sattler',
+    title: 'Group Project Lead',
+    quote: "An incredibly dedicated teammate. Sopan's problem-solving skills were crucial to our project's success. Always willing to help.",
     image: 'https://picsum.photos/100/100?q=6',
-    dataAiHint: 'man portrait',
+    dataAiHint: 'woman student',
   },
   {
-    name: 'Emily White',
-    title: 'Project Manager, Solutions Inc.',
-    quote: "Their ability to deliver high-quality work on schedule is remarkable. A true professional and a pleasure to work with.",
+    name: 'Ian Malcolm',
+    title: 'Hackathon Judge',
+    quote: "Their project was a standout. The technical implementation was solid, and the presentation was clear and compelling. A well-deserved win.",
     image: 'https://picsum.photos/100/100?q=7',
-    dataAiHint: 'woman professional',
+    dataAiHint: 'man professional',
   },
 ];
