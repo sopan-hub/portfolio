@@ -13,18 +13,20 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-3xl dark:bg-red-500/20"></div>
           <h2 className="mb-8 text-center text-4xl font-bold">About Me</h2>
-          <div className="relative mx-auto max-w-3xl space-y-6 rounded-lg bg-card p-8 text-center text-lg text-card-foreground shadow-2xl shadow-black/70">
-            <p>
-              I am a passionate and driven Computer Science student with a deep specialization in Artificial Intelligence and Machine Learning. My journey into tech is fueled by a curiosity for building intelligent systems that can solve real-world problems.
-            </p>
-            <p>
-              From theoretical foundations in algorithms to hands-on projects in neural networks, I am constantly exploring the vast landscape of technology. I enjoy bridging the gap between complex AI concepts and practical, user-friendly applications. I'm always eager to learn and apply new techniques to my work.
-            </p>
-            <p>
-              My goal is to leverage my skills in software development and AI to contribute to innovative projects and build technology that makes a difference. I believe that the best solutions are not just technically robust, but also thoughtfully designed with the user in mind.
-            </p>
+          <div className="relative mx-auto max-w-3xl">
+            <div className="absolute -bottom-8 -inset-x-8 h-32 rounded-lg bg-red-500/30 blur-3xl dark:bg-red-500/20"></div>
+            <div className="relative space-y-6 rounded-lg bg-card p-8 text-center text-lg text-card-foreground shadow-2xl shadow-black/70">
+              <p>
+                I am a passionate and driven Computer Science student with a deep specialization in Artificial Intelligence and Machine Learning. My journey into tech is fueled by a curiosity for building intelligent systems that can solve real-world problems.
+              </p>
+              <p>
+                From theoretical foundations in algorithms to hands-on projects in neural networks, I am constantly exploring the vast landscape of technology. I enjoy bridging the gap between complex AI concepts and practical, user-friendly applications. I'm always eager to learn and apply new techniques to my work.
+              </p>
+              <p>
+                My goal is to leverage my skills in software development and AI to contribute to innovative projects and build technology that makes a difference. I believe that the best solutions are not just technically robust, but also thoughtfully designed with the user in mind.
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>
