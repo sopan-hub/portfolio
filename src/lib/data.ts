@@ -1,4 +1,4 @@
-import { Codepen, Database, Bot, GitFork, Linkedin, Github, Award, Users, Paintbrush, PenTool } from 'lucide-react';
+import { Codepen, Database, Bot, GitFork, Linkedin, Github, Award, Users, Paintbrush, PenTool, Trophy, Star } from 'lucide-react';
 
 export const navLinks = [
   { href: '#about', label: 'About' },
@@ -74,8 +74,36 @@ export const projects = [
 
 export const achievements = [
   {
+    title: 'Tata Power Skill Development Institute',
+    year: '2024',
+    icon: Award,
+    description: 'Certificate of Completion for Power Plant Familiarization.',
+    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/certificste.png'
+  },
+  {
+    title: 'Cisco Networking Academy',
+    year: '2023',
+    icon: Trophy,
+    description: 'Certificate of Completion for Introduction to Cybersecurity.',
+    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/efewfwe.png'
+  },
+  {
+    title: 'Google Crowdsource',
+    year: '2023',
+    icon: Star,
+    description: 'Certificate of Appreciation for contribution to the Google Crowdsource community.',
+    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/fwefwe.png'
+  },
+  {
+    title: 'Internshala',
+    year: '2023',
+    icon: Award,
+    description: 'Certificate of Training for completing the Web Development course.',
+    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/wfwefw.png'
+  },
+  {
     title: 'Hackathon Winner',
-    year: 2023,
+    year: '2023',
     icon: Award,
     description: 'First place at the university hackathon for creating an innovative solution for campus sustainability.',
   },

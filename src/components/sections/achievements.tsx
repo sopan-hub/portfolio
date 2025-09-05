@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { achievements } from '@/lib/data';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import Image from 'next/image';
 
 const AchievementsSection = () => {
   return (
@@ -14,31 +15,44 @@ const AchievementsSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="mb-12 text-center text-4xl font-bold">Achievements</h2>
-          <div className="mx-auto max-w-4xl space-y-8">
+          <h2 className="mb-12 text-center text-4xl font-bold">Achievements & Certificates</h2>
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-2xl dark:bg-red-500/30"></div>
-                <Card className="relative overflow-hidden shadow-2xl shadow-black/70">
-                  <div className="flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                      <achievement.icon className="h-6 w-6" />
+                 <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-2xl dark:bg-red-500/30"></div>
+                <Card className="relative h-full overflow-hidden shadow-2xl shadow-black/70">
+                  {achievement.image && (
+                    <div className="relative h-56 w-full">
+                      <Image
+                        src={achievement.image}
+                        alt={achievement.title}
+                        fill
+                        className="object-contain"
+                        data-ai-hint="certificate document"
+                      />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex flex-col justify-between sm:flex-row">
-                        <h3 className="text-lg font-semibold">{achievement.title}</h3>
+                  )}
+                  <CardHeader>
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <achievement.icon className="h-6 w-6" />
+                      </div>
+                      <div className="flex-1">
+                        <CardTitle>{achievement.title}</CardTitle>
                         <p className="text-sm text-muted-foreground">{achievement.year}</p>
                       </div>
-                      <p className="mt-1 text-sm text-muted-foreground">{achievement.description}</p>
                     </div>
-                  </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{achievement.description}</p>
+                  </CardContent>
                 </Card>
               </motion.div>
             ))}
