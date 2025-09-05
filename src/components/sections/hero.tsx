@@ -31,7 +31,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              I am a passionate and driven Computer Science student with a deep specialization in Artificial Intelligence and Machine Learning. My journey into tech is fueled by a curiosity for building intelligent systems that can solve real-world problems.
+              A Computer Science student specializing in AI/ML, passionate about building intelligent solutions for real-world challenges.
             </motion.p>
 
             <motion.div
