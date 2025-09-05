@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import React, { useState, useEffect, useRef, useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { motion } from 'framer-motion';
 import { Loader2, Download, AlertTriangle, CheckCircle2, Bot } from 'lucide-react';
 
@@ -49,7 +49,7 @@ const ContactSection = () => {
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const initialState: FormState = { success: false, message: '' };
-  const [state, formAction] = useFormState(handleContactForm, initialState);
+  const [state, formAction] = useActionState(handleContactForm, initialState);
   const [messages, setMessages] = useState<AnalyzedMessage[]>([]);
 
   useEffect(() => {
@@ -94,7 +94,7 @@ const ContactSection = () => {
           <h2 className="mb-8 text-center text-4xl font-bold">Get In Touch</h2>
           <div className="mx-auto max-w-2xl">
              <div className="relative">
-              <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-2xl"></div>
+              <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-3xl"></div>
               <Card className="relative shadow-2xl shadow-black/70">
                 <CardHeader>
                   <CardTitle>Contact Me</CardTitle>
@@ -117,7 +117,7 @@ const ContactSection = () => {
               </Card>
             </div>
             <div className="relative mt-12">
-              <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-2xl"></div>
+              <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-3xl"></div>
               <Card className="relative shadow-2xl shadow-black/70">
                 <CardHeader>
                   <CardTitle>Contact Form</CardTitle>
