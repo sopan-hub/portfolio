@@ -13,7 +13,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-8 text-center text-4xl font-bold">About Me</h2>
-          <div className="mx-auto max-w-3xl space-y-6 rounded-lg border bg-card p-8 text-center text-lg text-card-foreground shadow-lg">
+          <div className="mx-auto max-w-3xl space-y-6 rounded-lg border bg-card p-8 text-center text-lg text-card-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-primary/20">
             <p>
               I am a passionate and driven Computer Science student with a deep specialization in Artificial Intelligence and Machine Learning. My journey into tech is fueled by a curiosity for building intelligent systems that can solve real-world problems.
             </p>

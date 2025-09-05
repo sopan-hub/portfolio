@@ -20,11 +20,11 @@ const SkillsSection = () => {
               <motion.div
                 key={category}
                 initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                whileInVew={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full text-center transition-all duration-300 hover:border-primary hover:shadow-primary/20 hover:shadow-lg">
+                <Card className="h-full text-center transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
                   <CardHeader>
                     <CardTitle className="text-2xl">{category}</CardTitle>
                   </CardHeader>
