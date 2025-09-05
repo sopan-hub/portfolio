@@ -16,8 +16,8 @@ const ProjectsSection = () => {
 
   const filteredProjects =
     filter === 'All'
-      ? projects
-      : projects.filter((p) => p.category === filter);
+      ? projects.slice(0, 3)
+      : projects.filter((p) => p.category === filter).slice(0, 3);
 
   return (
     <section id="projects" className="py-24">
@@ -43,7 +43,7 @@ const ProjectsSection = () => {
           </div>
           <motion.div
             layout
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+            className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3"
           >
             <AnimatePresence>
               {filteredProjects.map((project, index) => (
@@ -51,12 +51,12 @@ const ProjectsSection = () => {
                   key={project.title + index}
                   layout
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  animate={{ opacity: 1, scale: 0.95 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
                   className="relative"
                 >
-                  <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-2xl"></div>
+                  <div className="absolute -inset-1 rounded-lg bg-red-500/10 blur-xl"></div>
                   <Card className="relative group h-full overflow-hidden shadow-2xl shadow-black/70">
                     <CardHeader className="p-0">
                       <div className="relative h-52 w-full overflow-hidden">
