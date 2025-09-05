@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import Typewriter from '../typewriter';
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -15,14 +16,7 @@ const HeroSection = () => {
       className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 z-0">
-        <Image
-          src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/file_000000001eb061f6a9042f1022c5dcd3.png"
-          alt="Background"
-          fill
-          className="object-cover blur-2xl"
-          data-ai-hint="abstract background"
-        />
-        <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-background"></div>
       </div>
       <div className="container z-10 grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
         <div className="flex flex-col items-center md:items-start">
@@ -72,7 +66,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-purple-500 to-pink-500/50 p-2 shadow-lg glow">
             <div className="relative h-full w-full overflow-hidden rounded-full">
               <Image
-                src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/file_000000001eb061f6a9042f1022c5dcd3.png"
+                src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/file_00000000dc0461f9b1a884202d5845c2.png"
                 alt="Profile Photo"
                 fill
                 className="object-cover"
