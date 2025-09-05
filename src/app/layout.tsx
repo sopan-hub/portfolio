@@ -8,7 +8,7 @@ import { Toaster } from '@/components/ui/toaster';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'PortfolioPulse | Your Name',
+  title: 'PortfolioPulse | Sopan Patil',
   description: 'A personal portfolio website built with Next.js and Firebase.',
 };
 

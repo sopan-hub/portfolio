@@ -28,7 +28,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Your Name
+              Sopan Patil
             </motion.h1>
 
             <motion.div
@@ -74,7 +74,7 @@ const HeroSection = () => {
           >
             <div className="h-full w-full overflow-hidden rounded-[60%_40%_30%_70%/60%_30%_70%_40%]">
               <Image
-                src="https://picsum.photos/400/400"
+                src="https://i.postimg.cc/mPDwYW4C/image.png"
                 alt="Profile Photo"
                 fill
                 className="object-cover"
