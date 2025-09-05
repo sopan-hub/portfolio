@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import Typewriter from '@/components/typewriter';
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -26,20 +25,14 @@ const HeroSection = () => {
               Sopan Patil
             </motion.h1>
 
-            <motion.div
-              className="mb-8 text-lg text-muted-foreground md:text-2xl"
+            <motion.p
+              className="mb-8 max-w-xl text-lg text-muted-foreground md:text-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Typewriter
-                texts={[
-                  'A Computer Science & AI/ML Student.',
-                  'Building intelligent applications.',
-                  'Passionate about problem-solving.',
-                ]}
-              />
-            </motion.div>
+              I am a passionate and driven Computer Science student with a deep specialization in Artificial Intelligence and Machine Learning. My journey into tech is fueled by a curiosity for building intelligent systems that can solve real-world problems.
+            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
