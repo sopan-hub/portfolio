@@ -43,7 +43,7 @@ const ProjectsSection = () => {
           </div>
           <motion.div
             layout
-            className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3"
+            className="grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-3"
           >
             <AnimatePresence>
               {filteredProjects.map((project, index) => (
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
                   key={project.title + index}
                   layout
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 0.9 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
                   className="relative"

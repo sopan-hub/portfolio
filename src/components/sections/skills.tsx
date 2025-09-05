@@ -25,7 +25,7 @@ const SkillsSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-2xl"></div>
+                <div className="absolute -inset-1 rounded-lg bg-red-500/10 blur-lg"></div>
                 <Card className="relative h-full text-center shadow-[0_0_20px_5px_rgba(0,0,0,0.3)]">
                   <CardHeader>
                     <CardTitle className="text-2xl">{category}</CardTitle>
