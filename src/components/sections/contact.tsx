@@ -94,7 +94,7 @@ const ContactSection = () => {
           <h2 className="mb-8 text-center text-4xl font-bold">Get In Touch</h2>
           <div className="mx-auto max-w-2xl">
             <div className="relative">
-              <div className="absolute -inset-4 rounded-lg bg-primary/5 blur-xl"></div>
+              <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-2xl"></div>
               <Card className="relative shadow-2xl shadow-black/70">
                 <CardHeader>
                   <CardTitle>Contact Me</CardTitle>
@@ -118,7 +118,7 @@ const ContactSection = () => {
             </div>
 
             <div className="relative mt-12">
-              <div className="absolute -inset-4 rounded-lg bg-primary/5 blur-xl"></div>
+              <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-2xl"></div>
               <Card className="relative shadow-2xl shadow-black/70">
                 <CardHeader>
                   <CardTitle>Contact Form</CardTitle>
@@ -141,53 +141,51 @@ const ContactSection = () => {
                     <SubmitButton />
                   </form>
                 </CardContent>
-              </Card>
-            </div>
-
-            <div className='relative mt-12'>
-               <div className="absolute -inset-4 rounded-lg bg-primary/5 blur-xl"></div>
-              <Card className='relative rounded-lg bg-card p-6 shadow-2xl shadow-black/70'>
-                <div className="flex items-center justify-between">
-                  <h3 className="mb-4 text-2xl font-semibold">Message Analysis</h3>
-                  {messages.length > 0 && (
-                    <Button variant="outline" size="sm" onClick={handleDownload}>
-                      <Download className="mr-2 h-4 w-4" /> Download
-                    </Button>
-                  )}
+                 <div className='relative mt-6 p-6 pt-0'>
+                  <Card className='relative rounded-lg bg-card p-6 shadow-inner'>
+                    <div className="flex items-center justify-between">
+                      <h3 className="mb-4 text-2xl font-semibold">Message Analysis</h3>
+                      {messages.length > 0 && (
+                        <Button variant="outline" size="sm" onClick={handleDownload}>
+                          <Download className="mr-2 h-4 w-4" /> Download
+                        </Button>
+                      )}
+                    </div>
+                    {messages.length > 0 ? (
+                      <div className="space-y-4">
+                        <p className="text-muted-foreground">Your submitted messages are analyzed by AI below.</p>
+                        <Accordion type="single" collapsible className="w-full">
+                          {messages.map((msg, index) => (
+                            <AccordionItem key={index} value={`item-${index}`}>
+                              <AccordionTrigger>
+                                <div className='flex items-center gap-3'>
+                                  {msg.analysis.isImportant ? <AlertTriangle className="h-5 w-5 text-destructive" /> : <CheckCircle2 className="h-5 w-5 text-green-500" />}
+                                  <span className="truncate font-medium">{msg.formData.name}: {msg.analysis.summary}</span>
+                                </div>
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                <div className="space-y-4 rounded-md border bg-card p-4">
+                                  <p><strong>From:</strong> {msg.formData.name} ({msg.formData.email})</p>
+                                  <p><strong>Message:</strong> {msg.formData.message}</p>
+                                  <div className="rounded-lg bg-accent p-4">
+                                    <h4 className="mb-2 flex items-center gap-2 font-semibold"><Bot className="h-5 w-5 text-primary"/> AI Analysis</h4>
+                                    <p><strong>Summary:</strong> {msg.analysis.summary}</p>
+                                    {msg.analysis.isImportant && <Badge variant="destructive" className="my-2">Important</Badge>}
+                                    <p className="mt-2 text-sm"><strong>Suggested Response:</strong> <em>"{msg.analysis.suggestedResponse}"</em></p>
+                                  </div>
+                                </div>
+                              </AccordionContent>
+                            </AccordionItem>
+                          ))}
+                        </Accordion>
+                      </div>
+                    ) : (
+                      <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed bg-background/50 p-8">
+                        <p className="text-muted-foreground">Submitted messages will appear here.</p>
+                      </div>
+                    )}
+                  </Card>
                 </div>
-                {messages.length > 0 ? (
-                  <div className="space-y-4">
-                    <p className="text-muted-foreground">Your submitted messages are analyzed by AI below.</p>
-                    <Accordion type="single" collapsible className="w-full">
-                      {messages.map((msg, index) => (
-                        <AccordionItem key={index} value={`item-${index}`}>
-                          <AccordionTrigger>
-                            <div className='flex items-center gap-3'>
-                              {msg.analysis.isImportant ? <AlertTriangle className="h-5 w-5 text-destructive" /> : <CheckCircle2 className="h-5 w-5 text-green-500" />}
-                              <span className="truncate font-medium">{msg.formData.name}: {msg.analysis.summary}</span>
-                            </div>
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <div className="space-y-4 rounded-md border bg-card p-4">
-                              <p><strong>From:</strong> {msg.formData.name} ({msg.formData.email})</p>
-                              <p><strong>Message:</strong> {msg.formData.message}</p>
-                              <div className="rounded-lg bg-accent p-4">
-                                <h4 className="mb-2 flex items-center gap-2 font-semibold"><Bot className="h-5 w-5 text-primary"/> AI Analysis</h4>
-                                <p><strong>Summary:</strong> {msg.analysis.summary}</p>
-                                {msg.analysis.isImportant && <Badge variant="destructive" className="my-2">Important</Badge>}
-                                <p className="mt-2 text-sm"><strong>Suggested Response:</strong> <em>"{msg.analysis.suggestedResponse}"</em></p>
-                              </div>
-                            </div>
-                          </AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </div>
-                ) : (
-                  <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed bg-background/50 p-8">
-                    <p className="text-muted-foreground">Submitted messages will appear here.</p>
-                  </div>
-                )}
               </Card>
             </div>
           </div>
