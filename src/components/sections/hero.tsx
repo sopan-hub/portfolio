@@ -56,7 +56,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           whileHover={{ scale: 1.05 }}
         >
-          <div className="absolute -inset-4 rounded-full bg-red-500/50 blur-3xl"></div>
+          <div className="absolute -inset-4 rounded-full bg-red-500/50 blur-3xl dark:bg-red-500/30"></div>
             <div className="relative h-full w-full overflow-hidden rounded-full p-2 shadow-lg">
               <Image
                 src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/file_00000000dc0461f9b1a884202d5845c2.png"
