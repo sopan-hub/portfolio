@@ -21,6 +21,7 @@ export default function Header() {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     return scrollY.on('change', (latest) => {
@@ -33,7 +34,7 @@ export default function Header() {
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
         isScrolled
-          ? 'border-b border-border/40 bg-background/50 backdrop-blur-2xl'
+          ? 'border-b border-border/40 bg-background/80 backdrop-blur-2xl'
           : 'bg-transparent'
       )}
       initial={{ y: -100 }}
@@ -43,8 +44,10 @@ export default function Header() {
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <motion.div
-            whileHover={{ rotate: 360 }}
-            transition={{ duration: 0.5 }}
+            onHoverStart={() => setIsHovered(true)}
+            onHoverEnd={() => setIsHovered(false)}
+            animate={isHovered ? { rotate: 360 } : { rotate: 0 }}
+            transition={isHovered ? { duration: 1, repeat: Infinity, ease: 'linear' } : { duration: 0.5 }}
           >
             <svg
               width="32"
@@ -58,7 +61,7 @@ export default function Header() {
               <path d="M50,64.29a7.14,7.14,0,1,0,7.14,7.14A7.14,7.14,0,0,0,50,64.29Z" />
             </svg>
           </motion.div>
-          <span className="text-xl font-bold">PortfolioPulse</span>
+          <span className="text-xl font-bold">Portfolio</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
