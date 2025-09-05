@@ -94,7 +94,7 @@ const ContactSection = () => {
           <h2 className="mb-8 text-center text-4xl font-bold">Get In Touch</h2>
           <div className="mx-auto max-w-2xl">
              <div className="relative">
-              <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-3xl"></div>
+              <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-2xl dark:bg-red-500/30"></div>
               <Card className="relative shadow-2xl shadow-black/70">
                 <CardHeader>
                   <CardTitle>Contact Me</CardTitle>
@@ -117,7 +117,7 @@ const ContactSection = () => {
               </Card>
             </div>
             <div className="relative mt-12">
-              <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-3xl"></div>
+              <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-2xl dark:bg-red-500/30"></div>
               <Card className="relative shadow-2xl shadow-black/70">
                 <CardHeader>
                   <CardTitle>Contact Form</CardTitle>
@@ -141,7 +141,7 @@ const ContactSection = () => {
                   </form>
                 </CardContent>
                  <CardContent>
-                  <div className='rounded-lg bg-card p-6 shadow-inner'>
+                  <div className="rounded-lg bg-background/50 p-6 shadow-inner backdrop-blur-sm">
                     <div className="flex items-center justify-between">
                       <h3 className="mb-4 text-2xl font-semibold">Message Analysis</h3>
                       {messages.length > 0 && (
