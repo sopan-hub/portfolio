@@ -15,73 +15,73 @@ const HeroSection = () => {
       id="home"
       className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-background"
     >
-      <div className="absolute inset-0 z-0">
-        <Image
-            src="https://i.postimg.cc/mPDwYW4C/image.png"
-            alt="Hero background"
-            fill
-            className="object-cover"
-            data-ai-hint="binary code"
-          />
+       <div className="absolute inset-0 z-0">
          <div className="absolute inset-0 bg-background/60"></div>
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-background" />
       </div>
 
-      <div className="container z-20 flex flex-col items-center text-center">
-        <motion.div
+      <div className="container z-20 grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
+        <div className="flex flex-col items-center md:items-start">
+            <motion.h1 
+              className="mb-4 text-5xl font-extrabold tracking-tight md:text-7xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Your Name
+            </motion.h1>
+
+            <motion.div
+              className="mb-8 text-lg text-muted-foreground md:text-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <Typewriter
+                texts={[
+                  'A Full-Stack Developer.',
+                  'An AI Enthusiast.',
+                  'A Creative Problem-Solver.',
+                ]}
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Button
+                size="lg"
+                className="group relative overflow-hidden rounded-full font-bold transition-all duration-300 hover:scale-105"
+                onClick={scrollToProjects}
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-primary via-purple-500 to-pink-500 opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
+                <span className="absolute inset-0 animate-pulse bg-primary/50 opacity-50 blur-2xl transition-opacity duration-300 group-hover:opacity-75" />
+                <span className="relative z-10">View My Work</span>
+                <div className="absolute -inset-1 z-0 animate-pulse rounded-full bg-primary/30 blur-xl group-hover:blur-2xl" />
+              </Button>
+            </motion.div>
+        </div>
+         <motion.div
+          className="relative flex h-[300px] w-[300px] items-center justify-center md:h-[400px] md:w-[400px]"
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <Image
-            src="https://picsum.photos/150/150"
-            alt="Profile Photo"
-            width={150}
-            height={150}
-            className="mb-6 rounded-full border-4 border-primary/50 object-cover shadow-lg"
-            data-ai-hint="profile photo"
-          />
-        </motion.div>
-        
-        <motion.h1 
-          className="mb-4 text-5xl font-extrabold tracking-tight md:text-7xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          Your Name
-        </motion.h1>
-
-        <motion.div
-          className="mb-8 text-lg text-muted-foreground md:text-2xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <Typewriter
-            texts={[
-              'A Full-Stack Developer.',
-              'An AI Enthusiast.',
-              'A Creative Problem-Solver.',
-            ]}
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <Button
-            size="lg"
-            className="group relative overflow-hidden rounded-full font-bold transition-all duration-300 hover:scale-105"
-            onClick={scrollToProjects}
+          <div
+            className="absolute inset-0 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] bg-gradient-to-r from-primary to-purple-500/50 p-2 shadow-lg glow"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-primary via-purple-500 to-pink-500 opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
-            <span className="absolute inset-0 animate-pulse bg-primary/50 opacity-50 blur-2xl transition-opacity duration-300 group-hover:opacity-75" />
-            <span className="relative z-10">View My Work</span>
-            <div className="absolute -inset-1 z-0 animate-pulse rounded-full bg-primary/30 blur-xl group-hover:blur-2xl" />
-          </Button>
+            <div className="h-full w-full overflow-hidden rounded-[60%_40%_30%_70%/60%_30%_70%_40%]">
+              <Image
+                src="https://picsum.photos/400/400"
+                alt="Profile Photo"
+                fill
+                className="object-cover"
+                data-ai-hint="profile photo"
+              />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
