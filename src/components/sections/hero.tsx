@@ -15,17 +15,6 @@ const HeroSection = () => {
       id="home"
       className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-background"
     >
-       <div className="absolute inset-0 z-0">
-        <Image
-          src="https://i.postimg.cc/mPDwYW4C/e4a1abfb4a784aca.png"
-          alt="Background"
-          fill
-          className="object-cover"
-        />
-         <div className="absolute inset-0 bg-background/60"></div>
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-background" />
-      </div>
-
       <div className="container z-20 grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
         <div className="flex flex-col items-center md:items-start">
             <motion.h1 
@@ -74,8 +63,9 @@ const HeroSection = () => {
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
+          whileHover={{ scale: 1.05 }}
         >
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-purple-500 to-pink-500/50 p-2 shadow-lg">
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-purple-500 to-pink-500/50 p-2 shadow-lg glow">
             <div className="relative h-full w-full overflow-hidden rounded-full">
               <Image
                 src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/file_000000001eb061f6a9042f1022c5dcd3.png"
