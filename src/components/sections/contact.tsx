@@ -92,23 +92,25 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-8 text-center text-4xl font-bold">Get In Touch</h2>
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <div className="mx-auto max-w-2xl">
             <div className='relative'>
-              <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-2xl"></div>
+              <div className="absolute -inset-4 rounded-lg bg-red-500/10 blur-xl"></div>
               <div className='relative'>
-                <h3 className="mb-4 text-2xl font-semibold">Contact Me</h3>
-                <p className="mb-6 text-muted-foreground">
-                  I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out to me.
-                </p>
-                <div className="mb-8 flex space-x-4">
-                  {socialLinks.map((link) => (
-                    <Button key={link.href} variant="outline" size="icon" asChild>
-                      <a href={link.href} target="_blank" rel="noopener noreferrer">
-                        <link.icon className="h-5 w-5" />
-                        <span className="sr-only">{link.label}</span>
-                      </a>
-                    </Button>
-                  ))}
+                <div className="text-center">
+                  <h3 className="mb-4 text-2xl font-semibold">Contact Me</h3>
+                  <p className="mb-6 text-muted-foreground">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out to me.
+                  </p>
+                  <div className="mb-8 flex justify-center space-x-4">
+                    {socialLinks.map((link) => (
+                      <Button key={link.href} variant="outline" size="icon" asChild>
+                        <a href={link.href} target="_blank" rel="noopener noreferrer">
+                          <link.icon className="h-5 w-5" />
+                          <span className="sr-only">{link.label}</span>
+                        </a>
+                      </Button>
+                    ))}
+                  </div>
                 </div>
                 <Card className="shadow-2xl shadow-black/70">
                   <CardHeader>
@@ -136,8 +138,8 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className='relative'>
-              <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-2xl"></div>
+            <div className='relative mt-12'>
+              <div className="absolute -inset-4 rounded-lg bg-red-500/10 blur-xl"></div>
               <div className='relative'>
                 <div className="flex items-center justify-between">
                   <h3 className="mb-4 text-2xl font-semibold">Message Analysis</h3>
@@ -176,7 +178,7 @@ const ContactSection = () => {
                     </Accordion>
                   </div>
                 ) : (
-                  <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed bg-card">
+                  <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed bg-card p-8">
                     <p className="text-muted-foreground">Submitted messages will appear here.</p>
                   </div>
                 )}
