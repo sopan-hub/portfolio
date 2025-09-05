@@ -26,7 +26,7 @@ const SkillsSection = () => {
                 className="relative"
               >
                 <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-3xl dark:bg-red-500/20"></div>
-                <Card className="relative h-full text-center shadow-[0_20px_25px_-5px] shadow-black/70">
+                <Card className="relative h-full text-center shadow-2xl shadow-black/70">
                   <CardHeader>
                     <CardTitle className="text-2xl">{category}</CardTitle>
                   </CardHeader>

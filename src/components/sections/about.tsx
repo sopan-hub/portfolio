@@ -15,7 +15,7 @@ const AboutSection = () => {
         >
           <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-3xl dark:bg-red-500/20"></div>
           <h2 className="mb-8 text-center text-4xl font-bold">About Me</h2>
-          <div className="relative mx-auto max-w-3xl space-y-6 rounded-lg bg-card p-8 text-center text-lg text-card-foreground shadow-[0_20px_25px_-5px] shadow-black/70">
+          <div className="relative mx-auto max-w-3xl space-y-6 rounded-lg bg-card p-8 text-center text-lg text-card-foreground shadow-2xl shadow-black/70">
             <p>
               I am a passionate and driven Computer Science student with a deep specialization in Artificial Intelligence and Machine Learning. My journey into tech is fueled by a curiosity for building intelligent systems that can solve real-world problems.
             </p>

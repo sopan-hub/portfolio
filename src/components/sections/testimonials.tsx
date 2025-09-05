@@ -33,7 +33,7 @@ const TestimonialsSection = () => {
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
                   <div className="relative p-1">
                     <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-3xl dark:bg-red-500/20"></div>
-                    <Card className="relative h-full shadow-[0_20px_25px_-5px] shadow-black/70">
+                    <Card className="relative h-full shadow-2xl shadow-black/70">
                       <CardContent className="flex flex-col items-center justify-center p-6 text-center">
                         <Image
                           src={testimonial.image}

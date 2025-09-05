@@ -110,7 +110,7 @@ const ContactSection = () => {
                     </Button>
                   ))}
                 </div>
-                <Card>
+                <Card className="shadow-2xl shadow-black/70">
                   <CardHeader>
                     <CardTitle>Contact Form</CardTitle>
                     <CardDescription>Fill out the form to send me a message.</CardDescription>

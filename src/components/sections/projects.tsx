@@ -57,7 +57,7 @@ const ProjectsSection = () => {
                   className="relative"
                 >
                   <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-3xl dark:bg-red-500/20"></div>
-                  <Card className="relative group h-full overflow-hidden shadow-[0_20px_25px_-5px] shadow-black/70">
+                  <Card className="relative group h-full overflow-hidden shadow-2xl shadow-black/70">
                     <CardHeader className="p-0">
                       <div className="relative h-52 w-full overflow-hidden">
                         <Image

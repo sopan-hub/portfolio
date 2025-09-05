@@ -26,7 +26,7 @@ const AchievementsSection = () => {
                 className="relative"
               >
                 <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-3xl dark:bg-red-500/20"></div>
-                <Card className="relative overflow-hidden shadow-[0_20px_25px_-5px] shadow-black/70">
+                <Card className="relative overflow-hidden shadow-2xl shadow-black/70">
                   <div className="flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                       <achievement.icon className="h-6 w-6" />
