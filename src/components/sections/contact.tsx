@@ -140,9 +140,8 @@ const ContactSection = () => {
                     <SubmitButton />
                   </form>
                 </CardContent>
-                 <div className='relative mt-6 p-6 pt-0'>
-                  <div className="absolute -inset-4 rounded-lg bg-red-500/30 blur-2xl"></div>
-                  <Card className='relative rounded-lg bg-card p-6 shadow-inner'>
+                 <CardContent>
+                  <div className='rounded-lg bg-card p-6 shadow-inner'>
                     <div className="flex items-center justify-between">
                       <h3 className="mb-4 text-2xl font-semibold">Message Analysis</h3>
                       {messages.length > 0 && (
@@ -184,8 +183,8 @@ const ContactSection = () => {
                         <p className="text-muted-foreground">Submitted messages will appear here.</p>
                       </div>
                     )}
-                  </Card>
-                </div>
+                  </div>
+                </CardContent>
               </Card>
             </div>
           </div>
