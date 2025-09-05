@@ -33,7 +33,7 @@ export default function Header() {
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
         isScrolled
-          ? 'border-b border-border/40 bg-background/95 backdrop-blur-2xl'
+          ? 'border-b border-border/40 bg-background/80 backdrop-blur-xl'
           : 'bg-transparent'
       )}
       initial={{ y: -100 }}

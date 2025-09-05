@@ -8,8 +8,8 @@ export const navLinks = [
 ];
 
 export const socialLinks = [
-  { href: 'https://github.com', icon: Github, label: 'GitHub' },
-  { href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
+  { href: 'https://github.com/sopan-hub', icon: Github, label: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/sopan-patil-24b2a1380', icon: Linkedin, label: 'LinkedIn' },
 ];
 
 export const skills = {
