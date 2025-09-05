@@ -68,7 +68,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-purple-500 to-pink-500/50 p-2 shadow-lg glow">
             <div className="relative h-full w-full overflow-hidden rounded-full">
               <Image
-                src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/file_000000001eb061f6a9042f1022c5dcd3.png"
+                src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/file_00000000dc0461f9b1a884202d5845c2.png"
                 alt="Profile Photo"
                 fill
                 className="object-cover"
