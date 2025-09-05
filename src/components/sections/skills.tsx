@@ -24,7 +24,7 @@ const SkillsSection = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_5px] hover:shadow-primary/40">
+                <Card className="h-full border-2 border-foreground text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_-5px] hover:shadow-black/70 dark:hover:shadow-black">
                   <CardHeader>
                     <CardTitle className="text-2xl">{category}</CardTitle>
                   </CardHeader>
