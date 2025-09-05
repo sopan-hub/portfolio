@@ -45,10 +45,7 @@ const HeroSection = () => {
                 className="group relative overflow-hidden rounded-full font-bold transition-all duration-300 hover:scale-105"
                 onClick={scrollToProjects}
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-primary via-purple-500 to-pink-500 opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
-                <span className="absolute inset-0 animate-pulse bg-primary/50 opacity-50 blur-2xl transition-opacity duration-300 group-hover:opacity-75" />
                 <span className="relative z-10">View My Work</span>
-                <div className="absolute -inset-1 z-0 animate-pulse rounded-full bg-primary/30 blur-xl group-hover:blur-2xl" />
               </Button>
             </motion.div>
         </div>

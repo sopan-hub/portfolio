@@ -25,12 +25,9 @@ const ResumeSection = () => {
             asChild
           >
             <a href="/resume.pdf" download>
-              <span className="absolute inset-0 bg-gradient-to-r from-primary via-purple-500 to-pink-500 opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
-              <span className="absolute inset-0 animate-pulse bg-primary/50 opacity-50 blur-2xl transition-opacity duration-300 group-hover:opacity-75" />
               <span className="relative z-10 flex items-center">
                 <Download className="mr-2 h-5 w-5" /> Download CV
               </span>
-              <div className="absolute -inset-1 z-0 animate-pulse rounded-full bg-primary/30 blur-xl group-hover:blur-2xl" />
             </a>
           </Button>
         </motion.div>

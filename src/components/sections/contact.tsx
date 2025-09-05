@@ -161,7 +161,7 @@ const ContactSection = () => {
                             <div className="rounded-lg bg-accent p-4">
                                 <h4 className="mb-2 flex items-center gap-2 font-semibold"><Bot className="h-5 w-5 text-primary"/> AI Analysis</h4>
                                 <p><strong>Summary:</strong> {msg.analysis.summary}</p>
-                                {msg.analysis.isImportant && <Badge color="red" className="my-2">Important</Badge>}
+                                {msg.analysis.isImportant && <Badge variant="destructive" className="my-2">Important</Badge>}
                                 <p className="mt-2 text-sm"><strong>Suggested Response:</strong> <em>"{msg.analysis.suggestedResponse}"</em></p>
                             </div>
                           </div>
