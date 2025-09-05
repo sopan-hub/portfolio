@@ -17,7 +17,7 @@ const HeroSection = () => {
     >
       <div className="absolute inset-0 z-0">
         <Image
-            src="https://share.text-image.com/e4a1abfb4a784aca"
+            src="https://i.postimg.cc/mPDwYW4C/image.png"
             alt="Hero background"
             fill
             className="object-cover"
