@@ -55,7 +55,7 @@ const ProjectsSection = () => {
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card className="group h-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
+                  <Card className="group h-full overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_5px] hover:shadow-primary/40">
                     <CardHeader className="p-0">
                       <div className="relative h-52 w-full overflow-hidden">
                         <Image

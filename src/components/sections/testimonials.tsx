@@ -32,7 +32,7 @@ const TestimonialsSection = () => {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
                   <div className="p-1">
-                    <Card className="h-full transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
+                    <Card className="h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_5px] hover:shadow-primary/40">
                       <CardContent className="flex flex-col items-center justify-center p-6 text-center">
                         <Image
                           src={testimonial.image}

@@ -24,7 +24,7 @@ const AchievementsSection = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
+                <Card className="overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_5px] hover:shadow-primary/40">
                   <div className="flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                       <achievement.icon className="h-6 w-6" />
