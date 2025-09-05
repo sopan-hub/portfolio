@@ -70,16 +70,6 @@ export const projects = [
     live: 'https://github.com',
     dataAiHint: 'mobile app',
   },
-  {
-    title: 'Personal Project Delta',
-    description: 'A creative coding project exploring generative art with p5.js and React.',
-    tech: ['p5.js', 'React'],
-    image: 'https://picsum.photos/400/300?q=4',
-    category: 'Other',
-    github: 'https://github.com',
-    live: 'https://github.com',
-    dataAiHint: 'generative art',
-  },
 ];
 
 export const achievements = [
