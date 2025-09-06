@@ -78,28 +78,28 @@ export const achievements = [
     year: '2024',
     icon: Award,
     description: 'Certificate of Completion for Power Plant Familiarization.',
-    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/certificste.png'
+    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/certificste.png'
   },
   {
     title: 'Cisco Networking Academy',
     year: '2023',
     icon: Trophy,
     description: 'Certificate of Completion for Introduction to Cybersecurity.',
-    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/efewfwe.png'
+    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/efewfwe.png'
   },
   {
     title: 'Google Crowdsource',
     year: '2023',
     icon: Star,
     description: 'Certificate of Appreciation for contribution to the Google Crowdsource community.',
-    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/fwefwe.png'
+    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/fwefwe.png'
   },
   {
     title: 'Internshala',
     year: '2023',
     icon: Award,
     description: 'Certificate of Training for completing the Web Development course.',
-    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/wfwefw.png'
+    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/wfwefw.png'
   },
   {
     title: 'Hackathon Winner',
