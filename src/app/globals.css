@@ -167,12 +167,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.15), transparent 70%);
+  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.3), transparent 70%);
   z-index: -1;
   border-radius: inherit;
   pointer-events: none;
 }
 
 .dark .red-glow::before {
-  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.25), transparent 70%);
+  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.4), transparent 70%);
 }
