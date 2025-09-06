@@ -3,8 +3,15 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
+  const [videoPlayed, setVideoPlayed] = useState(false);
+
+  const handleVideoEnd = () => {
+    setVideoPlayed(true);
+  };
+
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -14,7 +21,20 @@ const HeroSection = () => {
       id="home"
       className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 z-0 bg-background"></div>
+      <div className="absolute inset-0 z-0 bg-background">
+        {!videoPlayed && (
+          <video
+            autoPlay
+            muted
+            onEnded={handleVideoEnd}
+            className="absolute inset-0 h-full w-full object-cover"
+            playsInline
+          >
+            <source src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/10e930980cf22da3e5ec2000ded113e2cedc329a/vbg.mp4" type="video/mp4" />
+          </video>
+        )}
+         <div className={`absolute inset-0 transition-opacity duration-500 ${videoPlayed ? 'opacity-100' : 'opacity-0'}`} style={{ backgroundColor: '#000' }}></div>
+      </div>
       <div className="container z-10 grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
         <div className="flex flex-col items-center md:items-start">
             <motion.h1 
