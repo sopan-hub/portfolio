@@ -38,7 +38,7 @@ const HeroSection = () => {
       <div className="container z-10 grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
         <div className="flex flex-col items-center md:items-start">
             <motion.h1 
-              className="mb-4 text-5xl font-extrabold tracking-tight md:text-7xl"
+              className="mb-4 text-5xl font-extrabold tracking-tight text-white md:text-7xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
