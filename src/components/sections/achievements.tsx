@@ -24,17 +24,15 @@ const AchievementsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
               >
-                 <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-2xl dark:bg-red-500/30"></div>
-                <Card className="relative h-full overflow-hidden shadow-2xl shadow-black/70">
+                <Card className="glass-card flex h-full flex-col p-4">
                   {achievement.image && (
                     <div className="relative h-56 w-full">
                       <Image
                         src={achievement.image}
                         alt={achievement.title}
                         fill
-                        className="object-contain"
+                        className="rounded-lg object-contain"
                         data-ai-hint="certificate document"
                       />
                     </div>
@@ -50,7 +48,7 @@ const AchievementsSection = () => {
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-grow">
                     <p className="text-muted-foreground">{achievement.description}</p>
                   </CardContent>
                 </Card>

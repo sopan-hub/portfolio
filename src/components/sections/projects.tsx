@@ -56,10 +56,9 @@ const ProjectsSection = () => {
                   transition={{ duration: 0.3 }}
                   className="relative"
                 >
-                  <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-2xl dark:bg-red-500/30"></div>
-                  <Card className="relative group h-full overflow-hidden shadow-2xl shadow-black/70">
+                  <Card className="glass-card group flex h-full flex-col">
                     <CardHeader className="p-0">
-                      <div className="relative h-52 w-full overflow-hidden">
+                      <div className="relative h-52 w-full overflow-hidden rounded-t-[20px]">
                         <Image
                           src={project.image}
                           alt={project.title}
@@ -69,9 +68,9 @@ const ProjectsSection = () => {
                         />
                       </div>
                     </CardHeader>
-                    <CardContent className="p-6">
+                    <CardContent className="flex flex-grow flex-col p-6">
                       <CardTitle className="mb-2 text-xl">{project.title}</CardTitle>
-                      <p className="mb-4 text-sm text-muted-foreground">{project.description}</p>
+                      <p className="mb-4 flex-grow text-sm text-muted-foreground">{project.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((tech) => (
                           <Badge key={tech} variant="secondary">{tech}</Badge>
