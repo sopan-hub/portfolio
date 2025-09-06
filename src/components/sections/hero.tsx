@@ -23,7 +23,7 @@ const HeroSection = () => {
           className="absolute left-0 top-0 z-0 h-full w-full object-cover"
           src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/1757139210598.mp4"
         />
-        <div className="absolute inset-0 z-10 bg-background/60 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 z-10 bg-background/60"></div>
         
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="container grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
