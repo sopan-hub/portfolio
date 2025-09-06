@@ -51,24 +51,21 @@ const HeroSection = () => {
           </motion.div>
         </div>
         <motion.div
-          className="relative mx-auto flex h-[300px] w-[90%] max-w-lg items-center justify-center"
+          className="relative mx-auto flex h-[300px] w-[300px] items-center justify-center"
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           whileHover={{ scale: 1.05 }}
         >
-          <div className="absolute -inset-2 rounded-xl bg-primary/70 blur-3xl dark:bg-primary/30"></div>
-          <div className="glass-card relative h-full w-full overflow-hidden rounded-xl p-0 shadow-lg">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-full w-full object-cover"
-              src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/vbg.mp4"
-            >
-              Your browser does not support the video tag.
-            </video>
+          <div className="absolute -inset-2 rounded-full bg-primary/70 blur-3xl dark:bg-primary/30"></div>
+          <div className="relative h-full w-full overflow-hidden rounded-full shadow-lg">
+            <Image
+              src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
+              alt="Sopan Patil"
+              fill
+              className="object-cover"
+              data-ai-hint="profile picture"
+            />
           </div>
         </motion.div>
       </div>
