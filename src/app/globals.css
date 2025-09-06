@@ -157,24 +157,11 @@
 }
 
 .red-glow {
-  position: relative;
+  box-shadow: 0 0 20px 5px hsla(var(--destructive), 0.6),
+              0 0 45px 15px hsla(var(--destructive), 0.3);
 }
 
-.red-glow::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.4), transparent 70%);
-  filter: blur(30px);
-  z-index: -1;
-  border-radius: inherit;
-  pointer-events: none;
-}
-
-.dark .red-glow::before {
-  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.5), transparent 70%);
+.dark .red-glow {
+  box-shadow: 0 0 25px 5px hsla(var(--destructive), 0.7),
+              0 0 50px 20px hsla(var(--destructive), 0.4);
 }
