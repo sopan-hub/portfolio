@@ -156,3 +156,11 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.red-glow {
+  box-shadow: 0 0 15px hsl(var(--destructive)), 0 0 30px hsl(var(--destructive)), 0 0 45px hsl(var(--destructive));
+}
+
+.dark .red-glow {
+  box-shadow: 0 0 5px hsl(var(--destructive)), 0 0 10px hsl(var(--destructive)), 0 0 15px hsl(var(--destructive));
+}
+

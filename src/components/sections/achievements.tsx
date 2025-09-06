@@ -25,7 +25,7 @@ const AchievementsSection = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="glass-card relative flex h-full flex-col p-4">
+                <Card className="glass-card red-glow relative flex h-full flex-col p-4">
                   {achievement.image && (
                     <div className="relative h-56 w-full">
                       <Image

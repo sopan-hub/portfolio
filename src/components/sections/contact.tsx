@@ -95,7 +95,7 @@ const ContactSection = () => {
           <h2 className="mb-8 text-center text-4xl font-bold">Get In Touch</h2>
           <div className="mx-auto max-w-2xl">
              <div className="relative">
-              <Card className="glass-card">
+              <Card className="glass-card red-glow">
                 <CardHeader>
                   <CardTitle>Contact Me</CardTitle>
                   <CardDescription>
@@ -117,7 +117,7 @@ const ContactSection = () => {
               </Card>
             </div>
             <div className="relative mt-12">
-              <Card className="glass-card">
+              <Card className="glass-card red-glow">
                 <CardHeader>
                   <CardTitle>Contact Form</CardTitle>
                   <CardDescription>Fill out the form to send me a message.</CardDescription>
