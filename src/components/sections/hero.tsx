@@ -14,8 +14,17 @@ const HeroSection = () => {
       id="home"
       className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-background"
     >
-      <div className="absolute inset-0 z-0 h-full w-full bg-background" />
-      <div className="container z-10 grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute left-0 top-0 z-0 h-full w-full object-cover"
+        src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/10e930980cf22da3e5ec2000ded113e2cedc329a/vbg.mp4"
+      />
+      <div className="absolute inset-0 z-10 bg-background/60 backdrop-blur-sm"></div>
+
+      <div className="container z-20 grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
         <div className="flex flex-col items-center md:items-start">
           <motion.h1
             className="mb-4 text-5xl font-extrabold tracking-tight text-foreground md:text-7xl"
