@@ -11,12 +11,10 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="relative"
         >
           <h2 className="mb-8 text-center text-4xl font-bold">About Me</h2>
           <div className="relative mx-auto max-w-3xl">
-            <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-3xl dark:bg-red-500/30"></div>
-            <div className="glass-card relative space-y-6 p-8 text-center text-lg text-card-foreground">
+            <div className="glass-card radial-glow relative space-y-6 p-8 text-center text-lg text-card-foreground">
               <p>
                 I am a passionate and driven Computer Science student with a deep specialization in Artificial Intelligence and Machine Learning. My journey into tech is fueled by a curiosity for building intelligent systems that can solve real-world problems.
               </p>

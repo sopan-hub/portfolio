@@ -26,8 +26,7 @@ const AchievementsSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-3xl dark:bg-red-500/30"></div>
-                <Card className="glass-card relative flex h-full flex-col p-4">
+                <Card className="glass-card radial-glow relative flex h-full flex-col p-4">
                   {achievement.image && (
                     <div className="relative h-56 w-full">
                       <Image
