@@ -29,6 +29,7 @@ const HeroSection = () => {
             onEnded={handleVideoEnd}
             className="absolute inset-0 h-full w-full object-cover"
             playsInline
+            src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/10e930980cf22da3e5ec2000ded113e2cedc329a/vbg.mp4"
           >
             <source src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/10e930980cf22da3e5ec2000ded113e2cedc329a/vbg.mp4" type="video/mp4" />
           </video>
