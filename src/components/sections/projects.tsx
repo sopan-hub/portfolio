@@ -55,7 +55,7 @@ const ProjectsSection = () => {
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card className="glass-card red-glow group relative flex h-full flex-col">
+                  <Card className="glass-card glow group relative flex h-full flex-col">
                     <CardHeader className="p-0">
                       <div className="relative h-52 w-full overflow-hidden rounded-t-[20px]">
                         <Image
