@@ -157,10 +157,22 @@
 }
 
 .red-glow {
-  box-shadow: 0 0 15px hsl(var(--destructive)), 0 0 30px hsl(var(--destructive)), 0 0 45px hsl(var(--destructive));
+  position: relative;
 }
 
-.dark .red-glow {
-  box-shadow: 0 0 5px hsl(var(--destructive)), 0 0 10px hsl(var(--destructive)), 0 0 15px hsl(var(--destructive));
+.red-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.15), transparent 70%);
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
 }
 
+.dark .red-glow::before {
+  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.25), transparent 70%);
+}
