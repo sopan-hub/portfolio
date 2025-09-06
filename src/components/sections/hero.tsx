@@ -33,7 +33,6 @@ const HeroSection = () => {
       ) : (
         <div className="absolute inset-0 z-0 bg-background"></div>
       )}
-      <div className="absolute inset-0 z-10 bg-background/50"></div>
       <div className="relative z-20 flex w-full items-center justify-center">
         <div className="container grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
           <div className="flex flex-col items-center md:items-start">
