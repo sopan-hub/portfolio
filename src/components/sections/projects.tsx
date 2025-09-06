@@ -56,7 +56,8 @@ const ProjectsSection = () => {
                   transition={{ duration: 0.3 }}
                   className="relative"
                 >
-                  <Card className="glass-card group flex h-full flex-col">
+                  <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-3xl dark:bg-red-500/30"></div>
+                  <Card className="glass-card group relative flex h-full flex-col">
                     <CardHeader className="p-0">
                       <div className="relative h-52 w-full overflow-hidden rounded-t-[20px]">
                         <Image

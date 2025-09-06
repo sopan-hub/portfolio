@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useActionState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { motion } from 'framer-motion';
 import { Loader2, Download, AlertTriangle, CheckCircle2, Bot } from 'lucide-react';
@@ -95,7 +96,7 @@ const ContactSection = () => {
           <div className="mx-auto max-w-2xl">
              <div className="relative">
               <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-2xl dark:bg-red-500/30"></div>
-              <Card className="relative shadow-2xl shadow-black/70">
+              <Card className="glass-card relative">
                 <CardHeader>
                   <CardTitle>Contact Me</CardTitle>
                   <CardDescription>
@@ -118,7 +119,7 @@ const ContactSection = () => {
             </div>
             <div className="relative mt-12">
               <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-2xl dark:bg-red-500/30"></div>
-              <Card className="relative shadow-2xl shadow-black/70">
+              <Card className="glass-card relative">
                 <CardHeader>
                   <CardTitle>Contact Form</CardTitle>
                   <CardDescription>Fill out the form to send me a message.</CardDescription>
@@ -141,7 +142,7 @@ const ContactSection = () => {
                   </form>
                 </CardContent>
                  <CardContent>
-                  <div className="rounded-lg bg-background/50 p-6 shadow-inner backdrop-blur-sm">
+                  <div className="rounded-lg bg-background/5 p-6 shadow-inner backdrop-blur-sm">
                     <div className="flex items-center justify-between">
                       <h3 className="mb-4 text-2xl font-semibold">Message Analysis</h3>
                       {messages.length > 0 && (

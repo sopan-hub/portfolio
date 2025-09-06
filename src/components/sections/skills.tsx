@@ -26,14 +26,14 @@ const SkillsSection = () => {
                 className="relative"
               >
                 <div className="absolute -inset-4 rounded-lg bg-red-500/50 blur-2xl dark:bg-red-500/30"></div>
-                <Card className="relative h-full text-center shadow-[0_0_20px_5px_rgba(0,0,0,0.3)]">
+                <Card className="glass-card relative h-full text-center">
                   <CardHeader>
                     <CardTitle className="text-2xl">{category}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-4">
                       {skillList.map((skill) => (
-                        <li key={skill.name} className="flex items-center gap-4 rounded-md bg-background p-3">
+                        <li key={skill.name} className="flex items-center gap-4 rounded-md bg-background/50 p-3">
                           <skill.icon className="h-6 w-6 text-primary" />
                           <span className="font-medium">{skill.name}</span>
                         </li>
