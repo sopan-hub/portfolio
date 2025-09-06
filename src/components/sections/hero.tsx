@@ -21,7 +21,7 @@ const HeroSection = () => {
           muted
           playsInline
           className="absolute left-0 top-0 z-0 h-full w-full object-cover"
-          src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/10e930980cf22da3e5ec2000ded113e2cedc329a/vbg.mp4"
+          src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/1757139210598.mp4"
         />
         <div className="absolute inset-0 z-10 bg-background/60 backdrop-blur-sm"></div>
         
