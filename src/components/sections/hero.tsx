@@ -21,7 +21,7 @@ const HeroSection = () => {
       id="home"
       className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 z-0 bg-background">
+      <div className="absolute inset-0 z-0 bg-black">
         {!videoPlayed && (
           <video
             autoPlay
@@ -29,12 +29,11 @@ const HeroSection = () => {
             onEnded={handleVideoEnd}
             className="absolute inset-0 h-full w-full object-cover"
             playsInline
-            src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/10e930980cf22da3e5ec2000ded113e2cedc329a/vbg.mp4"
+            src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png"
           >
-            <source src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/10e930980cf22da3e5ec2000ded113e2cedc329a/vbg.mp4" type="video/mp4" />
+            <source src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/vbg.mp4" type="video/mp4" />
           </video>
         )}
-         <div className={`absolute inset-0 transition-opacity duration-500 ${videoPlayed ? 'opacity-100' : 'opacity-0'}`} style={{ backgroundColor: '#000' }}></div>
       </div>
       <div className="container z-10 grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
         <div className="flex flex-col items-center md:items-start">
