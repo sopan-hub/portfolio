@@ -3,10 +3,17 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 
 const HeroSection = () => {
+  const [videoEnded, setVideoEnded] = useState(false);
+
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleVideoEnd = () => {
+    setVideoEnded(true);
   };
 
   return (
@@ -14,14 +21,18 @@ const HeroSection = () => {
       id="home"
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute left-0 top-0 z-0 h-full w-full object-cover"
-        src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/1757139210598.mp4"
-      />
+      {!videoEnded ? (
+        <video
+          autoPlay
+          muted
+          playsInline
+          onEnded={handleVideoEnd}
+          className="absolute left-0 top-0 z-0 h-full w-full object-cover"
+          src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/main/1757139210598.mp4"
+        />
+      ) : (
+        <div className="absolute inset-0 z-0 bg-background"></div>
+      )}
       <div className="absolute inset-0 z-10 bg-background/50"></div>
       <div className="relative z-20 flex w-full items-center justify-center">
         <div className="container grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
