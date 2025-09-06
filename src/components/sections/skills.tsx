@@ -23,9 +23,8 @@ const SkillsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
               >
-                <Card className="glass-card radial-glow relative h-full text-center">
+                <Card className="glass-card h-full text-center">
                   <CardHeader>
                     <CardTitle className="text-2xl">{category}</CardTitle>
                   </CardHeader>

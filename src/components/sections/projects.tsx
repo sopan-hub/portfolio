@@ -54,9 +54,8 @@ const ProjectsSection = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
-                  className="relative"
                 >
-                  <Card className="glass-card radial-glow group relative flex h-full flex-col">
+                  <Card className="glass-card group relative flex h-full flex-col">
                     <CardHeader className="p-0">
                       <div className="relative h-52 w-full overflow-hidden rounded-t-[20px]">
                         <Image
