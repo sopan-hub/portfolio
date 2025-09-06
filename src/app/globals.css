@@ -163,16 +163,18 @@
 .red-glow::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.3), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.25), transparent 70%);
+  filter: blur(20px);
   z-index: -1;
   border-radius: inherit;
   pointer-events: none;
 }
 
 .dark .red-glow::before {
-  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.4), transparent 70%);
+  background: radial-gradient(ellipse at center, hsla(var(--destructive), 0.35), transparent 70%);
 }
