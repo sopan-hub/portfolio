@@ -5,13 +5,13 @@
 @layer base {
   :root {
     --background: 0 0% 100%; /* White */
-    --foreground: 0 0% 3.9%; /* Black */
+    --foreground: 222.2 84% 4.9%; /* Dark Blue */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
+    --popover-foreground: 222.2 84% 4.9%;
     --primary: 210 40% 48%; /* Blue */
-    --primary-foreground: 210 40% 98%; /* White */
+    --primary-foreground: 0 0% 98%; /* White */
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
@@ -69,12 +69,12 @@
     background-image: radial-gradient(ellipse 80% 50% at 50% 120%, hsla(var(--primary), 0.25), transparent);
   }
   .glow {
-    box-shadow: 0 0 20px 5px hsla(var(--primary), 0.6),
-                0 0 45px 15px hsla(var(--primary), 0.3);
+    box-shadow: 0 0 30px 8px hsla(var(--primary), 0.7),
+                0 0 60px 20px hsla(var(--primary), 0.4);
   }
   .dark .glow {
-    box-shadow: 0 0 25px 5px hsla(var(--primary), 0.7),
-                0 0 50px 20px hsla(var(--primary), 0.4);
+    box-shadow: 0 0 40px 10px hsla(var(--primary), 0.8),
+                0 0 80px 25px hsla(var(--primary), 0.5);
   }
   .glow-sm {
      box-shadow: 0 0 2px hsl(var(--primary)),
