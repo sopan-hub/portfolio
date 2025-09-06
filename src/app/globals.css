@@ -62,26 +62,6 @@
 }
 
 @layer utilities {
-  .body-bg {
-    background-color: #fff;
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-    background-position: -20px -20px;
-  }
-
-  .dark .body-bg {
-    background-color: #0D0D0D;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      radial-gradient(ellipse 80% 80% at 50% 120%, hsla(var(--primary), 0.15), transparent);
-    background-size: 40px 40px, 40px 40px, 100% 100%;
-    background-position: -20px -20px, -20px -20px, center;
-    background-repeat: repeat, repeat, no-repeat;
-  }
-
   .glass-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
