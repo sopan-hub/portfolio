@@ -118,160 +118,57 @@
     outline: none;
     box-shadow: inset 2px 2px 5px #1a1a1a, inset -2px -2px 5px #404040, 2px 2px 5px #1a1a1a, -_2px -2px 5px #404040;
   }
-
-  .uiverse-parent {
-    height: 100%;
-    perspective: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s;
-    width: 100%;
-  }
   
-  .uiverse-card {
-    border-radius: 50px;
-    background: linear-gradient(135deg, rgb(0, 255, 214) 0%, rgb(8, 226, 96) 100%);
-    transition: all 0.5s ease-in-out;
-    transform-style: preserve-3d;
-    box-shadow: rgba(5, 71, 17, 0) 40px 50px 25px -40px, rgba(5, 71, 17, 0.2) 0px 25px 25px -5px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .uiverse-glass {
-    transform-style: preserve-3d;
-    position: absolute;
-    inset: 8px;
-    border-radius: 42px;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.349) 0%, rgba(255, 255, 255, 0.815) 100%);
-    transform: translate3d(0px, 0px, 25px);
-    border-left: 1px solid white;
-    border-bottom: 1px solid white;
-    transition: all 0.5s ease-in-out;
-  }
-  
-  .uiverse-content {
-    padding: 2rem 3rem;
-    transform: translate3d(0, 0, 26px);
-    text-align: center;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .uiverse-content .uiverse-title {
-    display: block;
-    font-weight: 900;
-    font-size: 20px;
-  }
-  
-  .dark .uiverse-content .uiverse-title {
-  }
-  
-  .uiverse-content .uiverse-text {
-    display: block;
-    font-weight: 700;
-    font-size: 15px;
-    margin-top: 10px;
-    flex-grow: 1;
-    color: #000000;
-  }
-
-  .dark .uiverse-content .uiverse-text {
-    color: #000000;
-  }
-  
-  .uiverse-bottom {
-    padding: 10px 20px;
-    transform-style: preserve-3d;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transform: translate3d(0, 0, 26px);
-  }
-  
-  .uiverse-bottom .uiverse-view-more {
-    display: flex;
-    align-items: center;
-    width: 40%;
-    justify-content: flex-end;
+  .neu-card {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+    color: #4d4d4d;
     transition: all 0.2s ease-in-out;
-  }
-  
-  .uiverse-bottom .uiverse-view-more:hover {
-    transform: translate3d(0, 0, 10px);
-  }
-  
-  .uiverse-bottom .uiverse-view-more .uiverse-view-more-button {
-    background: none;
-    border: none;
-    color: #00c37b;
-    font-weight: bolder;
-    font-size: 12px;
-  }
-  
-  .uiverse-bottom .uiverse-view-more .uiverse-svg {
-    fill: none;
-    stroke: #00c37b;
-    stroke-width: 3px;
-    max-height: 15px;
-  }
-  
-  .uiverse-bottom .uiverse-social-buttons-container {
-    display: flex;
-    gap: 10px;
-    transform-style: preserve-3d;
-  }
-  
-  .bottom .social-buttons-container .social-button .uiverse-svg {
-    width: 15px;
-    fill: #00894d;
+    border: 2px solid rgb(206, 206, 206);
+    padding: 2rem 3rem;
+    height: 100%;
+    width: 100%;
   }
 
-  .bottom .social-buttons-container .social-button:hover {
-    background: black;
+  .neu-card:hover {
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff;
   }
 
-  .bottom .social-buttons-container .social-button:hover .uiverse-svg {
-    fill: white;
-  }
-
-  .bottom .social-buttons-container .social-button:active {
-    background: rgb(255, 234, 0);
-  }
-
-  .bottom .social-buttons-container .social-button:active .uiverse-svg {
-    fill: black;
+  .dark .neu-card {
+    background-color: #2d2d2d;
+    box-shadow: inset 4px 4px 10px #1a1a1a, inset -4px -4px 10px #404040;
+    color: #e0e0e0;
+    border-color: #333;
   }
   
-  .uiverse-parent:hover .uiverse-card {
-    transform: rotate3d(0, 0, 0, 0deg);
-    box-shadow: rgba(5, 71, 17, 0.3) 30px 50px 25px -40px, rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
-  }
-  
-  .uiverse-parent:hover .uiverse-card .uiverse-bottom .uiverse-social-buttons-container .uiverse-social-button {
-    transform: translate3d(0, 0, 50px);
-    box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
+  .dark .neu-card:hover {
+    box-shadow: inset 2px 2px 5px #1a1a1a, inset -2px -2px 5px #404040;
   }
   
   .card-grid.has-active-card > .card-container:not(.active) {
     filter: blur(10px);
     transform: scale(0.9, 0.9);
   }
-}
 
-.uiverse-content .uiverse-title {
-  color: #000000;
-  font-weight: bold;
-}
+  .neu-card .uiverse-title {
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .dark .neu-card .uiverse-title {
+    color: #ffffff;
+  }
+  
+  .neu-card .uiverse-text {
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 10px;
+    color: #000000;
+  }
 
-.dark .uiverse-content .uiverse-title {
-  color: #000000;
+  .dark .neu-card .uiverse-text {
+    color: #e0e0e0;
+  }
 }
