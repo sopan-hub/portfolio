@@ -15,8 +15,8 @@ const ProjectsSection = () => {
 
   const filteredProjects =
     filter === 'All'
-      ? projects.slice(0, 3)
-      : projects.filter((p) => p.category === filter).slice(0, 3);
+      ? projects
+      : projects.filter((p) => p.category === filter);
 
   return (
     <section id="projects" className="py-24">
@@ -42,7 +42,7 @@ const ProjectsSection = () => {
           </div>
           <motion.div
             layout
-            className="grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-3"
+            className="projects-grid grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-3"
           >
             <AnimatePresence>
               {filteredProjects.map((project, index) => (
@@ -53,14 +53,15 @@ const ProjectsSection = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
+                  className="h-full"
                 >
                   <UiverseCard>
-                    <div className="relative h-48 w-full overflow-hidden rounded-t-3xl">
+                    <div className="relative h-56 w-full overflow-hidden rounded-t-3xl">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="object-cover"
+                        className="rounded-xl object-cover"
                         data-ai-hint={project.dataAiHint}
                       />
                     </div>
