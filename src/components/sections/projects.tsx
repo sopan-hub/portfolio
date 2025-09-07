@@ -20,14 +20,6 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="relative py-20">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 1.5 }}
-      >
-        <div className="projects-background-pattern absolute inset-0 z-0 opacity-10"></div>
-      </motion.div>
       <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

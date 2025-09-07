@@ -46,6 +46,13 @@
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
     font-family: "Bowlby One SC", sans-serif;
+     --color: #faa7d8;
+    background: linear-gradient(45deg, var(--color) 25%, transparent 25%) -50px 0,
+          linear-gradient(-45deg, var(--color) 25%, transparent 25%) -50px 0,
+          linear-gradient(45deg, transparent 75%, var(--color) 75%) -50px 0,
+          linear-gradient(-45deg, transparent 75%, var(--color) 75%) -50px 0;
+    background-color: #e5e5f7;
+    background-size: 10px 40px;
   }
   h2,h3 {
     font-family: "Bowlby One SC", sans-serif;
@@ -210,154 +217,5 @@
     color: white;
     font-size: 2rem;
     font-weight: bold;
-  }
-
-  .grid-wrapper {
-    min-height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  
-  .grid-background {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    background-image: linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
-    background-size: 20px 30px;
-    -webkit-mask-image: radial-gradient(
-      ellipse 70% 60% at 50% 0%,
-      #000 60%,
-      transparent 100%
-    );
-    mask-image: radial-gradient(
-      ellipse 70% 60% at 50% 0%,
-      #000 60%,
-      transparent 100%
-    );
-  }
-  .about-background-pattern {
-    width: 100%;
-    height: 100%;
-    --color: #faa7d8;
-    background: linear-gradient(45deg, var(--color) 25%, transparent 25%) -50px 0,
-          linear-gradient(-45deg, var(--color) 25%, transparent 25%) -50px 0,
-          linear-gradient(45deg, transparent 75%, var(--color) 75%) -50px 0,
-          linear-gradient(-45deg, transparent 75%, var(--color) 75%) -50px 0;
-    background-color: #e5e5f7;
-    background-size: 10px 40px;
-  }
-  .skills-background-pattern {
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(45deg, #3498db, #3498db 30px, #2ecc71 30px, #2ecc71 60px),
-      repeating-linear-gradient(135deg, #e74c3c, #e74c3c 30px, #f1c40f 30px, #f1c40f 60px);
-  }
-  .projects-background-pattern {
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-        50% 50% at 100% 0,
-        #ca3f3f 0% 5%,
-        #ffffff 6% 15%,
-        #ca3f3f 16% 25%,
-        #ffffff 26% 35%,
-        #ca3f3f 36% 45%,
-        #ffffff 46% 55%,
-        #ca3f3f 56% 65%,
-        #ffffff 66% 75%,
-        #ca3f3f 76% 85%,
-        #ffffff 86% 95%,
-        #0000 96%
-      ),
-      radial-gradient(
-        50% 50% at 0 100%,
-        #ca3f3f 0% 5%,
-        #ffffff 6% 15%,
-        #ca3f3f 16% 25%,
-        #ffffff 26% 35%,
-        #ca3f3f 36% 45%,
-        #ffffff 46% 55%,
-        #ca3f3f 56% 65%,
-        #ffffff 66% 75%,
-        #ca3f3f 76% 85%,
-        #ffffff 86% 95%,
-        #0000 96%
-      ),
-      radial-gradient(
-        50% 50%,
-        #ca3f3f 0% 5%,
-        #ffffff 6% 15%,
-        #ca3f3f 16% 25%,
-        #ffffff 26% 35%,
-        #ca3f3f 36% 45%,
-        #ffffff 46% 55%,
-        #ca3f3f 56% 65%,
-        #ffffff 66% 75%,
-        #ca3f3f 76% 85%,
-        #ffffff 86% 95%,
-        #0000 96%
-      ),
-      radial-gradient(
-          50% 50%,
-          #ca3f3f 0% 5%,
-          #ffffff 6% 15%,
-          #ca3f3f 16% 25%,
-          #ffffff 26% 35%,
-          #ca3f3f 36% 45%,
-          #ffffff 46% 55%,
-          #ca3f3f 56% 65%,
-          #ffffff 66% 75%,
-          #ca3f3f 76% 85%,
-          #ffffff 86% 95%,
-          #0000 96%
-        )
-        38px 38px;
-    background-size: 76px 76px;
-    background-color: #ca3f3f;
-  }
-  .resume-achievements-background-pattern {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to right,
-      #289a6a 0%,
-      #289a6a 20%,
-      #ffffff 20%,
-      #ffffff 40%,
-      #ffcd00 40%,
-      #ffcd00 60%,
-      #ffffff 60%,
-      #ffffff 80%,
-      #ef3340 80%,
-      #ef3340 100%
-    );
-    background-size: 160px 100%;
-    background-repeat: repeat;
-  }
-  .contact-background-pattern {
-    width: 100%;
-    height: 100%;
-    --s: 60px;
-    --c1: #6ca700;
-    --c2: #406102;
-    --_g: radial-gradient(
-      25% 25% at 25% 25%,
-      var(--c1) 99%,
-      rgba(0, 0, 0, 0) 101%
-    );
-    background: var(--_g) var(--s) var(--s) / calc(2 * var(--s))
-        calc(2 * var(--s)),
-      var(--_g) 0 0 / calc(2 * var(--s)) calc(2 * var(--s)),
-      radial-gradient(50% 50%, var(--c2) 98%, rgba(0, 0, 0, 0)) 0 0 / var(--s)
-        var(--s),
-      repeating-conic-gradient(var(--c2) 0 50%, var(--c1) 0 100%)
-        calc(0.5 * var(--s)) 0 / calc(2 * var(--s)) var(--s);
   }
 }
