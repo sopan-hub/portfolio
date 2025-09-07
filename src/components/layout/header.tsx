@@ -31,10 +31,7 @@ export default function Header() {
   return (
     <motion.header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300',
-        isScrolled
-          ? 'border-b border-border/40 bg-background/80 backdrop-blur-2xl'
-          : ''
+        'sticky top-0 z-50 w-full transition-all duration-300 border-b border-border/40 bg-transparent backdrop-blur-2xl'
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
