@@ -53,7 +53,6 @@ const ProjectsSection = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
-                  className="h-[520px]"
                 >
                   <UiverseCard>
                     <div className="relative h-48 w-full overflow-hidden">
@@ -65,26 +64,26 @@ const ProjectsSection = () => {
                         data-ai-hint={project.dataAiHint}
                       />
                     </div>
-                     <div className="flex-grow p-6 text-center">
+                     <div className="flex-grow p-6 text-center flex flex-col">
                         <h3 className="uiverse-title mb-2">{project.title}</h3>
                         <p className="uiverse-text mb-4 flex-grow">{project.description}</p>
-                        <div className="flex flex-wrap justify-center gap-2">
+                        <div className="flex flex-wrap justify-center gap-2 mb-4">
                           {project.tech.map((tech) => (
                             <Badge key={tech} variant="secondary">{tech}</Badge>
                           ))}
                         </div>
-                      </div>
-                      <div className="flex justify-center gap-4 p-6 pt-0">
-                        <Button variant="neu" size="sm" asChild>
-                          <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            GitHub
-                          </a>
-                        </Button>
-                        <Button variant="neu" size="sm" asChild>
-                          <a href={project.live} target="_blank" rel="noopener noreferrer">
-                            Live Demo
-                          </a>
-                        </Button>
+                        <div className="flex justify-center gap-4">
+                          <Button variant="neu" size="sm" asChild>
+                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                              GitHub
+                            </a>
+                          </Button>
+                          <Button variant="neu" size="sm" asChild>
+                            <a href={project.live} target="_blank" rel="noopener noreferrer">
+                              Live Demo
+                            </a>
+                          </Button>
+                        </div>
                       </div>
                   </UiverseCard>
                 </motion.div>
