@@ -229,6 +229,6 @@
         rgba(255, 255, 150, 0) 20%
       );
     filter: blur(80px);
-    opacity: 0.8;
+    opacity: 1;
   }
 }
