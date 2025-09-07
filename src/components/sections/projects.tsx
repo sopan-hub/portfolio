@@ -7,6 +7,7 @@ import { projects } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import UiverseCard from '../uiverse-card';
+import { cn } from '@/lib/utils';
 
 const categories = ['All', 'Web', 'AI', 'Other'];
 
@@ -62,7 +63,12 @@ const ProjectsSection = () => {
                           src={project.image}
                           alt={project.title}
                           fill
-                          className="object-cover"
+                          className={cn(
+                            'object-cover',
+                            (project.title === 'AI Chatbot Beta' ||
+                              project.title === 'Image Recognition API') &&
+                              'scale-110'
+                          )}
                           data-ai-hint={project.dataAiHint}
                         />
                       </div>
