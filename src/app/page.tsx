@@ -8,15 +8,19 @@ import AchievementsSection from '@/components/sections/achievements';
 import ContactSection from '@/components/sections/contact';
 import Footer from '@/components/layout/footer';
 import Fireworks from '@/components/fireworks';
+import FishAnimation from '@/components/fish-animation';
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <HeroSection />
+        <div className="relative">
+          <FishAnimation />
+          <HeroSection />
+          <AboutSection />
+        </div>
         <Fireworks />
-        <AboutSection />
         <SkillsSection />
         <ProjectsSection />
         <ResumeSection />
