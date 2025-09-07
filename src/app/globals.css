@@ -201,13 +201,13 @@
   .scrolling-wrapper {
     overflow: hidden;
     width: 100%;
-    max-width: 632px; /* (300px card + 16px margin) * 2 */
+    max-width: 732px; /* (350px card + 16px margin) * 2 */
     margin: 0 auto;
   }
 
   .scrolling-content {
     display: flex;
-    width: calc(316px * 8); /* 300px card + 16px margin * 8 cards */
+    width: calc(366px * 8); /* 350px card + 16px margin * 8 cards */
     animation: scroll 40s linear infinite;
   }
 
@@ -216,13 +216,13 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-316px * 4)); /* Move by the width of 4 cards */
+      transform: translateX(calc(-366px * 4)); /* Move by the width of 4 cards */
     }
   }
 
   .scrolling-item {
     flex: 0 0 auto;
-    width: 300px;
+    width: 350px;
     margin: 0 8px;
   }
 }

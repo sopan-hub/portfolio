@@ -34,7 +34,7 @@ const AchievementsSection = () => {
                   >
                     <UiverseCard>
                       <div className="flex flex-col items-center text-center p-4 h-full">
-                        <div className="relative mb-4 h-48 sm:h-60 w-full">
+                        <div className="relative mb-4 h-56 w-full">
                           <Image
                             src={achievement.image}
                             alt={achievement.title}
