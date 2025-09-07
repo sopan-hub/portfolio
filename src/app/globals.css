@@ -88,13 +88,13 @@
   }
 
   .neu-card {
-    padding: 2.5rem;
-    background-image: linear-gradient(to bottom left, #e0e4e5, #f2f6f9);
-    border-radius: 2rem;
-    color: #444447;
-    box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
     height: 100%;
     width: 100%;
+    padding: 1.5rem;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
   }
 
   .card-grid.has-active-card > .card-container:not(.active) {
