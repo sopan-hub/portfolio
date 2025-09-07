@@ -7,7 +7,6 @@ import { motion, useScroll } from 'framer-motion';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { navLinks, socialLinks } from '@/lib/data';
 import {
   Sheet,
@@ -85,7 +84,6 @@ export default function Header() {
               </a>
             </Button>
           ))}
-          <ThemeToggle />
         </div>
 
         <div className="md:hidden">
@@ -121,7 +119,6 @@ export default function Header() {
                     </a>
                   </Button>
                 ))}
-                <ThemeToggle />
               </div>
             </SheetContent>
           </Sheet>
