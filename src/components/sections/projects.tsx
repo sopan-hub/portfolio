@@ -67,7 +67,7 @@ const ProjectsSection = () => {
                             'object-cover',
                             (project.title === 'AI Chatbot Beta' ||
                               project.title === 'Image Recognition API') &&
-                              'scale-110'
+                              'scale-125'
                           )}
                           data-ai-hint={project.dataAiHint}
                         />
