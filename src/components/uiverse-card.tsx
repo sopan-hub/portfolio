@@ -40,33 +40,6 @@ const UiverseCard = ({ children }: { children: React.ReactNode }) => {
         </div>
         <div className="uiverse-glass"></div>
         <div className="uiverse-content">{children}</div>
-        <div className="uiverse-bottom">
-          <div className="uiverse-social-buttons-container">
-             {socialLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="uiverse-social-button"
-                >
-                  <link.icon className="uiverse-svg" />
-                </a>
-              ))}
-          </div>
-          <div className="uiverse-view-more">
-            <button className="uiverse-view-more-button">View more</button>
-            <svg
-              className="uiverse-svg"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
-          </div>
-        </div>
       </div>
     </div>
   );

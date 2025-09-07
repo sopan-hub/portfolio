@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import UiverseCard from '../uiverse-card';
 
 const SkillsSection = () => {
   return (
@@ -24,21 +25,17 @@ const SkillsSection = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="glass-card glow h-full text-center">
-                  <CardHeader>
-                    <CardTitle className="text-2xl">{category}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-4">
-                      {skillList.map((skill) => (
-                        <li key={skill.name} className="flex items-center gap-4 rounded-md bg-background/50 p-3">
-                          <skill.icon className="h-6 w-6 text-primary" />
-                          <span className="font-medium">{skill.name}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+                <UiverseCard>
+                  <h3 className="uiverse-title">{category}</h3>
+                  <ul className="uiverse-text mt-4 space-y-3">
+                    {skillList.map((skill) => (
+                      <li key={skill.name} className="flex items-center justify-center gap-3 rounded-md bg-background/20 p-2">
+                        <skill.icon className="h-6 w-6 text-primary" />
+                        <span className="font-medium">{skill.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </UiverseCard>
               </motion.div>
             ))}
           </div>

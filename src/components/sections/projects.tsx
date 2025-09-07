@@ -8,6 +8,7 @@ import { projects } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import UiverseCard from '../uiverse-card';
 
 const categories = ['All', 'Web', 'AI', 'Other'];
 
@@ -54,41 +55,40 @@ const ProjectsSection = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
+                  className="h-[520px]"
                 >
-                  <Card className="glass-card glow group relative flex h-full flex-col rounded-none">
-                    <CardHeader className="p-0">
-                      <div className="relative h-52 w-full overflow-hidden">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          data-ai-hint={project.dataAiHint}
-                        />
+                  <UiverseCard>
+                    <div className="relative h-48 w-full overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                        data-ai-hint={project.dataAiHint}
+                      />
+                    </div>
+                     <div className="flex-grow p-6 text-center">
+                        <h3 className="uiverse-title mb-2">{project.title}</h3>
+                        <p className="uiverse-text mb-4 flex-grow">{project.description}</p>
+                        <div className="flex flex-wrap justify-center gap-2">
+                          {project.tech.map((tech) => (
+                            <Badge key={tech} variant="secondary">{tech}</Badge>
+                          ))}
+                        </div>
                       </div>
-                    </CardHeader>
-                    <CardContent className="flex flex-grow flex-col p-6">
-                      <CardTitle className="mb-2 text-xl">{project.title}</CardTitle>
-                      <p className="mb-4 flex-grow text-sm text-muted-foreground">{project.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech) => (
-                          <Badge key={tech} variant="secondary">{tech}</Badge>
-                        ))}
+                      <div className="flex justify-center gap-2 p-6 pt-0">
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4" /> GitHub
+                          </a>
+                        </Button>
+                        <Button size="sm" asChild>
+                          <a href={project.live} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                          </a>
+                        </Button>
                       </div>
-                    </CardContent>
-                    <CardFooter className="flex justify-end gap-2 p-6 pt-0">
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4" /> GitHub
-                        </a>
-                      </Button>
-                      <Button size="sm" asChild>
-                        <a href={project.live} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-                        </a>
-                      </Button>
-                    </CardFooter>
-                  </Card>
+                  </UiverseCard>
                 </motion.div>
               ))}
             </AnimatePresence>

@@ -120,8 +120,8 @@
   }
 
   .uiverse-parent {
-    width: 380px;
-    height: 480px;
+    width: 100%;
+    height: 100%;
     perspective: 1000px;
   }
   
@@ -148,9 +148,10 @@
   }
   
   .uiverse-content {
-    padding: 100px 60px 0px 30px;
+    padding: 30px;
+    padding-top: 80px;
     transform: translate3d(0, 0, 26px);
-    text-align: left;
+    text-align: center;
   }
   
   .uiverse-content .uiverse-title {
@@ -168,7 +169,7 @@
   }
   
   .uiverse-bottom {
-    padding: 10px 12px;
+    padding: 10px 20px;
     transform-style: preserve-3d;
     position: absolute;
     bottom: 20px;
@@ -213,48 +214,24 @@
     transform-style: preserve-3d;
   }
   
-  .uiverse-bottom .uiverse-social-buttons-container .uiverse-social-button {
-    width: 30px;
-    aspect-ratio: 1;
-    padding: 5px;
-    background: rgb(255, 255, 255);
-    border-radius: 50%;
-    border: none;
-    display: grid;
-    place-content: center;
-    box-shadow: rgba(5, 71, 17, 0.5) 0px 7px 5px -5px;
-  }
-  
-  .uiverse-bottom .uiverse-social-buttons-container .uiverse-social-button:first-child {
-    transition: transform 0.2s ease-in-out 0.4s, box-shadow 0.2s ease-in-out 0.4s;
-  }
-  
-  .uiverse-bottom .uiverse-social-buttons-container .uiverse-social-button:nth-child(2) {
-    transition: transform 0.2s ease-in-out 0.6s, box-shadow 0.2s ease-in-out 0.6s;
-  }
-  
-  .uiverse-bottom .uiverse-social-buttons-container .uiverse-social-button:nth-child(3) {
-    transition: transform 0.2s ease-in-out 0.8s, box-shadow 0.2s ease-in-out 0.8s;
-  }
-  
-  .uiverse-bottom .uiverse-social-buttons-container .uiverse-social-button .uiverse-svg {
+  .bottom .social-buttons-container .social-button .uiverse-svg {
     width: 15px;
     fill: #00894d;
   }
-  
-  .uiverse-bottom .uiverse-social-buttons-container .uiverse-social-button:hover {
+
+  .bottom .social-buttons-container .social-button:hover {
     background: black;
   }
-  
-  .uiverse-bottom .uiverse-social-buttons-container .uiverse-social-button:hover .uiverse-svg {
+
+  .bottom .social-buttons-container .social-button:hover .uiverse-svg {
     fill: white;
   }
-  
-  .uiverse-bottom .uiverse-social-buttons-container .uiverse-social-button:active {
+
+  .bottom .social-buttons-container .social-button:active {
     background: rgb(255, 234, 0);
   }
-  
-  .uiverse-bottom .uiverse-social-buttons-container .uiverse-social-button:active .uiverse-svg {
+
+  .bottom .social-buttons-container .social-button:active .uiverse-svg {
     fill: black;
   }
   
