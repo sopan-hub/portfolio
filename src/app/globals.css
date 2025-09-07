@@ -104,6 +104,7 @@
     width: 250px;
     position: relative;
     transform-style: preserve-3d;
+    cursor: pointer;
   }
   @media (min-width: 640px) {
     .hero-panel {
@@ -177,9 +178,10 @@
   .grid-wrapper {
     position: relative;
     background-color: #c6d3db;
+    transition: background-color 0.8s ease-in-out;
     z-index: 1;
   }
-  
+
   .grid-background {
     position: absolute;
     top: 0;
@@ -187,9 +189,14 @@
     bottom: 0;
     left: 0;
     z-index: 0;
-    background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+    background-image: linear-gradient(
+        to right,
+        #e2e8f0 1px,
+        transparent 1px
+      ),
       linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
     background-size: 20px 30px;
+    transition: background-image 0.8s ease-in-out;
     -webkit-mask-image: radial-gradient(
       ellipse 70% 60% at 50% 0%,
       #000 60%,
@@ -200,5 +207,21 @@
       #000 60%,
       transparent 100%
     );
+  }
+
+  .grid-wrapper.background-active {
+    background-color: transparent;
+  }
+
+  .grid-wrapper.background-active .grid-background {
+    background-image: radial-gradient(
+        circle at var(--bg-x) var(--bg-y),
+        #e9c46a 0%,
+        #e76f51 100%
+      ),
+      linear-gradient(to right, #333 1px, transparent 1px),
+      linear-gradient(to bottom, #333 1px, transparent 1px);
+    background-size: 100% 100%, 20px 30px, 20px 30px;
+    background-position: 0 0, 0 0, 0 0;
   }
 }

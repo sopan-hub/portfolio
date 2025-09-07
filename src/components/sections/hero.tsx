@@ -1,17 +1,20 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Eye } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
 import Typewriter from '@/components/typewriter';
+import { cn } from '@/lib/utils';
 
 const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
+  const [isBackgroundActive, setIsBackgroundActive] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!ref.current) return;
@@ -31,8 +34,26 @@ const HeroSection = () => {
     setRotateY(0);
   };
 
+  const toggleBackground = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (sectionRef.current) {
+      const rect = sectionRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      sectionRef.current.style.setProperty('--bg-x', `${x}px`);
+      sectionRef.current.style.setProperty('--bg-y', `${y}px`);
+    }
+    setIsBackgroundActive(!isBackgroundActive);
+  };
+
+
   return (
-    <section id="home" className="grid-wrapper overflow-hidden py-24 sm:py-32">
+    <section
+      id="home"
+      ref={sectionRef}
+      className={cn('grid-wrapper overflow-hidden py-24 sm:py-32', {
+        'background-active': isBackgroundActive,
+      })}
+    >
       <div className="grid-background"></div>
       <div className="container relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -97,6 +118,7 @@ const HeroSection = () => {
                 transformStyle: 'preserve-3d',
                 transition: 'transform 0.1s ease-out',
               }}
+              onClick={toggleBackground}
             >
               <div className="hero-ring">
                 <div className="hero-card-image">
