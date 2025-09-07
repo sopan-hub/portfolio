@@ -13,7 +13,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative py-24 sm:py-32 overflow-hidden"
+      className="relative py-24 sm:py-32"
     >
       <FishAnimation />
       <div className="container relative z-10">
@@ -78,14 +78,13 @@ const HeroSection = () => {
                     alt="Sopan Patil"
                     width={300}
                     height={300}
-                    className="object-cover"
+                    className="object-cover w-full h-full"
                     priority
                   />
                 </div>
               </div>
               <div className="hero-border">
                 <div className="hero-slide">
-                  <p>Sopan</p>
                 </div>
               </div>
             </div>
