@@ -74,31 +74,31 @@ export const projects = [
 
 export const achievements = [
   {
-    title: 'Tata Power Skill Development Institute',
+    title: 'Software Engineering Job Simulation – Forage',
     year: '2024',
     icon: Award,
-    description: 'Successfully completed the Power Plant Familiarization course, gaining comprehensive knowledge of power generation and plant operations.',
+    description: 'Successfully completed the Software Engineering Job Simulation on Forage, gaining hands-on experience in project scoping, agile methodologies, API integration, and REST API controllers.',
     image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/certificste.png'
   },
   {
-    title: 'Cisco Networking Academy',
-    year: '2023',
+    title: 'GenAI Powered Data Analytics Job Simulation – Forage',
+    year: '2024',
     icon: Trophy,
-    description: 'Earned a certificate for completing the Introduction to Cybersecurity, covering the fundamentals of online safety and digital threats.',
+    description: 'Completed the GenAI Powered Data Analytics Job Simulation on Forage, developing skills in exploratory data analysis, risk profiling, business report writing, and implementing AI-driven collection strategies.',
     image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/efewfwe.png'
   },
   {
-    title: 'Google Crowdsource',
+    title: 'GenAI Job Simulation – BCG X (via Forage)',
     year: '2023',
     icon: Star,
-    description: 'Received a Certificate of Appreciation for valuable contributions to the Google Crowdsource community, helping improve Google services.',
+    description: 'Successfully completed the GenAI Job Simulation with BCG X on Forage, focusing on data extraction, AI-based data analysis, and developing an AI-powered financial chatbot.',
     image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/fwefwe.png'
   },
   {
-    title: 'Internshala',
+    title: 'Data Analytics Job Simulation – Deloitte (via Forage)',
     year: '2023',
     icon: Award,
-    description: 'Awarded a Certificate of Training for successfully completing the Web Development course, mastering modern web technologies.',
+    description: 'Completed the Deloitte Data Analytics Job Simulation on Forage, gaining practical knowledge in data analysis and forensic technology applications.',
     image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/wfwefw.png'
   },
 ];
