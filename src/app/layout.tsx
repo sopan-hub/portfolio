@@ -3,8 +3,14 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
+import { Bowlby_One_SC } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const bowlbyOneSC = Bowlby_One_SC({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-bowlby-one-sc',
+});
 
 export const metadata: Metadata = {
   title: 'Portfolio | Sopan Patil',
@@ -26,7 +32,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={cn('min-h-screen font-sans antialiased', inter.variable)}>
+      <body className={cn('min-h-screen font-sans antialiased', bowlbyOneSC.variable)}>
         {children}
         <Toaster />
       </body>

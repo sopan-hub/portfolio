@@ -45,10 +45,6 @@
   body {
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
-    font-family: "Bowlby One SC", sans-serif;
-  }
-  h2,h3 {
-    font-family: "Bowlby One SC", sans-serif;
   }
 }
 
