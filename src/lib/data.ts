@@ -77,28 +77,28 @@ export const achievements = [
     title: 'Tata Power Skill Development Institute',
     year: '2024',
     icon: Award,
-    description: 'Certificate of Completion for Power Plant Familiarization.',
+    description: 'Successfully completed the Power Plant Familiarization course, gaining comprehensive knowledge of power generation and plant operations.',
     image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/certificste.png'
   },
   {
     title: 'Cisco Networking Academy',
     year: '2023',
     icon: Trophy,
-    description: 'Certificate of Completion for Introduction to Cybersecurity.',
+    description: 'Earned a certificate for completing the Introduction to Cybersecurity, covering the fundamentals of online safety and digital threats.',
     image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/efewfwe.png'
   },
   {
     title: 'Google Crowdsource',
     year: '2023',
     icon: Star,
-    description: 'Certificate of Appreciation for contribution to the Google Crowdsource community.',
+    description: 'Received a Certificate of Appreciation for valuable contributions to the Google Crowdsource community, helping improve Google services.',
     image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/fwefwe.png'
   },
   {
     title: 'Internshala',
     year: '2023',
     icon: Award,
-    description: 'Certificate of Training for completing the Web Development course.',
+    description: 'Awarded a Certificate of Training for successfully completing the Web Development course, mastering modern web technologies.',
     image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/wfwefw.png'
   },
 ];
