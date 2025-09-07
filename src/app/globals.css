@@ -305,7 +305,7 @@
   }
   
   .uiverse-parent:hover .uiverse-card {
-    transform: rotate3d(1, 1, 0, 30deg);
+    transform: rotate3d(0.5, 0.5, 0, 15deg);
     box-shadow: rgba(5, 71, 17, 0.3) 30px 50px 25px -40px, rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
   }
   

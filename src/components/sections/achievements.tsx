@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { achievements } from '@/lib/data';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import Image from 'next/image';
 import UiverseCard from '../uiverse-card';
 
@@ -28,23 +27,23 @@ const AchievementsSection = () => {
                 className="h-[480px]"
               >
                 <UiverseCard>
-                    <div className="relative mb-4 h-40 w-full">
-                      <Image
-                        src={achievement.image}
-                        alt={achievement.title}
-                        fill
-                        className="rounded-lg object-contain"
-                        data-ai-hint="certificate document"
-                      />
+                  <div className="relative mb-4 h-48 w-full">
+                    <Image
+                      src={achievement.image}
+                      alt={achievement.title}
+                      fill
+                      className="rounded-lg object-contain"
+                      data-ai-hint="certificate document"
+                    />
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <achievement.icon className="h-6 w-6" />
                     </div>
-                    <div className="flex items-center gap-4">
-                      <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                        <achievement.icon className="h-6 w-6" />
-                      </div>
-                    </div>
-                    <h3 className="uiverse-title mt-4">{achievement.title}</h3>
-                    <p className="text-sm text-muted-foreground">{achievement.year}</p>
-                    <p className="uiverse-text">{achievement.description}</p>
+                  </div>
+                  <h3 className="uiverse-title mt-4">{achievement.title}</h3>
+                  <p className="text-sm text-muted-foreground">{achievement.year}</p>
+                  <p className="uiverse-text">{achievement.description}</p>
                 </UiverseCard>
               </motion.div>
             ))}
