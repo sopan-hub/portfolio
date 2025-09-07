@@ -59,7 +59,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex items-center justify-center"
+            className="relative flex items-center justify-center lg:order-last order-first"
           >
             <div className="hero-panel">
               <div className="line line-1"></div>
