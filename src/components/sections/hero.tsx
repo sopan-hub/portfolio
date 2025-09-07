@@ -76,7 +76,7 @@ const HeroSection = () => {
               </div>
               <div className="hero-border">
                 <div className="hero-slide">
-                  <p>Sopan Patil</p>
+                  <p>Sopan</p>
                   <p>CS & AI/ML</p>
                 </div>
               </div>
