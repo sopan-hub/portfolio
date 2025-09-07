@@ -20,7 +20,7 @@ const AchievementsSection = () => {
           </h2>
         </motion.div>
         
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
            {achievements.map((achievement, index) => (
             <motion.div
               key={index}
