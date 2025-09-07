@@ -13,7 +13,6 @@ const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
-  const [isBackgroundActive, setIsBackgroundActive] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!ref.current) return;
@@ -36,16 +35,10 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className={cn(
-        'overflow-hidden py-24 sm:py-32 transition-colors duration-1000',
-        isBackgroundActive ? 'bg-hero-active' : 'bg-hero-default'
-      )}
+      className="overflow-hidden py-24 sm:py-32 bg-hero-default"
     >
       <div
-        className={cn(
-          'absolute inset-0 z-0 bg-grid-default transition-all duration-1000',
-          isBackgroundActive && 'bg-grid-active'
-        )}
+        className="absolute inset-0 z-0 bg-grid-default"
       ></div>
       <div className="container relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -105,7 +98,6 @@ const HeroSection = () => {
           >
             <div
               className="hero-panel"
-              onClick={() => setIsBackgroundActive(!isBackgroundActive)}
               style={{
                 transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
                 transformStyle: 'preserve-3d',

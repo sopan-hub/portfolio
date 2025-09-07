@@ -178,23 +178,10 @@
   .bg-hero-default {
     background-color: hsl(var(--background));
   }
-  .bg-hero-active {
-    background: radial-gradient(
-      circle at center,
-      rgba(255, 255, 0, 0.5) 0%,
-      rgba(255, 0, 0, 0.5) 100%
-    );
-  }
 
   .bg-grid-default {
     background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px),
       linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
-    background-size: 2rem 2rem;
-  }
-
-  .bg-grid-active {
-    background-image: linear-gradient(to right, #444 1px, transparent 1px),
-      linear-gradient(to bottom, #444 1px, transparent 1px);
     background-size: 2rem 2rem;
   }
 }
