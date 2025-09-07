@@ -7,15 +7,13 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Eye } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
 import Typewriter from '@/components/typewriter';
-import FishAnimation from '../fish-animation';
 
 const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative py-24 sm:py-32"
+      className="relative py-24 sm:py-32 overflow-hidden"
     >
-      <FishAnimation />
       <div className="container relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <motion.div
