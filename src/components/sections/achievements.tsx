@@ -68,8 +68,8 @@ const AchievementsSection = () => {
                     <Image
                       src={achievement.image}
                       alt={achievement.title}
-                      width="150"
-                      height="150"
+                      width="200"
+                      height="200"
                       className="product-image object-contain"
                       data-ai-hint="certificate document"
                     />
