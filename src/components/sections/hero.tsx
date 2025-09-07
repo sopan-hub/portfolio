@@ -37,7 +37,6 @@ const HeroSection = () => {
       id="home"
       className="relative overflow-hidden py-24 sm:py-32"
     >
-      <div className="hero-gradient-bg"></div>
       <div className="container relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <motion.div

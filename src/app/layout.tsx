@@ -33,7 +33,10 @@ export default function RootLayout({
         />
       </head>
       <body className={cn('min-h-screen font-sans antialiased', bowlbyOneSC.variable)}>
-        {children}
+        <div className="hero-gradient-bg"></div>
+        <div className="relative z-10">
+          {children}
+        </div>
         <Toaster />
       </body>
     </html>
