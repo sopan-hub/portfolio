@@ -115,7 +115,7 @@
     filter: blur(1.5px);
   }
   .hero-panel:hover .hero-border {
-    border: 8px solid #000;
+    border: 12px solid #000;
   }
   .hero-panel:hover .hero-slide {
     bottom: 0px;
@@ -152,7 +152,7 @@
 
   .hero-border {
     position: absolute;
-    border: 8px solid #000;
+    border: 12px solid #000;
     height: 100%;
     width: 100%;
     transition: border 1s;
