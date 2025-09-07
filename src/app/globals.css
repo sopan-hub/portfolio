@@ -90,6 +90,7 @@
     border-radius: 32px;
     background: hsl(var(--card));
     box-shadow: 0 80px 120px -40px rgba(0, 0, 0, 0.35), 0 0 120px -10px rgba(139, 0, 0, 0.8);
+    transform: perspective(1000px) rotateX(0deg);
   }
 
   .card-grid.has-active-card > .card-container:not(.active) {
@@ -149,6 +150,7 @@
     width: 100%;
     border-radius: 9999px;
     overflow: hidden;
+    box-shadow: 0 0 60px -15px rgba(139, 0, 0, 0.8);
   }
 
   .hero-border {
@@ -176,6 +178,7 @@
   .grid-wrapper {
     position: relative;
     background-color: #c6d3db;
+    z-index: 1;
   }
   
   .grid-background {
