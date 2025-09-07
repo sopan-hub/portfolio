@@ -199,10 +199,10 @@
     border-radius: 9999px;
     background: conic-gradient(
       from 180deg at 50% 50%,
-      rgba(255, 0, 0, 0) 0deg,
-      #ff0000 360deg
+      rgba(204, 0, 0, 0) 0deg,
+      #990000 360deg
     );
-    filter: blur(10px);
+    filter: blur(20px);
     transform: translateZ(-10px);
   }
 
