@@ -49,6 +49,7 @@ const ProjectsSection = () => {
           <motion.div
             layout
             className={cn('card-grid grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-3', activeIndex !== null && 'has-active-card')}
+            onMouseLeave={() => setActiveIndex(null)}
           >
             <AnimatePresence>
               {filteredProjects.map((project, index) => (
@@ -68,7 +69,7 @@ const ProjectsSection = () => {
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="rounded-xl object-cover"
+                        className="rounded-lg object-cover"
                         data-ai-hint={project.dataAiHint}
                       />
                     </div>
