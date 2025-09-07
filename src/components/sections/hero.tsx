@@ -25,9 +25,17 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-              Hi, I'm Sopan Patil
-            </h1>
+            <div className="sliced-text-wrapper">
+              <h1 className="top text-4xl font-bold tracking-tight sm:text-6xl">
+                Hi, I'm Sopan Patil
+              </h1>
+              <h1
+                className="bottom text-4xl font-bold tracking-tight sm:text-6xl"
+                aria-hidden="true"
+              >
+                Hi, I'm Sopan Patil
+              </h1>
+            </div>
             <h2 className="mt-4 text-2xl font-semibold sm:text-4xl">
               A{' '}
               <Typewriter
@@ -72,16 +80,16 @@ const HeroSection = () => {
               className="hero-panel"
             >
               <div className="hero-ring">
-                <div className="hero-card-image">
-                  <Image
-                    src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
-                    alt="Sopan Patil"
-                    width={300}
-                    height={300}
-                    className="object-cover w-full h-full"
-                    priority
-                  />
-                </div>
+              </div>
+              <div className="hero-card-image">
+                <Image
+                  src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
+                  alt="Sopan Patil"
+                  width={300}
+                  height={300}
+                  className="object-cover w-full h-full"
+                  priority
+                />
               </div>
               <div className="hero-border">
               </div>
