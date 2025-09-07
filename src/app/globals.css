@@ -64,16 +64,13 @@
 @layer utilities {
   .glass-card {
     background: hsl(var(--card));
-    border-radius: 16px; /* slightly smaller radius */
-    border: 1px solid hsla(var(--border) / 0.5); /* softer border */
+    border-radius: 16px;
     position: relative;
     overflow: visible;
-    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2); /* subtle shadow */
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
   }
 
   .dark .glass-card {
-    background: hsl(var(--card));
-    border: 1px solid hsla(var(--border) / 0.5);
     box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.4);
   }
 
@@ -85,8 +82,8 @@
     transform: translate(-50%, -50%);
     width: 150%;
     height: 150%;
-    background: radial-gradient(circle, rgba(255, 182, 193, 0.3) 0%, rgba(255, 182, 193, 0) 70%); /* More diffused glow */
-    filter: blur(60px); /* More blur */
+    background: radial-gradient(circle, rgba(255, 182, 193, 0.3) 0%, rgba(255, 182, 193, 0) 70%);
+    filter: blur(60px);
     z-index: -1;
     transition: opacity 0.3s ease;
   }
