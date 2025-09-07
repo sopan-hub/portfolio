@@ -65,7 +65,6 @@ const HeroSection = () => {
             className="relative flex items-center justify-center order-first lg:order-last"
           >
             <div className="hero-panel">
-              <div className="hero-blob"></div>
               <div className="hero-ring">
                 <div className="hero-card-image">
                   <Image
@@ -80,7 +79,7 @@ const HeroSection = () => {
               </div>
               <div className="hero-border">
                 <div className="hero-slide">
-                  <p>Sopan</p>
+                  <p></p>
                 </div>
               </div>
             </div>
