@@ -88,8 +88,8 @@
     box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
     color: #4d4d4d;
     cursor: pointer;
-    font-size: 18px;
-    padding: 15px 40px;
+    font-size: 16px;
+    padding: 10px 20px;
     transition: all 0.2s ease-in-out;
     border: 2px solid rgb(206, 206, 206);
   }
@@ -330,3 +330,5 @@
     transform: translate3d(0, 0, 120px);
   }
 }
+
+    
