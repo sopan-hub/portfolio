@@ -146,7 +146,6 @@
     border-radius: 9999px;
     overflow: hidden;
     z-index: 2;
-    box-shadow: 0 0 140px -10px rgba(139, 0, 0, 1);
   }
 
   .hero-border {
@@ -202,7 +201,6 @@
   .interactive-palette-container {
     height: 250px;
     width: 100%;
-    max-width: 500px;
     border-radius: 1em;
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
@@ -212,7 +210,7 @@
 
   .palette {
     display: flex;
-    height: 86%;
+    height: 100%;
     width: 100%;
   }
 
@@ -227,13 +225,16 @@
     letter-spacing: 1px;
     transition: flex 0.2s ease-in-out;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
   }
-
-  .palette .color span {
+  
+  .palette .color .color-info {
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    z-index: 2;
   }
 
   .palette .color:hover {
@@ -241,12 +242,47 @@
     box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
   }
 
-  .palette .color:hover span {
+  .palette .color:hover .color-info {
     opacity: 1;
     writing-mode: initial;
     transform: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .palette .color .color-info .cert-image {
+    width: 80%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
   }
 
+  .palette .color .cert-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    filter: blur(2px) brightness(0.7);
+  }
+
+  .palette .color:hover .cert-image-bg {
+    opacity: 1;
+  }
+  
   #stats {
     height: 14%;
     width: 100%;

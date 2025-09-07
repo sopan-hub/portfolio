@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { achievements } from '@/lib/data';
 import { Award } from 'lucide-react';
@@ -15,9 +15,7 @@ const colors = [
 ];
 
 const AchievementsSection = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const activeAchievement = activeIndex !== null ? achievements[activeIndex] : null;
+  const [activeTitle, setActiveTitle] = useState<string>('Hover over a color to see details');
 
   return (
     <section id="achievements" className="relative py-20">
@@ -38,7 +36,7 @@ const AchievementsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+            className="w-full max-w-4xl mx-auto"
         >
             <div className="interactive-palette-container">
               <div className="palette">
@@ -47,47 +45,37 @@ const AchievementsSection = () => {
                       key={index} 
                       className="color" 
                       style={{ backgroundColor: colors[index % colors.length] }}
-                      onMouseEnter={() => setActiveIndex(index)}
-                      onMouseLeave={() => setActiveIndex(null)}
+                      onMouseEnter={() => setActiveTitle(achievement.description)}
+                      onMouseLeave={() => setActiveTitle('Hover over a color to see details')}
                     >
-                      <span className='truncate max-w-[80%]'>{achievement.title}</span>
+                      <Image
+                        src={achievement.image}
+                        alt={achievement.title}
+                        fill
+                        className="cert-image-bg"
+                      />
+                      <div className='color-info'>
+                        <Image
+                            src={achievement.image}
+                            alt={achievement.title}
+                            width={200}
+                            height={140}
+                            className="cert-image"
+                        />
+                        <span className='truncate max-w-full text-sm'>{achievement.title}</span>
+                      </div>
                     </div>
                 ))}
               </div>
-              <div id="stats" className='flex justify-between items-center'>
-                 <span className='truncate text-sm'>
-                    {activeAchievement ? activeAchievement.description : 'Hover over a color to see details'}
+            </div>
+             <div id="stats" className='flex justify-between items-center rounded-b-lg -mt-1'>
+                 <span className='truncate text-sm p-4'>
+                    {activeTitle}
                  </span>
-                 <Award className="h-5 w-5 text-muted-foreground" />
+                 <div className='p-4'>
+                    <Award className="h-5 w-5 text-muted-foreground" />
+                 </div>
               </div>
-            </div>
-
-            <div className="certificate-display-container">
-                {activeIndex === null ? (
-                    <div className="flex flex-col items-center justify-center h-full text-center text-muted-foreground p-8">
-                        <Award className="h-16 w-16 mb-4" />
-                        <p>Your certificates will be displayed here.</p>
-                    </div>
-                ) : (
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={activeIndex}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.3 }}
-                            className="relative w-full h-full"
-                        >
-                            <Image
-                                src={achievements[activeIndex].image}
-                                alt={achievements[activeIndex].title}
-                                fill
-                                className="object-contain rounded-lg"
-                            />
-                        </motion.div>
-                    </AnimatePresence>
-                )}
-            </div>
         </motion.div>
       </div>
     </section>
