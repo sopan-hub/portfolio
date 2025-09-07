@@ -319,8 +319,8 @@
 
   .profile-card {
     position: relative;
-    width: 250px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     border-radius: 10px;
     box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
     background: #151515;
