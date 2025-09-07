@@ -15,7 +15,7 @@ const AchievementsSection = () => {
   };
 
   return (
-    <section id="achievements" className="py-24">
+    <section id="achievements" className="py-20">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -41,14 +41,14 @@ const AchievementsSection = () => {
                       src={achievement.image}
                       alt={achievement.title}
                       fill
-                      className="rounded-3xl object-contain p-4"
+                      className="rounded-xl object-contain p-4"
                       data-ai-hint="certificate document"
                     />
                   </div>
                   <div className="flex grow flex-col p-6 pt-0 text-center">
                     <h3 className="uiverse-title mb-2">{achievement.title}</h3>
                     <p className="mb-4 text-sm text-muted-foreground">{achievement.year}</p>
-                    <p className="uiverse-text grow">{achievement.description}</p>
+                    <p className="uiverse-text">{achievement.description}</p>
                   </div>
                 </UiverseCard>
               </motion.div>

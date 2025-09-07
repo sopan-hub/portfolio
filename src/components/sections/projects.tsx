@@ -25,7 +25,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-20">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -63,7 +63,7 @@ const ProjectsSection = () => {
                   onClick={() => handleCardClick(index)}
                 >
                   <UiverseCard>
-                    <div className="relative h-56 w-full overflow-hidden rounded-t-3xl">
+                    <div className="relative h-56 w-full overflow-hidden">
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -74,13 +74,13 @@ const ProjectsSection = () => {
                     </div>
                      <div className="flex-grow p-6 text-center flex flex-col">
                         <h3 className="uiverse-title mb-2">{project.title}</h3>
-                        <p className="uiverse-text mb-4 flex-grow">{project.description}</p>
+                        <p className="uiverse-text mb-4">{project.description}</p>
                         <div className="flex flex-wrap justify-center gap-2 mb-4">
                           {project.tech.map((tech) => (
                             <Badge key={tech} variant="secondary">{tech}</Badge>
                           ))}
                         </div>
-                        <div className="flex justify-center gap-4">
+                        <div className="mt-auto flex justify-center gap-4">
                           <Button variant="neu" size="sm" asChild>
                             <a href={project.github} target="_blank" rel="noopener noreferrer">
                               GitHub
