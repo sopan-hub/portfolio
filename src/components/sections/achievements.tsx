@@ -20,7 +20,7 @@ const AchievementsSection = () => {
           </h2>
         </motion.div>
         
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2">
            {achievements.map((achievement, index) => (
             <motion.div
               key={index}
@@ -32,7 +32,7 @@ const AchievementsSection = () => {
             >
                 <UiverseCard>
                     <div className="flex h-full flex-col items-center text-center">
-                        <div className="relative mb-4 w-full aspect-[4/3] overflow-hidden rounded-lg border-2 border-black">
+                        <div className="relative mb-4 w-full aspect-video overflow-hidden rounded-lg border-2 border-black">
                             <Image
                                 src={achievement.image}
                                 alt={achievement.title}
