@@ -93,7 +93,22 @@
     padding: 1.5rem;
     border-radius: 30px;
     background: #e0e0e0;
-    box-shadow: 0 0 30px 5px rgba(139, 0, 0, 0.4);
+    box-shadow: 
+      20px 20px 60px #bebebe,
+      -20px -20px 60px #ffffff,
+      inset 0 0 0 0 rgba(139, 0, 0, 0.3),
+      0 0 40px 10px rgba(139, 0, 0, 0.4);
+    transform: translateZ(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .neu-card:hover {
+    transform: translateZ(20px) translateY(-10px);
+    box-shadow: 
+      40px 40px 80px #b0b0b0,
+      -40px -40px 80px #ffffff,
+      inset 0 0 20px 5px rgba(139, 0, 0, 0.3),
+      0 0 60px 20px rgba(139, 0, 0, 0.5);
   }
 
   .card-grid.has-active-card > .card-container:not(.active) {
