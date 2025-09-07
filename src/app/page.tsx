@@ -7,6 +7,7 @@ import ResumeSection from '@/components/sections/resume';
 import AchievementsSection from '@/components/sections/achievements';
 import ContactSection from '@/components/sections/contact';
 import Footer from '@/components/layout/footer';
+import Fireworks from '@/components/fireworks';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <Fireworks />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
