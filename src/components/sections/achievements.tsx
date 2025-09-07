@@ -4,8 +4,16 @@ import { motion } from 'framer-motion';
 import { achievements } from '@/lib/data';
 import Image from 'next/image';
 import UiverseCard from '../uiverse-card';
+import React, { useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const AchievementsSection = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleCardClick = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <section id="achievements" className="py-24">
       <div className="container">
@@ -16,7 +24,7 @@ const AchievementsSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-12 text-center text-4xl font-bold">Achievements & Certificates</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className={cn('grid gap-8 sm:grid-cols-2 lg:grid-cols-4 card-grid', activeIndex !== null && 'has-active-card')}>
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
@@ -24,6 +32,8 @@ const AchievementsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={cn('card-container', activeIndex === index && 'active')}
+                onClick={() => handleCardClick(index)}
               >
                 <UiverseCard>
                   <div className="relative mb-4 h-56 w-full">

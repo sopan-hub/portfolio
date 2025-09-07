@@ -7,16 +7,22 @@ import { projects } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import UiverseCard from '../uiverse-card';
+import { cn } from '@/lib/utils';
 
 const categories = ['All', 'Web', 'AI', 'Other'];
 
 const ProjectsSection = () => {
   const [filter, setFilter] = useState('All');
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const filteredProjects =
     filter === 'All'
       ? projects
       : projects.filter((p) => p.category === filter);
+
+  const handleCardClick = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
   return (
     <section id="projects" className="py-24">
@@ -42,7 +48,7 @@ const ProjectsSection = () => {
           </div>
           <motion.div
             layout
-            className="projects-grid grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-3"
+            className={cn('card-grid grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-3', activeIndex !== null && 'has-active-card')}
           >
             <AnimatePresence>
               {filteredProjects.map((project, index) => (
@@ -53,7 +59,8 @@ const ProjectsSection = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
-                  className="h-full"
+                  className={cn('h-full card-container', activeIndex === index && 'active')}
+                  onClick={() => handleCardClick(index)}
                 >
                   <UiverseCard>
                     <div className="relative h-56 w-full overflow-hidden rounded-t-3xl">

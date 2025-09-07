@@ -126,6 +126,7 @@
     justify-content: center;
     align-items: center;
     transition: all 0.4s;
+    width: 100%;
   }
   
   .uiverse-card {
@@ -165,11 +166,9 @@
     display: block;
     font-weight: 900;
     font-size: 20px;
-    color: #000;
   }
   
   .dark .uiverse-content .uiverse-title {
-    color: #000;
   }
   
   .uiverse-content .uiverse-text {
@@ -262,7 +261,7 @@
     box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
   }
   
-  .projects-grid:hover > div:not(:hover) {
+  .card-grid.has-active-card > .card-container:not(.active) {
     filter: blur(10px);
     transform: scale(0.9, 0.9);
   }
