@@ -89,9 +89,8 @@
     padding: 1.5rem;
     border-radius: 12px;
     background: hsl(var(--card));
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 30px rgba(139, 0, 0, 0.6);
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.25), 0 0 60px -15px rgba(139, 0, 0, 0.4);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: translateY(-10px);
   }
 
   .card-grid.has-active-card > .card-container:not(.active) {
