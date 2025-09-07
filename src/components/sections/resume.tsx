@@ -20,8 +20,9 @@ const ResumeSection = () => {
             get a comprehensive look at my skills, experience, and qualifications.
           </p>
           <Button
+            variant="neu"
             size="lg"
-            className="group relative overflow-hidden rounded-full font-bold transition-all duration-300 hover:scale-105"
+            className="font-bold"
             asChild
           >
             <a href="/resume.pdf" download>

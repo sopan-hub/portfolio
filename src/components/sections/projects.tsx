@@ -33,7 +33,7 @@ const ProjectsSection = () => {
             {categories.map((category) => (
               <Button
                 key={category}
-                variant={filter === category ? 'default' : 'outline'}
+                variant={filter === category ? 'neu' : 'outline'}
                 onClick={() => setFilter(category)}
                 className="rounded-full"
               >

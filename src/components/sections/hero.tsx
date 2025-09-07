@@ -44,8 +44,9 @@ const HeroSection = () => {
                 transition={{ duration: 1, delay: 0.6 }}
               >
                 <Button
+                  variant="neu"
                   size="lg"
-                  className="group relative overflow-hidden rounded-full font-bold transition-all duration-300 hover:scale-105"
+                  className="font-bold"
                   onClick={scrollToProjects}
                 >
                   <span className="relative z-10">View My Work</span>

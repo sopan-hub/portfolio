@@ -69,6 +69,7 @@
       0 4px 15px rgba(0,0,0,0.2), /* Standard shadow for depth */
       0 0 40px rgba(255, 0, 0, 0.5); /* Red glow */
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
   }
 
   .dark .glass-card {
@@ -79,5 +80,42 @@
 
   .glow::before {
     content: none;
+  }
+
+  .neu-button {
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+    color: #4d4d4d;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 15px 40px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid rgb(206, 206, 206);
+  }
+
+  .neu-button:hover {
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+  }
+
+  .neu-button:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+  }
+
+  .dark .neu-button {
+    background-color: #2d2d2d;
+    box-shadow: inset 4px 4px 10px #1a1a1a, inset -4px -4px 10px #404040;
+    color: #e0e0e0;
+    border-color: #333;
+  }
+
+  .dark .neu-button:hover {
+    box-shadow: inset 2px 2px 5px #1a1a1a, inset -2px -2px 5px #404040, 2px 2px 5px #1a1a1a, -2px -2px 5px #404040;
+  }
+
+  .dark .neu-button:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 5px #1a1a1a, inset -2px -2px 5px #404040, 2px 2px 5px #1a1a1a, -2px -2px 5px #404040;
   }
 }
