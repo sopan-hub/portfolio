@@ -148,8 +148,8 @@
   }
   
   .uiverse-content {
-    padding: 30px;
-    padding-top: 80px;
+    padding: 20px;
+    padding-top: 70px;
     transform: translate3d(0, 0, 26px);
     text-align: center;
   }
@@ -165,7 +165,7 @@
     display: block;
     color: rgba(0, 137, 78, 0.7647058824);
     font-size: 15px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
   .uiverse-bottom {
@@ -299,13 +299,8 @@
     transition-delay: 1.6s;
   }
   
-  .uiverse-logo .uiverse-circle5 .uiverse-svg {
-    width: 20px;
-    fill: white;
-  }
-  
   .uiverse-parent:hover .uiverse-card {
-    transform: rotate3d(0.5, 0.5, 0, 15deg);
+    transform: rotate3d(0.5, 0.5, 0, 5deg);
     box-shadow: rgba(5, 71, 17, 0.3) 30px 50px 25px -40px, rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
   }
   
@@ -330,5 +325,7 @@
     transform: translate3d(0, 0, 120px);
   }
 }
+
+    
 
     
