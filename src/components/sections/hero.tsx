@@ -61,6 +61,9 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative flex items-center justify-center"
           >
+            <div className="line line-1"></div>
+            <div className="line line-2"></div>
+            <div className="line line-3"></div>
             <div className="hero-panel">
               <div className="hero-ring">
                 <div className="hero-card-image">
@@ -77,7 +80,6 @@ const HeroSection = () => {
               <div className="hero-border">
                 <div className="hero-slide">
                   <p>Sopan</p>
-                  <p>CS & AI/ML</p>
                 </div>
               </div>
             </div>

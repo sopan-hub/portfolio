@@ -212,4 +212,26 @@
     font-size: 2rem;
     font-weight: bold;
   }
+
+  .line {
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    transform: rotate(-45deg);
+  }
+  .line-1 {
+    width: 100px;
+    top: 20%;
+    right: -10%;
+  }
+  .line-2 {
+    width: 80px;
+    top: 25%;
+    right: -10%;
+  }
+  .line-3 {
+    width: 60px;
+    top: 30%;
+    right: -10%;
+  }
 }
