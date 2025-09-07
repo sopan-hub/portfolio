@@ -15,7 +15,6 @@ const HeroSection = () => {
       id="home"
       className="relative py-24 sm:py-32"
     >
-      <FishAnimation />
       <div className="container relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <motion.div
@@ -68,6 +67,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative flex items-center justify-center order-first lg:order-last"
           >
+            <FishAnimation />
             <div
               className="hero-panel"
             >
