@@ -76,15 +76,15 @@ const ProjectsSection = () => {
                           ))}
                         </div>
                       </div>
-                      <div className="flex justify-center gap-2 p-6 pt-0">
-                        <Button variant="outline" size="sm" asChild>
+                      <div className="flex justify-center gap-4 p-6 pt-0">
+                        <Button variant="neu" size="sm" asChild>
                           <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" /> GitHub
+                            GitHub
                           </a>
                         </Button>
-                        <Button size="sm" asChild>
+                        <Button variant="neu" size="sm" asChild>
                           <a href={project.live} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                            Live Demo
                           </a>
                         </Button>
                       </div>
