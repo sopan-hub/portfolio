@@ -107,16 +107,4 @@ export const achievements = [
     icon: Award,
     description: 'First place at the university hackathon for creating an innovative solution for campus sustainability.',
   },
-  {
-    title: 'Dean\'s List',
-    year: '2022-2023',
-    icon: Award,
-    description: 'Achieved academic excellence by maintaining a GPA in the top 10% of the computer science department.',
-  },
-  {
-    title: 'Open Source Contributor',
-    year: 'Ongoing',
-    icon: GitFork,
-    description: 'Active contributor to several popular open-source AI and web development projects on GitHub.',
-  },
 ];
