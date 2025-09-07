@@ -53,6 +53,16 @@
           linear-gradient(-45deg, transparent 75%, var(--color) 75%) -50px 0;
     background-color: #e5e5f7;
     background-size: 10px 40px;
+    -webkit-mask-image: radial-gradient(
+      ellipse 100% 60% at 50% 0%,
+      #000 60%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 100% 60% at 50% 0%,
+      #000 60%,
+      transparent 100%
+    );
   }
   h2,h3 {
     font-family: "Bowlby One SC", sans-serif;
@@ -99,9 +109,7 @@
     background-image: linear-gradient(to bottom left, #e0e4e5, #f2f6f9);
     border-radius: 2rem;
     color: #444447;
-    box-shadow:
-      inset -2px 2px 4px hsl(0 0 100% / 1),
-      0 0 40px rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
     height: 100%;
     width: 100%;
   }
