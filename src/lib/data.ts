@@ -101,10 +101,4 @@ export const achievements = [
     description: 'Certificate of Training for completing the Web Development course.',
     image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/a505d28ffcda90ceb7b2570a6ecefd8e62851624/wfwefw.png'
   },
-  {
-    title: 'Hackathon Winner',
-    year: '2023',
-    icon: Award,
-    description: 'First place at the university hackathon for creating an innovative solution for campus sustainability.',
-  },
 ];
