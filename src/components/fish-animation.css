@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 0;
+  z-index: 2;
 }
 
 .fish-container .fish {
@@ -25,6 +25,20 @@
   );
 }
 
+.fish-container .fish:nth-of-type(2) {
+  transform-origin: top center;
+  transform: scale(-1, 1);
+  filter: drop-shadow(
+    calc(var(--coilSize) * -4) calc(var(--coilSize) / 3) 5px rgba(0, 0, 0, 0.1)
+  );
+}
+
+.fish-container .fish:nth-of-type(2) .koiCoil {
+  background-color: white;
+  box-shadow: calc(var(--coilSize) / -2) calc(var(--coilSize) / -10) 0 orangered
+    inset;
+}
+
 .fish-container .fish .koiCoil {
   position: absolute;
   width: var(--coilSize);
@@ -42,20 +56,6 @@
   );
   animation: fishAnim 20000ms linear infinite;
   box-shadow: calc(var(--coilSize) / -2) calc(var(--coilSize) / -10) 0 white
-    inset;
-}
-
-.fish-container .fish:nth-of-type(2) {
-  transform-origin: top center;
-  transform: scale(-1, 1);
-  filter: drop-shadow(
-    calc(var(--coilSize) * -4) calc(var(--coilSize) / 3) 5px rgba(0, 0, 0, 0.1)
-  );
-}
-
-.fish-container .fish:nth-of-type(2) .koiCoil {
-  background-color: white;
-  box-shadow: calc(var(--coilSize) / -2) calc(var(--coilSize) / -10) 0 orangered
     inset;
 }
 
