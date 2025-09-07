@@ -68,24 +68,23 @@
   }
 
   .neu-button {
-    background-color: #e0e0e0;
+    background-color: #ffffff;
     border-radius: 50px;
-    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
-    color: #4d4d4d;
+    color: #000000;
     cursor: pointer;
     font-size: 18px;
     padding: 15px 40px;
     transition: all 0.2s ease-in-out;
-    border: 2px solid rgb(206, 206, 206);
+    border: 1px solid #ccc;
   }
   
   .neu-button:hover {
-    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+    background-color: #f0f0f0;
   }
   
   .neu-button:focus {
     outline: none;
-    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+    box-shadow: 0 0 5px #ccc;
   }
 
   .neu-card {
@@ -218,6 +217,7 @@
     background-color: black;
     height: 2px;
     transform: rotate(-45deg);
+    z-index: -1;
   }
   .line-1 {
     width: 100px;
