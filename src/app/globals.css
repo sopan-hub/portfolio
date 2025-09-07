@@ -322,4 +322,23 @@
     background-size: 76px 76px;
     background-color: #ca3f3f;
   }
+  .resume-achievements-background-pattern {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      #289a6a 0%,
+      #289a6a 20%,
+      #ffffff 20%,
+      #ffffff 40%,
+      #ffcd00 40%,
+      #ffcd00 60%,
+      #ffffff 60%,
+      #ffffff 80%,
+      #ef3340 80%,
+      #ef3340 100%
+    );
+    background-size: 160px 100%;
+    background-repeat: repeat;
+  }
 }
