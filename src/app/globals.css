@@ -78,7 +78,7 @@
     width: 100%;
     border-radius: 32px;
     background: hsl(var(--card));
-    box-shadow: 0 80px 120px -40px rgba(0, 0, 0, 0.35), 0 0 140px -10px rgba(139, 0, 0, 1);
+    box-shadow: 0 80px 120px -40px rgba(0, 0, 0, 0.35);
     transform: perspective(1000px) rotateX(0deg);
   }
 
