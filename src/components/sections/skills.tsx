@@ -24,12 +24,13 @@ const SkillsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="h-[350px]"
               >
                 <UiverseCard>
                   <h3 className="uiverse-title">{category}</h3>
                   <ul className="uiverse-text mt-4 space-y-3">
                     {skillList.map((skill) => (
-                      <li key={skill.name} className="flex items-center justify-center gap-3 rounded-md bg-background/20 p-2">
+                      <li key={skill.name} className="flex items-center justify-center gap-3 rounded-md p-2">
                         <skill.icon className="h-6 w-6 text-primary" />
                         <span className="font-medium">{skill.name}</span>
                       </li>
