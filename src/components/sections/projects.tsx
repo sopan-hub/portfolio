@@ -55,7 +55,7 @@ const ProjectsSection = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <UiverseCard>
-                    <div className="relative h-48 w-full overflow-hidden">
+                    <div className="relative h-48 w-full overflow-hidden rounded-t-3xl">
                       <Image
                         src={project.image}
                         alt={project.title}

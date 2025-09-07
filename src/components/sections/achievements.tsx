@@ -31,7 +31,7 @@ const AchievementsSection = () => {
                       src={achievement.image}
                       alt={achievement.title}
                       fill
-                      className="rounded-lg object-contain p-4"
+                      className="rounded-3xl object-contain p-4"
                       data-ai-hint="certificate document"
                     />
                   </div>
