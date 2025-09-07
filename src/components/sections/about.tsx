@@ -6,7 +6,7 @@ import UiverseCard from '@/components/uiverse-card';
 const AboutSection = () => {
   return (
     <section id="about" className="py-20">
-      <div className="container md:w-full lg:w-5/6">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ const AboutSection = () => {
         >
           <div className="mx-auto max-w-4xl aspect-square">
             <UiverseCard>
-                <div className="flex flex-col justify-center h-full">
+                <div className="flex flex-col justify-center h-full p-8 md:p-12">
                   <h2 className="uiverse-title text-3xl md:text-4xl">About Me</h2>
                   <p className="uiverse-text mt-6 text-base md:text-lg">
                     I am a passionate and driven Computer Science student with a deep specialization in Artificial Intelligence and Machine Learning. My journey into tech is fueled by a curiosity for building intelligent systems that can solve real-world problems.
