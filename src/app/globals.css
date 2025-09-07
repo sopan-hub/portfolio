@@ -78,7 +78,7 @@
     width: 100%;
     border-radius: 32px;
     background: hsl(var(--card));
-    box-shadow: 0 80px 120px -40px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.1);
     transform: perspective(1000px) rotateX(0deg);
   }
 
@@ -198,29 +198,88 @@
     );
   }
 
-  .scrolling-wrapper {
+  .wrapper-3d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
   }
 
-  .scrolling-content {
-    display: flex;
-    flex-shrink: 0;
-    animation: scroll 40s linear infinite;
+  .inner-3d {
+    --w: 200px;
+    --h: 300px;
+    --translateZ: calc(var(--w) + 100px);
+    --rotateX: -15deg;
+    --perspective: 1000px;
+    position: absolute;
+    width: var(--w);
+    height: var(--h);
+    top: 0;
+    left: calc(50% - (var(--w) / 2) - 2.5px);
+    z-index: 2;
+    transform-style: preserve-3d;
+    transform: perspective(var(--perspective));
+    animation: rotating 20s linear infinite;
   }
-
-  @keyframes scroll {
+  @keyframes rotating {
     from {
-      transform: translateX(0);
+      transform: perspective(var(--perspective)) rotateX(var(--rotateX))
+        rotateY(0);
     }
     to {
-      transform: translateX(-50%);
+      transform: perspective(var(--perspective)) rotateX(var(--rotateX))
+        rotateY(1turn);
     }
   }
 
-  .scrolling-item {
-    flex: 0 0 auto;
-    width: 350px;
-    margin: 0 16px;
+  .card-3d {
+    position: absolute;
+    border: 2px solid rgba(var(--color-card));
+    border-radius: 12px;
+    overflow: hidden;
+    inset: 0;
+    transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
+      translateZ(var(--translateZ));
+    background: hsl(var(--card));
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-3d:hover {
+    animation-play-state: paused;
+  }
+
+  .img-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #0000
+      radial-gradient(
+        circle,
+        rgba(var(--color-card), 0.2) 0%,
+        rgba(var(--color-card), 0.6) 80%,
+        rgba(var(--color-card), 0.9) 100%
+      );
+  }
+
+  .card-3d-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .card-3d:hover .card-3d-content {
+    transform: translateY(0);
   }
 }

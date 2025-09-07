@@ -4,13 +4,17 @@ import { motion } from 'framer-motion';
 import { achievements } from '@/lib/data';
 import Image from 'next/image';
 import React from 'react';
-import UiverseCard from '../uiverse-card';
 
 const AchievementsSection = () => {
-  const duplicatedAchievements = [...achievements, ...achievements];
+  const cardColors = [
+    '142, 249, 252',
+    '142, 252, 204',
+    '215, 252, 142',
+    '252, 142, 142',
+  ];
 
   return (
-    <section id="achievements" className="relative py-20 overflow-hidden">
+    <section id="achievements" className="relative py-20 overflow-hidden min-h-[500px]">
       <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -23,32 +27,31 @@ const AchievementsSection = () => {
           </h2>
         </motion.div>
       </div>
-      <div className="scrolling-wrapper">
-        <div className="scrolling-content">
-          {duplicatedAchievements.map((achievement, index) => (
-            <div key={index} className="scrolling-item">
-                <UiverseCard>
-                  <div className="flex flex-col items-center text-center p-4 h-full">
-                    <div className="relative mb-4 h-56 w-full">
-                      <Image
-                        src={achievement.image}
-                        alt={achievement.title}
-                        fill
-                        className="object-contain"
-                        data-ai-hint="certificate document"
-                      />
-                    </div>
-                    <h3 className="uiverse-title text-base">
-                      {achievement.title}
-                    </h3>
-                    <p className="uiverse-text mt-2 text-sm">
-                      {achievement.year}
-                    </p>
-                    <p className="uiverse-text mt-2 text-sm flex-grow">
-                      {achievement.description}
-                    </p>
+      
+      <div className="wrapper-3d">
+        <div className="inner-3d" style={{ '--quantity': achievements.length } as React.CSSProperties}>
+          {achievements.map((achievement, index) => (
+            <div 
+              key={index} 
+              className="card-3d" 
+              style={{ 
+                '--index': index, 
+                '--color-card': cardColors[index % cardColors.length] 
+              } as React.CSSProperties}
+            >
+              <div className="img-3d">
+                 <Image
+                    src={achievement.image}
+                    alt={achievement.title}
+                    fill
+                    className="object-contain p-4"
+                    data-ai-hint="certificate document"
+                  />
+                  <div className="card-3d-content">
+                     <h3 className="text-sm font-bold">{achievement.title}</h3>
+                     <p className="text-xs mt-2">{achievement.description}</p>
                   </div>
-                </UiverseCard>
+              </div>
             </div>
           ))}
         </div>
