@@ -13,7 +13,7 @@ const AboutSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="mx-auto max-w-2xl">
+          <div className="mx-auto max-w-4xl">
             <UiverseCard>
                 <div className="flex flex-col justify-center h-full">
                   <h2 className="uiverse-title text-3xl md:text-4xl">About Me</h2>
