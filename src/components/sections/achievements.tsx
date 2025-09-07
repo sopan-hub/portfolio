@@ -1,10 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { achievements } from '@/lib/data';
-import { cn } from '@/lib/utils';
 import { Award } from 'lucide-react';
 
 const colors = [
