@@ -281,7 +281,6 @@
     border-radius: 50%;
     transition: transform 1s;
     transform: translateX(-50%) translateY(-50%) rotate(50deg);
-    box-sizing: border-box;
   }
   
   .hero-ring:before {
@@ -317,4 +316,249 @@
     font-size: 2rem;
     font-weight: bold;
   }
+
+  .profile-card {
+    position: relative;
+    width: 250px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
+    background: #151515;
+    overflow: hidden;
+  }
+  .profile-card .ds-top {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 300px;
+    height: 80px;
+    background: crimson;
+    animation: dsTop 1.5s;
+  }
+  .profile-card .avatar-holder {
+    position: absolute;
+    margin: auto;
+    top: 40px;
+    right: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #151515,
+                inset 0 0 0 5px #000000,
+                inset 0 0 0 5px #000000,
+                inset 0 0 0 5px #000000,
+                inset 0 0 0 5px #000000,;
+    background: white;
+    overflow: hidden;
+    animation: mvTop 1.5s;
+  }
+  .profile-card .avatar-holder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  .profile-card .name {
+    position: absolute;
+    margin: auto;
+    top: -60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: inherit;
+    height: 40px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+  }
+  .profile-card .name a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+  }
+  .profile-card .name a:hover {
+    text-decoration: underline;
+    color: crimson;
+  }
+  .profile-card .name h6 {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      color: white;
+      width: 40px;
+  }
+  .profile-card .button {
+    position: absolute;
+    margin: auto;
+    padding: 8px;
+    top: 20px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: inherit;
+    height: 40px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+    outline: none;
+  }
+  .profile-card .button a {
+      padding: 5px 20px;
+      border-radius: 10px;
+      color: white;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      font-size: 10px;
+      transition: all 1s;
+  }
+  .profile-card .button a:hover {
+    color: white;
+    background: crimson;
+  }
+  .profile-card .ds-info {
+    position: absolute;
+    margin: auto;
+    top: 120px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: inherit;
+    height: 40px;
+    display: flex;
+  }
+  .profile-card .ds-info .pens, .profile-card .ds-info .projects, .profile-card .ds-info .posts {
+      position: relative;
+      left: -300px;
+      width: calc(250px / 3);
+      text-align: center;
+      color: white;
+      animation: fadeInMove 2s;
+      animation-fill-mode: forwards;
+  }
+  .profile-card .ds-info .pens h6, .profile-card .ds-info .projects h6, .profile-card .ds-info .posts h6 {
+        text-transform: uppercase;
+        color: crimson;
+  }
+  .profile-card .ds-info .pens p, .profile-card .ds-info .projects p, .profile-card .ds-info .posts p {
+        font-size: 12px;
+  }
+  .profile-card .ds-info .ds:nth-of-type(2) {
+    animation-delay: .5s;
+  }
+  .profile-card .ds-info .ds:nth-of-type(1) {
+    animation-delay: 1s;
+  }
+
+  .profile-card .ds-skill {
+    position: absolute;
+    margin: auto;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    width: 200px;
+    height: 100px;
+    animation: mvBottom 1.5s;
+  }
+
+  .profile-card .ds-skill h6 {
+      margin-bottom: 5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: crimson;
+  }
+  .profile-card .ds-skill .skill h6 {
+    font-weight: 400;
+    font-size: 8px;
+    letter-spacing: 0.05em;
+    margin: 4px 0;
+    color: white;
+  }
+  .profile-card .ds-skill .skill .fab {
+    color: crimson;
+    font-size: 14px;
+  }
+  .profile-card .ds-skill .skill .bar {
+    height: 5px;
+    background: crimson;
+    text-align: right;
+  }
+  .profile-card .ds-skill .skill .bar p {
+    color: white;
+    font-size: 8px;
+    padding-top: 5px;
+    animation: fadeIn 5s;
+  }
+  .profile-card .ds-skill .skill .bar:hover {
+    background: white;
+  }
+  .profile-card .ds-skill .skill .bar-html {
+    width: 95%;
+    animation: htmlSkill 1s;
+    animation-delay: .4s;
+  }
+  .profile-card .ds-skill .skill .bar-css {
+    width: 90%;
+    animation: cssSkill 2s;
+    animation-delay: .4s;
+  }
+  .profile-card .ds-skill .skill .bar-js {
+    width: 75%;
+    animation: jsSkill 3s;
+    animation-delay: .4s;
+  }
+  
+  .following {
+    color: white;
+    background: crimson;
+  }
+  
+  @keyframes fadeInMove {
+    0% {
+      opacity: 0;
+      left: -300px;
+    }
+    100% {
+      opacity: 1;
+      left: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  @keyframes htmlSkill {
+    0% {width: 0;}
+    100% {width: 95%;}
+  }
+  
+  @keyframes cssSkill {
+    0% {width: 0;}
+    100% {width: 90%;}
+  }
+  
+  @keyframes jsSkill {
+    0% {width: 0;}
+    100% {width: 75%;}
+  }
+  
+  @keyframes mvBottom {
+    0% {bottom: -150px;}
+    100% {bottom: 10px;}
+  }
+  
+  @keyframes mvTop {
+    0% {top: -150px;}
+    100% {top: 40px;}
+  }
+   
+  @keyframes dsTop {
+    0% {top: -150px;}
+    100% {top: 0;}
+  }
+
 }

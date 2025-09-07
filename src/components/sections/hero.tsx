@@ -1,14 +1,48 @@
 'use client';
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { useEffect } from 'react';
+import { Codepen, GitFork, Bot, Users, Edit, FileText, MessageSquare } from 'lucide-react';
 
 const HeroSection = () => {
 
-  const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-  };
+  useEffect(() => {
+    const target = {
+      clicked: 0,
+      currentFollowers: 90,
+      btn: document.querySelector("a.btn"),
+      fw: document.querySelector("span.followers")
+    };
+
+    const follow = () => {
+      if (!target.btn || !target.fw) return;
+      target.clicked += 1;
+      target.btn.innerHTML = 'Following <i class="fas fa-user-times"></i>';
+    
+      if (target.clicked % 2 === 0) {
+        target.currentFollowers -= 1;
+        target.btn.innerHTML = 'Follow <i class="fas fa-user-plus"></i>';
+      }
+      else {
+        target.currentFollowers += 1;
+      }
+    
+      target.fw.textContent = target.currentFollowers.toString();
+      target.btn.classList.toggle("following");
+    }
+
+    const btn = document.querySelector("a.btn");
+    if (btn) {
+      btn.addEventListener('mousedown', follow);
+    }
+    
+    return () => {
+      if (btn) {
+        btn.removeEventListener('mousedown', follow);
+      }
+    }
+
+  }, []);
+
 
   return (
     <section
@@ -16,69 +50,53 @@ const HeroSection = () => {
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 z-0 bg-background"></div>
-      <div className="relative z-20 flex w-full items-center justify-center">
-          <div className="container grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
-            <div className="flex flex-col items-center md:items-start">
-              <motion.h1
-                className="mb-4 text-5xl font-extrabold tracking-tight text-foreground md:text-7xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.2 }}
-              >
-                Sopan Patil
-              </motion.h1>
-
-              <motion.p
-                className="mb-8 max-w-xl text-lg text-muted-foreground md:text-xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.4 }}
-              >
-                A Computer Science student specializing in AI/ML, passionate about
-                building intelligent solutions for real-world challenges.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.6 }}
-              >
-                <Button
-                  variant="neu"
-                  size="lg"
-                  className="font-bold"
-                  onClick={scrollToProjects}
-                >
-                  View My Work
-                </Button>
-              </motion.div>
-            </div>
-            <motion.div
-              className="relative mx-auto flex items-center justify-center"
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, ease: 'easeOut' }}
-            >
-              <div className="hero-panel">
-                <div className="hero-ring">
-                  <div className="hero-card-image">
-                     <Image
-                      src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
-                      alt="Sopan Patil"
-                      fill
-                      className="object-cover"
-                      data-ai-hint="profile picture"
-                    />
-                  </div>
-                  <div className="hero-border">
-                    <div className="hero-slide">
-                      Sopan
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+      <div className="profile-card">
+        <div className="ds-top"></div>
+        <div className="avatar-holder">
+          <img src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png" alt="Sopan Patil" />
+        </div>
+        <div className="name">
+          <a href="https://github.com/sopan-hub" target="_blank" rel="noopener noreferrer">Sopan Patil</a>
+          <h6 title="Followers"><Users className="inline-block h-4 w-4" /> <span className="followers">90</span></h6>
+        </div>
+        <div className="button">
+          <a href="#" className="btn">Follow <Users className="inline-block h-4 w-4" /></a>
+        </div>
+        <div className="ds-info">
+          <div className="ds pens">
+            <h6><Edit className="inline-block h-4 w-4" /> Projects</h6>
+            <p>3</p>
           </div>
+          <div className="ds projects">
+            <h6><FileText className="inline-block h-4 w-4" /> Certificates</h6>
+            <p>4</p>
+          </div>
+          <div className="ds posts">
+            <h6><MessageSquare className="inline-block h-4 w-4" /> Posts</h6>
+            <p>0</p>
+          </div>
+        </div>
+        <div className="ds-skill">
+          <h6>Skill <i className="fa fa-code" aria-hidden="true"></i></h6>
+          <div className="skill html">
+            <h6><Codepen className="inline-block h-4 w-4" /> React </h6>
+            <div className="bar bar-html">
+              <p>95%</p>
+            </div>
+          </div>
+          <div className="skill css">
+            <h6><Bot className="inline-block h-4 w-4" /> Genkit </h6>
+            <div className="bar bar-css">
+              <p>90%</p>
+            </div>
+          </div>
+          <div className="skill javascript">
+            <h6><GitFork className="inline-block h-4 w-4" /> Git </h6>
+            <div className="bar bar-js">
+              <p>85%</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
