@@ -6,7 +6,7 @@ import UiverseCard from '@/components/uiverse-card';
 const AboutSection = () => {
   return (
     <section id="about" className="py-24">
-      <div className="container flex justify-center">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
