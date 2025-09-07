@@ -212,28 +212,6 @@
     font-weight: bold;
   }
 
-  .line {
-    position: absolute;
-    background-color: black;
-    height: 3px;
-    z-index: -1;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    width: 150vw;
-    left: -25vw;
-  }
-  .line-1 {
-    top: 40%;
-    transform: rotate(-35deg);
-  }
-  .line-2 {
-    top: 50%;
-    transform: rotate(-35deg);
-  }
-  .line-3 {
-    top: 60%;
-    transform: rotate(-35deg);
-  }
-
   .grid-wrapper {
     min-height: 100%;
     width: 100%;
@@ -263,5 +241,16 @@
       #000 60%,
       transparent 100%
     );
+  }
+  .about-background-pattern {
+    width: 100%;
+    height: 100%;
+    --color: #faa7d8;
+    background: linear-gradient(45deg, var(--color) 25%, transparent 25%) -50px 0,
+          linear-gradient(-45deg, var(--color) 25%, transparent 25%) -50px 0,
+          linear-gradient(45deg, transparent 75%, var(--color) 75%) -50px 0,
+          linear-gradient(-45deg, transparent 75%, var(--color) 75%) -50px 0;
+    background-color: #e5e5f7;
+    background-size: 10px 40px;
   }
 }
