@@ -49,7 +49,7 @@ const HeroSection = () => {
                   className="font-bold"
                   onClick={scrollToProjects}
                 >
-                  <span className="relative z-10">View My Work</span>
+                  View My Work
                 </Button>
               </motion.div>
             </div>

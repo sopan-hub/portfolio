@@ -26,9 +26,7 @@ const ResumeSection = () => {
             asChild
           >
             <a href="/resume.pdf" download>
-              <span className="relative z-10 flex items-center">
-                <Download className="mr-2 h-5 w-5" /> Download CV
-              </span>
+              <Download className="mr-2 h-5 w-5" /> Download CV
             </a>
           </Button>
         </motion.div>
