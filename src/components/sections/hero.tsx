@@ -25,17 +25,9 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            <div className="sliced-text-wrapper">
-              <h1 className="top text-4xl font-bold tracking-tight sm:text-6xl">
-                Hi, I'm Sopan Patil
-              </h1>
-              <h1
-                className="bottom text-4xl font-bold tracking-tight sm:text-6xl"
-                aria-hidden="true"
-              >
-                Hi, I'm Sopan Patil
-              </h1>
-            </div>
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+              Hi, I'm Sopan Patil
+            </h1>
             <h2 className="mt-4 text-2xl font-semibold sm:text-4xl">
               A{' '}
               <Typewriter

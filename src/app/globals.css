@@ -196,27 +196,4 @@
     filter: blur(80px);
     opacity: 1;
   }
-
-  .sliced-text-wrapper {
-    display: grid;
-    place-content: center;
-  }
-
-  .sliced-text-wrapper > div {
-    grid-area: 1/1/-1/-1;
-  }
-
-  .sliced-text-wrapper .top {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
-  }
-
-  .sliced-text-wrapper .bottom {
-    clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
-    color: transparent;
-    background: -webkit-linear-gradient(177deg, black 53%, hsl(var(--foreground)) 65%);
-    background: linear-gradient(177deg, black 53%, hsl(var(--foreground)) 65%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    transform: translateX(-0.04em);
-  }
 }
