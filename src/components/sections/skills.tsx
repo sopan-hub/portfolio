@@ -1,20 +1,12 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '@/lib/data';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import UiverseCard from '../uiverse-card';
-import { cn } from '@/lib/utils';
 
 const SkillsSection = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const handleCardClick = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
   return (
-    <section id="skills" className="bg-secondary py-24 dark:bg-accent/20">
+    <section id="skills" className="py-24">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -24,8 +16,7 @@ const SkillsSection = () => {
         >
           <h2 className="mb-12 text-center text-4xl font-bold">My Skills</h2>
           <div 
-            className={cn('grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 card-grid', activeIndex !== null && 'has-active-card')}
-            onMouseLeave={() => setActiveIndex(null)}
+            className={'grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 card-grid'}
           >
             {Object.entries(skills).map(([category, skillList], index) => (
               <motion.div
@@ -34,8 +25,7 @@ const SkillsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={cn('h-full card-container', activeIndex === index && 'active')}
-                onClick={() => handleCardClick(index)}
+                className={'h-full card-container'}
               >
                 <UiverseCard>
                   <h3 className="uiverse-title">{category}</h3>

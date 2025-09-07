@@ -6,7 +6,7 @@ import { Download } from 'lucide-react';
 
 const ResumeSection = () => {
   return (
-    <section id="resume" className="bg-secondary py-24 dark:bg-accent/20">
+    <section id="resume" className="py-24">
       <div className="container text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
