@@ -93,13 +93,13 @@
     padding: 1.5rem;
     border-radius: 12px;
     background: hsl(var(--card));
-    box-shadow: 8px 8px 20px rgba(202, 63, 63, 0.4);
+    box-shadow: 0 0 20px rgba(202, 63, 63, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .neu-card:hover {
     transform: translateY(-5px);
-    box-shadow: 12px 12px 30px rgba(202, 63, 63, 0.5);
+    box-shadow: 0 0 30px rgba(202, 63, 63, 0.5);
   }
 
   .card-grid.has-active-card > .card-container:not(.active) {
