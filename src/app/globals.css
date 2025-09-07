@@ -76,10 +76,13 @@
   }
 
   .neu-card {
-    border-radius: 30px;
-    background: #e0e0e0;
-    box-shadow: 20px 20px 40px rgba(255, 0, 0, 0.4), -20px -20px 40px #ffffff;
-    padding: 2rem 3rem;
+    padding: 2.5rem;
+    background-image: linear-gradient(to bottom left, #e0e4e5, #f2f6f9);
+    border-radius: 2rem;
+    color: #444447;
+    box-shadow:
+      inset -2px 2px 4px hsl(0 0 100% / 1),
+      -20px 20px 40px rgba(255, 0, 0, 0.4);
     height: 100%;
     width: 100%;
   }
