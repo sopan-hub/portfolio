@@ -85,8 +85,9 @@ const ContactSection = () => {
 
 
   return (
-    <section id="contact" className="py-24">
-      <div className="container">
+    <section id="contact" className="relative py-24">
+      <div className="contact-background-pattern absolute inset-0 z-0 opacity-10"></div>
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
