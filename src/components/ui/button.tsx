@@ -47,11 +47,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     if (variant === 'neu') {
       return (
         <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
-          <div className="button-outer">
-            <div className="button-inner">
-              <span>{children}</span>
-            </div>
-          </div>
+          {children}
         </Comp>
       )
     }
