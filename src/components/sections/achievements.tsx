@@ -16,8 +16,8 @@ const AchievementsSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="mb-12 text-center text-3xl font-bold">Achievements & Certificates</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <h2 className="mb-12 text-center text-xl font-bold">Achievements & Certificates</h2>
+          <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 lg:grid-cols-4">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
@@ -25,10 +25,11 @@ const AchievementsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="w-full max-w-sm"
               >
                 <UiverseCard>
                   <div className="flex flex-col items-center text-center">
-                    <div className="relative mb-4 h-52 w-full">
+                    <div className="relative mb-4 h-60 w-full">
                       <Image
                         src={achievement.image}
                         alt={achievement.title}
@@ -37,7 +38,7 @@ const AchievementsSection = () => {
                         data-ai-hint="certificate document"
                       />
                     </div>
-                    <h3 className="uiverse-title text-lg">{achievement.title}</h3>
+                    <h3 className="uiverse-title text-base">{achievement.title}</h3>
                     <p className="uiverse-text mt-2 text-sm">{achievement.year}</p>
                     <p className="uiverse-text mt-2 text-sm">{achievement.description}</p>
                   </div>
