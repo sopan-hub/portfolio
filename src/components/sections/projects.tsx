@@ -19,8 +19,9 @@ const ProjectsSection = () => {
       : projects.filter((p) => p.category === filter);
 
   return (
-    <section id="projects" className="py-20">
-      <div className="container">
+    <section id="projects" className="relative py-20">
+      <div className="projects-background-pattern absolute inset-0 z-0 opacity-10"></div>
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
