@@ -98,7 +98,6 @@ const HeroSection = () => {
                 transition: 'transform 0.1s ease-out',
               }}
             >
-              <div className="hero-light-ring"></div>
               <div className="hero-ring">
                 <div className="hero-card-image">
                   <Image
