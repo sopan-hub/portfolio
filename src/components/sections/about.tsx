@@ -7,6 +7,7 @@ import FishAnimation from '../fish-animation';
 const AboutSection = () => {
   return (
     <section id="about" className="relative py-20 overflow-hidden">
+      <FishAnimation />
       <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -16,7 +17,6 @@ const AboutSection = () => {
         >
           <div className="mx-auto max-w-4xl relative">
             <UiverseCard>
-                <FishAnimation />
                 <div className="flex flex-col justify-center h-full p-4 sm:p-8 relative z-10">
                   <h2 className="uiverse-title text-2xl md:text-4xl text-center">About Me</h2>
                   <p className="uiverse-text mt-6 text-lg md:text-xl">
