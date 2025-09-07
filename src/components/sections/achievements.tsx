@@ -2,11 +2,16 @@
 
 import { motion } from 'framer-motion';
 import { achievements } from '@/lib/data';
-import Image from 'next/image';
-import React from 'react';
-import UiverseCard from '../uiverse-card';
 
 const AchievementsSection = () => {
+  const colors = [
+    '#264653',
+    '#2A9D8F',
+    '#E9C46A',
+    '#F4A261',
+    '#E76F51',
+  ];
+
   return (
     <section id="achievements" className="relative py-20">
       <div className="container relative z-10">
@@ -20,7 +25,7 @@ const AchievementsSection = () => {
             Achievements & Certificates
           </h2>
         </motion.div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {achievements.map((achievement, index) => (
             <motion.div
               key={index}
@@ -29,25 +34,21 @@ const AchievementsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <UiverseCard>
-                <div className="flex h-full flex-col items-center p-6 text-center">
-                  <div className="relative mb-4 h-56 w-full">
-                    <Image
-                      src={achievement.image}
-                      alt={achievement.title}
-                      fill
-                      className="object-contain"
-                      data-ai-hint="certificate document"
-                    />
-                  </div>
-                  <div className="flex flex-grow flex-col">
-                    <h3 className="uiverse-title mb-2 text-xl">{achievement.title}</h3>
-                    <p className="uiverse-text text-sm">
-                      {achievement.description}
-                    </p>
-                  </div>
+              <div className="palette-container">
+                <div className="palette">
+                  {colors.map((color, colorIndex) => (
+                     <div key={colorIndex} className="color" style={{ backgroundColor: color }}>
+                       <span className='truncate max-w-[80%]'>{colorIndex === 2 ? achievement.title : color.substring(1)}</span>
+                     </div>
+                  ))}
                 </div>
-              </UiverseCard>
+                <div id="stats">
+                  <span className='truncate'>{achievement.description}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                    <path d="M4 7.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5S5.5 9.83 5.5 9 4.83 7.5 4 7.5zm10 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm-5 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5S9.83 7.5 9 7.5z"></path>
+                  </svg>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
