@@ -1,4 +1,8 @@
 import {
+  Github,
+  Linkedin,
+} from 'lucide-react';
+import {
   ReactJs,
   NextJs,
   TailwindCss,
@@ -25,10 +29,10 @@ export const navLinks = [
 ];
 
 export const socialLinks = [
-  { href: 'https://github.com/sopan-hub', icon: Git, label: 'GitHub' },
+  { href: 'https://github.com/sopan-hub', icon: Github, label: 'GitHub' },
   {
     href: 'https://www.linkedin.com/in/sopan-patil-24b2a1380',
-    icon: NodeJs,
+    icon: Linkedin,
     label: 'LinkedIn',
   },
 ];
