@@ -63,18 +63,18 @@
 
 @layer utilities {
   .glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 20px;
-    border: 1px solid hsla(var(--border));
+    background: hsl(var(--card));
+    border-radius: 16px; /* slightly smaller radius */
+    border: 1px solid hsla(var(--border) / 0.5); /* softer border */
     position: relative;
     overflow: visible;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2); /* subtle shadow */
   }
 
   .dark .glass-card {
-    background: rgba(0, 0, 0, 0.15);
-    border: 1px solid hsla(var(--border));
+    background: hsl(var(--card));
+    border: 1px solid hsla(var(--border) / 0.5);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.4);
   }
 
   .glow::before {
@@ -85,13 +85,13 @@
     transform: translate(-50%, -50%);
     width: 150%;
     height: 150%;
-    background: radial-gradient(circle, rgba(255, 182, 193, 0.3) 0%, rgba(255, 182, 193, 0) 60%);
-    filter: blur(50px);
+    background: radial-gradient(circle, rgba(255, 182, 193, 0.3) 0%, rgba(255, 182, 193, 0) 70%); /* More diffused glow */
+    filter: blur(60px); /* More blur */
     z-index: -1;
     transition: opacity 0.3s ease;
   }
 
   .dark .glow::before {
-    background: radial-gradient(circle, rgba(255, 182, 193, 0.15) 0%, rgba(255, 182, 193, 0) 60%);
+    background: radial-gradient(circle, rgba(255, 182, 193, 0.15) 0%, rgba(255, 182, 193, 0) 70%);
   }
 }
