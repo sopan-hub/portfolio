@@ -79,7 +79,7 @@ const HeroSection = () => {
               </div>
               <div className="hero-border">
                 <div className="hero-slide">
-                  <p></p>
+                  <p>Sopan</p>
                 </div>
               </div>
             </div>
