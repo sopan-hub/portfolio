@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion';
 import UiverseCard from '@/components/uiverse-card';
+import FishAnimation from '../fish-animation';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="relative py-20">
+    <section id="about" className="relative py-20 overflow-hidden">
       <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -13,7 +14,8 @@ const AboutSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-4xl relative">
+            <FishAnimation />
             <UiverseCard>
                 <div className="flex flex-col justify-center h-full p-4 sm:p-8">
                   <h2 className="uiverse-title text-2xl md:text-4xl text-center">About Me</h2>
