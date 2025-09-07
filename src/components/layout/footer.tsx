@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-primary/20 bg-background">
+    <footer className="border-t border-primary/20 bg-transparent">
       <div className="container flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
         <p className="text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()} Portfolio. All rights reserved.
