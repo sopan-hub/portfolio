@@ -22,8 +22,8 @@ const HeroSection = () => {
     const mouseY = e.clientY - rect.top;
     const xPct = mouseX / width - 0.5;
     const yPct = mouseY / height - 0.5;
-    setRotateX(yPct * -30);
-    setRotateY(xPct * 30);
+    setRotateX(yPct * -40);
+    setRotateY(xPct * 40);
   };
 
   const handleMouseLeave = () => {
@@ -98,6 +98,7 @@ const HeroSection = () => {
                 transition: 'transform 0.1s ease-out',
               }}
             >
+              <div className="hero-light-ring"></div>
               <div className="hero-ring">
                 <div className="hero-card-image">
                   <Image
