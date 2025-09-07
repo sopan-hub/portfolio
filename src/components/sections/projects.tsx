@@ -57,7 +57,7 @@ const ProjectsSection = () => {
                 >
                   <UiverseCard>
                     <div className="flex h-full flex-col text-center">
-                      <div className="relative mb-4 h-48 w-full">
+                      <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg">
                         <Image
                           src={project.image}
                           alt={project.title}

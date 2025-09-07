@@ -54,7 +54,7 @@ export const projects = [
     title: 'E-commerce Platform',
     description: 'A full-stack e-commerce website with features like product catalog, shopping cart, and user authentication.',
     tech: ['Next.js', 'Tailwind CSS', 'Firebase'],
-    image: 'https://i.postimg.cc/q7LMW2xP/file-00000000b094247514a6e399080c9e10.png',
+    image: 'https://raw.githubusercontent.com/sopan-hub/my-image-assets/b1d7b7cf58c5f0bd3e71cf0a53fbc6c2601b51ea/fsscscs.png',
     category: 'Web',
     github: 'https://github.com',
     live: 'https://github.com',
