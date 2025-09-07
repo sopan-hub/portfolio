@@ -47,7 +47,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
   return (
     <span className={className}>
       {currentText}
-      <span className="animate-[blink-caret_1s_step-end_infinite] border-r-2 border-primary"></span>
+      <span className="animate-blink-caret border-r-2"></span>
     </span>
   );
 };
