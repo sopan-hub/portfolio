@@ -94,7 +94,7 @@
     border-radius: 30px;
     background: #e0e0e0;
     box-shadow: 15px 15px 30px #bebebe,
-               -15px -15px 30px #ffffff;
+               -15px -15px 30px #ffbebe;
   }
 
   .card-grid.has-active-card > .card-container:not(.active) {
