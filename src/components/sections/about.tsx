@@ -6,12 +6,13 @@ import UiverseCard from '@/components/uiverse-card';
 const AboutSection = () => {
   return (
     <section id="about" className="py-24">
-      <div className="container">
+      <div className="container w-1/2">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
+           className="h-[350px]"
         >
           <UiverseCard>
               <h2 className="uiverse-title">About Me</h2>
