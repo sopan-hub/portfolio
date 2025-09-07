@@ -39,8 +39,8 @@ const HeroSection = () => {
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
-                <a href="/Sopan Resume.pdf" download>
-                  Download CV <Download className="ml-2 h-5 w-5" />
+                <a href="https://raw.githubusercontent.com/sopan-hub/my-image-assets/fada33b59422fb108a4ab3e4a48a93cb31c0b0d9/ssdsdcsdc.png" download>
+                  Download Resume <Download className="ml-2 h-5 w-5" />
                 </a>
               </Button>
             </div>

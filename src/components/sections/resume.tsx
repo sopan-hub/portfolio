@@ -25,8 +25,8 @@ const ResumeSection = () => {
             className="font-bold"
             asChild
           >
-            <a href="/resume.pdf" download>
-              <Download className="mr-2 h-5 w-5" /> Download CV
+            <a href="https://raw.githubusercontent.com/sopan-hub/my-image-assets/fada33b59422fb108a4ab3e4a48a93cb31c0b0d9/ssdsdcsdc.png" download>
+              <Download className="mr-2 h-5 w-5" /> Download Resume
             </a>
           </Button>
         </motion.div>
