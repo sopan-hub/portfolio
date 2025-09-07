@@ -93,8 +93,7 @@
     padding: 1.5rem;
     border-radius: 30px;
     background: #e0e0e0;
-    box-shadow: 15px 15px 30px #bebebe,
-               -15px -15px 30px #ffbebe;
+    box-shadow: 0 0 30px 5px rgba(139, 0, 0, 0.4);
   }
 
   .card-grid.has-active-card > .card-container:not(.active) {
