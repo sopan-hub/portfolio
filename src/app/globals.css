@@ -199,30 +199,28 @@
   }
 
   .scrolling-wrapper {
+    display: flex;
     overflow: hidden;
-    width: 100%;
-    max-width: 732px; /* (350px card + 16px margin) * 2 */
-    margin: 0 auto;
   }
 
   .scrolling-content {
     display: flex;
-    width: calc(366px * 8); /* 350px card + 16px margin * 8 cards */
+    flex-shrink: 0;
     animation: scroll 40s linear infinite;
   }
 
   @keyframes scroll {
-    0% {
+    from {
       transform: translateX(0);
     }
-    100% {
-      transform: translateX(calc(-366px * 4)); /* Move by the width of 4 cards */
+    to {
+      transform: translateX(-50%);
     }
   }
 
   .scrolling-item {
     flex: 0 0 auto;
     width: 350px;
-    margin: 0 8px;
+    margin: 0 16px;
   }
 }
