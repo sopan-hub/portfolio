@@ -34,7 +34,7 @@ const SkillsSection = () => {
                         (skill: { name: string; icon: React.ElementType }) => (
                           <div
                             key={skill.name}
-                            className="flex flex-col items-center gap-3 text-center"
+                            className="flex flex-col items-center gap-3 text-center group"
                           >
                             <skill.icon className="h-10 w-10 text-primary transition-transform group-hover:scale-110" />
                             <span className="text-xs sm:text-sm font-medium">
