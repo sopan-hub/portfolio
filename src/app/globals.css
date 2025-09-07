@@ -113,22 +113,11 @@
     }
   }
 
-  .hero-ring, .hero-card-image, .hero-border, .hero-slide {
+  .hero-card-image, .hero-border {
     display: flex;
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
-  }
-  
-  .hero-ring {
-    color: #fffbf1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%) translateZ(20px);
-    font-size: 170px;
-    height: 100%;
-    width: 100%;
   }
   
   .hero-card-image {
