@@ -90,12 +90,7 @@
     border-radius: 32px;
     background: hsl(var(--card));
     box-shadow: 0 80px 120px -40px rgba(0, 0, 0, 0.35), 0 0 120px -10px rgba(139, 0, 0, 0.8);
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: perspective(1500px) rotateX(-15deg);
-  }
-  
-  .neu-card:hover {
-    transform: perspective(1500px) rotateX(0deg);
+    transform: perspective(1500px) rotateX(-5deg);
   }
 
   .card-grid.has-active-card > .card-container:not(.active) {
