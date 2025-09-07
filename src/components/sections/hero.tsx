@@ -11,9 +11,6 @@ import Typewriter from '@/components/typewriter';
 const HeroSection = () => {
   return (
     <section id="home" className="relative overflow-hidden py-24 sm:py-32">
-      <div className="grid-wrapper">
-        <div className="grid-background"></div>
-      </div>
       <div className="container relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <motion.div
