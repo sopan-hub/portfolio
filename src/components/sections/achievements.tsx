@@ -36,7 +36,7 @@ const AchievementsSection = () => {
     </svg>
       <div className="container">
         <div className="title-section">
-          <h2 className="section-title mb-12 text-center text-4xl font-bold">Achievements & Certificates</h2>
+          <h2 className="section-title mb-12 text-center text-3xl font-bold">Achievements & Certificates</h2>
         </div>
         <div 
           className={'product-grid'}

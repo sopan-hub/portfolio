@@ -217,7 +217,7 @@
   /* New Certificate Card Styles */
   .title-section h2 {
     opacity: 0;
-    font-size: var(--step-6);
+    font-size: var(--step-4);
     text-transform: uppercase;
     line-height: 1;
     text-align: center;
@@ -248,7 +248,7 @@
     overflow: hidden;
     margin-inline: auto;
     width: 100%;
-    max-width: 18rem;
+    max-width: 22rem;
     opacity: 0;
     transform: translateY(50px);
     animation: slideInFromBottom 0.8s linear(0, 0.464 8.3%, 0.819 17%, 0.956 21.5%, 1.069 26.2%, 1.156 31%, 1.219 36%, 1.252 40.2%, 1.271 44.5%, 1.275 49.1%, 1.265 54.1%, 1.215 63.4%, 1.041 86.9%, 1.01 93.7%, 1) forwards;
