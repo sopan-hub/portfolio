@@ -199,13 +199,15 @@
     );
   }
 
-  .palette-container {
-    height: 200px;
-    width: 350px;
+  .interactive-palette-container {
+    height: 250px;
+    width: 100%;
+    max-width: 500px;
     border-radius: 1em;
     overflow: hidden;
-    box-shadow: 0 10px 20px #dbdbdb;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     font-family: sans-serif;
+    margin: auto;
   }
 
   .palette {
@@ -223,21 +225,26 @@
     color: white;
     font-weight: 600;
     letter-spacing: 1px;
-    transition: flex 0.1s linear;
+    transition: flex 0.2s ease-in-out;
+    cursor: pointer;
   }
 
   .palette .color span {
     opacity: 0;
-    transition: opacity 0.1s linear;
+    transition: opacity 0.2s ease-in-out;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
   }
 
   .palette .color:hover {
-    flex: 2;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    flex: 3;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
   }
 
   .palette .color:hover span {
     opacity: 1;
+    writing-mode: initial;
+    transform: none;
   }
 
   #stats {
@@ -249,11 +256,18 @@
     justify-content: space-between;
     padding: 0 1.5em;
     box-sizing: border-box;
-    color: #bebebe;
+    color: #888;
   }
 
-  #stats svg {
-    fill: #bebebe;
-    transform: scale(1.2);
+  .certificate-display-container {
+      height: 250px;
+      width: 100%;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 1em;
+      background-color: hsl(var(--card));
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
   }
 }
