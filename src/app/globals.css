@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* White */
+    --background: 204 16% 82%; /* #c6d3db */
     --foreground: 0 0% 0%; /* Black */
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -174,11 +174,7 @@
     font-weight: bold;
   }
   .grid-wrapper {
-    min-height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     background-color: #c6d3db;
   }
   
