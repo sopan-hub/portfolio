@@ -11,7 +11,7 @@ export default function Footer() {
         </p>
         <div className="flex items-center gap-2">
           {socialLinks.map((link) => (
-            <Button key={link.href} variant="ghost" size="icon" asChild>
+            <Button key={link.href} variant="link" size="icon" asChild>
               <a href={link.href} target="_blank" rel="noopener noreferrer">
                 <link.icon className="h-5 w-5" />
                 <span className="sr-only">{link.label}</span>

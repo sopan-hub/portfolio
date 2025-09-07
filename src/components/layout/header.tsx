@@ -74,7 +74,7 @@ export default function Header() {
 
         <div className="hidden items-center gap-2 md:flex">
           {socialLinks.map((link) => (
-            <Button key={link.href} variant="ghost" size="icon" asChild>
+            <Button key={link.href} variant="link" size="icon" asChild>
               <a href={link.href} target="_blank" rel="noopener noreferrer">
                 <link.icon className="h-5 w-5" />
                 <span className="sr-only">{link.label}</span>
@@ -109,7 +109,7 @@ export default function Header() {
               </nav>
               <div className="mt-8 flex items-center gap-4">
                  {socialLinks.map((link) => (
-                  <Button key={link.href} variant="ghost" size="icon" asChild>
+                  <Button key={link.href} variant="link" size="icon" asChild>
                     <a href={link.href} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
                       <link.icon className="h-6 w-6" />
                       <span className="sr-only">{link.label}</span>

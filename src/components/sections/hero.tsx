@@ -48,7 +48,7 @@ const HeroSection = () => {
             </div>
             <div className="mt-8 flex justify-center gap-4 lg:justify-start">
               {socialLinks.map((link) => (
-                <Button key={link.href} variant="ghost" size="icon" asChild>
+                <Button key={link.href} variant="link" size="icon" asChild>
                   <a href={link.href} target="_blank" rel="noopener noreferrer">
                     <link.icon className="h-6 w-6" />
                     <span className="sr-only">{link.label}</span>

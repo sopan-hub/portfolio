@@ -49,16 +49,6 @@
 }
 
 @layer utilities {
-  .glass-card {
-    background: hsl(var(--card));
-    border-radius: 12px;
-    box-shadow: 
-      0 4px 15px rgba(0,0,0,0.2), /* Standard shadow for depth */
-      0 0 40px rgba(255, 0, 0, 0.5); /* Red glow */
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-  }
-
   .glow::before {
     content: none;
   }

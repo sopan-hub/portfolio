@@ -103,7 +103,7 @@ const ContactSection = () => {
                   </p>
                   <div className="mt-8 flex justify-center space-x-4">
                     {socialLinks.map((link) => (
-                      <Button key={link.href} variant="outline" size="icon" asChild>
+                      <Button key={link.href} variant="link" size="icon" asChild>
                         <a href={link.href} target="_blank" rel="noopener noreferrer">
                           <link.icon className="h-5 w-5" />
                           <span className="sr-only">{link.label}</span>
