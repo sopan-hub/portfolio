@@ -201,13 +201,14 @@
   .scrolling-wrapper {
     overflow: hidden;
     width: 100%;
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
-    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    max-width: 632px; /* (300px card + 16px margin) * 2 */
+    margin: 0 auto;
   }
 
   .scrolling-content {
     display: flex;
-    animation: scroll 30s linear infinite;
+    width: calc(316px * 8); /* 300px card + 16px margin * 8 cards */
+    animation: scroll 40s linear infinite;
   }
 
   @keyframes scroll {
@@ -215,13 +216,13 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(calc(-316px * 4)); /* Move by the width of 4 cards */
     }
   }
 
   .scrolling-item {
     flex: 0 0 auto;
     width: 300px;
-    margin: 0 1rem;
+    margin: 0 8px;
   }
 }
