@@ -108,7 +108,7 @@ const HeroSection = () => {
               onClick={() => setIsBackgroundActive(!isBackgroundActive)}
               style={{
                 transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
-                transformStyle: 'preserve-d',
+                transformStyle: 'preserve-3d',
                 transition: 'transform 0.1s ease-out',
               }}
             >
