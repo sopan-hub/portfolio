@@ -7,7 +7,14 @@ import { Download } from 'lucide-react';
 const ResumeSection = () => {
   return (
     <section id="resume" className="relative py-24">
-      <div className="resume-achievements-background-pattern absolute inset-0 z-0 opacity-10"></div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 1.5 }}
+      >
+        <div className="resume-achievements-background-pattern absolute inset-0 z-0 opacity-10"></div>
+      </motion.div>
       <div className="container relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

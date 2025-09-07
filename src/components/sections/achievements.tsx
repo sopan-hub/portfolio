@@ -9,7 +9,14 @@ import UiverseCard from '../uiverse-card';
 const AchievementsSection = () => {
   return (
     <section id="achievements" className="relative py-20">
-      <div className="resume-achievements-background-pattern absolute inset-0 z-0 opacity-10"></div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 1.5 }}
+      >
+        <div className="resume-achievements-background-pattern absolute inset-0 z-0 opacity-10"></div>
+      </motion.div>
       <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

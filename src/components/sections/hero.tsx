@@ -12,7 +12,13 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative overflow-hidden py-24 sm:py-32">
       <div className="grid-wrapper">
-        <div className="grid-background"></div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+        >
+          <div className="grid-background"></div>
+        </motion.div>
       </div>
       <div className="container">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
