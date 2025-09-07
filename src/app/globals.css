@@ -103,6 +103,7 @@
     height: 250px;
     width: 250px;
     position: relative;
+    transform-style: preserve-3d;
   }
   @media (min-width: 640px) {
     .hero-panel {
@@ -124,6 +125,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transform-style: preserve-3d;
   }
   
   .hero-ring {
@@ -131,7 +133,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%) translateZ(20px);
     font-size: 170px;
     height: 100%;
     width: 100%;
@@ -169,6 +171,7 @@
     color: white;
     font-size: 2rem;
     font-weight: bold;
+    transform: translateZ(50px);
   }
   .grid-wrapper {
     position: relative;

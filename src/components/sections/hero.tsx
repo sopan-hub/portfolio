@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -9,6 +9,28 @@ import { socialLinks } from '@/lib/data';
 import Typewriter from '@/components/typewriter';
 
 const HeroSection = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    setRotateX(yPct * -30);
+    setRotateY(xPct * 30);
+  };
+
+  const handleMouseLeave = () => {
+    setRotateX(0);
+    setRotateY(0);
+  };
+
   return (
     <section id="home" className="grid-wrapper overflow-hidden py-24 sm:py-32">
       <div className="grid-background"></div>
@@ -63,8 +85,19 @@ const HeroSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative flex items-center justify-center order-first lg:order-last"
+            ref={ref}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ perspective: '1000px' }}
           >
-            <div className="hero-panel">
+            <div
+              className="hero-panel"
+              style={{
+                transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+                transformStyle: 'preserve-3d',
+                transition: 'transform 0.1s ease-out',
+              }}
+            >
               <div className="hero-ring">
                 <div className="hero-card-image">
                   <Image
