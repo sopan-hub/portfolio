@@ -112,15 +112,6 @@
       width: 300px;
     }
   }
-  .hero-panel:hover .hero-card-image {
-    filter: blur(1.5px);
-  }
-  .hero-panel:hover .hero-border {
-    border: 10px solid #000;
-  }
-  .hero-panel:hover .hero-slide {
-    bottom: 0px;
-  }
 
   .hero-ring, .hero-card-image, .hero-border, .hero-slide {
     display: flex;
@@ -160,20 +151,6 @@
     border-radius: 9999px;
   }
   
-  .hero-slide {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    bottom: -100%;
-    background: rgba(0, 0, 0, 0.5);
-    transition: bottom 1s;
-    flex-direction: column;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    transform: translateZ(50px);
-  }
-
   .bg-hero-default {
     background-color: hsl(var(--background));
   }

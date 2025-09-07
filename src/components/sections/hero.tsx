@@ -84,8 +84,6 @@ const HeroSection = () => {
                 </div>
               </div>
               <div className="hero-border">
-                <div className="hero-slide">
-                </div>
               </div>
             </div>
           </motion.div>
