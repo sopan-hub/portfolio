@@ -253,4 +253,10 @@
     background-color: #e5e5f7;
     background-size: 10px 40px;
   }
+  .skills-background-pattern {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(45deg, #3498db, #3498db 30px, #2ecc71 30px, #2ecc71 60px),
+      repeating-linear-gradient(135deg, #e74c3c, #e74c3c 30px, #f1c40f 30px, #f1c40f 60px);
+  }
 }

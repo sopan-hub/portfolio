@@ -6,8 +6,9 @@ import UiverseCard from '../uiverse-card';
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20">
-      <div className="container">
+    <section id="skills" className="relative py-20">
+      <div className="skills-background-pattern absolute inset-0 z-0 opacity-10"></div>
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
