@@ -66,16 +66,15 @@
     background: hsl(var(--card));
     border-radius: 12px;
     box-shadow: 
-      0 15px 35px rgba(0,0,0,0.2), 
-      0 0 60px rgba(255, 0, 0, 0.6);
-    transform: perspective(1000px) rotateY(5deg);
+      0 4px 15px rgba(0,0,0,0.2), /* Standard shadow for depth */
+      0 0 40px rgba(255, 0, 0, 0.5); /* Red glow */
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   }
 
   .dark .glass-card {
     box-shadow: 
-      0 15px 35px rgba(0,0,0,0.3), 
-      0 0 60px rgba(255, 0, 0, 0.6);
+      0 4px 15px rgba(0,0,0,0.3), /* Adjusted for dark mode */
+      0 0 50px rgba(255, 0, 0, 0.6); /* Slightly more intense red glow for dark mode */
   }
 
   .glow::before {
