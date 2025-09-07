@@ -29,7 +29,14 @@ const AchievementsSection = () => {
       </div>
       
       <div className="wrapper-3d">
-        <div className="inner-3d" style={{ '--quantity': achievements.length } as React.CSSProperties}>
+        <div 
+          className="inner-3d" 
+          style={{ 
+            '--quantity': achievements.length,
+            '--w': '200px',
+            '--h': '300px',
+          } as React.CSSProperties}
+        >
           {achievements.map((achievement, index) => (
             <div 
               key={index} 
@@ -47,10 +54,6 @@ const AchievementsSection = () => {
                     className="object-contain p-4"
                     data-ai-hint="certificate document"
                   />
-                  <div className="card-3d-content">
-                     <h3 className="text-sm font-bold">{achievement.title}</h3>
-                     <p className="text-xs mt-2">{achievement.description}</p>
-                  </div>
               </div>
             </div>
           ))}

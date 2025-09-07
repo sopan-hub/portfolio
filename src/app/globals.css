@@ -210,8 +210,6 @@
   }
 
   .inner-3d {
-    --w: 200px;
-    --h: 300px;
     --translateZ: calc(var(--w) + 100px);
     --rotateX: -15deg;
     --perspective: 1000px;
@@ -245,8 +243,6 @@
     transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
       translateZ(var(--translateZ));
     background: hsl(var(--card));
-    display: flex;
-    flex-direction: column;
   }
 
   .card-3d:hover {
@@ -265,21 +261,5 @@
         rgba(var(--color-card), 0.6) 80%,
         rgba(var(--color-card), 0.9) 100%
       );
-  }
-
-  .card-3d-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    transform: translateY(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .card-3d:hover .card-3d-content {
-    transform: translateY(0);
   }
 }
