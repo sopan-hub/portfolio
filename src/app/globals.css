@@ -116,7 +116,7 @@
     filter: blur(1.5px);
   }
   .hero-panel:hover .hero-border {
-    border: 20px solid #000;
+    border: 10px solid #000;
   }
   .hero-panel:hover .hero-slide {
     bottom: 0px;
@@ -153,12 +153,11 @@
 
   .hero-border {
     position: absolute;
-    border: 20px solid #000;
+    border: 10px solid #000;
     height: 100%;
     width: 100%;
     transition: border 1s;
     border-radius: 9999px;
-    overflow: hidden;
   }
   
   .hero-slide {
