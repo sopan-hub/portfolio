@@ -57,7 +57,7 @@ export default function Header() {
               <path d="M50,64.29a7.14,7.14,0,1,0,7.14,7.14A7.14,7.14,0,0,0,50,64.29Z" />
             </svg>
           </motion.div>
-          <span className="text-xl font-bold">Portfolio</span>
+          <span className="hidden sm:inline text-xl font-bold">Portfolio</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">

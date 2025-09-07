@@ -93,91 +93,97 @@ const ContactSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="mb-8 text-center text-4xl font-bold">Get In Touch</h2>
+          <h2 className="mb-8 text-center text-3xl sm:text-4xl font-bold">Get In Touch</h2>
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
             <div className="relative">
               <UiverseCard>
-                  <h2 className="uiverse-title">Contact Me</h2>
-                  <p className="uiverse-text">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out to me.
-                  </p>
-                  <div className="mt-8 flex justify-center space-x-4">
-                    {socialLinks.map((link) => (
-                      <Button key={link.href} variant="link" size="icon" asChild>
-                        <a href={link.href} target="_blank" rel="noopener noreferrer">
-                          <link.icon className="h-5 w-5" />
-                          <span className="sr-only">{link.label}</span>
-                        </a>
-                      </Button>
-                    ))}
+                  <div className="p-4 sm:p-6">
+                    <h2 className="uiverse-title">Contact Me</h2>
+                    <p className="uiverse-text">
+                      I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out to me.
+                    </p>
+                    <div className="mt-8 flex justify-center space-x-4">
+                      {socialLinks.map((link) => (
+                        <Button key={link.href} variant="link" size="icon" asChild>
+                          <a href={link.href} target="_blank" rel="noopener noreferrer">
+                            <link.icon className="h-5 w-5" />
+                            <span className="sr-only">{link.label}</span>
+                          </a>
+                        </Button>
+                      ))}
+                    </div>
                   </div>
               </UiverseCard>
             </div>
             <div className="relative">
               <UiverseCard>
-                  <h2 className="uiverse-title">Contact Form</h2>
-                  <p className="uiverse-text">Fill out the form to send me a message.</p>
-                  <form ref={formRef} action={formAction} className="mt-4 space-y-4 text-left">
-                    <div>
-                      <Label htmlFor="name">Name</Label>
-                      <Input id="name" name="name" type="text" placeholder="Your Name" required />
-                    </div>
-                    <div>
-                      <Label htmlFor="email">Email</Label>
-                      <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
-                    </div>
-                    <div>
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea id="message" name="message" placeholder="Your message..." required />
-                    </div>
-                    <SubmitButton />
-                  </form>
+                  <div className="p-4 sm:p-6">
+                    <h2 className="uiverse-title">Contact Form</h2>
+                    <p className="uiverse-text">Fill out the form to send me a message.</p>
+                    <form ref={formRef} action={formAction} className="mt-4 space-y-4 text-left">
+                      <div>
+                        <Label htmlFor="name">Name</Label>
+                        <Input id="name" name="name" type="text" placeholder="Your Name" required />
+                      </div>
+                      <div>
+                        <Label htmlFor="email">Email</Label>
+                        <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
+                      </div>
+                      <div>
+                        <Label htmlFor="message">Message</Label>
+                        <Textarea id="message" name="message" placeholder="Your message..." required />
+                      </div>
+                      <SubmitButton />
+                    </form>
+                  </div>
               </UiverseCard>
             </div>
           </div>
            <div className="relative mt-12">
               <UiverseCard>
-                <div className="flex items-center justify-between">
-                  <h3 className="uiverse-title text-left">Message Analysis</h3>
-                  {messages.length > 0 && (
-                    <Button variant="outline" size="sm" onClick={handleDownload}>
-                      <Download className="mr-2 h-4 w-4" /> Download
-                    </Button>
+                <div className="p-4 sm:p-6">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <h3 className="uiverse-title text-left">Message Analysis</h3>
+                    {messages.length > 0 && (
+                      <Button variant="outline" size="sm" onClick={handleDownload}>
+                        <Download className="mr-2 h-4 w-4" /> Download
+                      </Button>
+                    )}
+                  </div>
+                  {messages.length > 0 ? (
+                    <div className="mt-4 space-y-4">
+                      <p className="uiverse-text text-left">Your submitted messages are analyzed by AI below.</p>
+                      <Accordion type="single" collapsible className="w-full">
+                        {messages.map((msg, index) => (
+                          <AccordionItem key={index} value={`item-${index}`}>
+                            <AccordionTrigger>
+                              <div className='flex items-center gap-3'>
+                                {msg.analysis.isImportant ? <AlertTriangle className="h-5 w-5 text-destructive" /> : <CheckCircle2 className="h-5 w-5 text-green-500" />}
+                                <span className="truncate font-medium">{msg.formData.name}: {msg.analysis.summary}</span>
+                              </div>
+                            </AccordionTrigger>
+                            <AccordionContent>
+                              <div className="space-y-4 rounded-md border bg-card p-4 text-left">
+                                <p className="break-words"><strong>From:</strong> {msg.formData.name} ({msg.formData.email})</p>
+                                <p className="break-words"><strong>Message:</strong> {msg.formData.message}</p>
+                                <div className="rounded-lg bg-accent p-4">
+                                  <h4 className="mb-2 flex items-center gap-2 font-semibold"><Bot className="h-5 w-5 text-primary"/> AI Analysis</h4>
+                                  <p className="break-words"><strong>Summary:</strong> {msg.analysis.summary}</p>
+                                  {msg.analysis.isImportant && <Badge variant="destructive" className="my-2">Important</Badge>}
+                                  <p className="mt-2 text-sm break-words"><strong>Suggested Response:</strong> <em>"{msg.analysis.suggestedResponse}"</em></p>
+                                </div>
+                              </div>
+                            </AccordionContent>
+                          </AccordionItem>
+                        ))}
+                      </Accordion>
+                    </div>
+                  ) : (
+                    <div className="mt-4 flex h-full min-h-[200px] items-center justify-center rounded-lg border-2 border-dashed border-gray-400/50 bg-background/20 p-8">
+                      <p className="text-center text-muted-foreground">Submitted messages will appear here.</p>
+                    </div>
                   )}
                 </div>
-                {messages.length > 0 ? (
-                  <div className="mt-4 space-y-4">
-                    <p className="uiverse-text text-left">Your submitted messages are analyzed by AI below.</p>
-                    <Accordion type="single" collapsible className="w-full">
-                      {messages.map((msg, index) => (
-                        <AccordionItem key={index} value={`item-${index}`}>
-                          <AccordionTrigger>
-                            <div className='flex items-center gap-3'>
-                              {msg.analysis.isImportant ? <AlertTriangle className="h-5 w-5 text-destructive" /> : <CheckCircle2 className="h-5 w-5 text-green-500" />}
-                              <span className="truncate font-medium">{msg.formData.name}: {msg.analysis.summary}</span>
-                            </div>
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <div className="space-y-4 rounded-md border bg-card p-4 text-left">
-                              <p><strong>From:</strong> {msg.formData.name} ({msg.formData.email})</p>
-                              <p><strong>Message:</strong> {msg.formData.message}</p>
-                              <div className="rounded-lg bg-accent p-4">
-                                <h4 className="mb-2 flex items-center gap-2 font-semibold"><Bot className="h-5 w-5 text-primary"/> AI Analysis</h4>
-                                <p><strong>Summary:</strong> {msg.analysis.summary}</p>
-                                {msg.analysis.isImportant && <Badge variant="destructive" className="my-2">Important</Badge>}
-                                <p className="mt-2 text-sm"><strong>Suggested Response:</strong> <em>"{msg.analysis.suggestedResponse}"</em></p>
-                              </div>
-                            </div>
-                          </AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </div>
-                ) : (
-                  <div className="mt-4 flex h-full min-h-[200px] items-center justify-center rounded-lg border-2 border-dashed border-gray-400/50 bg-background/20 p-8">
-                    <p className="text-muted-foreground">Submitted messages will appear here.</p>
-                  </div>
-                )}
               </UiverseCard>
             </div>
         </motion.div>

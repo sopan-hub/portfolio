@@ -17,7 +17,7 @@ const SkillsSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-12 text-center text-3xl font-bold">My Skills</h2>
-          <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto grid max-w-7xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {skillCategories.map((category, index) => (
               <motion.div
                 key={category}
@@ -37,7 +37,7 @@ const SkillsSection = () => {
                             className="flex flex-col items-center gap-3 text-center"
                           >
                             <skill.icon className="h-10 w-10 text-primary transition-transform group-hover:scale-110" />
-                            <span className="text-sm font-medium">
+                            <span className="text-xs sm:text-sm font-medium">
                               {skill.name}
                             </span>
                           </div>

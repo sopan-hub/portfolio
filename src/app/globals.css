@@ -76,7 +76,6 @@
   .neu-card {
     height: 100%;
     width: 100%;
-    padding: 1.5rem;
     border-radius: 32px;
     background: hsl(var(--card));
     box-shadow: 0 80px 120px -40px rgba(0, 0, 0, 0.35), 0 0 140px -10px rgba(139, 0, 0, 1);
@@ -101,9 +100,15 @@
     color: #000000;
   }
   .hero-panel {
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
     position: relative;
+  }
+  @media (min-width: 640px) {
+    .hero-panel {
+      height: 300px;
+      width: 300px;
+    }
   }
   .hero-panel:hover .hero-card-image {
     filter: blur(1.5px);
@@ -128,8 +133,8 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     font-size: 170px;
-    height: 300px;
-    width: 300px;
+    height: 100%;
+    width: 100%;
   }
   
   .hero-card-image {
@@ -157,7 +162,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    bottom: -300px;
+    bottom: -100%;
     background: rgba(0, 0, 0, 0.5);
     transition: bottom 1s;
     flex-direction: column;

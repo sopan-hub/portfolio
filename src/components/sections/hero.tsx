@@ -62,7 +62,7 @@ const HeroSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex items-center justify-center lg:order-last order-first"
+            className="relative flex items-center justify-center order-first lg:order-last"
           >
             <div className="hero-panel">
               <div className="hero-ring">

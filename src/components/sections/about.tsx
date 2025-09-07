@@ -15,8 +15,8 @@ const AboutSection = () => {
         >
           <div className="mx-auto max-w-4xl">
             <UiverseCard>
-                <div className="flex flex-col justify-center h-full p-8">
-                  <h2 className="uiverse-title text-3xl md:text-4xl text-center">About Me</h2>
+                <div className="flex flex-col justify-center h-full p-4 sm:p-8">
+                  <h2 className="uiverse-title text-2xl md:text-4xl text-center">About Me</h2>
                   <p className="uiverse-text mt-6 text-base md:text-lg">
                     I am a passionate and driven Computer Science student with a deep specialization in Artificial Intelligence and Machine Learning. My journey into tech is fueled by a relentless curiosity for building intelligent systems that can solve tangible, real-world problems. I thrive on challenges, viewing every obstacle as an opportunity to learn, innovate, and grow as a developer and a problem-solver.
                   </p>
