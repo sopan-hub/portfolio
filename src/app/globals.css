@@ -116,7 +116,7 @@
 
   .dark .neu-button:focus {
     outline: none;
-    box-shadow: inset 2px 2px 5px #1a1a1a, inset -2px -2px 5px #404040, 2px 2px 5px #1a1a1a, -2px -2px 5px #404040;
+    box-shadow: inset 2px 2px 5px #1a1a1a, inset -2px -2px 5px #404040, 2px 2px 5px #1a1a1a, -_2px -2px 5px #404040;
   }
 
   .uiverse-parent {
@@ -173,15 +173,15 @@
   
   .uiverse-content .uiverse-text {
     display: block;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 15px;
     margin-top: 10px;
     flex-grow: 1;
-    color: #000;
+    color: #000000;
   }
 
   .dark .uiverse-content .uiverse-text {
-    color: #000;
+    color: #000000;
   }
   
   .uiverse-bottom {
