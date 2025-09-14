@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Eye } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
 import Typewriter from '@/components/typewriter';
+import ShapeBlur from '../ShapeBlur';
 
 const HeroSection = () => {
   return (
@@ -66,9 +67,32 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative flex items-center justify-center order-first lg:order-last"
           >
-            <div
-              className="hero-panel"
-            >
+             <div className="hero-panel">
+               <div
+                 style={{
+                   position: 'absolute',
+                   top: '50%',
+                   left: '50%',
+                   transform: 'translate(-50%, -50%)',
+                   width: '125%',
+                   height: '125%',
+                   zIndex: 1,
+                 }}
+               >
+                <ShapeBlur
+                  variation={0}
+                  pixelRatioProp={
+                    typeof window !== 'undefined'
+                      ? window.devicePixelRatio || 1
+                      : 1
+                  }
+                  shapeSize={0.5}
+                  roundness={0.5}
+                  borderSize={0.05}
+                  circleSize={0.5}
+                  circleEdge={1}
+                />
+              </div>
               <div className="hero-card-image">
                 <Image
                   src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"

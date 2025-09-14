@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { DM_Mono } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 const dmMono = DM_Mono({
   subsets: ['latin'],
@@ -29,7 +29,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className={cn('min-h-screen font-sans antialiased', dmMono.variable)}>
+      <body className={cn('min-h-screen font-sans antialiased', inter.variable)}>
         <div className="hero-gradient-bg"></div>
         <div className="relative z-10">
           {children}

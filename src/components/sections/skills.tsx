@@ -25,7 +25,7 @@ const SkillsSection = () => {
               }))}
               speed={80}
               direction="left"
-              logoHeight={48}
+              logoHeight={64}
               gap={80}
               pauseOnHover
               scaleOnHover
