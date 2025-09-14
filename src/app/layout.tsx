@@ -3,18 +3,13 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
-import { Bowlby_One_SC, DM_Mono } from 'next/font/google';
+import { DM_Mono } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const bowlbyOneSC = Bowlby_One_SC({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-bowlby-one-sc',
-});
 
 const dmMono = DM_Mono({
   subsets: ['latin'],
-  weight: '500',
+  weight: ['300', '400', '500'],
   variable: '--font-dm-mono',
 });
 
@@ -34,7 +29,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className={cn('min-h-screen font-sans antialiased', bowlbyOneSC.variable, dmMono.variable)}>
+      <body className={cn('min-h-screen font-sans antialiased', dmMono.variable)}>
         <div className="hero-gradient-bg"></div>
         <div className="relative z-10">
           {children}

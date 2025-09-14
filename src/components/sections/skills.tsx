@@ -2,13 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { skills } from '@/lib/data';
-import UiverseCard from '../uiverse-card';
+import LogoLoop from '@/components/logo-loop';
 
 const SkillsSection = () => {
-  const skillCategories = Object.keys(skills);
+  const allSkills = Object.values(skills).flat();
 
   return (
-    <section id="skills" className="relative py-20">
+    <section id="skills" className="relative py-20 overflow-hidden">
       <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -17,37 +17,22 @@ const SkillsSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-12 text-center text-3xl font-bold">My Skills</h2>
-          <div className="mx-auto grid max-w-7xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {skillCategories.map((category, index) => (
-              <motion.div
-                key={category}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <UiverseCard>
-                  <div className="p-6 text-center">
-                    <h3 className="uiverse-title mb-6 text-xl">{category}</h3>
-                    <div className="grid grid-cols-2 gap-8">
-                      {(skills as Record<string, any>)[category].map(
-                        (skill: { name: string; icon: React.ElementType }) => (
-                          <div
-                            key={skill.name}
-                            className="flex flex-col items-center gap-3 text-center group"
-                          >
-                            <skill.icon className="h-10 w-10 text-primary transition-transform group-hover:scale-110" />
-                            <span className="text-xs sm:text-sm font-medium">
-                              {skill.name}
-                            </span>
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
-                </UiverseCard>
-              </motion.div>
-            ))}
+          <div className="relative w-full">
+            <LogoLoop
+              logos={allSkills.map(skill => ({
+                node: <skill.icon className="h-full w-full" />,
+                title: skill.name,
+              }))}
+              speed={80}
+              direction="left"
+              logoHeight={48}
+              gap={80}
+              pauseOnHover
+              scaleOnHover
+              fadeOut
+              fadeOutColor="hsl(var(--background))"
+              ariaLabel="My Skills"
+            />
           </div>
         </motion.div>
       </div>

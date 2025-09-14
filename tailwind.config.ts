@@ -16,9 +16,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Bowlby One SC"', 'sans-serif'],
-        headline: ['"Bowlby One SC"', 'sans-serif'],
-        body: ['"Bowlby One SC"', 'sans-serif'],
+        sans: ['var(--font-dm-mono)', 'monospace'],
+        headline: ['var(--font-dm-mono)', 'monospace'],
+        body: ['var(--font-dm-mono)', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
