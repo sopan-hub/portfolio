@@ -8,7 +8,6 @@ import { ArrowRight, Eye } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
 import Typewriter from '@/components/typewriter';
 import ShapeBlur from '../ShapeBlur';
-import LightRays from '../LightRays';
 
 const HeroSection = () => {
   const isBrowser = typeof window !== 'undefined';
@@ -18,17 +17,6 @@ const HeroSection = () => {
       id="home"
       className="relative flex items-center justify-center overflow-hidden py-24 sm:py-32"
     >
-      <LightRays
-        raysOrigin="top-center"
-        raysColor="#A020F0"
-        raysSpeed={1.2}
-        lightSpread={0.7}
-        rayLength={1.5}
-        followMouse={true}
-        mouseInfluence={0.08}
-        noiseAmount={0.05}
-        distortion={0.02}
-      />
       <div className="container relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <motion.div
