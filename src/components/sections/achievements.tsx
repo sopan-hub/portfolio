@@ -1,11 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { achievements } from '@/lib/data';
-import UiverseCard from '../uiverse-card';
+import CircularGallery from '../CircularGallery';
 
 const AchievementsSection = () => {
+  const galleryItems = achievements.map(achievement => ({
+    image: achievement.image,
+    text: achievement.title,
+  }));
+
   return (
     <section id="achievements" className="relative py-20">
       <div className="container relative z-10">
@@ -20,32 +24,14 @@ const AchievementsSection = () => {
           </h2>
         </motion.div>
         
-        <div className="grid gap-8 md:grid-cols-2">
-           {achievements.map((achievement, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className='flex'
-            >
-                <UiverseCard>
-                    <div className="flex h-full flex-col items-center text-center">
-                        <div className="relative mb-4 w-full aspect-video overflow-hidden rounded-lg border-2 border-black">
-                            <Image
-                                src={achievement.image}
-                                alt={achievement.title}
-                                fill
-                                className="object-contain"
-                            />
-                        </div>
-                        <h3 className="uiverse-title text-xl">{achievement.title}</h3>
-                        <p className="uiverse-text mt-2 flex-grow">{achievement.description}</p>
-                    </div>
-                </UiverseCard>
-            </motion.div>
-          ))}
+        <div style={{ height: '500px', position: 'relative' }}>
+            <CircularGallery 
+              items={galleryItems}
+              bend={3} 
+              textColor="hsl(var(--primary-foreground))" 
+              borderRadius={0.05} 
+              scrollEase={0.02}
+            />
         </div>
       </div>
     </section>
