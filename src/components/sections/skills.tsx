@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { skills } from '@/lib/data';
-import LogoLoop from '@/components/logo-loop';
+import { LogoLoop } from '@/components/logo-loop';
 
 const SkillsSection = () => {
   const allSkills = Object.values(skills).flat();

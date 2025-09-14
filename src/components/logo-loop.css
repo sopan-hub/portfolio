@@ -4,7 +4,7 @@
   overflow: hidden;
   user-select: none;
   width: 100%;
-  --logoloop-fadeColor: #fff;
+  --logoloop-fadeColor: hsl(var(--background));
   color: hsl(var(--foreground));
 }
 
