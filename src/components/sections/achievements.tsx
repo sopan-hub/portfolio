@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { achievements } from '@/lib/data';
 import UiverseCard from '../uiverse-card';
+import GradualBlur from '../GradualBlur';
 
 const AchievementsSection = () => {
   return (
@@ -33,12 +34,26 @@ const AchievementsSection = () => {
                       className="object-contain"
                     />
                   </div>
-                  <h3 className="uiverse-title text-lg font-semibold">
-                    {achievement.title}
-                  </h3>
-                  <p className="uiverse-text mt-2 flex-grow">
-                    {achievement.description}
-                  </p>
+                  <div className="relative flex-grow">
+                    <div className="h-full overflow-y-auto">
+                      <h3 className="uiverse-title text-lg font-semibold">
+                        {achievement.title}
+                      </h3>
+                      <p className="uiverse-text mt-2 mb-4">
+                        {achievement.description}
+                      </p>
+                    </div>
+                     <GradualBlur
+                        target="parent"
+                        position="bottom"
+                        height="4rem"
+                        strength={2}
+                        divCount={5}
+                        curve="bezier"
+                        exponential={true}
+                        opacity={1}
+                      />
+                  </div>
                   <span className="uiverse-text mt-4 text-sm font-bold">
                     {achievement.year}
                   </span>
