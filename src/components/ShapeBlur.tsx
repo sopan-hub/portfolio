@@ -135,6 +135,15 @@ const ShapeBlur = ({
   borderSize = 0.05,
   circleSize = 0.3,
   circleEdge = 0.5
+}: {
+  className?: string;
+  variation?: number;
+  pixelRatioProp?: number;
+  shapeSize?: number;
+  roundness?: number;
+  borderSize?: number;
+  circleSize?: number;
+  circleEdge?: number;
 }) => {
   const mountRef = useRef<HTMLDivElement>(null);
 
@@ -144,7 +153,7 @@ const ShapeBlur = ({
     const mount = mountRef.current;
     if (!mount) return;
 
-    let animationFrameId;
+    let animationFrameId: number;
     let time = 0,
       lastTime = 0;
 
@@ -184,7 +193,7 @@ const ShapeBlur = ({
     const quad = new THREE.Mesh(geo, material);
     scene.add(quad);
 
-    const onPointerMove = e => {
+    const onPointerMove = (e: PointerEvent | MouseEvent) => {
       const rect = mount.getBoundingClientRect();
       vMouse.set(e.clientX - rect.left, e.clientY - rect.top);
     };
@@ -225,7 +234,7 @@ const ShapeBlur = ({
       lastTime = time;
 
       ['x', 'y'].forEach(k => {
-        vMouseDamp[k] = THREE.MathUtils.damp(vMouseDamp[k], vMouse[k], 8, dt);
+        vMouseDamp[k as 'x' | 'y'] = THREE.MathUtils.damp(vMouseDamp[k as 'x' | 'y'], vMouse[k as 'x' | 'y'], 8, dt);
       });
 
       renderer.render(scene, camera);
@@ -239,7 +248,9 @@ const ShapeBlur = ({
       if (ro) ro.disconnect();
       document.removeEventListener('mousemove', onPointerMove);
       document.removeEventListener('pointermove', onPointerMove);
-      mount.removeChild(renderer.domElement);
+      if (mount && renderer.domElement) {
+        mount.removeChild(renderer.domElement);
+      }
       renderer.dispose();
     };
   }, [variation, pixelRatioProp, shapeSize, roundness, borderSize, circleSize, circleEdge]);
