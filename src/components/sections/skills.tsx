@@ -2,11 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { skills } from '@/lib/data';
-import { LogoLoop } from '@/components/logo-loop';
+import UiverseCard from '../uiverse-card';
 
 const SkillsSection = () => {
-  const allSkills = Object.values(skills).flat();
-
   return (
     <section id="skills" className="relative py-20 overflow-hidden">
       <div className="container relative z-10">
@@ -17,22 +15,29 @@ const SkillsSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-12 text-center text-3xl font-bold">My Skills</h2>
-          <div className="relative w-full">
-            <LogoLoop
-              logos={allSkills.map(skill => ({
-                node: <skill.icon className="h-full w-full" />,
-                title: skill.name,
-              }))}
-              speed={80}
-              direction="left"
-              logoHeight={64}
-              gap={80}
-              pauseOnHover
-              scaleOnHover
-              fadeOut
-              fadeOutColor="hsl(var(--background))"
-              ariaLabel="My Skills"
-            />
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {Object.entries(skills).map(([category, skillList]) => (
+              <UiverseCard key={category}>
+                <div className="p-4">
+                  <h3 className="uiverse-title mb-6 text-center text-xl">
+                    {category}
+                  </h3>
+                  <div className="grid grid-cols-2 gap-6">
+                    {skillList.map((skill) => (
+                      <div
+                        key={skill.name}
+                        className="flex flex-col items-center justify-center gap-2"
+                      >
+                        <skill.icon className="h-12 w-12" />
+                        <span className="text-sm text-muted-foreground">
+                          {skill.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </UiverseCard>
+            ))}
           </div>
         </motion.div>
       </div>
