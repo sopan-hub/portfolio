@@ -29,8 +29,8 @@ const AchievementsSection = () => {
                     <Image
                       src={achievement.image}
                       alt={achievement.title}
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      className="object-contain"
                     />
                   </div>
                   <h3 className="uiverse-title text-lg font-semibold">
