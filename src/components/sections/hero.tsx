@@ -74,8 +74,8 @@ const HeroSection = () => {
                   <Image
                     src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
                     alt="Sopan Patil"
-                    width={200}
-                    height={200}
+                    width={250}
+                    height={250}
                     className="rounded-full"
                   />
                 </div>
