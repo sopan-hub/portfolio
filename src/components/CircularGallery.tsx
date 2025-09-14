@@ -4,19 +4,19 @@ import { useEffect, useRef } from 'react';
 
 import './CircularGallery.css';
 
-function debounce(func, wait) {
-  let timeout;
-  return function (...args) {
+function debounce(func: (this: any, ...args: any[]) => void, wait: number) {
+  let timeout: NodeJS.Timeout;
+  return function (this: any, ...args: any[]) {
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(this, args), wait);
   };
 }
 
-function lerp(p1, p2, t) {
+function lerp(p1: number, p2: number, t: number) {
   return p1 + (p2 - p1) * t;
 }
 
-function autoBind(instance) {
+function autoBind(instance: any) {
   const proto = Object.getPrototypeOf(instance);
   Object.getOwnPropertyNames(proto).forEach(key => {
     if (key !== 'constructor' && typeof instance[key] === 'function') {
@@ -25,9 +25,9 @@ function autoBind(instance) {
   });
 }
 
-function createTextTexture(gl, text, font = 'bold 30px monospace', color = 'black') {
+function createTextTexture(gl: any, text: string, font = 'bold 30px monospace', color = 'black') {
   const canvas = document.createElement('canvas');
-  const context = canvas.getContext('2d');
+  const context = canvas.getContext('2d')!;
   context.font = font;
   const metrics = context.measureText(text);
   const textWidth = Math.ceil(metrics.width);
@@ -46,7 +46,15 @@ function createTextTexture(gl, text, font = 'bold 30px monospace', color = 'blac
 }
 
 class Title {
-  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif' }) {
+  gl: any;
+  plane: any;
+  renderer: any;
+  text: string;
+  textColor: string;
+  font: string;
+  mesh: any;
+
+  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif' }: { gl: any; plane: any; renderer: any; text: string; textColor?: string; font?: string; }) {
     autoBind(this);
     this.gl = gl;
     this.plane = plane;
@@ -95,6 +103,33 @@ class Title {
 }
 
 class Media {
+    extra: number;
+    geometry: any;
+    gl: any;
+    image: any;
+    index: number;
+    length: number;
+    renderer: any;
+    scene: any;
+    screen: any;
+    text: any;
+    viewport: any;
+    bend: any;
+    textColor: any;
+    borderRadius: number;
+    font: any;
+    program: any;
+    plane: any;
+    title: any;
+    speed: number;
+    isBefore: boolean;
+    isAfter: boolean;
+    scale: number;
+    width: number;
+    widthTotal: number;
+    x: number;
+    padding: number;
+
   constructor({
     geometry,
     gl,
@@ -110,7 +145,7 @@ class Media {
     textColor,
     borderRadius = 0,
     font
-  }) {
+  }: { geometry: any; gl: any; image: any; index: number; length: number; renderer: any; scene: any; screen: any; text: any; viewport: any; bend: any; textColor: any; borderRadius?: number; font: any; }) {
     this.extra = 0;
     this.geometry = geometry;
     this.gl = gl;
@@ -219,10 +254,10 @@ class Media {
       renderer: this.renderer,
       text: this.text,
       textColor: this.textColor,
-      fontFamily: this.font
+      font: this.font,
     });
   }
-  update(scroll, direction) {
+  update(scroll: { current: number; last: number; }, direction: string) {
     this.plane.position.x = this.x - scroll.current - this.extra;
 
     const x = this.plane.position.x;
@@ -263,7 +298,7 @@ class Media {
       this.isBefore = this.isAfter = false;
     }
   }
-  onResize({ screen, viewport } = {}) {
+  onResize({ screen, viewport }: { screen?: any; viewport?: any; } = {}) {
     if (screen) this.screen = screen;
     if (viewport) {
       this.viewport = viewport;
@@ -283,8 +318,30 @@ class Media {
 }
 
 class App {
+  container: any;
+  scrollSpeed: number;
+  scroll: { ease: number; current: number; target: number; last: number; position?: number; };
+  onCheckDebounce: (...args: any[]) => void;
+  renderer: Renderer;
+  gl: any;
+  camera: Camera;
+  scene: Transform;
+  planeGeometry: Plane;
+  mediasImages: any[];
+  medias: Media[];
+  isDown: boolean;
+  start: number;
+  screen: { width: any; height: any; };
+  viewport: { width: number; height: number; };
+  raf: number;
+  boundOnResize: () => void;
+  boundOnWheel: (e: any) => void;
+  boundOnTouchDown: (e: any) => void;
+  boundOnTouchMove: (e: any) => void;
+  boundOnTouchUp: () => void;
+
   constructor(
-    container,
+    container: any,
     {
       items,
       bend,
@@ -293,7 +350,7 @@ class App {
       font = 'bold 30px Figtree',
       scrollSpeed = 2,
       scrollEase = 0.05
-    } = {}
+    }: { items?: any; bend?: any; textColor?: string; borderRadius?: number; font?: string; scrollSpeed?: number; scrollEase?: number; } = {}
   ) {
     autoBind(this);
     if (!this.container) {
@@ -335,7 +392,7 @@ class App {
       widthSegments: 100
     });
   }
-  createMedias(items, bend = 1, textColor, borderRadius, font) {
+  createMedias(items: any, bend = 1, textColor: string, borderRadius: number, font: string) {
     const defaultItems = [
       { image: `https://picsum.photos/seed/1/800/600?grayscale`, text: 'Bridge' },
       { image: `https://picsum.photos/seed/2/800/600?grayscale`, text: 'Desk Setup' },
@@ -371,22 +428,22 @@ class App {
       });
     });
   }
-  onTouchDown(e) {
+  onTouchDown(e: { touches: { clientX: number; }[]; clientX: number; }) {
     this.isDown = true;
     this.scroll.position = this.scroll.current;
     this.start = e.touches ? e.touches[0].clientX : e.clientX;
   }
-  onTouchMove(e) {
+  onTouchMove(e: { touches: { clientX: number; }[]; clientX: number; }) {
     if (!this.isDown) return;
     const x = e.touches ? e.touches[0].clientX : e.clientX;
     const distance = (this.start - x) * (this.scrollSpeed * 0.025);
-    this.scroll.target = this.scroll.position + distance;
+    this.scroll.target = this.scroll.position! + distance;
   }
   onTouchUp() {
     this.isDown = false;
     this.onCheck();
   }
-  onWheel(e) {
+  onWheel(e: { deltaY: any; wheelDelta: any; detail: any; }) {
     const delta = e.deltaY || e.wheelDelta || e.detail;
     this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2;
     this.onCheckDebounce();
@@ -466,10 +523,10 @@ export default function CircularGallery({
   font = 'bold 30px Figtree',
   scrollSpeed = 2,
   scrollEase = 0.05
-}) {
+}: { items?: any; bend?: number; textColor?: string; borderRadius?: number; font?: string; scrollSpeed?: number; scrollEase?: number; }) {
   const containerRef = useRef(null);
   useEffect(() => {
-    let app;
+    let app: App | undefined;
     // The 'ogl' package is only available in the browser.
     if (typeof window !== 'undefined') {
       app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase });
