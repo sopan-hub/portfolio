@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Eye } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
 import Typewriter from '@/components/typewriter';
-import LightRays from '../LightRays';
 
 const HeroSection = () => {
 
@@ -16,20 +15,6 @@ const HeroSection = () => {
       id="home"
       className="relative flex items-center justify-center overflow-hidden py-24 sm:py-32"
     >
-      <div className="absolute inset-0 z-0">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="hsl(var(--primary))"
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className="custom-rays"
-        />
-      </div>
       <div className="container relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <motion.div
