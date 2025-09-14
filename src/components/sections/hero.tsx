@@ -1,18 +1,21 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Eye } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
 import Typewriter from '@/components/typewriter';
-import Lanyard from '../Lanyard';
+import ShapeBlur from '../ShapeBlur';
 
 const HeroSection = () => {
+  const isBrowser = typeof window !== 'undefined';
+
   return (
     <section
       id="home"
-      className="relative py-24 sm:py-32"
+      className="relative flex items-center justify-center overflow-hidden py-24 sm:py-32"
     >
       <div className="container relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -64,10 +67,32 @@ const HeroSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex items-center justify-center order-first lg:order-last"
-            style={{minHeight: '400px'}}
+            className="relative flex items-center justify-center"
           >
-             <Lanyard />
+            <div className="hero-panel">
+                <div className="hero-border">
+                  {isBrowser && (
+                     <ShapeBlur
+                        variation={0}
+                        pixelRatioProp={window.devicePixelRatio || 1}
+                        shapeSize={0.5}
+                        roundness={0.5}
+                        borderSize={0.05}
+                        circleSize={0.5}
+                        circleEdge={1}
+                      />
+                  )}
+                </div>
+                <div className="hero-card-image">
+                  <Image
+                    src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
+                    alt="Sopan Patil"
+                    width={200}
+                    height={200}
+                    className="rounded-full"
+                  />
+                </div>
+              </div>
           </motion.div>
         </div>
       </div>
