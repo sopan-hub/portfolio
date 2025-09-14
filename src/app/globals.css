@@ -77,12 +77,15 @@
     height: 100%;
     width: 100%;
     border-radius: 32px;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: hsl(var(--card));
+    box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    transform: perspective(1000px) rotateX(0deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .neu-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 12px 12px 24px #bebebe, -12px -12px 24px #ffffff;
   }
 
   .card-grid.has-active-card > .card-container:not(.active) {
