@@ -7,10 +7,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Eye } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
 import Typewriter from '@/components/typewriter';
-import ShapeBlur from '../ShapeBlur';
 
 const HeroSection = () => {
-  const isBrowser = typeof window !== 'undefined';
 
   return (
     <section
@@ -71,17 +69,6 @@ const HeroSection = () => {
           >
             <div className="hero-panel">
                 <div className="hero-border">
-                  {isBrowser && (
-                     <ShapeBlur
-                        variation={0}
-                        pixelRatioProp={window.devicePixelRatio || 1}
-                        shapeSize={0.5}
-                        roundness={0.5}
-                        borderSize={0.05}
-                        circleSize={0.5}
-                        circleEdge={1}
-                      />
-                  )}
                 </div>
                 <div className="hero-card-image">
                   <Image
