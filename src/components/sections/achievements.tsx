@@ -1,15 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { achievements } from '@/lib/data';
-import CircularGallery from '../CircularGallery';
+import UiverseCard from '../uiverse-card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 const AchievementsSection = () => {
-  const galleryItems = achievements.map(achievement => ({
-    image: achievement.image,
-    text: achievement.title
-  }));
-
   return (
     <section id="achievements" className="relative py-20">
       <div className="container relative z-10">
@@ -24,15 +27,45 @@ const AchievementsSection = () => {
           </h2>
         </motion.div>
 
-        <div style={{ height: '500px', position: 'relative' }}>
-          <CircularGallery
-            items={galleryItems}
-            bend={3}
-            textColor="hsl(var(--foreground))"
-            borderRadius={0.05}
-            scrollEase={0.02}
-          />
-        </div>
+        <Carousel
+          opts={{
+            align: 'start',
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {achievements.map((achievement, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1 h-full">
+                  <UiverseCard>
+                    <div className="flex flex-col h-full text-center p-4">
+                      <div className="relative w-full h-56 mb-4 overflow-hidden rounded-lg">
+                        <Image
+                          src={achievement.image}
+                          alt={achievement.title}
+                          layout="fill"
+                          objectFit="contain"
+                        />
+                      </div>
+                      <h3 className="uiverse-title text-lg font-semibold">
+                        {achievement.title}
+                      </h3>
+                      <p className="uiverse-text mt-2 flex-grow">
+                        {achievement.description}
+                      </p>
+                      <span className="uiverse-text mt-4 text-sm font-bold">
+                        {achievement.year}
+                      </span>
+                    </div>
+                  </UiverseCard>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );
