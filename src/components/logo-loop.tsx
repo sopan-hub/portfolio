@@ -9,13 +9,13 @@ const ANIMATION_CONFIG = {
   COPY_HEADROOM: 2,
 };
 
-const toCssLength = (value: number | string | undefined) =>
+const toCssLength = (value) =>
   typeof value === 'number' ? `${value}px` : value ?? undefined;
 
 const useResizeObserver = (
-  callback: () => void,
-  elements: React.RefObject<HTMLElement>[],
-  dependencies: any[]
+  callback,
+  elements,
+  dependencies
 ) => {
   useEffect(() => {
     if (!window.ResizeObserver) {
@@ -42,9 +42,9 @@ const useResizeObserver = (
 };
 
 const useImageLoader = (
-  seqRef: React.RefObject<HTMLElement>,
-  onLoad: () => void,
-  dependencies: any[]
+  seqRef,
+  onLoad,
+  dependencies
 ) => {
   useEffect(() => {
     const images = seqRef.current?.querySelectorAll('img') ?? [];
@@ -83,14 +83,14 @@ const useImageLoader = (
 };
 
 const useAnimationLoop = (
-  trackRef: React.RefObject<HTMLDivElement>,
-  targetVelocity: number,
-  seqWidth: number,
-  isHovered: boolean,
-  pauseOnHover: boolean
+  trackRef,
+  targetVelocity,
+  seqWidth,
+  isHovered,
+  pauseOnHover
 ) => {
-  const rafRef = useRef<number | null>(null);
-  const lastTimestampRef = useRef<number | null>(null);
+  const rafRef = useRef(null);
+  const lastTimestampRef = useRef(null);
   const offsetRef = useRef(0);
   const velocityRef = useRef(0);
 
@@ -103,7 +103,7 @@ const useAnimationLoop = (
       track.style.transform = `translate3d(${-offsetRef.current}px, 0, 0)`;
     }
 
-    const animate = (timestamp: number) => {
+    const animate = (timestamp) => {
       if (lastTimestampRef.current === null) {
         lastTimestampRef.current = timestamp;
       }
@@ -140,42 +140,6 @@ const useAnimationLoop = (
   }, [targetVelocity, seqWidth, isHovered, pauseOnHover, trackRef]);
 };
 
-interface NodeLogo {
-    node: React.ReactNode;
-    title?: string;
-    href?: string;
-    ariaLabel?: string;
-}
-
-interface ImageLogo {
-    src: string;
-    srcSet?: string;
-    sizes?: string;
-    width?: number;
-    height?: number;
-    alt?: string;
-    title?: string;
-    href?: string;
-}
-
-type Logo = NodeLogo | ImageLogo;
-
-interface LogoLoopProps {
-    logos: Logo[];
-    speed?: number;
-    direction?: 'left' | 'right';
-    width?: string | number;
-    logoHeight?: number;
-    gap?: number;
-    pauseOnHover?: boolean;
-    fadeOut?: boolean;
-    fadeOutColor?: string;
-    scaleOnHover?: boolean;
-    ariaLabel?: string;
-    className?: string;
-    style?: React.CSSProperties;
-}
-
 
 export const LogoLoop = memo(
   ({
@@ -192,10 +156,10 @@ export const LogoLoop = memo(
     ariaLabel = 'Partner logos',
     className,
     style,
-  }: LogoLoopProps) => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const trackRef = useRef<HTMLDivElement>(null);
-    const seqRef = useRef<HTMLUListElement>(null);
+  }) => {
+    const containerRef = useRef(null);
+    const trackRef = useRef(null);
+    const seqRef = useRef(null);
 
     const [seqWidth, setSeqWidth] = useState(0);
     const [copyCount, setCopyCount] = useState(ANIMATION_CONFIG.MIN_COPIES);
@@ -250,7 +214,7 @@ export const LogoLoop = memo(
       if (pauseOnHover) setIsHovered(false);
     }, [pauseOnHover]);
 
-    const renderLogoItem = useCallback((item: Logo, key: string | number) => {
+    const renderLogoItem = useCallback((item, key) => {
       const isNodeItem = 'node' in item;
 
       const content = isNodeItem ? (
@@ -314,7 +278,7 @@ export const LogoLoop = memo(
     const containerStyle = useMemo(
       () => ({
         width: toCssLength(width) ?? '100%',
-        ...cssVariables as React.CSSProperties,
+        ...cssVariables,
         ...style,
       }),
       [width, cssVariables, style]
