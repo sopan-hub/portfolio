@@ -1,11 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { achievements } from '@/lib/data';
-import UiverseCard from '../uiverse-card';
+import CircularGallery from '../CircularGallery';
 
 const AchievementsSection = () => {
+  const galleryItems = achievements.map(achievement => ({
+    image: achievement.image,
+    text: achievement.title
+  }));
+
   return (
     <section id="achievements" className="relative py-20">
       <div className="container relative z-10">
@@ -20,34 +24,14 @@ const AchievementsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="flex gap-8 overflow-x-auto pb-8">
-          {achievements.map((achievement, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex-shrink-0 w-[350px]"
-            >
-              <UiverseCard>
-                <div className="flex h-full flex-col text-center">
-                  <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={achievement.image}
-                      alt={achievement.title}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  <h3 className="uiverse-title text-lg">{achievement.title}</h3>
-                  <p className="uiverse-text mt-2 flex-grow text-sm">
-                    {achievement.description}
-                  </p>
-                </div>
-              </UiverseCard>
-            </motion.div>
-          ))}
+        <div style={{ height: '500px', position: 'relative' }}>
+          <CircularGallery
+            items={galleryItems}
+            bend={3}
+            textColor="hsl(var(--foreground))"
+            borderRadius={0.05}
+            scrollEase={0.02}
+          />
         </div>
       </div>
     </section>
