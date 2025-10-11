@@ -1,10 +1,9 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: 240 10% 3.9%;
-  --background-end: 240 10% 10%;
   --foreground: 0 0% 98%;
   --card: 240 10% 3.9%;
   --card-foreground: 0 0% 98%;
@@ -27,6 +26,6 @@
 }
 
 body {
-  color: hsl(var(--foreground) / 0.8);
+  color: hsl(var(--foreground));
   background: hsl(var(--background));
 }

@@ -41,18 +41,18 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {skillCategories.map((category) => (
             <div key={category} className="rounded-lg bg-card p-6">
               <h3 className="mb-6 text-xl font-bold text-primary">
                 {category}
               </h3>
-              <div className="skills-grid">
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
                 {skills[category].map((skill) => {
                   const Icon = iconMap[skill.name];
                   return (
-                    <div className="skill-item" key={skill.name}>
-                      {Icon && <Icon className="text-primary" />}
+                    <div className="flex items-center gap-2" key={skill.name}>
+                      {Icon && <Icon className="h-6 w-6 text-primary" />}
                       <span>{skill.name}</span>
                     </div>
                   );
