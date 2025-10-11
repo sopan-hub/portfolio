@@ -1,65 +1,70 @@
 'use client';
-
-import React from 'react';
-import { motion } from 'framer-motion';
+import { socialLinks } from '@/lib/data';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowDown, Code } from 'lucide-react';
 import Typewriter from '@/components/typewriter';
-import Image from 'next/image';
+import { Lanyard } from '@/components/Lanyard';
 
 const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden py-24 sm:py-32"
+      className="relative flex min-h-screen items-center overflow-hidden"
     >
-      <div className="container relative z-10">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
-          >
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+      <div className="container mx-auto px-4">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="space-y-6 text-center lg:text-left">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
               Hi, I'm Sopan Patil
             </h1>
-            <h2 className="mt-4 text-2xl font-semibold sm:text-4xl">
-              A{' '}
+            <div className="text-2xl font-semibold text-primary sm:text-3xl">
               <Typewriter
                 texts={['Developer', 'Creator', 'Innovator']}
-                className="text-primary"
+                className="text-gradient"
               />
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              I'm a computer science and AI/ML student passionate about building innovative solutions that make a difference. Explore my work and get in touch!
+            </div>
+            <p className="mx-auto max-w-xl text-lg text-muted-foreground lg:mx-0">
+              I'm a computer science and AI/ML student passionate about
+              building innovative solutions that make a difference. Explore my
+              work and get in touch!
             </p>
-            <div className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:justify-center lg:justify-start">
-              <Button size="lg" asChild className="neu-button w-full sm:w-auto">
-                <a href="#contact">
-                  Contact Me <ArrowRight className="ml-2 h-5 w-5" />
+            <div className="flex items-center justify-center gap-4 lg:justify-start">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                  aria-label={link.label}
+                >
+                  <link.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+              <Button variant="neu" asChild>
+                <a href="#projects">
+                  <Code className="mr-2" /> My Work
                 </a>
               </Button>
+              <Button variant="outline" asChild>
+                <a href="#contact">Hire Me</a>
+              </Button>
             </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex h-[400px] items-center justify-center lg:h-[500px]"
-          >
-             <Image
-                src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
-                alt="Profile Picture"
-                width={300}
-                height={300}
-                className="rounded-full border-4 border-primary shadow-lg"
-              />
-          </motion.div>
+          </div>
+
+          <div className="relative -mr-48 hidden h-[600px] w-full scale-125 lg:block">
+            <Lanyard />
+          </div>
         </div>
       </div>
+      <a
+        href="#about"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
+      >
+        <ArrowDown className="h-6 w-6 text-muted-foreground" />
+      </a>
     </section>
   );
 };

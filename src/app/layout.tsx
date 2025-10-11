@@ -1,15 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
-import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
-import ScrollingBackground from '@/components/scrolling-background';
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: 'Portfolio | Sopan Patil',
-  description: 'The personal portfolio of Sopan Patil, a computer science and AI/ML student.',
+  description:
+    'The personal portfolio of Sopan Patil, a computer science and AI/ML student.',
 };
 
 export default function RootLayout({
@@ -21,14 +18,20 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className={cn('min-h-screen font-sans antialiased', inter.variable)}>
-        <ScrollingBackground />
-        <div className="relative z-10">
-          {children}
-        </div>
+      <body>
+        {children}
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );

@@ -1,46 +1,26 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
-import { motion } from 'framer-motion';
-import { Loader2, Download, AlertTriangle, CheckCircle2, Bot } from 'lucide-react';
-
-import { socialLinks } from '@/lib/data';
+import { handleContactForm, type FormState } from '@/app/actions';
+import { useEffect, useRef } from 'react';
+import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { useToast } from '@/hooks/use-toast';
-import { handleContactForm, type FormState, type AnalyzeContactFormMessageOutput } from '@/app/actions';
-import { Badge } from '../ui/badge';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
-import UiverseCard from '../uiverse-card';
-
-type AnalyzedMessage = {
-  analysis: AnalyzeContactFormMessageOutput;
-  formData: {
-    name: string;
-    email: string;
-    message: string;
-  };
-};
+import UiverseCard from '@/components/uiverse-card';
+import { Send } from 'lucide-react';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button
-      type="submit"
-      disabled={pending}
-      className="w-full font-bold neu-button"
-      size="lg"
-    >
+    <Button type="submit" variant="neu" disabled={pending}>
       {pending ? (
-        <>
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...
-        </>
+        'Sending...'
       ) : (
-        'Send Message'
+        <>
+          <Send className="mr-2" /> Send Message
+        </>
       )}
     </Button>
   );
@@ -51,141 +31,71 @@ const ContactSection = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const initialState: FormState = { success: false, message: '' };
   const [state, formAction] = useActionState(handleContactForm, initialState);
-  const [messages, setMessages] = useState<AnalyzedMessage[]>([]);
 
   useEffect(() => {
     if (state.message) {
-      if (state.success && state.analysis && state.formData) {
+      if (state.success) {
         toast({
-          title: 'Success!',
+          title: 'Message Sent!',
           description: state.message,
         });
-        setMessages(prev => [...prev, { analysis: state.analysis!, formData: state.formData! }]);
         formRef.current?.reset();
-      } else if (!state.success) {
+      } else {
         toast({
           variant: 'destructive',
-          title: 'Error',
+          title: 'Oops!',
           description: state.message,
         });
       }
     }
   }, [state, toast]);
 
-  const handleDownload = () => {
-    const dataStr = JSON.stringify(messages, null, 2);
-    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-    
-    const linkElement = document.createElement('a');
-    linkElement.setAttribute('href', dataUri);
-    linkElement.setAttribute('download', 'messages.json');
-    linkElement.click();
-  };
-
-
   return (
-    <section id="contact" className="relative py-24">
-      <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="mb-8 text-center text-3xl sm:text-4xl font-bold">Get In Touch</h2>
-          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
-            <div className="relative">
-              <UiverseCard>
-                  <div className="p-4 sm:p-6">
-                    <h2 className="uiverse-title">Contact Me</h2>
-                    <p className="uiverse-text">
-                      I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out to me.
-                    </p>
-                    <div className="mt-8 flex justify-center space-x-4">
-                      {socialLinks.map((link) => (
-                        <Button key={link.href} variant="link" size="icon" asChild>
-                          <a href={link.href} target="_blank" rel="noopener noreferrer">
-                            <link.icon className="h-5 w-5" />
-                            <span className="sr-only">{link.label}</span>
-                          </a>
-                        </Button>
-                      ))}
-                    </div>
-                  </div>
-              </UiverseCard>
-            </div>
-            <div className="relative">
-              <UiverseCard>
-                  <div className="p-4 sm:p-6">
-                    <h2 className="uiverse-title">Contact Form</h2>
-                    <p className="uiverse-text">Fill out the form to send me a message.</p>
-                    <form ref={formRef} action={formAction} className="mt-4 space-y-4 text-left">
-                      <div>
-                        <Label htmlFor="name">Name</Label>
-                        <Input id="name" name="name" type="text" placeholder="Your Name" required />
-                      </div>
-                      <div>
-                        <Label htmlFor="email">Email</Label>
-                        <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
-                      </div>
-                      <div>
-                        <Label htmlFor="message">Message</Label>
-                        <Textarea id="message" name="message" placeholder="Your message..." required />
-                      </div>
-                      <SubmitButton />
-                    </form>
-                  </div>
-              </UiverseCard>
-            </div>
-          </div>
-           <div className="relative mt-12">
-              <UiverseCard>
-                <div className="p-4 sm:p-6">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <h3 className="uiverse-title text-left">Message Analysis</h3>
-                    {messages.length > 0 && (
-                      <Button variant="outline" size="sm" onClick={handleDownload}>
-                        <Download className="mr-2 h-4 w-4" /> Download
-                      </Button>
-                    )}
-                  </div>
-                  {messages.length > 0 ? (
-                    <div className="mt-4 space-y-4">
-                      <p className="uiverse-text text-left">Your submitted messages are analyzed by AI below.</p>
-                      <Accordion type="single" collapsible className="w-full">
-                        {messages.map((msg, index) => (
-                          <AccordionItem key={index} value={`item-${index}`}>
-                            <AccordionTrigger>
-                              <div className='flex items-center gap-3'>
-                                {msg.analysis.isImportant ? <AlertTriangle className="h-5 w-5 text-destructive" /> : <CheckCircle2 className="h-5 w-5 text-green-500" />}
-                                <span className="truncate font-medium">{msg.formData.name}: {msg.analysis.summary}</span>
-                              </div>
-                            </AccordionTrigger>
-                            <AccordionContent>
-                              <div className="space-y-4 rounded-md border bg-card p-4 text-left">
-                                <p className="break-words"><strong>From:</strong> {msg.formData.name} ({msg.formData.email})</p>
-                                <p className="break-words"><strong>Message:</strong> {msg.formData.message}</p>
-                                <div className="rounded-lg bg-accent p-4">
-                                  <h4 className="mb-2 flex items-center gap-2 font-semibold"><Bot className="h-5 w-5 text-primary"/> AI Analysis</h4>
-                                  <p className="break-words"><strong>Summary:</strong> {msg.analysis.summary}</p>
-                                  {msg.analysis.isImportant && <Badge variant="destructive" className="my-2">Important</Badge>}
-                                  <p className="mt-2 text-sm break-words"><strong>Suggested Response:</strong> <em>"{msg.analysis.suggestedResponse}"</em></p>
-                                </div>
-                              </div>
-                            </AccordionContent>
-                          </AccordionItem>
-                        ))}
-                      </Accordion>
-                    </div>
-                  ) : (
-                    <div className="mt-4 flex h-full min-h-[200px] items-center justify-center rounded-lg border-2 border-dashed border-gray-400/50 bg-background/20 p-8">
-                      <p className="text-center text-muted-foreground">Submitted messages will appear here.</p>
-                    </div>
-                  )}
+    <section id="contact" className="py-24">
+      <div className="container mx-auto px-4">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Get in Touch
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Have a question or want to work together? Drop me a line.
+          </p>
+        </div>
+        <div className="mx-auto max-w-xl">
+          <UiverseCard>
+            <form ref={formRef} action={formAction} className="space-y-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <Input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                  />
                 </div>
-              </UiverseCard>
-            </div>
-        </motion.div>
+                <div className="space-y-2">
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Textarea
+                  name="message"
+                  placeholder="Your Message"
+                  rows={5}
+                  required
+                />
+              </div>
+              <div className="text-center">
+                <SubmitButton />
+              </div>
+            </form>
+          </UiverseCard>
+        </div>
       </div>
     </section>
   );

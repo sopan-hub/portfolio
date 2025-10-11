@@ -1,25 +1,31 @@
-import React from 'react';
+'use client';
 import { socialLinks } from '@/lib/data';
-import { Button } from '@/components/ui/button';
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="border-t border-primary/20 bg-transparent">
-      <div className="container flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-        <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Portfolio. All rights reserved.
-        </p>
-        <div className="flex items-center gap-2">
-          {socialLinks.map((link) => (
-            <Button key={link.href} variant="link" size="icon" asChild>
-              <a href={link.href} target="_blank" rel="noopener noreferrer">
+    <footer className="py-8">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <p className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} Sopan Patil. All rights reserved.
+          </p>
+          <div className="flex items-center gap-4">
+            {socialLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground transition-colors hover:text-primary"
+              >
                 <link.icon className="h-5 w-5" />
-                <span className="sr-only">{link.label}</span>
               </a>
-            </Button>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

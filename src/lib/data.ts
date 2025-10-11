@@ -1,30 +1,11 @@
-import {
-  Github,
-  Linkedin,
-} from 'lucide-react';
-import {
-  ReactJs,
-  NextJs,
-  TailwindCss,
-  Typescript,
-  NodeJs,
-  Firebase,
-  Python,
-  Express,
-  Genkit,
-  Tensorflow,
-  Pytorch,
-  ScikitLearn,
-  Git,
-  Docker,
-  Figma,
-  Webpack,
-} from '@/components/icons';
+import { Github, Linkedin } from 'lucide-react';
 
 export const navLinks = [
+  { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
+  { href: '#achievements', label: 'Certificates' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -39,28 +20,28 @@ export const socialLinks = [
 
 export const skills = {
   'Frontend': [
-    { name: 'React', icon: ReactJs },
-    { name: 'Next.js', icon: NextJs },
-    { name: 'Tailwind CSS', icon: TailwindCss },
-    { name: 'TypeScript', icon: Typescript },
+    { name: 'React', level: 90 },
+    { name: 'Next.js', level: 85 },
+    { name: 'Tailwind CSS', level: 80 },
+    { name: 'TypeScript', level: 90 },
   ],
   'Backend': [
-    { name: 'Node.js', icon: NodeJs },
-    { name: 'Firebase', icon: Firebase },
-    { name: 'Python', icon: Python },
-    { name: 'Express', icon: Express },
+    { name: 'Node.js', level: 85 },
+    { name: 'Firebase', level: 80 },
+    { name: 'Python', level: 95 },
+    { name: 'Express', level: 75 },
   ],
   'AI/ML': [
-    { name: 'Genkit', icon: Genkit },
-    { name: 'TensorFlow', icon: Tensorflow },
-    { name: 'PyTorch', icon: Pytorch },
-    { name: 'Scikit-learn', icon: ScikitLearn },
+    { name: 'Genkit', level: 80 },
+    { name: 'TensorFlow', level: 85 },
+    { name: 'PyTorch', level: 75 },
+    { name: 'Scikit-learn', level: 90 },
   ],
   'Tools': [
-    { name: 'Git', icon: Git },
-    { name: 'Docker', icon: Docker },
-    { name: 'Figma', icon: Figma },
-    { name: 'Webpack', icon: Webpack },
+    { name: 'Git', level: 90 },
+    { name: 'Docker', level: 70 },
+    { name: 'Figma', level: 65 },
+    { name: 'Webpack', level: 70 },
   ],
 };
 

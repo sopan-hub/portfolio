@@ -1,45 +1,67 @@
 'use client';
-
-import { motion } from 'framer-motion';
 import { skills } from '@/lib/data';
-import UiverseCard from '../uiverse-card';
+import * as Icons from '@/components/icons';
+import UiverseCard from '@/components/uiverse-card';
+
+const skillCategories: (keyof typeof skills)[] = [
+  'Frontend',
+  'Backend',
+  'AI/ML',
+  'Tools',
+];
+
+const iconMap: { [key: string]: React.FC<{ className?: string }> } = {
+  React: Icons.ReactJs,
+  'Next.js': Icons.NextJs,
+  'Tailwind CSS': Icons.TailwindCss,
+  TypeScript: Icons.Typescript,
+  'Node.js': Icons.NodeJs,
+  Firebase: Icons.Firebase,
+  Python: Icons.Python,
+  Express: Icons.Express,
+  Genkit: Icons.Genkit,
+  TensorFlow: Icons.Tensorflow,
+  PyTorch: Icons.Pytorch,
+  'Scikit-learn': Icons.ScikitLearn,
+  Git: Icons.Git,
+  Docker: Icons.Docker,
+  Figma: Icons.Figma,
+  Webpack: Icons.Webpack,
+};
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="relative py-20 overflow-hidden">
-      <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="mb-12 text-center text-3xl font-bold">My Skills</h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {Object.entries(skills).map(([category, skillList]) => (
-              <UiverseCard key={category}>
-                <div className="p-4">
-                  <h3 className="uiverse-title mb-6 text-center text-xl">
-                    {category}
-                  </h3>
-                  <div className="grid grid-cols-2 gap-6">
-                    {skillList.map((skill) => (
-                      <div
-                        key={skill.name}
-                        className="flex flex-col items-center justify-center gap-2"
-                      >
-                        <skill.icon className="h-12 w-12" />
-                        <span className="text-sm text-muted-foreground">
-                          {skill.name}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </UiverseCard>
-            ))}
-          </div>
-        </motion.div>
+    <section id="skills" className="py-24">
+      <div className="container mx-auto px-4">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            My Skills
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Technologies and tools I work with.
+          </p>
+        </div>
+
+        <div className="space-y-12">
+          {skillCategories.map((category) => (
+            <UiverseCard key={category}>
+              <h3 className="mb-6 text-xl font-bold text-primary">
+                {category}
+              </h3>
+              <div className="skills-grid">
+                {skills[category].map((skill) => {
+                  const Icon = iconMap[skill.name];
+                  return (
+                    <div className="skill-item" key={skill.name}>
+                      {Icon && <Icon className="text-primary" />}
+                      <span>{skill.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </UiverseCard>
+          ))}
+        </div>
       </div>
     </section>
   );

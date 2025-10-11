@@ -1,10 +1,1 @@
-.gradual-blur { 
-  pointer-events: none; 
-  transition: opacity 0.3s ease-out; 
-}
-.gradual-blur-parent { 
-  overflow: hidden; 
-}
-.gradual-blur-inner { 
-  pointer-events: none; 
-}
+/* This file is intentionally blank. It is used by the GradualBlur component. */

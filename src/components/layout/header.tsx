@@ -1,125 +1,121 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
-import { motion, useScroll } from 'framer-motion';
+import { navLinks } from '@/lib/data';
+import { Menu, X } from 'lucide-react';
+import { Button } from '../ui/button';
 
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { navLinks, socialLinks } from '@/lib/data';
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
-
-export default function Header() {
-  const { scrollY } = useScroll();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+const Header = () => {
+  const [isSticky, setSticky] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('#home');
 
   useEffect(() => {
-    return scrollY.on('change', (latest) => {
-      setIsScrolled(latest > 50);
-    });
-  }, [scrollY]);
+    const handleScroll = () => {
+      setSticky(window.scrollY > 50);
+
+      const sections = navLinks.map((link) =>
+        document.getElementById(link.href.substring(1))
+      );
+      let currentSection = '';
+      for (const section of sections) {
+        if (section) {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) {
+            currentSection = `#${section.id}`;
+          }
+        }
+      }
+      setActiveLink(currentSection || '#home');
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
   return (
-    <motion.header
-      className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300 border-b border-border/40 bg-transparent backdrop-blur-2xl'
-      )}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+    <header
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
+        isSticky
+          ? 'border-b border-border/50 bg-background/80 backdrop-blur-lg'
+          : 'border-b border-transparent'
+      }`}
     >
-      <div className="container flex h-20 items-center justify-between">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <motion.div
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
-            animate={isHovered ? { rotate: 360 } : { rotate: 0 }}
-            transition={isHovered ? { duration: 1, repeat: Infinity, ease: 'linear' } : { duration: 0.5 }}
+          <svg
+            className="h-8 w-8 text-primary"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="fill-primary"
-            >
-              <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" />
-            </svg>
-          </motion.div>
-          <span className="hidden sm:inline text-xl font-bold">Portfolio</span>
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
+          </svg>
+          <span className="text-xl font-bold">Sopan.</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                activeLink === link.href
+                  ? 'text-primary'
+                  : 'text-muted-foreground'
+              }`}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 md:flex">
-          {socialLinks.map((link) => (
-            <Button key={link.href} variant="link" size="icon" asChild>
-              <a href={link.href} target="_blank" rel="noopener noreferrer">
-                <link.icon className="h-5 w-5" />
-                <span className="sr-only">{link.label}</span>
-              </a>
-            </Button>
-          ))}
-        </div>
-
-        <div className="md:hidden">
-          <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <SheetHeader>
-                <SheetTitle>Menu</SheetTitle>
-              </SheetHeader>
-              <nav className="mt-8 flex flex-col gap-6">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-lg font-medium text-foreground transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-              <div className="mt-8 flex items-center gap-4">
-                 {socialLinks.map((link) => (
-                  <Button key={link.href} variant="link" size="icon" asChild>
-                    <a href={link.href} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
-                      <link.icon className="h-6 w-6" />
-                      <span className="sr-only">{link.label}</span>
-                    </a>
-                  </Button>
-                ))}
-              </div>
-            </SheetContent>
-          </Sheet>
+        <div className="flex items-center gap-4">
+          <Button variant="neu" size="sm" asChild className="hidden md:flex">
+            <a href="#contact">Hire Me</a>
+          </Button>
+          <button
+            className="p-2 md:hidden"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X /> : <Menu />}
+          </button>
         </div>
       </div>
-    </motion.header>
+
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 w-full border-b border-border/50 bg-background/95 p-4 backdrop-blur-lg md:hidden">
+          <nav className="flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-muted-foreground"
+                onClick={toggleMenu}
+              >
+                {link.label}
+              </a>
+            ))}
+            <Button variant="neu" asChild>
+              <a href="#contact" onClick={toggleMenu}>Hire Me</a>
+            </Button>
+          </nav>
+        </div>
+      )}
+    </header>
   );
-}
+};
+
+export default Header;

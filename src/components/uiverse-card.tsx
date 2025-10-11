@@ -1,8 +1,8 @@
 import React from 'react';
 
-const UiverseCard = ({ children }: { children: React.ReactNode }) => {
+const UiverseCard = ({ children, className }: { children: React.ReactNode, className?: string }) => {
   return (
-    <div className="neu-card">
+    <div className={`neu-card ${className || ''}`}>
       {children}
     </div>
   );

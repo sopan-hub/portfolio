@@ -1,13 +1,10 @@
 'use client';
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
 import { projects } from '@/lib/data';
+import { ArrowRight, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import UiverseCard from '../uiverse-card';
-import { cn } from '@/lib/utils';
+import UiverseCard from '@/components/uiverse-card';
 
 const categories = ['All', 'Web', 'AI', 'Other'];
 
@@ -20,81 +17,75 @@ const ProjectsSection = () => {
       : projects.filter((p) => p.category === filter);
 
   return (
-    <section id="projects" className="relative py-20">
-      <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="mb-12 text-center text-3xl font-bold">Projects</h2>
-          <div className="mb-12 flex flex-wrap justify-center gap-2">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={filter === category ? 'default' : 'outline'}
-                onClick={() => setFilter(category)}
-                className="rounded-full neu-button"
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-          <motion.div
-            layout
-            className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-          >
-            <AnimatePresence>
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.title + index}
-                  layout
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3 }}
-                  className="flex"
-                >
-                  <UiverseCard>
-                    <div className="flex h-full flex-col text-center p-6">
-                      <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className={cn(
-                            'object-cover'
-                          )}
-                          data-ai-hint={project.dataAiHint}
-                        />
-                      </div>
-                      <h3 className="uiverse-title text-xl">{project.title}</h3>
-                      <p className="uiverse-text mb-4 flex-grow">{project.description}</p>
-                      <div className="mb-4 flex flex-wrap justify-center gap-2">
-                        {project.tech.map((tech) => (
-                          <Badge key={tech} variant="secondary">{tech}</Badge>
-                        ))}
-                      </div>
-                      <div className="mt-auto flex justify-center gap-4">
-                        <Button variant="neu" size="sm" asChild>
-                          <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            GitHub
-                          </a>
-                        </Button>
-                        <Button variant="neu" size="sm" asChild>
-                          <a href={project.live} target="_blank" rel="noopener noreferrer">
-                            Live Demo
-                          </a>
-                        </Button>
-                      </div>
-                    </div>
-                  </UiverseCard>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-        </motion.div>
+    <section id="projects" className="py-24">
+      <div className="container mx-auto px-4">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            My Projects
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            A selection of my work.
+          </p>
+        </div>
+        <div className="mb-8 flex justify-center space-x-2">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant={filter === category ? 'neu' : 'ghost'}
+              onClick={() => setFilter(category)}
+              className="rounded-full"
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {filteredProjects.map((project) => (
+            <UiverseCard key={project.title}>
+              <div className="flex h-full flex-col">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={400}
+                  height={300}
+                  className="mb-4 rounded-md object-cover"
+                  data-ai-hint={project.dataAiHint}
+                />
+                <div className="flex flex-grow flex-col">
+                  <p className="mb-1 text-sm font-semibold text-primary">
+                    {project.category}
+                  </p>
+                  <h4 className="mb-2 text-lg font-bold text-foreground">
+                    {project.title}
+                  </h4>
+                  <p className="mb-4 flex-grow text-sm text-muted-foreground">
+                    {project.description}
+                  </p>
+                  <div className="mt-auto flex justify-between">
+                    <Button variant="neu" size="sm" asChild>
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                    <Button variant="ghost" size="icon" asChild>
+                       <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </UiverseCard>
+          ))}
+        </div>
       </div>
     </section>
   );
