@@ -1,7 +1,6 @@
 'use client';
 import { skills } from '@/lib/data';
 import * as Icons from '@/components/icons';
-import UiverseCard from '@/components/uiverse-card';
 
 const skillCategories: (keyof typeof skills)[] = [
   'Frontend',
@@ -44,7 +43,7 @@ const SkillsSection = () => {
 
         <div className="space-y-12">
           {skillCategories.map((category) => (
-            <UiverseCard key={category}>
+            <div key={category} className="rounded-lg bg-card p-6">
               <h3 className="mb-6 text-xl font-bold text-primary">
                 {category}
               </h3>
@@ -59,7 +58,7 @@ const SkillsSection = () => {
                   );
                 })}
               </div>
-            </UiverseCard>
+            </div>
           ))}
         </div>
       </div>

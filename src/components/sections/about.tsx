@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
-import UiverseCard from '@/components/uiverse-card';
 
 const AboutSection = () => {
   return (
@@ -11,7 +10,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="relative mx-auto w-full max-w-sm">
-            <UiverseCard>
+            <div className="rounded-lg bg-card p-6">
               <Image
                 src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
                 alt="About Sopan Patil"
@@ -19,7 +18,7 @@ const AboutSection = () => {
                 height={400}
                 className="rounded-lg"
               />
-            </UiverseCard>
+            </div>
           </div>
           <div className="space-y-6">
             <div className="space-y-2">
@@ -56,7 +55,7 @@ const AboutSection = () => {
                 <span className="text-muted-foreground">Maharashtra, India</span>
               </li>
             </ul>
-            <Button asChild variant="neu">
+            <Button asChild variant="outline">
               <a href="/sopan-patil-resume.pdf" download>
                 <Download className="mr-2" />
                 Download CV

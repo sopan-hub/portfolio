@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { projects } from '@/lib/data';
 import { ArrowRight, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import UiverseCard from '@/components/uiverse-card';
 
 const categories = ['All', 'Web', 'AI', 'Other'];
 
@@ -31,7 +30,7 @@ const ProjectsSection = () => {
           {categories.map((category) => (
             <Button
               key={category}
-              variant={filter === category ? 'neu' : 'ghost'}
+              variant={filter === category ? 'default' : 'ghost'}
               onClick={() => setFilter(category)}
               className="rounded-full"
             >
@@ -41,7 +40,7 @@ const ProjectsSection = () => {
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project) => (
-            <UiverseCard key={project.title}>
+            <div key={project.title} className="rounded-lg bg-card p-6">
               <div className="flex h-full flex-col">
                 <Image
                   src={project.image}
@@ -62,7 +61,7 @@ const ProjectsSection = () => {
                     {project.description}
                   </p>
                   <div className="mt-auto flex justify-between">
-                    <Button variant="neu" size="sm" asChild>
+                    <Button variant="outline" size="sm" asChild>
                       <a
                         href={project.live}
                         target="_blank"
@@ -83,7 +82,7 @@ const ProjectsSection = () => {
                   </div>
                 </div>
               </div>
-            </UiverseCard>
+            </div>
           ))}
         </div>
       </div>

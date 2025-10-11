@@ -2,7 +2,6 @@
 import { socialLinks } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Code } from 'lucide-react';
-import Typewriter from '@/components/typewriter';
 
 const HeroSection = () => {
   return (
@@ -17,10 +16,7 @@ const HeroSection = () => {
               Hi, I'm Sopan Patil
             </h1>
             <div className="text-2xl font-semibold text-primary sm:text-3xl">
-              <Typewriter
-                texts={['Developer', 'Creator', 'Innovator']}
-                className="text-gradient"
-              />
+              <p>Developer, Creator, Innovator</p>
             </div>
             <p className="mx-auto max-w-xl text-lg text-muted-foreground lg:mx-0">
               I'm a computer science and AI/ML student passionate about
@@ -42,7 +38,7 @@ const HeroSection = () => {
               ))}
             </div>
             <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-              <Button variant="neu" asChild>
+              <Button variant="outline" asChild>
                 <a href="#projects">
                   <Code className="mr-2" /> My Work
                 </a>
@@ -54,9 +50,8 @@ const HeroSection = () => {
           </div>
 
           <div className="relative hidden h-[600px] w-full items-center justify-center lg:flex">
-             {/* Lanyard component removed for stability */}
              <div className="h-96 w-64 rounded-lg bg-card/50 flex items-center justify-center text-muted-foreground">
-                3D Lanyard will be here
+                3D element removed for stability.
              </div>
           </div>
         </div>

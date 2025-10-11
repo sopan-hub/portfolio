@@ -1,7 +1,6 @@
 'use client';
 import { achievements } from '@/lib/data';
 import Image from 'next/image';
-import UiverseCard from '@/components/uiverse-card';
 
 const AchievementsSection = () => {
   return (
@@ -17,7 +16,7 @@ const AchievementsSection = () => {
         </div>
         <div className="grid gap-8 md:grid-cols-2">
           {achievements.map((achievement, index) => (
-            <UiverseCard key={index}>
+            <div key={index} className="rounded-lg bg-card p-6">
               <div className="overflow-hidden rounded-lg">
                 <Image
                   src={achievement.image}
@@ -40,7 +39,7 @@ const AchievementsSection = () => {
                   </span>
                 </div>
               </div>
-            </UiverseCard>
+            </div>
           ))}
         </div>
       </div>

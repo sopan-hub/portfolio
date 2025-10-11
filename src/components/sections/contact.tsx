@@ -8,13 +8,12 @@ import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import UiverseCard from '@/components/uiverse-card';
 import { Send } from 'lucide-react';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" variant="neu" disabled={pending}>
+    <Button type="submit" variant="outline" disabled={pending}>
       {pending ? (
         'Sending...'
       ) : (
@@ -62,7 +61,7 @@ const ContactSection = () => {
           </p>
         </div>
         <div className="mx-auto max-w-xl">
-          <UiverseCard>
+          <div className="rounded-lg bg-card p-6">
             <form ref={formRef} action={formAction} className="space-y-6">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
@@ -94,7 +93,7 @@ const ContactSection = () => {
                 <SubmitButton />
               </div>
             </form>
-          </UiverseCard>
+          </div>
         </div>
       </div>
     </section>
