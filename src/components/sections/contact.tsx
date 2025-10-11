@@ -11,7 +11,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { handleContactForm, type FormState, type AnalyzeContactFormMessageOutput } from '@/app/actions';
 import { Badge } from '../ui/badge';
@@ -33,7 +32,7 @@ function SubmitButton() {
     <Button
       type="submit"
       disabled={pending}
-      className="w-full font-bold"
+      className="w-full font-bold neu-button"
       size="lg"
     >
       {pending ? (

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { motion, useScroll } from 'framer-motion';
 
 import { cn } from '@/lib/utils';
@@ -48,13 +48,12 @@ export default function Header() {
             <svg
               width="32"
               height="32"
-              viewBox="0 0 100 100"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
               className="fill-primary"
             >
-              <path d="M50,0A50,50,0,1,0,50,100,50,50,0,0,0,50,0Zm0,92.86A42.86,42.86,0,1,1,92.86,50,42.91,42.91,0,0,1,50,92.86Z" />
-              <path d="M50,21.43a7.14,7.14,0,1,0,7.14,7.14A7.14,7.14,0,0,0,50,21.43Z" />
-              <path d="M50,42.86a7.14,7.14,0,1,0,7.14,7.14A7.14,7.14,0,0,0,50,42.86Z" />
-              <path d="M50,64.29a7.14,7.14,0,1,0,7.14,7.14A7.14,7.14,0,0,0,50,64.29Z" />
+              <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" />
             </svg>
           </motion.div>
           <span className="hidden sm:inline text-xl font-bold">Portfolio</span>

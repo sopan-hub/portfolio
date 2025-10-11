@@ -33,9 +33,9 @@ const ProjectsSection = () => {
             {categories.map((category) => (
               <Button
                 key={category}
-                variant={filter === category ? 'neu' : 'outline'}
+                variant={filter === category ? 'default' : 'outline'}
                 onClick={() => setFilter(category)}
-                className="rounded-full"
+                className="rounded-full neu-button"
               >
                 {category}
               </Button>
@@ -57,17 +57,14 @@ const ProjectsSection = () => {
                   className="flex"
                 >
                   <UiverseCard>
-                    <div className="flex h-full flex-col text-center">
-                      <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg border-2 border-black">
+                    <div className="flex h-full flex-col text-center p-6">
+                      <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg">
                         <Image
                           src={project.image}
                           alt={project.title}
                           fill
                           className={cn(
-                            'object-cover',
-                            (project.title === 'AI Chatbot Beta' ||
-                              project.title === 'Image Recognition API') &&
-                              'scale-125'
+                            'object-cover'
                           )}
                           data-ai-hint={project.dataAiHint}
                         />

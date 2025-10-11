@@ -3,11 +3,9 @@ import HeroSection from '@/components/sections/hero';
 import AboutSection from '@/components/sections/about';
 import SkillsSection from '@/components/sections/skills';
 import ProjectsSection from '@/components/sections/projects';
-import ResumeSection from '@/components/sections/resume';
 import AchievementsSection from '@/components/sections/achievements';
 import ContactSection from '@/components/sections/contact';
 import Footer from '@/components/layout/footer';
-import Fireworks from '@/components/fireworks';
 
 export default function Home() {
   return (
@@ -16,10 +14,8 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <AboutSection />
-        <Fireworks />
         <SkillsSection />
         <ProjectsSection />
-        <ResumeSection />
         <AchievementsSection />
         <ContactSection />
       </main>
