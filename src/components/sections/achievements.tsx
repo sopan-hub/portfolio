@@ -2,7 +2,6 @@
 import { achievements } from '@/lib/data';
 import Image from 'next/image';
 import UiverseCard from '@/components/uiverse-card';
-import GradualBlur from '@/components/GradualBlur';
 
 const AchievementsSection = () => {
   return (
@@ -35,13 +34,6 @@ const AchievementsSection = () => {
                     <p className="text-sm text-muted-foreground">
                       {achievement.description}
                     </p>
-                     <GradualBlur
-                      target="parent"
-                      position="bottom"
-                      height="3rem"
-                      strength={2}
-                      divCount={4}
-                    />
                   </div>
                    <span className="absolute bottom-6 right-6 text-xs font-semibold text-primary">
                     {achievement.year}

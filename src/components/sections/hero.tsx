@@ -3,7 +3,6 @@ import { socialLinks } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Code } from 'lucide-react';
 import Typewriter from '@/components/typewriter';
-import { Lanyard } from '@/components/Lanyard';
 
 const HeroSection = () => {
   return (
@@ -54,8 +53,11 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="relative -mr-48 hidden h-[600px] w-full scale-125 lg:block">
-            <Lanyard />
+          <div className="relative hidden h-[600px] w-full items-center justify-center lg:flex">
+             {/* Lanyard component removed for stability */}
+             <div className="h-96 w-64 rounded-lg bg-card/50 flex items-center justify-center text-muted-foreground">
+                3D Lanyard will be here
+             </div>
           </div>
         </div>
       </div>
