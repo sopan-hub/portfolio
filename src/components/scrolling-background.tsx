@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
-import LightRays from './LightRays';
 
 const ScrollingBackground = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -67,17 +66,6 @@ const ScrollingBackground = () => {
   return (
     <div className="hero-gradient-bg">
       <div ref={backgroundRef} className="hero-gradient-bg-dynamic" />
-      <LightRays
-        raysOrigin="top-center"
-        raysColor="#ffffff"
-        raysSpeed={0.5}
-        lightSpread={0.5}
-        rayLength={1.5}
-        pulsating={true}
-        fadeDistance={0.8}
-        saturation={0.5}
-        mouseInfluence={0.05}
-      />
     </div>
   );
 };
