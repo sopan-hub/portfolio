@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Typewriter from '@/components/typewriter';
-import Lanyard from '../Lanyard';
+import Image from 'next/image';
 
 const HeroSection = () => {
   return (
@@ -50,7 +50,13 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative flex h-[400px] items-center justify-center lg:h-[500px]"
           >
-            <Lanyard />
+             <Image
+                src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
+                alt="Profile Picture"
+                width={300}
+                height={300}
+                className="rounded-full border-4 border-primary shadow-lg"
+              />
           </motion.div>
         </div>
       </div>
