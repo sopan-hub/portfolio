@@ -23,13 +23,12 @@ export default function HeroSection() {
           src={images["hero-bg"].url}
           alt={images["hero-bg"].alt}
           fill
-          className="object-cover opacity-50 mix-blend-luminosity"
+          className="object-cover opacity-60"
           priority
           data-ai-hint={images["hero-bg"].dataAiHint}
         />
-        {/* Gradient overlays to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
+        {/* Subtle vignette instead of heavy black fade */}
+        <div className="absolute inset-0 bg-radial-gradient from-transparent to-black/40" />
       </div>
 
       {/* Technical Background patterns */}
@@ -43,7 +42,7 @@ export default function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex justify-between items-start pt-12 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+        <div className="flex justify-between items-start pt-12 text-[10px] uppercase tracking-[0.2em] text-white/50">
           <span>SOPAN-PATIL // v2.0</span>
           <div className="flex gap-4">
             <span>10/25</span>
@@ -52,44 +51,48 @@ export default function HeroSection() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Main Title */}
-          <div className="lg:col-span-6 space-y-8">
-            <div className="space-y-2">
-              <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white">
+          {/* Left Column: Main Title with Clean Blur */}
+          <div className="lg:col-span-7 p-10 rounded-3xl backdrop-blur-2xl bg-white/5 border border-white/10 shadow-2xl space-y-8">
+            <div className="space-y-4">
+              <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter">
                 SOPAN-PATIL // <br />
                 <span className="text-primary glow-orange">Neural Interface</span>
               </h1>
-              <p className="max-w-md text-muted-foreground text-sm leading-relaxed mt-6 bg-black/40 backdrop-blur-sm p-4 rounded-lg border border-white/10">
+              <p className="max-w-md text-white/80 text-base leading-relaxed mt-6">
                 Architecting intelligent solutions with high-res logic and a zero-gravity framework. Bridging the gap between human intuition and machine intelligence.
               </p>
             </div>
 
             <div className="flex gap-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-muted-foreground hover:border-primary hover:text-primary transition-colors bg-black/40">
-                <Boxes size={16} />
+              <div className="flex items-center justify-center w-12 h-12 rounded-full border border-white/20 text-white/60 hover:border-primary hover:text-primary transition-all bg-white/5 backdrop-blur-md">
+                <Boxes size={20} />
               </div>
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-muted-foreground hover:border-primary hover:text-primary transition-colors bg-black/40">
-                <Scan size={16} />
+              <div className="flex items-center justify-center w-12 h-12 rounded-full border border-white/20 text-white/60 hover:border-primary hover:text-primary transition-all bg-white/5 backdrop-blur-md">
+                <Scan size={20} />
               </div>
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-muted-foreground hover:border-primary hover:text-primary transition-colors bg-black/40">
-                <Zap size={16} />
+              <div className="flex items-center justify-center w-12 h-12 rounded-full border border-white/20 text-white/60 hover:border-primary hover:text-primary transition-all bg-white/5 backdrop-blur-md">
+                <Zap size={20} />
               </div>
             </div>
+            
+            <Button size="lg" className="rounded-full px-8 bg-primary text-black font-bold hover:scale-105 transition-transform">
+              INITIALIZE CORE <ArrowUpRight className="ml-2" />
+            </Button>
           </div>
 
-          {/* Right Column: Specs */}
-          <div className="lg:col-span-6 flex flex-col items-end">
-            <div className="w-full max-w-sm space-y-6 bg-black/40 backdrop-blur-md p-6 rounded-xl border border-white/10">
-              <h3 className="text-xs font-bold tracking-widest text-white/50 border-b border-white/10 pb-2">
-                TECHNICAL SPECS
+          {/* Right Column: Specs with Clean Blur */}
+          <div className="lg:col-span-5 flex flex-col items-end">
+            <div className="w-full max-w-sm space-y-6 backdrop-blur-xl bg-white/5 p-8 rounded-3xl border border-white/10 shadow-xl">
+              <h3 className="text-xs font-bold tracking-[0.3em] text-white/40 border-b border-white/10 pb-4 uppercase">
+                SYSTEM PARAMETERS
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {specs.map((spec) => (
                   <div key={spec.label} className="flex justify-between text-xs group">
-                    <span className="text-muted-foreground group-hover:text-white transition-colors">
+                    <span className="text-white/50 group-hover:text-white transition-colors">
                       {spec.label}
                     </span>
-                    <span className="text-white font-medium">
+                    <span className="text-white font-mono font-medium">
                       {spec.value}
                     </span>
                   </div>
@@ -100,10 +103,10 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom Feature Card */}
-        <div className="mt-32 grid grid-cols-1 md:grid-cols-12 gap-8 items-end pb-20">
+        <div className="mt-24 grid grid-cols-1 md:grid-cols-12 gap-8 items-end pb-20">
           <div className="md:col-span-5">
-            <div className="tech-border p-4 rounded-xl flex gap-6 items-center group cursor-pointer hover:border-primary/50 transition-all duration-500 bg-black/60 backdrop-blur-lg">
-              <div className="relative w-24 h-24 rounded-lg overflow-hidden shrink-0">
+            <div className="p-5 rounded-2xl flex gap-6 items-center group cursor-pointer border border-white/10 bg-white/5 backdrop-blur-xl hover:border-primary/50 transition-all duration-500 shadow-lg">
+              <div className="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 ring-1 ring-white/20">
                 <Image
                   src={images["neural-chip"].url}
                   alt={images["neural-chip"].alt}
@@ -113,30 +116,27 @@ export default function HeroSection() {
                 />
               </div>
               <div className="space-y-2">
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+                <h4 className="text-sm font-bold text-white uppercase tracking-widest">
                   S-01: Neural Core
                 </h4>
-                <p className="text-[10px] text-muted-foreground leading-snug">
+                <p className="text-[11px] text-white/60 leading-snug">
                   Optimized for real-world AI deployment with a focus on precision and scalability.
                 </p>
-                <Button variant="ghost" size="sm" className="h-7 px-2 text-[10px] uppercase tracking-widest text-primary hover:text-white hover:bg-primary/20">
-                  Explore Tech <ArrowUpRight size={12} className="ml-1" />
+                <Button variant="ghost" size="sm" className="h-7 px-0 text-[10px] uppercase tracking-widest text-primary hover:text-white hover:bg-transparent">
+                  View Architecture <ArrowUpRight size={12} className="ml-1" />
                 </Button>
               </div>
             </div>
           </div>
 
-          <div className="md:col-span-7 flex justify-end gap-2">
-             <Badge variant="outline" className="rounded-full px-4 py-1 text-[10px] border-white/10 text-muted-foreground hover:border-primary hover:text-white transition-all uppercase tracking-widest bg-black/40">
+          <div className="md:col-span-7 flex justify-end gap-3">
+             <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] border-white/10 text-white/40 hover:border-primary hover:text-white transition-all uppercase tracking-[0.2em] bg-white/5 backdrop-blur-md">
               8K PRECISION
             </Badge>
-            <Badge variant="outline" className="rounded-full px-4 py-1 text-[10px] border-white/10 text-muted-foreground hover:border-primary hover:text-white transition-all uppercase tracking-widest bg-black/40">
+            <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] border-white/10 text-white/40 hover:border-primary hover:text-white transition-all uppercase tracking-[0.2em] bg-white/5 backdrop-blur-md">
               V2.5
             </Badge>
-            <Badge variant="outline" className="rounded-full px-4 py-1 text-[10px] border-white/10 text-muted-foreground hover:border-primary hover:text-white transition-all uppercase tracking-widest bg-black/40">
-              ULTRA-HD
-            </Badge>
-            <Badge variant="outline" className="rounded-full px-4 py-1 text-[10px] border-primary/50 text-primary glow-orange uppercase tracking-widest bg-black/40">
+            <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] border-primary/50 text-primary glow-orange uppercase tracking-[0.2em] bg-white/5 backdrop-blur-md">
               NEURAL-SYNC ACTIVE
             </Badge>
           </div>
