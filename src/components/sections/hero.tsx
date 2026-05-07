@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight, Cpu, Sparkles, Code2, Cloud, BrainCircuit } from 'lucide-react';
+import { ArrowUpRight, Cpu, Sparkles, Code2, Cloud, BrainCircuit, Activity } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
 import images from '@/app/lib/placeholder-images.json';
 import GlassSurface from '@/components/ui/glass-surface';
@@ -14,6 +14,7 @@ export default function HeroSection() {
     { label: 'Web Stack', value: 'Next.js 15 & React', icon: Code2 },
     { label: 'Architecture', value: 'Scalable MERN Apps', icon: Cpu },
     { label: 'Cloud Tech', value: 'Firebase & Serverless', icon: Cloud },
+    { label: 'System', value: 'Neural core component', icon: Activity },
   ];
 
   return (
@@ -58,23 +59,23 @@ export default function HeroSection() {
             <GlassSurface
               width="100%"
               borderRadius={32}
-              className="p-8 shadow-2xl max-w-md"
+              className="p-6 shadow-2xl max-w-sm"
             >
               <h3 className="text-[10px] font-bold tracking-[0.4em] text-white/40 border-b border-white/5 pb-4 mb-6 uppercase">
                 CORE CAPABILITIES
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {capabilities.map((tech) => (
                   <div key={tech.label} className="flex items-center justify-between group">
-                    <div className="flex items-center gap-4">
-                      <div className="p-2 rounded-lg bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors">
-                        <tech.icon size={16} className="text-white/70 group-hover:text-white" />
+                    <div className="flex items-center gap-3">
+                      <div className="p-1.5 rounded-lg bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors">
+                        <tech.icon size={14} className="text-white/70 group-hover:text-white" />
                       </div>
-                      <span className="text-xs font-bold text-white/60 tracking-wider group-hover:text-white transition-colors uppercase">
+                      <span className="text-[10px] font-bold text-white/60 tracking-wider group-hover:text-white transition-colors uppercase">
                         {tech.label}
                       </span>
                     </div>
-                    <span className="text-[11px] font-medium text-white/90 text-right">
+                    <span className="text-[10px] font-medium text-white/90 text-right">
                       {tech.value}
                     </span>
                   </div>
