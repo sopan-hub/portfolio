@@ -54,6 +54,7 @@ const ProjectsSection = () => {
               borderRadius={32}
               brightness={30}
               opacity={0.8}
+              blur={16}
               displace={0.1}
               distortionScale={-30}
               className="p-6 group transition-all duration-500 hover:scale-[1.02]"

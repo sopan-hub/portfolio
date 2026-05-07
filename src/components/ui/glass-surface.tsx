@@ -4,7 +4,7 @@ import { useEffect, useState, useRef, useId } from 'react';
 import './glass-surface.css';
 
 interface GlassSurfaceProps {
-  children: React.Node;
+  children: React.ReactNode;
   width?: number | string;
   height?: number | string;
   borderRadius?: number;
@@ -34,11 +34,11 @@ const GlassSurface = ({
   borderWidth = 0.05,
   brightness = 40,
   opacity = 0.8,
-  blur = 8,
-  displace = 0.3,
-  backgroundOpacity = 0.03,
+  blur = 12,
+  displace = 0.1,
+  backgroundOpacity = 0.05,
   saturation = 1.1,
-  distortionScale = -120,
+  distortionScale = -30,
   redOffset = 0,
   greenOffset = 5,
   blueOffset = 10,

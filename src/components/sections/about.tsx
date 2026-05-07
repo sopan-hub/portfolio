@@ -16,8 +16,9 @@ const AboutSection = () => {
               borderRadius={32}
               brightness={40}
               opacity={0.8}
+              blur={16}
               displace={0.1}
-              distortionScale={-40}
+              distortionScale={-30}
               className="p-6"
             >
               <Image
@@ -52,6 +53,7 @@ const AboutSection = () => {
               borderRadius={24}
               brightness={35}
               opacity={0.7}
+              blur={16}
               displace={0.1}
               distortionScale={-30}
               className="p-6"

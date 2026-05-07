@@ -53,8 +53,9 @@ const SkillsSection = () => {
               borderRadius={32}
               brightness={35}
               opacity={0.8}
+              blur={16}
               displace={0.1}
-              distortionScale={-40}
+              distortionScale={-30}
               className="p-8"
             >
               <h3 className="mb-8 text-xl font-bold text-white uppercase tracking-widest border-b border-white/10 pb-4">
