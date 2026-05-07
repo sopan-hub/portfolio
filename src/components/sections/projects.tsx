@@ -1,3 +1,4 @@
+
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
@@ -18,17 +19,17 @@ const ProjectsSection = () => {
       : projects.filter((p) => p.category === filter);
 
   return (
-    <section id="projects" className="py-24">
+    <section className="py-24">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center flex flex-col items-center">
           <ScrollFloat
             containerClassName="text-3xl font-bold tracking-tight sm:text-4xl mb-4"
             textClassName="text-white uppercase"
           >
-            My Projects
+            Archive
           </ScrollFloat>
           <p className="mt-4 text-white/60">
-            A selection of my work across different technologies.
+            A deeper look into my technical repository.
           </p>
         </div>
         <div className="mb-12 flex justify-center gap-4">

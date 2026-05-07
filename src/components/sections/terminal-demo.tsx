@@ -26,7 +26,6 @@ const TerminalDemo = () => {
         setIndex((prev) => prev + 1);
       }, 70); // Typing speed
     } else {
-      // Pause at the end before restarting the loop
       timeout = setTimeout(() => {
         setDisplayText('');
         setIndex(0);
@@ -38,7 +37,7 @@ const TerminalDemo = () => {
   if (!mounted) return null;
 
   return (
-    <section className="py-24 flex justify-center px-4 bg-transparent">
+    <section id="projects" className="py-24 flex justify-center px-4 bg-transparent">
       <div className="max-w-3xl w-full">
         {/* Terminal Window - High Contrast Light Mode */}
         <div className="rounded-xl shadow-[0_30px_60px_-12px_rgba(0,0,0,0.15)] overflow-hidden bg-white border border-slate-200">
@@ -52,7 +51,6 @@ const TerminalDemo = () => {
             </div>
             <div className="flex items-center gap-2 text-slate-400 text-[10px] font-mono font-bold uppercase tracking-[0.4em]">
               <TerminalIcon size={12} className="opacity-50" />
-              deployment.sh — bash
             </div>
             <div className="w-12" />
           </div>
@@ -60,8 +58,8 @@ const TerminalDemo = () => {
           {/* Terminal Body */}
           <div className="p-8 md:p-12 font-mono text-sm md:text-base leading-relaxed">
             {/* Project Info Block */}
-            <div className="mb-12">
-              <p className="text-slate-400 mb-3 text-xs uppercase tracking-widest font-bold"># Project Overview</p>
+            <div className="mb-10">
+              <p className="text-slate-400 mb-3 text-xs uppercase tracking-widest font-bold"># Featured Project</p>
               <p className="text-slate-700 font-semibold text-lg md:text-xl leading-snug">
                 {projectInfo}
               </p>
