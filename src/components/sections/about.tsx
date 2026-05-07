@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
 import ScrollFloat from '@/components/ui/scroll-float';
+import GlassSurface from '@/components/ui/glass-surface';
 
 const AboutSection = () => {
   return (
@@ -11,7 +12,12 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="relative mx-auto w-full max-w-sm">
-            <div className="liquid-glass p-6 rounded-[2rem]">
+            <GlassSurface
+              borderRadius={32}
+              brightness={40}
+              opacity={0.8}
+              className="p-6"
+            >
               <Image
                 src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
                 alt="About Sopan Patil"
@@ -19,7 +25,7 @@ const AboutSection = () => {
                 height={400}
                 className="rounded-2xl"
               />
-            </div>
+            </GlassSurface>
           </div>
           <div className="space-y-6">
             <div className="space-y-2">
@@ -40,7 +46,12 @@ const AboutSection = () => {
               building intelligent systems that can solve tangible, real-world
               problems.
             </p>
-            <div className="liquid-glass p-6 rounded-3xl space-y-3">
+            <GlassSurface
+              borderRadius={24}
+              brightness={35}
+              opacity={0.7}
+              className="p-6"
+            >
               <ul className="space-y-2 text-sm">
                 <li className="flex gap-2">
                   <strong className="w-20 text-white">Name:</strong>
@@ -60,7 +71,7 @@ const AboutSection = () => {
                   <span className="text-white/70">Maharashtra, India</span>
                 </li>
               </ul>
-            </div>
+            </GlassSurface>
             <Button asChild variant="outline" className="rounded-full border-white/20 hover:bg-white/10 text-white">
               <a href="/sopan-patil-resume.pdf" download>
                 <Download className="mr-2" />

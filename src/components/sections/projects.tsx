@@ -5,6 +5,7 @@ import { projects } from '@/lib/data';
 import { ArrowRight, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ScrollFloat from '@/components/ui/scroll-float';
+import GlassSurface from '@/components/ui/glass-surface';
 
 const categories = ['All', 'Web', 'AI', 'Other'];
 
@@ -48,7 +49,14 @@ const ProjectsSection = () => {
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project) => (
-            <div key={project.title} className="liquid-glass p-6 rounded-[2rem] group transition-all duration-500 hover:scale-[1.02]">
+            <GlassSurface
+              key={project.title}
+              borderRadius={32}
+              brightness={30}
+              opacity={0.8}
+              displace={0.6}
+              className="p-6 group transition-all duration-500 hover:scale-[1.02]"
+            >
               <div className="flex h-full flex-col">
                 <div className="relative overflow-hidden rounded-2xl mb-6 aspect-video">
                   <Image
@@ -94,7 +102,7 @@ const ProjectsSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </GlassSurface>
           ))}
         </div>
       </div>

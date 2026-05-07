@@ -2,6 +2,7 @@
 import { achievements } from '@/lib/data';
 import Image from 'next/image';
 import ScrollFloat from '@/components/ui/scroll-float';
+import GlassSurface from '@/components/ui/glass-surface';
 
 const AchievementsSection = () => {
   return (
@@ -20,7 +21,14 @@ const AchievementsSection = () => {
         </div>
         <div className="grid gap-10 md:grid-cols-2">
           {achievements.map((achievement, index) => (
-            <div key={index} className="liquid-glass rounded-[2.5rem] overflow-hidden group">
+            <GlassSurface
+              key={index}
+              borderRadius={40}
+              brightness={35}
+              opacity={0.8}
+              displace={0.7}
+              className="overflow-hidden group"
+            >
               <div className="relative aspect-[16/10]">
                 <Image
                   src={achievement.image}
@@ -46,7 +54,7 @@ const AchievementsSection = () => {
                   {achievement.description}
                 </p>
               </div>
-            </div>
+            </GlassSurface>
           ))}
         </div>
       </div>

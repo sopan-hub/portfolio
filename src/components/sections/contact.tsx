@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useActionState } from 'react';
@@ -11,6 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Send } from 'lucide-react';
 import ScrollFloat from '@/components/ui/scroll-float';
+import GlassSurface from '@/components/ui/glass-surface';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -66,7 +66,12 @@ const ContactSection = () => {
           </p>
         </div>
         <div className="mx-auto max-w-xl">
-          <div className="rounded-3xl bg-card p-8 liquid-glass border border-white/10 shadow-2xl">
+          <GlassSurface
+            borderRadius={32}
+            brightness={30}
+            opacity={0.8}
+            className="p-8 shadow-2xl"
+          >
             <form ref={formRef} action={formAction} className="space-y-6">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
@@ -101,7 +106,7 @@ const ContactSection = () => {
                 <SubmitButton />
               </div>
             </form>
-          </div>
+          </GlassSurface>
         </div>
       </div>
     </section>

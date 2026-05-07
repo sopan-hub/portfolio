@@ -2,6 +2,7 @@
 import { skills } from '@/lib/data';
 import * as Icons from '@/components/icons';
 import ScrollFloat from '@/components/ui/scroll-float';
+import GlassSurface from '@/components/ui/glass-surface';
 
 const skillCategories: (keyof typeof skills)[] = [
   'Frontend',
@@ -47,7 +48,13 @@ const SkillsSection = () => {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {skillCategories.map((category) => (
-            <div key={category} className="liquid-glass p-8 rounded-[2.5rem]">
+            <GlassSurface
+              key={category}
+              borderRadius={32}
+              brightness={35}
+              opacity={0.8}
+              className="p-8"
+            >
               <h3 className="mb-8 text-xl font-bold text-white uppercase tracking-widest border-b border-white/10 pb-4">
                 {category}
               </h3>
@@ -64,7 +71,7 @@ const SkillsSection = () => {
                   );
                 })}
               </div>
-            </div>
+            </GlassSurface>
           ))}
         </div>
       </div>
