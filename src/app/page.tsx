@@ -14,7 +14,7 @@ export default function Home() {
       <main className="flex-grow">
         <HeroSection />
         
-        <div className="bg-black relative z-10">
+        <div className="relative z-10">
           <AboutSection />
           <SkillsSection />
           <ProjectsSection />
