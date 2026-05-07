@@ -1,9 +1,7 @@
-
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import Image from 'next/image';
-import placeholderImages from '@/app/lib/placeholder-images.json';
+import ScrollZoomBackground from '@/components/ui/scroll-zoom-background';
 
 export const metadata: Metadata = {
   title: 'Portfolio | Sopan Patil',
@@ -16,7 +14,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const bgImage = placeholderImages['hero-bg'];
+  const bgImageUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png";
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -32,19 +30,12 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="relative min-h-screen overflow-x-hidden">
-        {/* Fixed Background Image Layer */}
-        <div className="fixed inset-0 z-[-1]">
-          <Image
-            src={bgImage.url}
-            alt={bgImage.alt}
-            fill
-            className="object-cover"
-            priority
-            quality={100}
-            unoptimized
-          />
-        </div>
+      <body className="relative min-h-screen bg-black overflow-x-hidden">
+        {/* Interactive Scroll-Zoom Background */}
+        <ScrollZoomBackground 
+          src={bgImageUrl} 
+          alt="Neural Interface Background" 
+        />
         
         <div className="relative z-10">
           {children}
