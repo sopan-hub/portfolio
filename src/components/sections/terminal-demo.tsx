@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -10,11 +11,9 @@ const TerminalDemo = () => {
   const [displayText, setDisplayText] = useState('');
   const [index, setIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
-  const [time, setTime] = useState('');
 
   useEffect(() => {
     setMounted(true);
-    setTime(new Date().toLocaleTimeString());
   }, []);
 
   useEffect(() => {
@@ -40,7 +39,7 @@ const TerminalDemo = () => {
 
   return (
     <section className="py-24 flex justify-center px-4 bg-transparent">
-      <div className="max-w-4xl w-full">
+      <div className="max-w-3xl w-full">
         {/* Terminal Window - High Contrast Light Mode */}
         <div className="rounded-xl shadow-[0_30px_60px_-12px_rgba(0,0,0,0.15)] overflow-hidden bg-white border border-slate-200">
           
@@ -59,7 +58,7 @@ const TerminalDemo = () => {
           </div>
 
           {/* Terminal Body */}
-          <div className="p-10 md:p-16 font-mono text-sm md:text-base leading-relaxed">
+          <div className="p-8 md:p-12 font-mono text-sm md:text-base leading-relaxed">
             {/* Project Info Block */}
             <div className="mb-12">
               <p className="text-slate-400 mb-3 text-xs uppercase tracking-widest font-bold"># Project Overview</p>
@@ -88,13 +87,6 @@ const TerminalDemo = () => {
                   <ExternalLink size={18} className="text-slate-300 group-hover:text-blue-500 transition-colors shrink-0" />
                 </a>
               </div>
-            </div>
-
-            {/* Simulated System Logs */}
-            <div className="mt-16 pt-8 border-t border-slate-50 space-y-2 text-[11px] text-slate-400 font-semibold uppercase tracking-wider opacity-60">
-              <p>{`> Initializing neural engine... [DONE]`}</p>
-              <p>{`> Training session active... [STABLE]`}</p>
-              <p>{`> Session deployed successfully at ${time}`}</p>
             </div>
           </div>
         </div>
