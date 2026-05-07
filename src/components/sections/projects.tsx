@@ -52,11 +52,11 @@ const ProjectsSection = () => {
             <GlassSurface
               key={project.title}
               borderRadius={32}
-              brightness={15}
+              brightness={10}
               opacity={0.98}
               blur={60}
-              backgroundOpacity={0.4}
-              className="p-6 group transition-all duration-500 hover:scale-[1.02] shadow-xl"
+              backgroundOpacity={0.1}
+              className="p-6 group transition-all duration-500 hover:scale-[1.02] shadow-2xl"
             >
               <div className="flex h-full flex-col">
                 <div className="relative overflow-hidden rounded-2xl mb-6 aspect-video">

@@ -24,11 +24,11 @@ const AchievementsSection = () => {
             <GlassSurface
               key={index}
               borderRadius={32}
-              brightness={15}
+              brightness={10}
               opacity={0.98}
-              blur={60}
-              backgroundOpacity={0.4}
-              className="overflow-hidden group shadow-xl"
+              blur={80}
+              backgroundOpacity={0.1}
+              className="overflow-hidden group shadow-2xl"
             >
               <div className="relative aspect-[16/10]">
                 <Image

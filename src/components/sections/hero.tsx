@@ -80,7 +80,7 @@ export default function HeroSection() {
               brightness={10}
               opacity={0.98}
               blur={80}
-              backgroundOpacity={0.4}
+              backgroundOpacity={0.1}
               className="p-8 shadow-2xl"
             >
               <h3 className="text-xs font-bold tracking-[0.3em] text-white/60 border-b border-white/10 pb-4 uppercase">
@@ -109,7 +109,7 @@ export default function HeroSection() {
               brightness={10}
               opacity={0.98}
               blur={80}
-              backgroundOpacity={0.4}
+              backgroundOpacity={0.1}
               className="p-6 shadow-2xl"
             >
               <div className="flex gap-6 items-center group cursor-pointer">

@@ -14,11 +14,11 @@ const AboutSection = () => {
           <div className="relative mx-auto w-full max-sm:max-w-xs">
             <GlassSurface
               borderRadius={32}
-              brightness={15}
+              brightness={10}
               opacity={0.98}
               blur={60}
-              backgroundOpacity={0.4}
-              className="p-6"
+              backgroundOpacity={0.1}
+              className="p-6 shadow-2xl"
             >
               <Image
                 src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
@@ -50,11 +50,11 @@ const AboutSection = () => {
             </p>
             <GlassSurface
               borderRadius={24}
-              brightness={15}
+              brightness={10}
               opacity={0.98}
               blur={60}
-              backgroundOpacity={0.4}
-              className="p-6"
+              backgroundOpacity={0.1}
+              className="p-6 shadow-2xl"
             >
               <ul className="space-y-2 text-sm">
                 <li className="flex gap-2">
