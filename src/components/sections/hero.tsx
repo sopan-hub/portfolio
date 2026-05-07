@@ -8,15 +8,6 @@ import images from '@/app/lib/placeholder-images.json';
 import GlassSurface from '@/components/ui/glass-surface';
 
 export default function HeroSection() {
-  const capabilities = [
-    { label: 'Agentic AI', value: 'Autonomous LLM Agents', icon: BrainCircuit },
-    { label: 'Gen AI', value: 'RAG & Custom LLMs', icon: Sparkles },
-    { label: 'Web Stack', value: 'Next.js 15 & React', icon: Code2 },
-    { label: 'Architecture', value: 'Scalable MERN Apps', icon: Cpu },
-    { label: 'Cloud Tech', value: 'Firebase & Serverless', icon: Cloud },
-    { label: 'System', value: 'Neural core component', icon: Activity },
-  ];
-
   return (
     <section id="home" className="relative min-h-screen overflow-hidden pt-20">
       <div className="container mx-auto px-4 relative z-20">
@@ -58,29 +49,19 @@ export default function HeroSection() {
           <div className="lg:col-span-5 flex flex-col items-end relative z-10">
             <GlassSurface
               width="100%"
-              borderRadius={32}
-              className="p-6 shadow-2xl max-w-xs"
+              borderRadius={24}
+              className="p-5 shadow-2xl max-w-[280px]"
             >
-              <h3 className="text-[10px] font-bold tracking-[0.4em] text-white/40 border-b border-white/5 pb-4 mb-6 uppercase">
-                CORE CAPABILITIES
+              <h3 className="text-[9px] font-bold tracking-[0.4em] text-white/40 border-b border-white/5 pb-3 mb-4 uppercase">
+                MISSION BRIEF
               </h3>
-              <div className="space-y-4">
-                {capabilities.map((tech) => (
-                  <div key={tech.label} className="flex items-center justify-between group">
-                    <div className="flex items-center gap-3">
-                      <div className="p-1.5 rounded-lg bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors">
-                        <tech.icon size={14} className="text-white/70 group-hover:text-white" />
-                      </div>
-                      <span className="text-[10px] font-bold text-white/60 tracking-wider group-hover:text-white transition-colors uppercase">
-                        {tech.label}
-                      </span>
-                    </div>
-                    <span className="text-[10px] font-medium text-white/90 text-right">
-                      {tech.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <p className="text-[11px] leading-relaxed text-white/80 font-medium">
+                Architecting the future of Autonomous Intelligence by merging Next.js 15 with Agentic AI frameworks. 
+                Expert in engineering Multi-Agent Orchestration, RAG Pipelines, and Custom LLM deployments. 
+                From designing Scalable MERN backends to deploying Serverless Cloud infra via Firebase, 
+                I bridge the gap between high-performance web systems and self-evolving GenAI logic. 
+                Focused on precision, real-world scalability, and low-latency Neural Architectures.
+              </p>
             </GlassSurface>
           </div>
         </div>
