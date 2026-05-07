@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Portfolio | Sopan Patil',
@@ -27,8 +28,24 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
-        {children}
+      <body className="relative">
+        {/* Fixed Background Image */}
+        <div className="fixed inset-0 z-[-1] overflow-hidden">
+          <Image
+            src="https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png"
+            alt="Global Background"
+            fill
+            className="object-cover"
+            priority
+            quality={100}
+            unoptimized
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+        
+        <div className="relative z-0">
+          {children}
+        </div>
         <Toaster />
       </body>
     </html>
