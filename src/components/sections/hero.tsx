@@ -2,30 +2,31 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Cpu, Sparkles, Code2, Cloud, BrainCircuit } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
 import images from '@/app/lib/placeholder-images.json';
 import GlassSurface from '@/components/ui/glass-surface';
 
 export default function HeroSection() {
-  const specs = [
-    { label: 'Intelligence', value: 'Deep Neural Models' },
-    { label: 'Engine', value: 'R1 - Genkit Framework' },
-    { label: 'Latency', value: 'Real-time Inference' },
-    { label: 'Core', value: 'Lightweight Scalable Architecture' },
+  const capabilities = [
+    { label: 'Agentic AI', value: 'Autonomous LLM Agents', icon: BrainCircuit },
+    { label: 'Gen AI', value: 'RAG & Custom LLMs', icon: Sparkles },
+    { label: 'Web Stack', value: 'Next.js 15 & React', icon: Code2 },
+    { label: 'Architecture', value: 'Scalable MERN Apps', icon: Cpu },
+    { label: 'Cloud Tech', value: 'Firebase & Serverless', icon: Cloud },
   ];
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden pt-20">
       <div className="container mx-auto px-4 relative z-20">
-        <div className="mt-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
+        <div className="mt-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative">
           <div className="lg:col-span-7 relative z-10 space-y-8 p-4">
             <div className="space-y-4">
               <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter uppercase">
                 Sopan Patil
               </h1>
               <p className="max-w-2xl text-white/90 text-sm md:text-base leading-relaxed mt-6 font-medium">
-                Software Developer | Python, MERN, Scalable, Intelligent Web Apps | Exploring Next.js | AI/ML & Cloud | Building LLMs & GenAI
+                Software Developer | Building Intelligent Web Apps with Agentic AI, Next.js, and the MERN Stack. Exploring the frontiers of GenAI and Cloud Architecture.
               </p>
             </div>
 
@@ -44,7 +45,7 @@ export default function HeroSection() {
               ))}
             </div>
             
-            <Button asChild size="lg" className="rounded-full px-8 bg-white text-black font-bold hover:scale-105 transition-transform">
+            <Button asChild size="lg" className="rounded-full px-10 h-14 bg-white text-black font-bold hover:scale-105 transition-transform">
               <a href="/sopan-patil-resume.pdf" target="_blank" rel="noopener noreferrer">
                 VIEW RESUME <ArrowUpRight className="ml-2" />
               </a>
@@ -53,21 +54,26 @@ export default function HeroSection() {
 
           <div className="lg:col-span-5 flex flex-col items-end relative z-10">
             <GlassSurface
-              width={400}
+              width="100%"
               borderRadius={32}
-              className="p-8 shadow-2xl"
+              className="p-8 shadow-2xl max-w-md"
             >
-              <h3 className="text-xs font-bold tracking-[0.3em] text-white/60 border-b border-white/10 pb-4 uppercase">
-                SYSTEM PARAMETERS
+              <h3 className="text-[10px] font-bold tracking-[0.4em] text-white/40 border-b border-white/5 pb-4 mb-6 uppercase">
+                CORE CAPABILITIES
               </h3>
-              <div className="mt-6 space-y-5">
-                {specs.map((spec) => (
-                  <div key={spec.label} className="flex justify-between text-xs group">
-                    <span className="text-white/60 group-hover:text-white transition-colors">
-                      {spec.label}
-                    </span>
-                    <span className="text-white font-mono font-medium">
-                      {spec.value}
+              <div className="space-y-6">
+                {capabilities.map((tech) => (
+                  <div key={tech.label} className="flex items-center justify-between group">
+                    <div className="flex items-center gap-4">
+                      <div className="p-2 rounded-lg bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors">
+                        <tech.icon size={16} className="text-white/70 group-hover:text-white" />
+                      </div>
+                      <span className="text-xs font-bold text-white/60 tracking-wider group-hover:text-white transition-colors uppercase">
+                        {tech.label}
+                      </span>
+                    </div>
+                    <span className="text-[11px] font-medium text-white/90 text-right">
+                      {tech.value}
                     </span>
                   </div>
                 ))}
@@ -83,7 +89,7 @@ export default function HeroSection() {
               className="p-6 shadow-2xl"
             >
               <div className="flex gap-6 items-center group cursor-pointer">
-                <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0 ring-1 ring-white/20">
+                <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0 ring-1 ring-white/10">
                   <Image
                     src={images["neural-chip"].url}
                     alt={images["neural-chip"].alt}
@@ -94,21 +100,17 @@ export default function HeroSection() {
                 </div>
                 <div className="space-y-2">
                   <h4 className="text-sm font-bold text-white uppercase tracking-widest">
-                    S-01: Neural Core
+                    LATEST BUILD: NEXUS-R1
                   </h4>
-                  <p className="text-[11px] text-white/80 leading-snug">
-                    Optimized for real-world AI deployment with a focus on precision and scalability.
+                  <p className="text-[11px] text-white/60 leading-snug">
+                    An advanced multi-agent framework utilizing Genkit and Gemini for autonomous decision making.
                   </p>
                   <Button variant="ghost" size="sm" className="h-7 px-0 text-[10px] uppercase tracking-widest text-white hover:text-white hover:bg-transparent">
-                    View Architecture <ArrowUpRight size={12} className="ml-1" />
+                    View Project <ArrowUpRight size={12} className="ml-1" />
                   </Button>
                 </div>
               </div>
             </GlassSurface>
-          </div>
-
-          <div className="md:col-span-7 flex justify-end gap-3 z-10">
-            {/* Status badges removed as requested */}
           </div>
         </div>
       </div>
