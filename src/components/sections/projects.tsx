@@ -53,11 +53,12 @@ const ProjectsSection = () => {
             <GlassSurface
               key={project.title}
               borderRadius={32}
-              brightness={30}
-              opacity={0.9}
-              blur={24}
-              displace={0.1}
-              distortionScale={-20}
+              brightness={25}
+              opacity={0.98}
+              blur={60}
+              backgroundOpacity={0.4}
+              displace={0}
+              distortionScale={0}
               className="p-6 group transition-all duration-500 hover:scale-[1.02]"
             >
               <div className="flex h-full flex-col">

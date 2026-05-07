@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useActionState } from 'react';
@@ -15,7 +16,7 @@ import GlassSurface from '@/components/ui/glass-surface';
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" variant="default" disabled={pending} className="w-full rounded-full font-bold uppercase tracking-widest py-6">
+    <Button type="submit" variant="default" disabled={pending} className="w-full rounded-full font-bold uppercase tracking-widest py-6 bg-white text-black">
       {pending ? (
         'Sending Core Message...'
       ) : (
@@ -68,10 +69,12 @@ const ContactSection = () => {
         <div className="mx-auto max-w-xl">
           <GlassSurface
             borderRadius={32}
-            brightness={30}
-            opacity={0.8}
-            displace={0.1}
-            distortionScale={-20}
+            brightness={25}
+            opacity={0.98}
+            blur={60}
+            backgroundOpacity={0.4}
+            displace={0}
+            distortionScale={0}
             className="p-8 shadow-2xl"
           >
             <form ref={formRef} action={formAction} className="space-y-6">

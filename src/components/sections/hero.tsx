@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Cpu, Zap, Scan, Boxes, ArrowUpRight } from 'lucide-react';
+import { Boxes, Scan, Zap, ArrowUpRight } from 'lucide-react';
 import images from '@/app/lib/placeholder-images.json';
 import GlassSurface from '@/components/ui/glass-surface';
 
@@ -20,8 +20,8 @@ export default function HeroSection() {
     <section id="home" className="relative min-h-screen bg-black overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <Image
-          src={images["hero-bg"].url}
-          alt={images["hero-bg"].alt}
+          src="https://raw.githubusercontent.com/sopan-hub/my-acces/608ed1759591797750a4cf9ac69791e8cf4cbf20/image3.png"
+          alt="Sopan Patil Hero Background"
           fill
           className="object-cover"
           priority
@@ -49,10 +49,10 @@ export default function HeroSection() {
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
           <div className="lg:col-span-7 relative z-10 space-y-8 p-4">
             <div className="space-y-4">
-              <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter drop-shadow-2xl">
+              <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter">
                 Sopan Patil
               </h1>
-              <p className="max-w-2xl text-white/90 text-sm md:text-base leading-relaxed mt-6 font-medium drop-shadow-lg">
+              <p className="max-w-2xl text-white/90 text-sm md:text-base leading-relaxed mt-6 font-medium">
                 Software Developer | Python, MERN, Scalable, Intelligent Web Apps | Exploring Next.js | AI/ML & Cloud | Building LLMs & GenAI
               </p>
             </div>
@@ -69,7 +69,7 @@ export default function HeroSection() {
               </div>
             </div>
             
-            <Button size="lg" className="rounded-full px-8 bg-primary text-black font-bold hover:scale-105 transition-transform shadow-xl">
+            <Button size="lg" className="rounded-full px-8 bg-white text-black font-bold hover:scale-105 transition-transform">
               INITIALIZE CORE <ArrowUpRight className="ml-2" />
             </Button>
           </div>
@@ -95,7 +95,7 @@ export default function HeroSection() {
                     <span className="text-white/60 group-hover:text-white transition-colors">
                       {spec.label}
                     </span>
-                    <span className="text-white font-mono font-medium drop-shadow-md">
+                    <span className="text-white font-mono font-medium">
                       {spec.value}
                     </span>
                   </div>
@@ -108,17 +108,17 @@ export default function HeroSection() {
         <div className="mt-24 grid grid-cols-1 md:grid-cols-12 gap-8 items-end pb-20 relative">
           <div className="md:col-span-5 relative">
             <GlassSurface
-              borderRadius={24}
+              borderRadius={32}
               brightness={25}
               opacity={0.98}
               blur={60}
               backgroundOpacity={0.4}
               displace={0}
               distortionScale={0}
-              className="p-5"
+              className="p-6"
             >
               <div className="flex gap-6 items-center group cursor-pointer">
-                <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0 ring-1 ring-white/20 shadow-2xl">
+                <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0 ring-1 ring-white/20">
                   <Image
                     src={images["neural-chip"].url}
                     alt={images["neural-chip"].alt}
@@ -127,13 +127,13 @@ export default function HeroSection() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-sm font-bold text-white uppercase tracking-widest drop-shadow-md">
+                  <h4 className="text-sm font-bold text-white uppercase tracking-widest">
                     S-01: Neural Core
                   </h4>
                   <p className="text-[11px] text-white/80 leading-snug">
                     Optimized for real-world AI deployment with a focus on precision and scalability.
                   </p>
-                  <Button variant="ghost" size="sm" className="h-7 px-0 text-[10px] uppercase tracking-widest text-primary hover:text-white hover:bg-transparent">
+                  <Button variant="ghost" size="sm" className="h-7 px-0 text-[10px] uppercase tracking-widest text-white hover:text-white hover:bg-transparent">
                     View Architecture <ArrowUpRight size={12} className="ml-1" />
                   </Button>
                 </div>
@@ -148,7 +148,7 @@ export default function HeroSection() {
             <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] liquid-glass text-white/80 hover:text-white transition-all uppercase tracking-[0.2em]">
               V2.5
             </Badge>
-            <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] border-primary text-primary glow-orange uppercase tracking-[0.2em] liquid-glass">
+            <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] border-white text-white uppercase tracking-[0.2em] liquid-glass">
               NEURAL-SYNC ACTIVE
             </Badge>
           </div>

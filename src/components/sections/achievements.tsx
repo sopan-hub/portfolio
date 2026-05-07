@@ -1,3 +1,4 @@
+
 'use client';
 import { achievements } from '@/lib/data';
 import Image from 'next/image';
@@ -23,12 +24,13 @@ const AchievementsSection = () => {
           {achievements.map((achievement, index) => (
             <GlassSurface
               key={index}
-              borderRadius={40}
-              brightness={35}
-              opacity={0.8}
-              blur={16}
-              displace={0.1}
-              distortionScale={-30}
+              borderRadius={32}
+              brightness={25}
+              opacity={0.98}
+              blur={60}
+              backgroundOpacity={0.4}
+              displace={0}
+              distortionScale={0}
               className="overflow-hidden group"
             >
               <div className="relative aspect-[16/10]">
