@@ -17,7 +17,7 @@ export default function HeroSection() {
           {/* Left Column: Branding & Actions */}
           <div className="lg:col-span-7 space-y-8 md:space-y-10">
             <div className="space-y-4 md:space-y-6">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase whitespace-nowrap">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase whitespace-nowrap">
                 SOPAN PATIL
               </h1>
               <p className="max-w-md text-white/90 text-sm md:text-base font-medium leading-relaxed">

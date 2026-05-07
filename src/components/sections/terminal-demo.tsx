@@ -37,7 +37,7 @@ const TerminalDemo = () => {
 
   return (
     <section id="projects" className="py-24 flex justify-center px-4 bg-transparent">
-      <div className="max-w-3xl w-full">
+      <div className="max-w-2xl w-full">
         {/* Terminal Window - Professional Light Mode */}
         <div className="rounded-xl shadow-[0_30px_60px_-12px_rgba(0,0,0,0.15)] overflow-hidden bg-white border border-slate-200">
           
@@ -55,7 +55,7 @@ const TerminalDemo = () => {
           </div>
 
           {/* Terminal Body */}
-          <div className="p-8 md:p-12 font-mono text-sm md:text-base leading-relaxed">
+          <div className="p-8 md:p-10 font-mono text-sm md:text-base leading-relaxed">
             {/* Project Info Block */}
             <div className="mb-8">
               <p className="text-slate-400 mb-3 text-xs uppercase tracking-widest font-bold"># Project Overview</p>

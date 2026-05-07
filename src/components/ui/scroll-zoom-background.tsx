@@ -17,11 +17,11 @@ export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoom
     restDelta: 0.001
   });
 
-  // Hero image fades out VERY fast as you start scrolling
-  const heroOpacity = useTransform(smoothProgress, [0.02, 0.08], [1, 0]);
+  // Hero image disappears extremely fast to switch to the technical background
+  const heroOpacity = useTransform(smoothProgress, [0.01, 0.04], [1, 0]);
   
-  // Content background image fades in quickly to replace it
-  const contentOpacity = useTransform(smoothProgress, [0.02, 0.08], [0, 1]);
+  // Content background image appears just as fast to replace it
+  const contentOpacity = useTransform(smoothProgress, [0.01, 0.04], [0, 1]);
 
   // Subtle zoom effect for the background to maintain depth
   const scale = useTransform(smoothProgress, [0, 1], [1, 1.05]);
@@ -44,8 +44,6 @@ export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoom
           quality={100}
           unoptimized
         />
-        {/* Dark overlay for better text contrast in content sections */}
-        <div className="absolute inset-0 bg-black/60 pointer-events-none" />
       </motion.div>
 
       {/* Hero Background (Portrait) */}
@@ -64,8 +62,6 @@ export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoom
           quality={100}
           unoptimized
         />
-        {/* Subtle hero-only overlay */}
-        <div className="absolute inset-0 bg-black/20 pointer-events-none" />
       </motion.div>
     </div>
   );
