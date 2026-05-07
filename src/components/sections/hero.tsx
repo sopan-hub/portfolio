@@ -79,7 +79,7 @@ export default function HeroSection() {
               borderRadius={32}
               brightness={10}
               opacity={0.98}
-              blur={80}
+              blur={60}
               backgroundOpacity={0.1}
               className="p-8 shadow-2xl"
             >
@@ -108,7 +108,7 @@ export default function HeroSection() {
               borderRadius={32}
               brightness={10}
               opacity={0.98}
-              blur={80}
+              blur={60}
               backgroundOpacity={0.1}
               className="p-6 shadow-2xl"
             >

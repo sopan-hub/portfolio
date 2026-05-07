@@ -70,7 +70,7 @@ const ContactSection = () => {
             borderRadius={32}
             brightness={10}
             opacity={0.98}
-            blur={80}
+            blur={60}
             backgroundOpacity={0.1}
             className="p-8 shadow-2xl"
           >
@@ -78,7 +78,7 @@ const ContactSection = () => {
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Input
-                    className="bg-black/50 border-white/10 rounded-xl"
+                    className="bg-black/50 border-white/10 rounded-xl text-white placeholder:text-white/40"
                     type="text"
                     name="name"
                     placeholder="Subject Name"
@@ -87,7 +87,7 @@ const ContactSection = () => {
                 </div>
                 <div className="space-y-2">
                   <Input
-                    className="bg-black/50 border-white/10 rounded-xl"
+                    className="bg-black/50 border-white/10 rounded-xl text-white placeholder:text-white/40"
                     type="email"
                     name="email"
                     placeholder="Source Email"
@@ -97,7 +97,7 @@ const ContactSection = () => {
               </div>
               <div className="space-y-2">
                 <Textarea
-                  className="bg-black/50 border-white/10 rounded-xl"
+                  className="bg-black/50 border-white/10 rounded-xl text-white placeholder:text-white/40"
                   name="message"
                   placeholder="Transmission Payload"
                   rows={5}
