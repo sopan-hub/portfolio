@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -16,7 +17,7 @@ export default function HeroSection() {
           {/* Left: Branding & CTAs */}
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[70px] font-black text-white tracking-tighter uppercase whitespace-nowrap drop-shadow-2xl">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[85px] font-black text-white tracking-tighter uppercase whitespace-nowrap drop-shadow-2xl">
                 SOPAN PATIL
               </h1>
               <p className="max-w-xl text-white/90 text-[10px] sm:text-[11px] md:text-xs font-bold leading-relaxed uppercase tracking-[0.15em]">
