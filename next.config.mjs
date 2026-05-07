@@ -6,22 +6,18 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'raw.githubusercontent.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'github.com',
+        pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'picsum.photos',
+        pathname: '/**',
       },
     ],
   },
-  experimental: {
-    allowedDevOrigins: [
-      '6000-firebase-studio-1757078021811.cluster-52r6vzs3ujeoctkkxpjif3x34a.cloudworkstations.dev',
-    ],
-  },
+  allowedDevOrigins: [
+    '6000-firebase-studio-1757078021811.cluster-52r6vzs3ujeoctkkxpjif3x34a.cloudworkstations.dev'
+  ]
 };
 
 export default nextConfig;
