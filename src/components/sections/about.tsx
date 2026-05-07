@@ -11,11 +11,13 @@ const AboutSection = () => {
     <section id="about" className="py-24">
       <div className="container mx-auto px-4">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <div className="relative mx-auto w-full max-w-sm">
+          <div className="relative mx-auto w-full max-sm:max-w-xs">
             <GlassSurface
               borderRadius={32}
               brightness={40}
               opacity={0.8}
+              displace={0.1}
+              distortionScale={-40}
               className="p-6"
             >
               <Image
@@ -23,7 +25,7 @@ const AboutSection = () => {
                 alt="About Sopan Patil"
                 width={400}
                 height={400}
-                className="rounded-2xl"
+                className="rounded-2xl w-full"
               />
             </GlassSurface>
           </div>
@@ -50,6 +52,8 @@ const AboutSection = () => {
               borderRadius={24}
               brightness={35}
               opacity={0.7}
+              displace={0.1}
+              distortionScale={-30}
               className="p-6"
             >
               <ul className="space-y-2 text-sm">

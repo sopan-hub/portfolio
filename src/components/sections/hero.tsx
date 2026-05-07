@@ -15,8 +15,6 @@ export default function HeroSection() {
     { label: 'Core', value: 'Lightweight Scalable Architecture' },
   ];
 
-  const bgImageUrl = "https://github.com/sopan-hub/my-acces/blob/main/Gemini_Generated_Image_yzt7vnyzt7vnyzt7.png?raw=true";
-
   return (
     <section id="home" className="relative min-h-screen bg-black overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
@@ -81,7 +79,8 @@ export default function HeroSection() {
               brightness={30}
               opacity={0.8}
               blur={15}
-              displace={1}
+              displace={0.2}
+              distortionScale={-80}
               className="p-8"
             >
               <h3 className="text-xs font-bold tracking-[0.3em] text-white/60 border-b border-white/10 pb-4 uppercase">
@@ -109,7 +108,8 @@ export default function HeroSection() {
               borderRadius={24}
               brightness={40}
               opacity={0.7}
-              displace={0.8}
+              displace={0.15}
+              distortionScale={-60}
               className="p-5"
             >
               <div className="flex gap-6 items-center group cursor-pointer">

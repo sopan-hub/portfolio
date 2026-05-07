@@ -54,7 +54,8 @@ const ProjectsSection = () => {
               borderRadius={32}
               brightness={30}
               opacity={0.8}
-              displace={0.6}
+              displace={0.1}
+              distortionScale={-30}
               className="p-6 group transition-all duration-500 hover:scale-[1.02]"
             >
               <div className="flex h-full flex-col">

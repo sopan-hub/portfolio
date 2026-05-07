@@ -70,6 +70,8 @@ const ContactSection = () => {
             borderRadius={32}
             brightness={30}
             opacity={0.8}
+            displace={0.1}
+            distortionScale={-20}
             className="p-8 shadow-2xl"
           >
             <form ref={formRef} action={formAction} className="space-y-6">

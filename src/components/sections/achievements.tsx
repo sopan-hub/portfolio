@@ -26,7 +26,8 @@ const AchievementsSection = () => {
               borderRadius={40}
               brightness={35}
               opacity={0.8}
-              displace={0.7}
+              displace={0.1}
+              distortionScale={-40}
               className="overflow-hidden group"
             >
               <div className="relative aspect-[16/10]">
