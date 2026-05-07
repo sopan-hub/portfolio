@@ -50,13 +50,13 @@ export default function HeroSection() {
             <GlassSurface
               width="100%"
               borderRadius={24}
-              className="p-6 shadow-2xl max-w-[320px]"
+              className="p-8 shadow-2xl max-w-2xl"
             >
               <h3 className="text-[10px] font-bold tracking-[0.4em] text-white/40 border-b border-white/5 pb-3 mb-4 uppercase">
                 MISSION BRIEF
               </h3>
               <p className="text-sm md:text-base leading-relaxed text-white/80 font-medium">
-                Architecting Autonomous Intelligence. Engineering Multi-Agent Orchestration and Scalable MERN systems. Merging Next.js 15 with GenAI for low-latency Neural Architectures.
+                Architecting Autonomous Intelligence by merging Next.js 15 with Agentic AI. Expert in Multi-Agent Orchestration, RAG Pipelines, and Custom LLM deployments. I bridge Scalable MERN backends with Serverless Cloud infra to build high-performance, self-evolving GenAI systems focused on low-latency Neural Architectures.
               </p>
             </GlassSurface>
           </div>
