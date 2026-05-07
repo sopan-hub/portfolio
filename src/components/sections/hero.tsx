@@ -28,7 +28,7 @@ export default function HeroSection() {
               </h1>
               <div className="space-y-6">
                 <p className="max-w-2xl text-white/90 text-sm md:text-base leading-relaxed mt-6 font-medium">
-                  Software Developer | Python, MERN, Scalable, Intelligent Web Apps | Exploring Next.js | AI/ML & Cloud | Building LLMs & GenAl.
+                  Full-Stack AI Developer | Python • MERN • Next.js | Autonomous Agentic Workflows | LLM Ops & Cloud Scaling
                 </p>
               </div>
             </div>
@@ -59,7 +59,7 @@ export default function HeroSection() {
             <GlassSurface
               width="100%"
               borderRadius={32}
-              className="p-6 shadow-2xl max-w-sm"
+              className="p-6 shadow-2xl max-w-xs"
             >
               <h3 className="text-[10px] font-bold tracking-[0.4em] text-white/40 border-b border-white/5 pb-4 mb-6 uppercase">
                 CORE CAPABILITIES
