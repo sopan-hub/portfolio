@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 2%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 38 92% 50%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 63%;
-    --accent: 38 92% 15%;
-    --accent-foreground: 0 0% 98%;
+    --background: 270 50% 5%;
+    --foreground: 0 0% 100%;
+    --card: 270 50% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 270 50% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 270 50% 5%;
+    --secondary: 270 30% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 270 30% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 270 50% 20%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 38 92% 50%;
-    --radius: 0.5rem;
+    --border: 270 30% 20%;
+    --input: 270 30% 20%;
+    --ring: 0 0% 100%;
+    --radius: 1.5rem;
   }
 }
 
@@ -34,6 +34,9 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top right, #2e1065, #000000), 
+                radial-gradient(circle at bottom left, #4c1d95, #000000);
+    background-attachment: fixed;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Jost', sans-serif;
@@ -42,13 +45,12 @@
 }
 
 @layer components {
-  .tech-border {
-    @apply border border-white/10 bg-white/5 backdrop-blur-sm;
-  }
-  .glow-orange {
-    text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
-  }
   .liquid-glass {
-    @apply bg-white/5 backdrop-blur-2xl border border-white/10;
+    @apply bg-white/[0.03] backdrop-blur-[20px] border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  
+  .glow-white {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
 }

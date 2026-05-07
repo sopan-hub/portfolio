@@ -1,4 +1,3 @@
-
 'use client';
 import { skills } from '@/lib/data';
 import * as Icons from '@/components/icons';
@@ -41,24 +40,26 @@ const SkillsSection = () => {
           >
             My Skills
           </ScrollFloat>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-white/60">
             Technologies and tools I work with.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {skillCategories.map((category) => (
-            <div key={category} className="rounded-lg bg-card p-6">
-              <h3 className="mb-6 text-xl font-bold text-primary uppercase tracking-wider">
+            <div key={category} className="liquid-glass p-8 rounded-[2.5rem]">
+              <h3 className="mb-8 text-xl font-bold text-white uppercase tracking-widest border-b border-white/10 pb-4">
                 {category}
               </h3>
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+              <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
                 {skills[category].map((skill) => {
                   const Icon = iconMap[skill.name];
                   return (
-                    <div className="flex items-center gap-2 group" key={skill.name}>
-                      {Icon && <Icon className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />}
-                      <span className="text-sm font-medium">{skill.name}</span>
+                    <div className="flex items-center gap-3 group" key={skill.name}>
+                      <div className="p-2 rounded-xl bg-white/5 group-hover:bg-white/10 transition-colors">
+                        {Icon && <Icon className="h-6 w-6 text-white transition-transform group-hover:scale-110" />}
+                      </div>
+                      <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">{skill.name}</span>
                     </div>
                   );
                 })}

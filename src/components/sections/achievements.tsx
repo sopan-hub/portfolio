@@ -1,4 +1,3 @@
-
 'use client';
 import { achievements } from '@/lib/data';
 import Image from 'next/image';
@@ -15,35 +14,37 @@ const AchievementsSection = () => {
           >
             Certificates
           </ScrollFloat>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-white/60">
             A showcase of my certified skills and completed professional simulations.
           </p>
         </div>
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2">
           {achievements.map((achievement, index) => (
-            <div key={index} className="rounded-lg bg-card p-6 transition-all hover:bg-white/5 border border-white/5">
-              <div className="overflow-hidden rounded-lg">
-                <div className="relative aspect-video">
-                  <Image
-                    src={achievement.image}
-                    alt={achievement.title}
-                    fill
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="relative p-6">
-                  <div className="relative h-32 overflow-hidden">
-                    <h4 className="mb-2 text-lg font-semibold text-foreground uppercase tracking-tight leading-tight">
-                      {achievement.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground line-clamp-3">
-                      {achievement.description}
-                    </p>
-                  </div>
-                   <span className="absolute bottom-6 right-6 text-[10px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-widest">
+            <div key={index} className="liquid-glass rounded-[2.5rem] overflow-hidden group">
+              <div className="relative aspect-[16/10]">
+                <Image
+                  src={achievement.image}
+                  alt={achievement.title}
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+              <div className="p-10 relative">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-[10px] font-bold text-white/40 uppercase tracking-[0.3em]">
+                    Verified Achievement
+                  </span>
+                  <span className="text-xs font-bold text-white bg-white/10 px-4 py-1.5 rounded-full uppercase tracking-widest">
                     {achievement.year}
                   </span>
                 </div>
+                <h4 className="mb-4 text-xl font-bold text-white uppercase tracking-tight leading-tight group-hover:text-primary transition-colors">
+                  {achievement.title}
+                </h4>
+                <p className="text-sm text-white/60 leading-relaxed line-clamp-3">
+                  {achievement.description}
+                </p>
               </div>
             </div>
           ))}

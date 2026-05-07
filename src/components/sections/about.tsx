@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -12,13 +11,13 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="relative mx-auto w-full max-w-sm">
-            <div className="rounded-lg bg-card p-6">
+            <div className="liquid-glass p-6 rounded-[2rem]">
               <Image
                 src="https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png"
                 alt="About Sopan Patil"
                 width={400}
                 height={400}
-                className="rounded-lg"
+                className="rounded-2xl"
               />
             </div>
           </div>
@@ -30,37 +29,39 @@ const AboutSection = () => {
               >
                 About Me
               </ScrollFloat>
-              <h3 className="text-xl font-medium text-primary">
+              <h3 className="text-xl font-medium text-white/90">
                 A passionate Developer & AI/ML Enthusiast based in India
               </h3>
             </div>
-            <p className="leading-relaxed text-muted-foreground">
+            <p className="leading-relaxed text-white/70">
               I am a passionate and driven Computer Science student with a deep
               specialization in Artificial Intelligence and Machine Learning. My
               journey into tech is fueled by a relentless curiosity for
               building intelligent systems that can solve tangible, real-world
               problems.
             </p>
-            <ul className="space-y-2 text-sm">
-              <li className="flex gap-2">
-                <strong className="w-20 text-foreground">Name:</strong>
-                <span className="text-muted-foreground">Sopan Patil</span>
-              </li>
-              <li className="flex gap-2">
-                <strong className="w-20 text-foreground">Email:</strong>
-                <a
-                  href="mailto:sopanpatil@example.com"
-                  className="text-primary hover:underline"
-                >
-                  sopanpatil@example.com
-                </a>
-              </li>
-              <li className="flex gap-2">
-                <strong className="w-20 text-foreground">From:</strong>
-                <span className="text-muted-foreground">Maharashtra, India</span>
-              </li>
-            </ul>
-            <Button asChild variant="outline">
+            <div className="liquid-glass p-6 rounded-3xl space-y-3">
+              <ul className="space-y-2 text-sm">
+                <li className="flex gap-2">
+                  <strong className="w-20 text-white">Name:</strong>
+                  <span className="text-white/70">Sopan Patil</span>
+                </li>
+                <li className="flex gap-2">
+                  <strong className="w-20 text-white">Email:</strong>
+                  <a
+                    href="mailto:sopanpatil@example.com"
+                    className="text-white hover:underline transition-all"
+                  >
+                    sopanpatil@example.com
+                  </a>
+                </li>
+                <li className="flex gap-2">
+                  <strong className="w-20 text-white">From:</strong>
+                  <span className="text-white/70">Maharashtra, India</span>
+                </li>
+              </ul>
+            </div>
+            <Button asChild variant="outline" className="rounded-full border-white/20 hover:bg-white/10 text-white">
               <a href="/sopan-patil-resume.pdf" download>
                 <Download className="mr-2" />
                 Download CV
