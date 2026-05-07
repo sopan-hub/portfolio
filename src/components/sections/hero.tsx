@@ -26,8 +26,7 @@ export default function HeroSection() {
           className="object-cover"
           priority
         />
-        {/* Subtle overlay to help with text contrast if needed */}
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/10" />
       </div>
 
       <div className="absolute inset-0 opacity-10 pointer-events-none z-10">
@@ -79,11 +78,12 @@ export default function HeroSection() {
             <GlassSurface
               width={400}
               borderRadius={32}
-              brightness={35}
-              opacity={0.9}
-              blur={24}
-              displace={0.1}
-              distortionScale={-20}
+              brightness={25}
+              opacity={0.98}
+              blur={60}
+              backgroundOpacity={0.4}
+              displace={0}
+              distortionScale={0}
               className="p-8"
             >
               <h3 className="text-xs font-bold tracking-[0.3em] text-white/60 border-b border-white/10 pb-4 uppercase">
@@ -109,11 +109,12 @@ export default function HeroSection() {
           <div className="md:col-span-5 relative">
             <GlassSurface
               borderRadius={24}
-              brightness={35}
-              opacity={0.9}
-              blur={24}
-              displace={0.1}
-              distortionScale={-20}
+              brightness={25}
+              opacity={0.98}
+              blur={60}
+              backgroundOpacity={0.4}
+              displace={0}
+              distortionScale={0}
               className="p-5"
             >
               <div className="flex gap-6 items-center group cursor-pointer">
