@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Image from 'next/image';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'Portfolio | Sopan Patil',
@@ -15,8 +16,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Using the high-quality direct raw link for the background
-  const bgImage = "https://github.com/sopan-hub/my-acces/blob/main/image.png?raw=true";
+  const bgImage = placeholderImages['hero-bg'];
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -36,16 +36,16 @@ export default function RootLayout({
         {/* Fixed Background Image Layer */}
         <div className="fixed inset-0 z-[-1]">
           <Image
-            src={bgImage}
-            alt="Neural Interface Background"
+            src={bgImage.url}
+            alt={bgImage.alt}
             fill
             className="object-cover"
             priority
             quality={100}
-            unoptimized // Bypass optimization if GitHub raw links behave unexpectedly with standard loaders
+            unoptimized
           />
           {/* Extremely subtle overlay to keep image colors vibrant while ensuring text is readable */}
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-black/30" />
         </div>
         
         <div className="relative z-10">

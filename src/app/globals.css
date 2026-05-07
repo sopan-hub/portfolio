@@ -38,7 +38,6 @@
     background: transparent;
   }
   html {
-    /* Base color is black but will be covered by the fixed image */
     background-color: black;
   }
   h1, h2, h3, h4, h5, h6 {
