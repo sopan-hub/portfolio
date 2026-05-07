@@ -28,9 +28,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="relative">
-        {/* Fixed Background Image */}
-        <div className="fixed inset-0 z-[-1] overflow-hidden">
+      <body className="relative bg-black">
+        {/* Fixed Background Image - Only visible in Hero */}
+        <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
           <Image
             src="https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png"
             alt="Global Background"
@@ -40,7 +40,7 @@ export default function RootLayout({
             quality={100}
             unoptimized
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-black/30" />
         </div>
         
         <div className="relative z-0">
