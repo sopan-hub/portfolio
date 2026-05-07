@@ -1,24 +1,22 @@
 
-/** @type {import('next').Config} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'raw.githubusercontent.com',
-        pathname: '/**',
+        hostname: 'picsum.photos',
       },
       {
         protocol: 'https',
-        hostname: 'picsum.photos',
-        pathname: '/**',
-      }
+        hostname: 'raw.githubusercontent.com',
+      },
     ],
   },
   experimental: {
-    serverActions: {
-      bodySizeLimit: '2mb',
-    },
+    allowedDevOrigins: [
+      '6000-firebase-studio-1757078021811.cluster-52r6vzs3ujeoctkkxpjif3x34a.cloudworkstations.dev',
+    ],
   },
 };
 
