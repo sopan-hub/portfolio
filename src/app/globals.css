@@ -46,8 +46,8 @@
 
 @layer components {
   .liquid-glass {
-    @apply bg-white/[0.15] backdrop-blur-[40px] border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    @apply bg-white/[0.1] backdrop-blur-[60px] border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
   }
   
   .glow-white {

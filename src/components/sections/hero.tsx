@@ -24,8 +24,10 @@ export default function HeroSection() {
           fill
           className="object-cover"
           priority
+          quality={100}
+          unoptimized
         />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/10" />
       </div>
 
       <div className="container mx-auto px-4 relative z-20">
@@ -103,6 +105,7 @@ export default function HeroSection() {
                     alt={images["neural-chip"].alt}
                     fill
                     className="object-cover"
+                    unoptimized
                   />
                 </div>
                 <div className="space-y-2">
