@@ -46,7 +46,7 @@ export default function HeroSection() {
             </Button>
           </div>
 
-          <div className="lg:col-span-5 flex flex-col lg:items-end relative z-10 lg:translate-x-12">
+          <div className="lg:col-span-5 flex flex-col lg:items-end relative z-10 lg:translate-x-12 lg:pt-5">
             <GlassSurface
               width="100%"
               borderRadius={24}
