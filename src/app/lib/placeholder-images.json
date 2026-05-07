@@ -1,0 +1,17 @@
+
+{
+  "hero-tech": {
+    "url": "https://picsum.photos/seed/tech-core/1200/800",
+    "width": 1200,
+    "height": 800,
+    "alt": "Futuristic neural core visualization",
+    "dataAiHint": "futuristic hardware"
+  },
+  "neural-chip": {
+    "url": "https://picsum.photos/seed/neural/400/400",
+    "width": 400,
+    "height": 400,
+    "alt": "Neural core component",
+    "dataAiHint": "microchip technology"
+  }
+}
