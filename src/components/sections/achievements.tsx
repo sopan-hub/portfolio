@@ -1,40 +1,46 @@
+
 'use client';
 import { achievements } from '@/lib/data';
 import Image from 'next/image';
+import ScrollFloat from '@/components/ui/scroll-float';
 
 const AchievementsSection = () => {
   return (
     <section id="achievements" className="py-24">
       <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <div className="mb-12 text-center flex flex-col items-center">
+          <ScrollFloat
+            containerClassName="text-3xl font-bold tracking-tight sm:text-4xl mb-4"
+            textClassName="text-white uppercase"
+          >
             Certificates
-          </h2>
+          </ScrollFloat>
           <p className="mt-4 text-muted-foreground">
-            A showcase of my certified skills and completed courses.
+            A showcase of my certified skills and completed professional simulations.
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
           {achievements.map((achievement, index) => (
-            <div key={index} className="rounded-lg bg-card p-6">
+            <div key={index} className="rounded-lg bg-card p-6 transition-all hover:bg-white/5 border border-white/5">
               <div className="overflow-hidden rounded-lg">
-                <Image
-                  src={achievement.image}
-                  alt={achievement.title}
-                  width={500}
-                  height={350}
-                  className="w-full object-cover"
-                />
+                <div className="relative aspect-video">
+                  <Image
+                    src={achievement.image}
+                    alt={achievement.title}
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
                 <div className="relative p-6">
                   <div className="relative h-32 overflow-hidden">
-                    <h4 className="mb-2 text-lg font-semibold text-foreground">
+                    <h4 className="mb-2 text-lg font-semibold text-foreground uppercase tracking-tight leading-tight">
                       {achievement.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground line-clamp-3">
                       {achievement.description}
                     </p>
                   </div>
-                   <span className="absolute bottom-6 right-6 text-xs font-semibold text-primary">
+                   <span className="absolute bottom-6 right-6 text-[10px] font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-widest">
                     {achievement.year}
                   </span>
                 </div>

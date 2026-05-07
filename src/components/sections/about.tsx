@@ -1,8 +1,10 @@
+
 'use client';
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
+import ScrollFloat from '@/components/ui/scroll-float';
 
 const AboutSection = () => {
   return (
@@ -22,9 +24,12 @@ const AboutSection = () => {
           </div>
           <div className="space-y-6">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              <ScrollFloat
+                containerClassName="text-3xl font-bold tracking-tight sm:text-4xl"
+                textClassName="text-white uppercase"
+              >
                 About Me
-              </h2>
+              </ScrollFloat>
               <h3 className="text-xl font-medium text-primary">
                 A passionate Developer & AI/ML Enthusiast based in India
               </h3>

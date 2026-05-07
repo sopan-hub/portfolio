@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useActionState } from 'react';
@@ -9,16 +10,17 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Send } from 'lucide-react';
+import ScrollFloat from '@/components/ui/scroll-float';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" variant="outline" disabled={pending}>
+    <Button type="submit" variant="default" disabled={pending} className="w-full rounded-full font-bold uppercase tracking-widest py-6">
       {pending ? (
-        'Sending...'
+        'Sending Core Message...'
       ) : (
         <>
-          <Send className="mr-2" /> Send Message
+          <Send className="mr-2 h-4 w-4" /> Initialize Connection
         </>
       )}
     </Button>
@@ -35,14 +37,14 @@ const ContactSection = () => {
     if (state.message) {
       if (state.success) {
         toast({
-          title: 'Message Sent!',
+          title: 'Connection Established!',
           description: state.message,
         });
         formRef.current?.reset();
       } else {
         toast({
           variant: 'destructive',
-          title: 'Oops!',
+          title: 'Neural Sync Failed',
           description: state.message,
         });
       }
@@ -52,44 +54,50 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-24">
       <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <div className="mb-12 text-center flex flex-col items-center">
+          <ScrollFloat
+            containerClassName="text-3xl font-bold tracking-tight sm:text-4xl mb-4"
+            textClassName="text-white uppercase"
+          >
             Get in Touch
-          </h2>
+          </ScrollFloat>
           <p className="mt-4 text-muted-foreground">
-            Have a question or want to work together? Drop me a line.
+            Ready to collaborate on the next intelligence frontier? Send a transmission.
           </p>
         </div>
         <div className="mx-auto max-w-xl">
-          <div className="rounded-lg bg-card p-6">
+          <div className="rounded-3xl bg-card p-8 liquid-glass border border-white/10 shadow-2xl">
             <form ref={formRef} action={formAction} className="space-y-6">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Input
+                    className="bg-black/50 border-white/10 rounded-xl"
                     type="text"
                     name="name"
-                    placeholder="Your Name"
+                    placeholder="Subject Name"
                     required
                   />
                 </div>
                 <div className="space-y-2">
                   <Input
+                    className="bg-black/50 border-white/10 rounded-xl"
                     type="email"
                     name="email"
-                    placeholder="Your Email"
+                    placeholder="Source Email"
                     required
                   />
                 </div>
               </div>
               <div className="space-y-2">
                 <Textarea
+                  className="bg-black/50 border-white/10 rounded-xl"
                   name="message"
-                  placeholder="Your Message"
+                  placeholder="Transmission Payload"
                   rows={5}
                   required
                 />
               </div>
-              <div className="text-center">
+              <div className="pt-4">
                 <SubmitButton />
               </div>
             </form>
