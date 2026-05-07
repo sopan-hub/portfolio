@@ -51,10 +51,6 @@ const SkillsSection = () => {
             <GlassSurface
               key={category}
               borderRadius={32}
-              brightness={10}
-              opacity={0.98}
-              blur={60}
-              backgroundOpacity={0.1}
               className="p-8 shadow-2xl"
             >
               <h3 className="mb-8 text-xl font-bold text-white uppercase tracking-widest border-b border-white/10 pb-4">

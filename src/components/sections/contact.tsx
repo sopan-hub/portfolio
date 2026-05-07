@@ -68,10 +68,6 @@ const ContactSection = () => {
         <div className="mx-auto max-w-xl">
           <GlassSurface
             borderRadius={32}
-            brightness={10}
-            opacity={0.98}
-            blur={60}
-            backgroundOpacity={0.1}
             className="p-8 shadow-2xl"
           >
             <form ref={formRef} action={formAction} className="space-y-6">

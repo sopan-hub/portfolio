@@ -25,15 +25,7 @@ export default function HeroSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/30" />
-      </div>
-
-      <div className="absolute inset-0 opacity-10 pointer-events-none z-10">
-        <div className="grid grid-cols-[repeat(20,minmax(0,1fr))] h-full w-full">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div key={i} className="border-r border-white/5" />
-          ))}
-        </div>
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       <div className="container mx-auto px-4 relative z-20">
@@ -77,10 +69,6 @@ export default function HeroSection() {
             <GlassSurface
               width={400}
               borderRadius={32}
-              brightness={10}
-              opacity={0.98}
-              blur={60}
-              backgroundOpacity={0.1}
               className="p-8 shadow-2xl"
             >
               <h3 className="text-xs font-bold tracking-[0.3em] text-white/60 border-b border-white/10 pb-4 uppercase">
@@ -106,10 +94,6 @@ export default function HeroSection() {
           <div className="md:col-span-5 relative">
             <GlassSurface
               borderRadius={32}
-              brightness={10}
-              opacity={0.98}
-              blur={60}
-              backgroundOpacity={0.1}
               className="p-6 shadow-2xl"
             >
               <div className="flex gap-6 items-center group cursor-pointer">
