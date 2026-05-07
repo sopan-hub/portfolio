@@ -16,7 +16,7 @@ export default function HeroSection() {
           {/* Left: Branding & CTAs */}
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-black text-white tracking-tighter uppercase whitespace-nowrap drop-shadow-2xl">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[70px] font-black text-white tracking-tighter uppercase whitespace-nowrap drop-shadow-2xl">
                 SOPAN PATIL
               </h1>
               <p className="max-w-xl text-white/90 text-[10px] sm:text-[11px] md:text-xs font-bold leading-relaxed uppercase tracking-[0.15em]">
@@ -32,7 +32,9 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-all border border-white/10 backdrop-blur-md"
               >
-                <Github size={18} />
+                <div className="relative">
+                  <Github size={18} />
+                </div>
               </a>
               <a
                 href="https://www.linkedin.com/in/sopan-patil-24b2a1380"
@@ -40,7 +42,9 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-all border border-white/10 backdrop-blur-md"
               >
-                <Linkedin size={18} />
+                <div className="relative">
+                  <Linkedin size={18} />
+                </div>
               </a>
             </div>
 
