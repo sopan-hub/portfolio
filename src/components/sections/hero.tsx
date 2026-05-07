@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -26,7 +25,7 @@ export default function HeroSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       <div className="absolute inset-0 opacity-10 pointer-events-none z-10">
@@ -49,7 +48,7 @@ export default function HeroSection() {
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
           <div className="lg:col-span-7 relative z-10 space-y-8 p-4">
             <div className="space-y-4">
-              <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter">
+              <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter uppercase">
                 Sopan Patil
               </h1>
               <p className="max-w-2xl text-white/90 text-sm md:text-base leading-relaxed mt-6 font-medium">
@@ -78,13 +77,11 @@ export default function HeroSection() {
             <GlassSurface
               width={400}
               borderRadius={32}
-              brightness={25}
+              brightness={10}
               opacity={0.98}
-              blur={60}
+              blur={80}
               backgroundOpacity={0.4}
-              displace={0}
-              distortionScale={0}
-              className="p-8"
+              className="p-8 shadow-2xl"
             >
               <h3 className="text-xs font-bold tracking-[0.3em] text-white/60 border-b border-white/10 pb-4 uppercase">
                 SYSTEM PARAMETERS
@@ -109,13 +106,11 @@ export default function HeroSection() {
           <div className="md:col-span-5 relative">
             <GlassSurface
               borderRadius={32}
-              brightness={25}
+              brightness={10}
               opacity={0.98}
-              blur={60}
+              blur={80}
               backgroundOpacity={0.4}
-              displace={0}
-              distortionScale={0}
-              className="p-6"
+              className="p-6 shadow-2xl"
             >
               <div className="flex gap-6 items-center group cursor-pointer">
                 <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0 ring-1 ring-white/20">

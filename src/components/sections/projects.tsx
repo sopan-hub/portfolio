@@ -1,4 +1,3 @@
-
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
@@ -53,13 +52,11 @@ const ProjectsSection = () => {
             <GlassSurface
               key={project.title}
               borderRadius={32}
-              brightness={25}
+              brightness={15}
               opacity={0.98}
               blur={60}
               backgroundOpacity={0.4}
-              displace={0}
-              distortionScale={0}
-              className="p-6 group transition-all duration-500 hover:scale-[1.02]"
+              className="p-6 group transition-all duration-500 hover:scale-[1.02] shadow-xl"
             >
               <div className="flex h-full flex-col">
                 <div className="relative overflow-hidden rounded-2xl mb-6 aspect-video">

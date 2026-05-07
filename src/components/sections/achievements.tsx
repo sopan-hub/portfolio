@@ -1,4 +1,3 @@
-
 'use client';
 import { achievements } from '@/lib/data';
 import Image from 'next/image';
@@ -25,13 +24,11 @@ const AchievementsSection = () => {
             <GlassSurface
               key={index}
               borderRadius={32}
-              brightness={25}
+              brightness={15}
               opacity={0.98}
               blur={60}
               backgroundOpacity={0.4}
-              displace={0}
-              distortionScale={0}
-              className="overflow-hidden group"
+              className="overflow-hidden group shadow-xl"
             >
               <div className="relative aspect-[16/10]">
                 <Image
@@ -40,7 +37,7 @@ const AchievementsSection = () => {
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               <div className="p-10 relative">
                 <div className="flex justify-between items-center mb-4">

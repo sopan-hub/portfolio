@@ -1,4 +1,3 @@
-
 'use client';
 import { skills } from '@/lib/data';
 import * as Icons from '@/components/icons';
@@ -52,13 +51,11 @@ const SkillsSection = () => {
             <GlassSurface
               key={category}
               borderRadius={32}
-              brightness={25}
+              brightness={15}
               opacity={0.98}
               blur={60}
               backgroundOpacity={0.4}
-              displace={0}
-              distortionScale={0}
-              className="p-8"
+              className="p-8 shadow-xl"
             >
               <h3 className="mb-8 text-xl font-bold text-white uppercase tracking-widest border-b border-white/10 pb-4">
                 {category}

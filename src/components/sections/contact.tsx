@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useActionState } from 'react';
@@ -69,12 +68,10 @@ const ContactSection = () => {
         <div className="mx-auto max-w-xl">
           <GlassSurface
             borderRadius={32}
-            brightness={25}
+            brightness={15}
             opacity={0.98}
-            blur={60}
+            blur={80}
             backgroundOpacity={0.4}
-            displace={0}
-            distortionScale={0}
             className="p-8 shadow-2xl"
           >
             <form ref={formRef} action={formAction} className="space-y-6">

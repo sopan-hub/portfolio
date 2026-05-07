@@ -32,13 +32,13 @@ const GlassSurface = ({
   height = 'auto',
   borderRadius = 32,
   borderWidth = 0.05,
-  brightness = 35,
-  opacity = 0.95,
-  blur = 40,
+  brightness = 15,
+  opacity = 0.98,
+  blur = 60,
   displace = 0.05,
-  backgroundOpacity = 0.2,
-  saturation = 1.1,
-  distortionScale = -10,
+  backgroundOpacity = 0.3,
+  saturation = 1.2,
+  distortionScale = -15,
   redOffset = 0,
   greenOffset = 5,
   blueOffset = 10,
@@ -144,10 +144,6 @@ const GlassSurface = ({
       resizeObserver.disconnect();
     };
   }, []);
-
-  useEffect(() => {
-    setTimeout(updateDisplacementMap, 0);
-  }, [width, height]);
 
   useEffect(() => {
     setSvgSupported(supportsSVGFilters());
