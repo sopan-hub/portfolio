@@ -40,13 +40,9 @@ const Header = () => {
   return (
     <div className="fixed top-6 left-0 z-50 w-full px-4 flex justify-center pointer-events-none">
       <header
-        className={`pointer-events-auto transition-all duration-500 rounded-full px-6 py-3 flex items-center gap-8 ${
-          isSticky 
-            ? 'liquid-glass border border-white/10 shadow-2xl scale-100' 
-            : 'bg-transparent scale-105'
-        }`}
+        className="pointer-events-auto transition-all duration-500 rounded-full px-8 py-3 flex items-center gap-8 liquid-glass border border-white/10 shadow-2xl scale-100"
       >
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
