@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -15,10 +16,10 @@ const AboutSection = () => {
             <GlassSurface
               borderRadius={32}
               brightness={40}
-              opacity={0.8}
-              blur={16}
+              opacity={0.9}
+              blur={24}
               displace={0.1}
-              distortionScale={-30}
+              distortionScale={-20}
               className="p-6"
             >
               <Image
@@ -52,10 +53,10 @@ const AboutSection = () => {
             <GlassSurface
               borderRadius={24}
               brightness={35}
-              opacity={0.7}
-              blur={16}
+              opacity={0.9}
+              blur={24}
               displace={0.1}
-              distortionScale={-30}
+              distortionScale={-20}
               className="p-6"
             >
               <ul className="space-y-2 text-sm">

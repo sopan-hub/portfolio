@@ -1,3 +1,4 @@
+
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
@@ -53,10 +54,10 @@ const ProjectsSection = () => {
               key={project.title}
               borderRadius={32}
               brightness={30}
-              opacity={0.8}
-              blur={16}
+              opacity={0.9}
+              blur={24}
               displace={0.1}
-              distortionScale={-30}
+              distortionScale={-20}
               className="p-6 group transition-all duration-500 hover:scale-[1.02]"
             >
               <div className="flex h-full flex-col">

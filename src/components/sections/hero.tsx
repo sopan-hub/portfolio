@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -19,12 +20,14 @@ export default function HeroSection() {
     <section id="home" className="relative min-h-screen bg-black overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://raw.githubusercontent.com/sopan-hub/my-acces/main/Gemini_Generated_Image_yzt7vnyzt7vnyzt7.png"
-          alt="Neural Background"
+          src={images["hero-bg"].url}
+          alt={images["hero-bg"].alt}
           fill
           className="object-cover"
           priority
         />
+        {/* Subtle overlay to help with text contrast if needed */}
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       <div className="absolute inset-0 opacity-10 pointer-events-none z-10">
@@ -37,10 +40,10 @@ export default function HeroSection() {
 
       <div className="container mx-auto px-4 relative z-20">
         <div className="flex justify-between items-start pt-12 text-[10px] uppercase tracking-[0.2em] text-white/70">
-          <span>SOPAN-PATIL // v2.0</span>
+          <span>SOPAN-PATIL // v2.5</span>
           <div className="flex gap-4">
             <span>10/25</span>
-            <span className="text-white font-bold">Neural Portfolio</span>
+            <span className="text-white font-bold">Neural Interface</span>
           </div>
         </div>
 
@@ -77,10 +80,10 @@ export default function HeroSection() {
               width={400}
               borderRadius={32}
               brightness={35}
-              opacity={0.8}
-              blur={16}
+              opacity={0.9}
+              blur={24}
               displace={0.1}
-              distortionScale={-30}
+              distortionScale={-20}
               className="p-8"
             >
               <h3 className="text-xs font-bold tracking-[0.3em] text-white/60 border-b border-white/10 pb-4 uppercase">
@@ -107,10 +110,10 @@ export default function HeroSection() {
             <GlassSurface
               borderRadius={24}
               brightness={35}
-              opacity={0.8}
-              blur={16}
+              opacity={0.9}
+              blur={24}
               displace={0.1}
-              distortionScale={-30}
+              distortionScale={-20}
               className="p-5"
             >
               <div className="flex gap-6 items-center group cursor-pointer">
