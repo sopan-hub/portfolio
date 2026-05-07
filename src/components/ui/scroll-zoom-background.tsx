@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Image from 'next/image';
 
 interface ScrollZoomBackgroundProps {
@@ -11,15 +11,29 @@ interface ScrollZoomBackgroundProps {
 export default function ScrollZoomBackground({ src, alt }: ScrollZoomBackgroundProps) {
   const { scrollYProgress } = useScroll();
   
-  // Map scroll progress (0 to 1) to scale (1 to 1.5)
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
-  // Optional: slightly dim the image as you zoom in to focus on content
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 0.4, 0.3]);
+  // Create a smoother spring for the zoom to make it feel more organic
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  // Fast zoom:
+  // [0, 0.1]: Hero section - stay at scale 1 (static)
+  // [0.1, 0.4]: Zoom rapidly from 1 to 4 (Fast transition below hero)
+  // [0.4, 1.0]: Maintain high zoom for the rest of the content
+  const scale = useTransform(smoothProgress, [0, 0.1, 0.4, 1], [1, 1, 4, 4.5]);
+  
+  // Subtle opacity shift to enhance readability as we zoom into the high-detail core
+  const overlayOpacity = useTransform(smoothProgress, [0, 0.15, 0.5], [0.3, 0.4, 0.5]);
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-black">
       <motion.div
-        style={{ scale }}
+        style={{ 
+          scale,
+          transformOrigin: '50% 42%' // Targeting the goggle/eyes area which is slightly above center
+        }}
         className="relative h-full w-full"
       >
         <Image
@@ -31,9 +45,9 @@ export default function ScrollZoomBackground({ src, alt }: ScrollZoomBackgroundP
           quality={100}
           unoptimized
         />
-        {/* Subtle overlay to maintain text readability */}
+        {/* Dynamic overlay that darkens slightly as you zoom in to keep text legible */}
         <motion.div 
-          style={{ opacity }}
+          style={{ opacity: overlayOpacity }}
           className="absolute inset-0 bg-black pointer-events-none" 
         />
       </motion.div>

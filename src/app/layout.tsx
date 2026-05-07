@@ -14,6 +14,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Using the high-quality direct raw URL for the neural interface image
   const bgImageUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png";
 
   return (
@@ -31,7 +32,7 @@ export default function RootLayout({
         />
       </head>
       <body className="relative min-h-screen bg-black overflow-x-hidden">
-        {/* Interactive Scroll-Zoom Background */}
+        {/* High-speed immersive scroll-zoom effect */}
         <ScrollZoomBackground 
           src={bgImageUrl} 
           alt="Neural Interface Background" 
