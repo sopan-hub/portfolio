@@ -32,7 +32,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="relative min-h-screen bg-black overflow-x-hidden">
+      <body className="relative min-h-screen overflow-x-hidden">
         {/* Fixed Background Image Layer */}
         <div className="fixed inset-0 z-[-1]">
           <Image
@@ -44,8 +44,6 @@ export default function RootLayout({
             quality={100}
             unoptimized
           />
-          {/* Extremely subtle overlay to keep image colors vibrant while ensuring text is readable */}
-          <div className="absolute inset-0 bg-black/30" />
         </div>
         
         <div className="relative z-10">
