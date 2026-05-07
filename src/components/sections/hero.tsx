@@ -18,7 +18,7 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen bg-black overflow-hidden pt-20">
-      {/* Background Image Layer - Pure and Clear */}
+      {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <Image
           src={bgImageUrl}
@@ -50,12 +50,8 @@ export default function HeroSection() {
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
           
-          {/* Organic Liquid Glass Blurs behind text */}
-          <div className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-white/5 rounded-full backdrop-blur-[120px] pointer-events-none z-0 border border-white/5" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-white/5 rounded-full backdrop-blur-[100px] pointer-events-none z-0 border border-white/5" />
-
-          {/* Left Column: Main Title */}
-          <div className="lg:col-span-7 relative z-10 space-y-8 p-8 rounded-3xl backdrop-blur-md bg-white/5 border border-white/10">
+          {/* Left Column: Main Title (Removed container blur/border) */}
+          <div className="lg:col-span-7 relative z-10 space-y-8 p-4">
             <div className="space-y-4">
               <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter drop-shadow-2xl">
                 SOPAN-PATIL // <br />
