@@ -11,10 +11,10 @@ import Image from 'next/image';
 export default function HeroSection() {
   return (
     <section id="home" className="relative flex min-h-screen items-center pt-20 pb-12 overflow-hidden">
-      <div className="container mx-auto px-4 h-full flex flex-col justify-between relative z-10">
+      <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
         
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mt-12 md:mt-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Column: Branding & Actions */}
           <div className="lg:col-span-7 space-y-6 md:space-y-8">
@@ -64,35 +64,6 @@ export default function HeroSection() {
               </p>
             </GlassSurface>
           </div>
-        </div>
-
-        {/* Bottom Section: Latest Build Card */}
-        <div className="mt-12 lg:mt-auto">
-          <GlassSurface
-            borderRadius={28}
-            className="p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-5 md:gap-6 shadow-2xl bg-white/[0.05] max-w-md md:max-w-lg border-white/5"
-          >
-            <div className="relative h-16 w-16 md:h-20 md:w-20 flex-shrink-0 overflow-hidden rounded-xl md:rounded-2xl border border-white/10">
-              <Image 
-                src="https://picsum.photos/seed/nexus/200/200" 
-                alt="Nexus R1" 
-                fill 
-                className="object-cover"
-                unoptimized
-              />
-            </div>
-            <div className="space-y-1 flex-1">
-              <h4 className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] text-white/30 uppercase">
-                LATEST BUILD: NEXUS-R1
-              </h4>
-              <p className="text-[10px] md:text-xs text-white/60 max-w-xs leading-relaxed mb-2 md:mb-3">
-                An advanced multi-agent framework utilizing Genkit and Gemini for autonomous decision making.
-              </p>
-              <a href="#projects" className="inline-flex items-center text-[9px] md:text-[10px] font-bold text-white uppercase hover:translate-x-1 transition-transform tracking-widest">
-                VIEW PROJECT <ArrowUpRight className="ml-1 h-3 w-3" />
-              </a>
-            </div>
-          </GlassSurface>
         </div>
       </div>
     </section>
