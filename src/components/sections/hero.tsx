@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Cpu, Zap, Scan, Boxes, ArrowUpRight, BadgeCheck } from 'lucide-react';
+import { Cpu, Zap, Scan, Boxes, ArrowUpRight } from 'lucide-react';
 import images from '@/app/lib/placeholder-images.json';
 import GlassSurface from '@/components/ui/glass-surface';
 
@@ -47,8 +47,8 @@ export default function HeroSection() {
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
           <div className="lg:col-span-7 relative z-10 space-y-8 p-4">
             <div className="space-y-4">
-              <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter drop-shadow-2xl flex items-center gap-4">
-                Sopan Patil <BadgeCheck className="text-primary w-12 h-12 md:w-16 md:h-16 shrink-0" />
+              <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter drop-shadow-2xl">
+                Sopan Patil
               </h1>
               <p className="max-w-2xl text-white/90 text-sm md:text-base leading-relaxed mt-6 font-medium drop-shadow-lg">
                 Software Developer | Python, MERN, Scalable, Intelligent Web Apps | Exploring Next.js | AI/ML & Cloud | Building LLMs & GenAI
@@ -79,8 +79,8 @@ export default function HeroSection() {
               brightness={30}
               opacity={0.8}
               blur={15}
-              displace={0.2}
-              distortionScale={-80}
+              displace={0.1}
+              distortionScale={-40}
               className="p-8"
             >
               <h3 className="text-xs font-bold tracking-[0.3em] text-white/60 border-b border-white/10 pb-4 uppercase">
@@ -108,8 +108,8 @@ export default function HeroSection() {
               borderRadius={24}
               brightness={40}
               opacity={0.7}
-              displace={0.15}
-              distortionScale={-60}
+              displace={0.05}
+              distortionScale={-20}
               className="p-5"
             >
               <div className="flex gap-6 items-center group cursor-pointer">
