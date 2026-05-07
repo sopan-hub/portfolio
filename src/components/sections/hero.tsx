@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight, Cpu, Sparkles, Code2, Cloud, BrainCircuit, Activity } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
 import images from '@/app/lib/placeholder-images.json';
 import GlassSurface from '@/components/ui/glass-surface';
@@ -50,17 +50,13 @@ export default function HeroSection() {
             <GlassSurface
               width="100%"
               borderRadius={24}
-              className="p-5 shadow-2xl max-w-[280px]"
+              className="p-6 shadow-2xl max-w-[320px]"
             >
-              <h3 className="text-[9px] font-bold tracking-[0.4em] text-white/40 border-b border-white/5 pb-3 mb-4 uppercase">
+              <h3 className="text-[10px] font-bold tracking-[0.4em] text-white/40 border-b border-white/5 pb-3 mb-4 uppercase">
                 MISSION BRIEF
               </h3>
-              <p className="text-[11px] leading-relaxed text-white/80 font-medium">
-                Architecting the future of Autonomous Intelligence by merging Next.js 15 with Agentic AI frameworks. 
-                Expert in engineering Multi-Agent Orchestration, RAG Pipelines, and Custom LLM deployments. 
-                From designing Scalable MERN backends to deploying Serverless Cloud infra via Firebase, 
-                I bridge the gap between high-performance web systems and self-evolving GenAI logic. 
-                Focused on precision, real-world scalability, and low-latency Neural Architectures.
+              <p className="text-sm md:text-base leading-relaxed text-white/80 font-medium">
+                Architecting Autonomous Intelligence. Engineering Multi-Agent Orchestration and Scalable MERN systems. Merging Next.js 15 with GenAI for low-latency Neural Architectures.
               </p>
             </GlassSurface>
           </div>
