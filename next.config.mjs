@@ -1,4 +1,3 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -13,11 +12,13 @@ const nextConfig = {
         hostname: 'picsum.photos',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/**',
+      }
     ],
   },
-  allowedDevOrigins: [
-    '6000-firebase-studio-1757078021811.cluster-52r6vzs3ujeoctkkxpjif3x34a.cloudworkstations.dev'
-  ]
 };
 
 export default nextConfig;

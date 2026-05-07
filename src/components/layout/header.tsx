@@ -1,10 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { navLinks } from '@/lib/data';
 import { Menu, X } from 'lucide-react';
-import { Button } from '../ui/button';
 
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
@@ -40,27 +38,23 @@ const Header = () => {
   const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
   return (
-    <header
-      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
-        isSticky
-          ? 'liquid-glass border-b border-white/10'
-          : 'border-b border-transparent'
-      }`}
-    >
-      <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold">Sopan.</span>
-        </Link>
-
+    <div className="fixed top-6 left-0 z-50 w-full px-4 flex justify-center pointer-events-none">
+      <header
+        className={`pointer-events-auto transition-all duration-500 rounded-full px-6 py-3 flex items-center gap-8 ${
+          isSticky 
+            ? 'liquid-glass border border-white/10 shadow-2xl scale-100' 
+            : 'bg-transparent scale-105'
+        }`}
+      >
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
+              className={`text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:text-primary ${
                 activeLink === link.href
                   ? 'text-primary'
-                  : 'text-muted-foreground'
+                  : 'text-white/70'
               }`}
             >
               {link.label}
@@ -68,40 +62,41 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" asChild className="hidden md:flex liquid-glass hover:bg-white/10">
-            <a href="#contact">Hire Me</a>
-          </Button>
-          <button
-            className="p-2 md:hidden"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-      </div>
+        <button
+          className="p-1 md:hidden text-white"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </header>
 
+      {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full liquid-glass border-b border-white/10 p-4 md:hidden">
-          <nav className="flex flex-col gap-4">
+        <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-md md:hidden flex items-center justify-center p-6">
+          <div className="liquid-glass border border-white/10 rounded-3xl w-full max-w-xs p-8 flex flex-col gap-6 items-center">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground"
+                className={`text-sm font-bold uppercase tracking-widest transition-colors ${
+                  activeLink === link.href ? 'text-primary' : 'text-white'
+                }`}
                 onClick={toggleMenu}
               >
                 {link.label}
               </a>
             ))}
-            <Button variant="outline" asChild className="liquid-glass">
-              <a href="#contact" onClick={toggleMenu}>Hire Me</a>
-            </Button>
-          </nav>
+            <button 
+              onClick={toggleMenu}
+              className="mt-4 p-2 rounded-full bg-white/10 text-white"
+            >
+              <X size={24} />
+            </button>
+          </div>
         </div>
       )}
-    </header>
+    </div>
   );
 };
 
