@@ -23,13 +23,13 @@ export default function HeroSection() {
           src={images["hero-bg"].url}
           alt={images["hero-bg"].alt}
           fill
-          className="object-cover opacity-40 mix-blend-luminosity"
+          className="object-cover opacity-50 mix-blend-luminosity"
           priority
           data-ai-hint={images["hero-bg"].dataAiHint}
         />
         {/* Gradient overlays to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
       </div>
 
       {/* Technical Background patterns */}
@@ -46,8 +46,8 @@ export default function HeroSection() {
         <div className="flex justify-between items-start pt-12 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
           <span>SOPAN-PATIL // v2.0</span>
           <div className="flex gap-4">
-            <span>01/24</span>
-            <span className="text-white">Next Project</span>
+            <span>10/25</span>
+            <span className="text-white">Neural Portfolio</span>
           </div>
         </div>
 
@@ -60,7 +60,7 @@ export default function HeroSection() {
                 <span className="text-primary glow-orange">Neural Interface</span>
               </h1>
               <p className="max-w-md text-muted-foreground text-sm leading-relaxed mt-6 bg-black/40 backdrop-blur-sm p-4 rounded-lg border border-white/10">
-                Engineered with high-res logic and a zero-gravity framework for those who don't just watch the future—they build it. Shift your digital reality.
+                Architecting intelligent solutions with high-res logic and a zero-gravity framework. Bridging the gap between human intuition and machine intelligence.
               </p>
             </div>
 
@@ -117,10 +117,10 @@ export default function HeroSection() {
                   S-01: Neural Core
                 </h4>
                 <p className="text-[10px] text-muted-foreground leading-snug">
-                  High-resolution optimization and a light frame for comfort and clarity in AI deployments.
+                  Optimized for real-world AI deployment with a focus on precision and scalability.
                 </p>
                 <Button variant="ghost" size="sm" className="h-7 px-2 text-[10px] uppercase tracking-widest text-primary hover:text-white hover:bg-primary/20">
-                  View Source <ArrowUpRight size={12} className="ml-1" />
+                  Explore Tech <ArrowUpRight size={12} className="ml-1" />
                 </Button>
               </div>
             </div>
@@ -128,16 +128,16 @@ export default function HeroSection() {
 
           <div className="md:col-span-7 flex justify-end gap-2">
              <Badge variant="outline" className="rounded-full px-4 py-1 text-[10px] border-white/10 text-muted-foreground hover:border-primary hover:text-white transition-all uppercase tracking-widest bg-black/40">
-              8K RAW
+              8K PRECISION
             </Badge>
             <Badge variant="outline" className="rounded-full px-4 py-1 text-[10px] border-white/10 text-muted-foreground hover:border-primary hover:text-white transition-all uppercase tracking-widest bg-black/40">
-              A+
+              V2.5
             </Badge>
             <Badge variant="outline" className="rounded-full px-4 py-1 text-[10px] border-white/10 text-muted-foreground hover:border-primary hover:text-white transition-all uppercase tracking-widest bg-black/40">
-              ULTRA-WIDE
+              ULTRA-HD
             </Badge>
             <Badge variant="outline" className="rounded-full px-4 py-1 text-[10px] border-primary/50 text-primary glow-orange uppercase tracking-widest bg-black/40">
-              NEURAL-SYNC
+              NEURAL-SYNC ACTIVE
             </Badge>
           </div>
         </div>
