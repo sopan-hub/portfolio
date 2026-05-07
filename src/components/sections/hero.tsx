@@ -2,8 +2,7 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { ArrowUpRight, Github, Linkedin } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
 import images from '@/app/lib/placeholder-images.json';
 import GlassSurface from '@/components/ui/glass-surface';
@@ -45,8 +44,10 @@ export default function HeroSection() {
               ))}
             </div>
             
-            <Button size="lg" className="rounded-full px-8 bg-white text-black font-bold hover:scale-105 transition-transform">
-              INITIALIZE CORE <ArrowUpRight className="ml-2" />
+            <Button asChild size="lg" className="rounded-full px-8 bg-white text-black font-bold hover:scale-105 transition-transform">
+              <a href="/sopan-patil-resume.pdf" target="_blank" rel="noopener noreferrer">
+                VIEW RESUME <ArrowUpRight className="ml-2" />
+              </a>
             </Button>
           </div>
 
@@ -107,15 +108,7 @@ export default function HeroSection() {
           </div>
 
           <div className="md:col-span-7 flex justify-end gap-3 z-10">
-             <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] bg-white/10 backdrop-blur-md text-white/80 hover:text-white transition-all uppercase tracking-[0.2em] border-white/10">
-              8K PRECISION
-            </Badge>
-            <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] bg-white/10 backdrop-blur-md text-white/80 hover:text-white transition-all uppercase tracking-[0.2em] border-white/10">
-              V2.5
-            </Badge>
-            <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] border-white text-white uppercase tracking-[0.2em] bg-white/10 backdrop-blur-md">
-              NEURAL-SYNC ACTIVE
-            </Badge>
+            {/* Status badges removed as requested */}
           </div>
         </div>
       </div>
