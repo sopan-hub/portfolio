@@ -20,7 +20,7 @@ export default function HeroSection() {
     <section id="home" className="relative min-h-screen bg-black overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://raw.githubusercontent.com/sopan-hub/my-acces/608ed1759591797750a4cf9ac69791e8cf4cbf20/image3.png"
+          src="https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png"
           alt="Sopan Patil Hero Background"
           fill
           className="object-cover"
@@ -58,13 +58,13 @@ export default function HeroSection() {
             </div>
 
             <div className="flex gap-4">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full liquid-glass text-white/80 hover:text-primary transition-all">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md text-white/80 hover:text-primary transition-all">
                 <Boxes size={20} />
               </div>
-              <div className="flex items-center justify-center w-12 h-12 rounded-full liquid-glass text-white/80 hover:text-primary transition-all">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md text-white/80 hover:text-primary transition-all">
                 <Scan size={20} />
               </div>
-              <div className="flex items-center justify-center w-12 h-12 rounded-full liquid-glass text-white/80 hover:text-primary transition-all">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md text-white/80 hover:text-primary transition-all">
                 <Zap size={20} />
               </div>
             </div>
@@ -142,13 +142,13 @@ export default function HeroSection() {
           </div>
 
           <div className="md:col-span-7 flex justify-end gap-3 z-10">
-             <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] liquid-glass text-white/80 hover:text-white transition-all uppercase tracking-[0.2em]">
+             <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] bg-white/10 backdrop-blur-md text-white/80 hover:text-white transition-all uppercase tracking-[0.2em]">
               8K PRECISION
             </Badge>
-            <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] liquid-glass text-white/80 hover:text-white transition-all uppercase tracking-[0.2em]">
+            <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] bg-white/10 backdrop-blur-md text-white/80 hover:text-white transition-all uppercase tracking-[0.2em]">
               V2.5
             </Badge>
-            <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] border-white text-white uppercase tracking-[0.2em] liquid-glass">
+            <Badge variant="outline" className="rounded-full px-5 py-1.5 text-[10px] border-white text-white uppercase tracking-[0.2em] bg-white/10 backdrop-blur-md">
               NEURAL-SYNC ACTIVE
             </Badge>
           </div>
