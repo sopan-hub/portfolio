@@ -43,7 +43,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
         isSticky
-          ? 'border-b border-border/50 bg-background/80 backdrop-blur-lg'
+          ? 'liquid-glass border-b border-white/10'
           : 'border-b border-transparent'
       }`}
     >
@@ -69,7 +69,7 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" asChild className="hidden md:flex">
+          <Button variant="outline" size="sm" asChild className="hidden md:flex liquid-glass hover:bg-white/10">
             <a href="#contact">Hire Me</a>
           </Button>
           <button
@@ -83,7 +83,7 @@ const Header = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full border-b border-border/50 bg-background/95 p-4 backdrop-blur-lg md:hidden">
+        <div className="absolute top-full left-0 w-full liquid-glass border-b border-white/10 p-4 md:hidden">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
@@ -95,7 +95,7 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-            <Button variant="outline" asChild>
+            <Button variant="outline" asChild className="liquid-glass">
               <a href="#contact" onClick={toggleMenu}>Hire Me</a>
             </Button>
           </nav>
