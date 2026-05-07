@@ -3,7 +3,8 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Boxes, Scan, Zap, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { socialLinks } from '@/lib/data';
 import images from '@/app/lib/placeholder-images.json';
 import GlassSurface from '@/components/ui/glass-surface';
 
@@ -31,15 +32,7 @@ export default function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-20">
-        <div className="flex justify-between items-start pt-12 text-[10px] uppercase tracking-[0.2em] text-white/70">
-          <span>SOPAN-PATIL // v2.5</span>
-          <div className="flex gap-4">
-            <span>10/25</span>
-            <span className="text-white font-bold">Neural Interface</span>
-          </div>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
+        <div className="mt-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
           <div className="lg:col-span-7 relative z-10 space-y-8 p-4">
             <div className="space-y-4">
               <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter uppercase">
@@ -51,15 +44,18 @@ export default function HeroSection() {
             </div>
 
             <div className="flex gap-4">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md text-white/80 hover:text-primary transition-all">
-                <Boxes size={20} />
-              </div>
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md text-white/80 hover:text-primary transition-all">
-                <Scan size={20} />
-              </div>
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md text-white/80 hover:text-primary transition-all">
-                <Zap size={20} />
-              </div>
+              {socialLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md text-white/80 hover:text-white hover:bg-white/20 transition-all"
+                  aria-label={link.label}
+                >
+                  <link.icon size={20} />
+                </a>
+              ))}
             </div>
             
             <Button size="lg" className="rounded-full px-8 bg-white text-black font-bold hover:scale-105 transition-transform">
