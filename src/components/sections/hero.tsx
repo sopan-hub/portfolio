@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Cpu, Zap, Scan, Boxes, ArrowUpRight } from 'lucide-react';
+import { Cpu, Zap, Scan, Boxes, ArrowUpRight, BadgeCheck } from 'lucide-react';
 import images from '@/app/lib/placeholder-images.json';
 import GlassSurface from '@/components/ui/glass-surface';
 
@@ -15,13 +15,13 @@ export default function HeroSection() {
     { label: 'Core', value: 'Lightweight Scalable Architecture' },
   ];
 
-  const bgImageUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/main/Gemini_Generated_Image_yzt7vnyzt7vnyzt7.png?raw=true";
+  const bgImageUrl = "https://github.com/sopan-hub/my-acces/blob/main/Gemini_Generated_Image_yzt7vnyzt7vnyzt7.png?raw=true";
 
   return (
     <section id="home" className="relative min-h-screen bg-black overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <Image
-          src={bgImageUrl}
+          src="https://raw.githubusercontent.com/sopan-hub/my-acces/main/Gemini_Generated_Image_yzt7vnyzt7vnyzt7.png"
           alt="Neural Background"
           fill
           className="object-cover"
@@ -49,12 +49,11 @@ export default function HeroSection() {
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
           <div className="lg:col-span-7 relative z-10 space-y-8 p-4">
             <div className="space-y-4">
-              <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter drop-shadow-2xl">
-                SOPAN-PATIL // <br />
-                <span className="text-primary glow-orange">Neural Interface</span>
+              <h1 className="text-6xl md:text-7xl font-extrabold leading-[0.9] text-white tracking-tighter drop-shadow-2xl flex items-center gap-4">
+                Sopan Patil <BadgeCheck className="text-primary w-12 h-12 md:w-16 md:h-16 shrink-0" />
               </h1>
-              <p className="max-w-md text-white/90 text-base leading-relaxed mt-6 font-medium drop-shadow-lg">
-                Architecting intelligent solutions with high-res logic and a zero-gravity framework. Bridging the gap between human intuition and machine intelligence.
+              <p className="max-w-2xl text-white/90 text-sm md:text-base leading-relaxed mt-6 font-medium drop-shadow-lg">
+                Software Developer | Python, MERN, Scalable, Intelligent Web Apps | Exploring Next.js | AI/ML & Cloud | Building LLMs & GenAI
               </p>
             </div>
 
