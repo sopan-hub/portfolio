@@ -76,11 +76,11 @@ export default function HeroSection() {
             <GlassSurface
               width={400}
               borderRadius={32}
-              brightness={30}
+              brightness={35}
               opacity={0.8}
-              blur={15}
+              blur={12}
               displace={0.1}
-              distortionScale={-40}
+              distortionScale={-30}
               className="p-8"
             >
               <h3 className="text-xs font-bold tracking-[0.3em] text-white/60 border-b border-white/10 pb-4 uppercase">
@@ -106,10 +106,10 @@ export default function HeroSection() {
           <div className="md:col-span-5 relative">
             <GlassSurface
               borderRadius={24}
-              brightness={40}
-              opacity={0.7}
-              displace={0.05}
-              distortionScale={-20}
+              brightness={35}
+              opacity={0.8}
+              displace={0.1}
+              distortionScale={-30}
               className="p-5"
             >
               <div className="flex gap-6 items-center group cursor-pointer">
