@@ -14,8 +14,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Using the high-quality direct raw URL for the neural interface image
-  const bgImageUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png";
+  // Hero background (portrait)
+  const heroBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png";
+  // Content background (tech texture for below hero)
+  const contentBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/ca0012b3d0edc65f0fb81b41dbedf4ac750eb549/bg.png";
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -32,10 +34,10 @@ export default function RootLayout({
         />
       </head>
       <body className="relative min-h-screen bg-black overflow-x-hidden">
-        {/* High-speed immersive scroll-zoom effect */}
+        {/* Responsive background that transitions between images */}
         <ScrollZoomBackground 
-          src={bgImageUrl} 
-          alt="Neural Interface Background" 
+          heroSrc={heroBgUrl} 
+          contentSrc={contentBgUrl} 
         />
         
         <div className="relative z-10">

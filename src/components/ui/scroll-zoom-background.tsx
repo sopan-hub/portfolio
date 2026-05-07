@@ -1,15 +1,14 @@
-
 'use client';
 
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Image from 'next/image';
 
 interface ScrollZoomBackgroundProps {
-  src: string;
-  alt: string;
+  heroSrc: string;
+  contentSrc: string;
 }
 
-export default function ScrollZoomBackground({ src, alt }: ScrollZoomBackgroundProps) {
+export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoomBackgroundProps) {
   const { scrollYProgress } = useScroll();
   
   const smoothProgress = useSpring(scrollYProgress, {
@@ -18,36 +17,55 @@ export default function ScrollZoomBackground({ src, alt }: ScrollZoomBackgroundP
     restDelta: 0.001
   });
 
-  // Fast zoom into the focal point (goggles)
-  // [0, 0.1]: Hero section - stay at scale 1
-  // [0.1, 0.5]: Rapid zoom
-  const scale = useTransform(smoothProgress, [0, 0.1, 0.5, 1], [1, 1, 3.5, 4]);
+  // Hero image fades out as you scroll past the top
+  const heroOpacity = useTransform(smoothProgress, [0.1, 0.25], [1, 0]);
   
-  // Overlay darkens as we dive in
-  const overlayOpacity = useTransform(smoothProgress, [0, 0.2, 0.6], [0.2, 0.4, 0.6]);
+  // Content background image fades in as you reach the first content section
+  const contentOpacity = useTransform(smoothProgress, [0.1, 0.25], [0, 1]);
+
+  // Subtle zoom effect for the background to maintain depth
+  const scale = useTransform(smoothProgress, [0, 1], [1, 1.1]);
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-black">
+      {/* High Quality Content Background (for everything below hero) */}
       <motion.div
         style={{ 
-          scale,
-          transformOrigin: '55% 42%' // Adjusted to center the goggle area better
+          opacity: contentOpacity,
+          scale
         }}
-        className="relative h-full w-full"
+        className="absolute inset-0"
       >
         <Image
-          src={src}
-          alt={alt}
+          src={contentSrc}
+          alt="Tech Background"
+          fill
+          className="object-cover"
+          quality={100}
+          unoptimized
+        />
+        {/* Dark overlay for better text contrast in content sections */}
+        <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+      </motion.div>
+
+      {/* Hero Background (Portrait) */}
+      <motion.div
+        style={{ 
+          opacity: heroOpacity
+        }}
+        className="absolute inset-0"
+      >
+        <Image
+          src={heroSrc}
+          alt="Sopan Patil Hero"
           fill
           className="object-cover"
           priority
           quality={100}
           unoptimized
         />
-        <motion.div 
-          style={{ opacity: overlayOpacity }}
-          className="absolute inset-0 bg-black pointer-events-none transition-colors" 
-        />
+        {/* Subtle hero-only overlay */}
+        <div className="absolute inset-0 bg-black/20 pointer-events-none" />
       </motion.div>
     </div>
   );

@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -39,10 +38,10 @@ const TerminalDemo = () => {
   return (
     <section id="projects" className="py-24 flex justify-center px-4 bg-transparent">
       <div className="max-w-3xl w-full">
-        {/* Terminal Window - High Contrast Light Mode */}
+        {/* Terminal Window - Professional Light Mode */}
         <div className="rounded-xl shadow-[0_30px_60px_-12px_rgba(0,0,0,0.15)] overflow-hidden bg-white border border-slate-200">
           
-          {/* Header Bar - macOS Style Light */}
+          {/* Header Bar - macOS Style */}
           <div className="flex items-center justify-between px-6 py-4 bg-[#f1f3f5] border-b border-slate-200">
             <div className="flex gap-2">
               <div className="w-3.5 h-3.5 rounded-full bg-[#ff5f57] border border-black/5" />
@@ -58,15 +57,15 @@ const TerminalDemo = () => {
           {/* Terminal Body */}
           <div className="p-8 md:p-12 font-mono text-sm md:text-base leading-relaxed">
             {/* Project Info Block */}
-            <div className="mb-10">
-              <p className="text-slate-400 mb-3 text-xs uppercase tracking-widest font-bold"># Featured Project</p>
-              <p className="text-slate-700 font-semibold text-lg md:text-xl leading-snug">
+            <div className="mb-8">
+              <p className="text-slate-400 mb-3 text-xs uppercase tracking-widest font-bold"># Project Overview</p>
+              <p className="text-slate-700 font-semibold text-lg leading-snug">
                 {projectInfo}
               </p>
             </div>
 
             {/* Prompt Line with Typing Animation */}
-            <div className="flex flex-wrap items-start gap-4">
+            <div className="flex flex-wrap items-start gap-3">
               <div className="flex items-center gap-2 select-none shrink-0">
                 <span className="text-[#28c840] font-bold">➜</span>
                 <span className="text-[#007aff] font-bold">~</span>
