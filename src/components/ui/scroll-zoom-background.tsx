@@ -17,25 +17,14 @@ export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoom
     restDelta: 0.001
   });
 
-  // Hero image disappears extremely fast to switch to the technical background
-  const heroOpacity = useTransform(smoothProgress, [0.01, 0.04], [1, 0]);
-  
-  // Content background image appears just as fast to replace it
-  const contentOpacity = useTransform(smoothProgress, [0.01, 0.04], [0, 1]);
-
-  // Subtle zoom effect for the background to maintain depth
-  const scale = useTransform(smoothProgress, [0, 1], [1, 1.05]);
+  // Hero image fades out extremely fast to switch to the technical background
+  // We use a range that ensures it clears out before the next section arrives
+  const heroOpacity = useTransform(smoothProgress, [0.01, 0.05], [1, 0]);
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-black">
-      {/* High Quality Content Background (Tech texture) */}
-      <motion.div
-        style={{ 
-          opacity: contentOpacity,
-          scale
-        }}
-        className="absolute inset-0"
-      >
+      {/* High Quality Content Background (Tech texture) - Always visible base layer to prevent dimming */}
+      <div className="absolute inset-0">
         <Image
           src={contentSrc}
           alt="Tech Background"
@@ -44,9 +33,9 @@ export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoom
           quality={100}
           unoptimized
         />
-      </motion.div>
+      </div>
 
-      {/* Hero Background (Portrait) */}
+      {/* Hero Background (Portrait) - Fades out to reveal the base layer */}
       <motion.div
         style={{ 
           opacity: heroOpacity
