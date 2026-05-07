@@ -27,7 +27,7 @@ export default function HeroSection() {
               </h1>
               <div className="space-y-6">
                 <p className="max-w-2xl text-white/90 text-sm md:text-base leading-relaxed mt-6 font-medium">
-                  Software Developer | Building Intelligent Web Apps with Agentic AI, Next.js, and the MERN Stack. Exploring the frontiers of GenAI and Cloud Architecture.
+                  Software Developer | Python, MERN, Scalable, Intelligent Web Apps | Exploring Next.js | AI/ML & Cloud | Building LLMs & GenAl.
                 </p>
                 <p className="max-w-2xl text-white/70 text-sm md:text-base leading-relaxed font-normal">
                   Expertise lies in developing autonomous LLM-powered agents and implementing advanced RAG (Retrieval-Augmented Generation) systems. Proficient in crafting high-performance, scalable web architectures using Next.js 15 and the full MERN stack, integrated with robust cloud services like Firebase and serverless infrastructures for seamless deployment and real-time inference.
