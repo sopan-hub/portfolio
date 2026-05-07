@@ -1,7 +1,9 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Image from 'next/image';
+import images from '@/app/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'Portfolio | Sopan Patil',
@@ -15,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -28,19 +30,20 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="relative bg-black">
-        {/* Fixed Background Image - Only visible in Hero */}
+      <body className="relative min-h-screen">
+        {/* Fixed Background Image - Global High Quality */}
         <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
           <Image
-            src="https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png"
-            alt="Global Background"
+            src={images["hero-bg"].url}
+            alt={images["hero-bg"].alt}
             fill
             className="object-cover"
             priority
             quality={100}
             unoptimized
           />
-          <div className="absolute inset-0 bg-black/30" />
+          {/* Subtle overlay to improve text readability without blocking the image */}
+          <div className="absolute inset-0 bg-black/10" />
         </div>
         
         <div className="relative z-0">

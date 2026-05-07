@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -32,13 +33,13 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply text-foreground antialiased;
     font-family: 'Poppins', sans-serif;
-    /* Removed radial gradients to allow the fixed Image to show through */
     background: transparent;
   }
   html {
-    @apply bg-black;
+    /* Base color is black but will be covered by the fixed image */
+    background-color: black;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Jost', sans-serif;
