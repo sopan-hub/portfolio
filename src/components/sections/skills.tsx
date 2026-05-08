@@ -1,4 +1,3 @@
-
 'use client';
 import Image from 'next/image';
 import { skills } from '@/lib/data';
@@ -35,19 +34,19 @@ const iconMap: { [key: string]: React.FC<{ className?: string }> } = {
 const SkillsSection = () => {
   return (
     <section id="skills" className="relative py-32 overflow-hidden">
-      {/* Background Image Layer - High Fidelity Style */}
+      {/* Background Image Layer - Matches Hero Clarity */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image
           src="https://raw.githubusercontent.com/sopan-hub/my-acces/main/bg2.png"
-          alt="Skills Background"
+          alt="Skills Technical Background"
           fill
-          className="object-cover opacity-40"
+          className="object-cover"
           quality={100}
+          priority
           unoptimized
         />
-        {/* Vignette/Fade effect to match Hero section depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-        <div className="absolute inset-0 bg-black/20" />
+        {/* Subtle Vignette for depth, matching the Hero section's "popping" look */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -72,7 +71,7 @@ const SkillsSection = () => {
             <GlassSurface
               key={category}
               borderRadius={32}
-              className="p-10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.8)] border-white/5"
+              className="p-10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.8)] border-white/5 bg-black/20"
             >
               <h3 className="mb-10 text-xl font-black text-white uppercase tracking-[0.3em] border-b border-white/5 pb-6">
                 {category}
