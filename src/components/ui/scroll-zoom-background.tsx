@@ -17,9 +17,9 @@ export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoom
     restDelta: 0.001
   });
 
-  // Hero image disappears quickly as we scroll to be gone before the terminal section.
-  // Range [0, 0.2] ensures it hits 0 opacity by 20% scroll progress.
-  const heroOpacity = useTransform(smoothProgress, [0, 0.2], [1, 0]);
+  // Hero image disappears very quickly as we scroll to be gone before the terminal section.
+  // Range [0, 0.1] ensures it hits 0 opacity by 10% scroll progress.
+  const heroOpacity = useTransform(smoothProgress, [0, 0.1], [1, 0]);
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-black">
@@ -35,7 +35,7 @@ export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoom
         />
       </div>
 
-      {/* Hero Background (Portrait) - Fades out to reveal the tech texture */}
+      {/* Hero Background (Portrait) - Fades out very early to reveal the tech texture */}
       <motion.div
         style={{ 
           opacity: heroOpacity,
