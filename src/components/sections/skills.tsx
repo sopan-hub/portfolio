@@ -65,7 +65,7 @@ const SkillsSection = () => {
           src={skillsBg.url}
           alt={skillsBg.alt}
           fill
-          className="object-cover"
+          className="object-cover object-[30%_center]"
           quality={100}
           unoptimized
         />
