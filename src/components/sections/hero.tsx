@@ -16,7 +16,7 @@ export default function HeroSection() {
           {/* Left: Branding & CTAs */}
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[85px] font-black text-white tracking-tighter uppercase whitespace-nowrap drop-shadow-2xl">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[86px] font-black text-white tracking-tighter uppercase whitespace-nowrap drop-shadow-2xl">
                 SOPAN PATIL
               </h1>
               <p className="max-w-xl text-white/90 text-[10px] sm:text-[11px] md:text-xs font-bold leading-relaxed uppercase tracking-[0.15em]">
@@ -59,12 +59,12 @@ export default function HeroSection() {
           <div className="lg:col-span-5 flex justify-end">
             <GlassSurface
               borderRadius={40}
-              className="p-8 md:p-12 shadow-2xl max-w-sm md:max-w-md bg-white/[0.03] border-white/5"
+              className="p-10 md:p-14 shadow-2xl max-w-sm md:max-w-xl bg-white/[0.03] border-white/5"
             >
-              <h3 className="text-[9px] font-bold tracking-[0.4em] text-white/40 mb-6 uppercase">
+              <h3 className="text-[18px] font-bold tracking-[0.4em] text-white/40 mb-6 uppercase">
                 MISSION BRIEF
               </h3>
-              <p className="text-xs md:text-sm leading-relaxed text-white/80 font-normal">
+              <p className="text-sm md:text-base leading-relaxed text-white/90 font-normal">
                 Architecting Autonomous Intelligence by merging Next.js 15 with Agentic AI. Expert in Multi-Agent Orchestration, RAG Pipelines, and Custom LLM deployments. I bridge Scalable MERN backends with Serverless Cloud infra to build high-performance, self-evolving GenAI systems focused on low-latency Neural Architectures.
               </p>
             </GlassSurface>
