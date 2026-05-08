@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Cpu, Share2, ArrowRight } from 'lucide-react';
+import { Github, Linkedin, Cpu, ArrowRight } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -86,17 +86,24 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Social Icons (Positioned Bottom Right) */}
-          <div className="flex items-center gap-3">
-            <a href="https://github.com/sopan-hub" className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
-              <Github size={16} />
+          {/* Social Icons (Capsule Buttons) */}
+          <div className="flex items-center gap-4">
+            <a 
+              href="https://github.com/sopan-hub" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/10 bg-white/5 text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] hover:text-white hover:border-white/30 hover:bg-white/10 transition-all backdrop-blur-md"
+            >
+              <Github size={16} /> GitHub
             </a>
-            <a href="https://www.linkedin.com/in/sopan-patil-24b2a1380" className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
-              <Linkedin size={16} />
+            <a 
+              href="https://www.linkedin.com/in/sopan-patil-24b2a1380" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/10 bg-white/5 text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] hover:text-white hover:border-white/30 hover:bg-white/10 transition-all backdrop-blur-md"
+            >
+              <Linkedin size={16} /> LinkedIn
             </a>
-            <button className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
-              <Share2 size={16} />
-            </button>
           </div>
 
         </div>
