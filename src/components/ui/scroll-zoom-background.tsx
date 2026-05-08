@@ -18,17 +18,13 @@ export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoom
     restDelta: 0.001
   });
 
-  // Hero image transforms into the navbar icon
-  // It shrinks, moves, and rounds its corners as we scroll
+  // Hero image disappears quickly as we scroll
   const heroOpacity = useTransform(smoothProgress, [0, 0.15], [1, 0]);
-  const heroScale = useTransform(smoothProgress, [0, 0.2], [1, 0.02]);
-  const heroY = useTransform(smoothProgress, [0, 0.2], ["0%", "-46%"]);
-  const heroX = useTransform(smoothProgress, [0, 0.2], ["0%", "-10%"]); // Slight offset to align with left-of-pill
-  const heroRadius = useTransform(smoothProgress, [0, 0.15], ["0rem", "50rem"]);
+  const heroScale = useTransform(smoothProgress, [0, 0.15], [1, 1.1]);
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-black">
-      {/* High Quality Content Background (Tech texture) - Always visible base layer */}
+      {/* High Quality Content Background (Tech texture) - Base layer for everything below hero */}
       <div className="absolute inset-0">
         <Image
           src={contentSrc}
@@ -40,14 +36,11 @@ export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoom
         />
       </div>
 
-      {/* Hero Background (Portrait) - Animates into the navbar position */}
+      {/* Hero Background (Portrait) - Fades out to reveal the tech texture */}
       <motion.div
         style={{ 
           opacity: heroOpacity,
-          scale: heroScale,
-          y: heroY,
-          x: heroX,
-          borderRadius: heroRadius
+          scale: heroScale
         }}
         className="absolute inset-0 overflow-hidden"
       >

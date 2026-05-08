@@ -5,8 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { navLinks } from '@/lib/data';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import Image from 'next/image';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState('#home');
@@ -17,12 +16,6 @@ const Header = () => {
     damping: 30,
     restDelta: 0.001
   });
-
-  // Animate the profile icon appearing as the background finishes its shrink
-  // We use a slight delay so it "takes over" from the shrinking BG
-  const profileOpacity = useTransform(smoothProgress, [0.15, 0.25], [0, 1]);
-  const profileScale = useTransform(smoothProgress, [0.15, 0.25], [0.8, 1]);
-  const navPaddingLeft = useTransform(smoothProgress, [0.1, 0.25], ["2.5rem", "1rem"]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,32 +39,11 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const profileImageUrl = "https://raw.githubusercontent.com/sopan-hub/my-image-assets/c1a37f7dca7fef0d5cad624e94e96e3132132d9e/file_00000000dc0461f9b1a884202d5845c2.png";
-
   return (
     <div className="fixed top-8 left-0 z-50 w-full px-4 flex justify-center pointer-events-none">
       <motion.nav 
-        style={{ paddingLeft: navPaddingLeft }}
-        className="pointer-events-auto transition-all duration-500 rounded-full pr-10 py-2 flex items-center gap-8 bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden"
+        className="pointer-events-auto transition-all duration-500 rounded-full px-10 py-4 flex items-center gap-8 bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden"
       >
-        {/* Profile Icon - Appears on Scroll and "catches" the shrinking Hero BG */}
-        <motion.div 
-          style={{ opacity: profileOpacity, scale: profileScale }}
-          className="flex items-center gap-3 shrink-0"
-        >
-          <div className="relative h-10 w-10 overflow-hidden rounded-full border border-white/20 bg-black">
-            <Image
-              src={profileImageUrl}
-              alt="Profile"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <span className="hidden lg:block text-[9px] font-bold uppercase tracking-[0.2em] text-white/90">
-            SOPAN
-          </span>
-        </motion.div>
-
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
