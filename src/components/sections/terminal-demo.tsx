@@ -85,15 +85,15 @@ const TerminalDemo = () => {
 
           {/* Left Side: Terminal Window */}
           <div className="lg:col-span-6 relative z-10">
-            <GlassSurface borderRadius={24} className="shadow-2xl border-white/10 ring-1 ring-white/5">
+            <GlassSurface borderRadius={24} className="shadow-2xl border-white/10 bg-black/40 ring-1 ring-white/5">
               {/* Header Bar */}
-              <div className="flex items-center justify-between px-6 py-4 bg-white/5 border-b border-white/10">
+              <div className="flex items-center justify-between px-6 py-4 bg-black/60 border-b border-white/10">
                 <div className="flex gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
                   <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
                   <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
                 </div>
-                <div className="text-[9px] font-mono text-white/30 tracking-[0.4em] uppercase font-bold flex items-center gap-2">
+                <div className="text-[9px] font-mono text-white/40 tracking-[0.4em] uppercase font-bold flex items-center gap-2">
                   <TerminalIcon size={10} />
                   <span>SupportAI</span>
                 </div>
@@ -101,7 +101,7 @@ const TerminalDemo = () => {
               </div>
 
               {/* Terminal Body */}
-              <div className="p-8 font-mono bg-black/40 min-h-[160px]">
+              <div className="p-8 font-mono bg-[#050505] min-h-[160px] rounded-b-3xl">
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <span className="text-green-500 font-bold shrink-0">➜</span>
