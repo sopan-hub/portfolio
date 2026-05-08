@@ -1,4 +1,3 @@
-
 'use client';
 
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
@@ -20,7 +19,6 @@ export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoom
 
   // Hero image disappears quickly as we scroll
   const heroOpacity = useTransform(smoothProgress, [0, 0.15], [1, 0]);
-  const heroScale = useTransform(smoothProgress, [0, 0.15], [1, 1.1]);
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-black">
@@ -40,7 +38,6 @@ export default function ScrollZoomBackground({ heroSrc, contentSrc }: ScrollZoom
       <motion.div
         style={{ 
           opacity: heroOpacity,
-          scale: heroScale
         }}
         className="absolute inset-0 overflow-hidden"
       >
