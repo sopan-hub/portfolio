@@ -24,7 +24,7 @@ export default function HeroSection() {
           <div className="lg:col-span-5 space-y-10">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-[76px] font-black text-white tracking-tighter uppercase leading-[0.9] drop-shadow-2xl">
-                SOPAN<br />PATIL //
+                SOPAN PATIL
               </h1>
               <p className="max-w-md text-white text-[12px] md:text-[14px] leading-relaxed uppercase tracking-wider font-bold">
                 Full-Stack AI Developer. Engineered with Agentic AI and high-res MERN stacks for those who don't just watch the future—they architect it. Expert in autonomous workflows and neural RAG pipelines.
@@ -69,7 +69,7 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom HUD Row */}
-        <div className="flex justify-end items-end w-full mt-12">
+        <div className="flex justify-start items-end w-full mt-12">
           
           {/* Social Icons (Capsule Buttons) */}
           <div className="flex items-center gap-4">
