@@ -20,5 +20,12 @@
     "height": 1080,
     "alt": "Sopan Patil Neural Background",
     "dataAiHint": "tech background"
+  },
+  "skills-bg": {
+    "url": "https://github.com/sopan-hub/my-acces/blob/main/bg2.png?raw=true",
+    "width": 1920,
+    "height": 1080,
+    "alt": "Technical Skills Background",
+    "dataAiHint": "circuitry background"
   }
 }

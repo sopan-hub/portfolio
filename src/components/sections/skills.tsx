@@ -1,4 +1,6 @@
+
 'use client';
+import Image from 'next/image';
 import { skills } from '@/lib/data';
 import * as Icons from '@/components/icons';
 import ScrollFloat from '@/components/ui/scroll-float';
@@ -32,8 +34,19 @@ const iconMap: { [key: string]: React.FC<{ className?: string }> } = {
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-24">
-      <div className="container mx-auto px-4">
+    <section id="skills" className="relative py-24 overflow-hidden">
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+        <Image
+          src="https://github.com/sopan-hub/my-acces/blob/main/bg2.png?raw=true"
+          alt="Skills Background"
+          fill
+          className="object-cover"
+          unoptimized
+        />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="mb-12 text-center flex flex-col items-center">
           <ScrollFloat
             containerClassName="text-3xl font-bold tracking-tight sm:text-4xl mb-4"
@@ -42,7 +55,7 @@ const SkillsSection = () => {
             My Skills
           </ScrollFloat>
           <p className="mt-4 text-white/60">
-            Technologies and tools I work with.
+            Technologies and tools I work with to build the future.
           </p>
         </div>
 
