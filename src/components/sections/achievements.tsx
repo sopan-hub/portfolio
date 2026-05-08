@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { achievements } from '@/lib/data';
 import { Code2, Database, Sparkles, BarChart3, Award } from 'lucide-react';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
@@ -29,7 +30,8 @@ const AchievementsSection = () => {
     {
       title: "Technical Excellence Continuous Learning",
       year: "2025",
-      description: "Constantly expanding neural network architectures and agentic workflow simulations through rigorous self-directed research."
+      description: "Constantly expanding neural network architectures and agentic workflow simulations through rigorous self-directed research.",
+      image: "https://picsum.photos/seed/cert/600/400"
     }
   ];
 
@@ -64,6 +66,7 @@ const AchievementsSection = () => {
                   <b>{item.year}</b> — {item.description}
                 </span>
               }
+              image={item.image}
             />
           ))}
         </ul>
@@ -77,12 +80,13 @@ interface GridItemProps {
   icon: React.ReactNode;
   title: string;
   description: React.ReactNode;
+  image?: string;
 }
 
-const GridItem = ({ area, icon, title, description }: GridItemProps) => {
+const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
   return (
     <li className={`min-h-[14rem] list-none group ${area}`}>
-      <div className="relative h-full rounded-2xl border border-white/10 p-2 md:rounded-3xl md:p-3 bg-[#050505]">
+      <div className="relative h-full rounded-2xl border border-white/10 p-2 md:rounded-3xl md:p-3 bg-[#050505] overflow-hidden">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -90,12 +94,13 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
           proximity={64}
           inactiveZone={0.01}
         />
-        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 shadow-[0px_0px_27px_0px_#1a1a1a]">
-          <div className="relative flex flex-1 flex-col justify-between gap-3">
-            <div className="w-fit rounded-lg border border-white/10 bg-white/5 p-2">
-              {icon}
-            </div>
-            <div className="space-y-3">
+        <div className="relative flex h-full flex-col overflow-hidden rounded-xl shadow-[0px_0px_27px_0px_#1a1a1a]">
+          
+          <div className="relative flex flex-1 flex-col justify-between gap-3 p-6 z-10">
+            <div className="space-y-4">
+              <div className="w-fit rounded-lg border border-white/10 bg-white/5 p-2">
+                {icon}
+              </div>
               <h3 className="tracking-tight pt-0.5 font-bold text-xl/[1.375rem] text-balance text-white md:text-2xl/[1.875rem] uppercase">
                 {title}
               </h3>
@@ -104,6 +109,19 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
               </p>
             </div>
           </div>
+
+          {image && (
+            <div className="relative w-full h-32 md:h-40 mt-auto opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden">
+              <Image 
+                src={image} 
+                alt={title} 
+                fill 
+                className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
+            </div>
+          )}
         </div>
       </div>
     </li>
