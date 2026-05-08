@@ -1,86 +1,38 @@
-
 'use client';
 
 import React from 'react';
-import { motion, useMotionValue, useMotionTemplate } from 'framer-motion';
 import { achievements } from '@/lib/data';
-import Image from 'next/image';
+import { Code2, Database, Sparkles, BarChart3, Award } from 'lucide-react';
+import { GlowingEffect } from '@/components/ui/glowing-effect';
 import ScrollFloat from '@/components/ui/scroll-float';
 
-const GlowingCard = ({ achievement }: { achievement: typeof achievements[0] }) => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+const iconMap = [
+  <Code2 className="h-4 w-4 text-neutral-400" />,
+  <Database className="h-4 w-4 text-neutral-400" />,
+  <Award className="h-4 w-4 text-neutral-400" />,
+  <Sparkles className="h-4 w-4 text-neutral-400" />,
+  <BarChart3 className="h-4 w-4 text-neutral-400" />,
+];
 
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    let { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-
-  return (
-    <div
-      onMouseMove={handleMouseMove}
-      className="group relative flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#050505] p-1 transition-all"
-    >
-      {/* Interactive Radial Glow */}
-      <motion.div
-        className="pointer-events-none absolute -inset-px rounded-[2.5rem] opacity-0 transition duration-300 group-hover:opacity-100"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              600px circle at ${mouseX}px ${mouseY}px,
-              rgba(255, 255, 255, 0.08),
-              transparent 80%
-            )
-          `,
-        }}
-      />
-      
-      {/* Border Glow (Simulated) */}
-      <div className="absolute inset-px rounded-[2.5rem] bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-
-      <div className="relative h-full overflow-hidden rounded-[2.4rem] bg-[#000000] p-8 flex flex-col z-10">
-        <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-8 border border-white/5">
-          <Image
-            src={achievement.image}
-            alt={achievement.title}
-            fill
-            className="object-cover transition-transform duration-1000 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        </div>
-        
-        <div className="flex flex-col flex-grow space-y-4">
-          <div className="flex justify-between items-center">
-            <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.4em]">
-              VERIFIED_RECORD
-            </span>
-            <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10">
-              <span className="text-[10px] font-bold text-white uppercase tracking-tighter">
-                {achievement.year}
-              </span>
-            </div>
-          </div>
-          
-          <h4 className="text-xl font-bold text-white uppercase tracking-tighter leading-[1.1] group-hover:text-white/90 transition-colors">
-            {achievement.title}
-          </h4>
-          
-          <p className="text-[13px] text-white/40 leading-relaxed font-medium line-clamp-4">
-            {achievement.description}
-          </p>
-        </div>
-
-        <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
-          <span className="text-[9px] font-bold text-white/20 uppercase tracking-[0.3em]">SIMULATION_COMPLETE</span>
-          <div className="h-1 w-1 rounded-full bg-white/40 group-hover:bg-white transition-colors" />
-        </div>
-      </div>
-    </div>
-  );
-};
+const gridAreas = [
+  "md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
+  "md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]",
+  "md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]",
+  "md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]",
+  "md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]",
+];
 
 const AchievementsSection = () => {
+  // We have 4 items in data.ts, let's create a 5th placeholder to match the layout
+  const allItems = [
+    ...achievements,
+    {
+      title: "Technical Excellence Continuous Learning",
+      year: "2025",
+      description: "Constantly expanding neural network architectures and agentic workflow simulations through rigorous self-directed research."
+    }
+  ];
+
   return (
     <section id="achievements" className="py-32 relative">
       <div className="container mx-auto px-4">
@@ -99,14 +51,62 @@ const AchievementsSection = () => {
             <div className="h-[1px] w-8 bg-white/20" />
           </div>
         </div>
-        
-        <div className="grid gap-8 md:grid-cols-2">
-          {achievements.map((achievement, index) => (
-            <GlowingCard key={index} achievement={achievement} />
+
+        <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:grid-rows-2">
+          {allItems.map((item, index) => (
+            <GridItem
+              key={index}
+              area={gridAreas[index % gridAreas.length]}
+              icon={iconMap[index % iconMap.length]}
+              title={item.title}
+              description={
+                <span>
+                  <b>{item.year}</b> — {item.description}
+                </span>
+              }
+            />
           ))}
-        </div>
+        </ul>
       </div>
     </section>
+  );
+};
+
+interface GridItemProps {
+  area: string;
+  icon: React.ReactNode;
+  title: string;
+  description: React.ReactNode;
+}
+
+const GridItem = ({ area, icon, title, description }: GridItemProps) => {
+  return (
+    <li className={`min-h-[14rem] list-none group ${area}`}>
+      <div className="relative h-full rounded-2xl border border-white/10 p-2 md:rounded-3xl md:p-3 bg-[#050505]">
+        <GlowingEffect
+          spread={40}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+        />
+        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 shadow-[0px_0px_27px_0px_#1a1a1a]">
+          <div className="relative flex flex-1 flex-col justify-between gap-3">
+            <div className="w-fit rounded-lg border border-white/10 bg-white/5 p-2">
+              {icon}
+            </div>
+            <div className="space-y-3">
+              <h3 className="tracking-tight pt-0.5 font-bold text-xl/[1.375rem] text-balance text-white md:text-2xl/[1.875rem] uppercase">
+                {title}
+              </h3>
+              <p className="font-sans text-sm/[1.125rem] text-neutral-400 md:text-base/[1.375rem] leading-relaxed">
+                {description}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
   );
 };
 
