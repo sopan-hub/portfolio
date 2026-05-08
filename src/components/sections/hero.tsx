@@ -86,28 +86,17 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Social Icons & Tech Tags */}
-          <div className="flex flex-col items-end gap-6">
-            {/* Social Icons Grouped */}
-            <div className="flex items-center gap-3">
-              <a href="https://github.com/sopan-hub" className="flex items-center justify-center w-9 h-9 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
-                <Github size={14} />
-              </a>
-              <a href="https://www.linkedin.com/in/sopan-patil-24b2a1380" className="flex items-center justify-center w-9 h-9 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
-                <Linkedin size={14} />
-              </a>
-              <button className="flex items-center justify-center w-9 h-9 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
-                <Share2 size={14} />
-              </button>
-            </div>
-
-            {/* Tech Tags Grouped */}
-            <div className="flex flex-wrap justify-end gap-3">
-              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">8K_RAW</span>
-              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">A+ //</span>
-              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">ULTRA-WIDE</span>
-              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">NEURAL-SYNC</span>
-            </div>
+          {/* Social Icons (Positioned Bottom Right) */}
+          <div className="flex items-center gap-3">
+            <a href="https://github.com/sopan-hub" className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
+              <Github size={16} />
+            </a>
+            <a href="https://www.linkedin.com/in/sopan-patil-24b2a1380" className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
+              <Linkedin size={16} />
+            </a>
+            <button className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
+              <Share2 size={16} />
+            </button>
           </div>
 
         </div>
