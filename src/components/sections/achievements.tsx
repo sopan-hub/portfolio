@@ -4,7 +4,6 @@ import React from 'react';
 import Image from 'next/image';
 import { Box, Lock, Search, Settings, Sparkles, Terminal as TerminalIcon } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { MacbookScroll } from "@/components/ui/macbook-scroll";
 
 const gridItems = [
   {
@@ -46,41 +45,41 @@ const gridItems = [
 
 const AchievementsSection = () => {
   return (
-    <section id="achievements" className="relative py-20">
-      <MacbookScroll
-        title={
-          <div className="flex flex-col items-center gap-4">
-            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter glow-white">
-              Technical Archive
-            </h2>
-            <div className="flex items-center gap-4">
-              <div className="h-[1px] w-8 bg-white/20" />
-              <p className="text-[10px] font-black text-white/40 uppercase tracking-[0.5em]">
-                Verified Technical Credentials
-              </p>
-              <div className="h-[1px] w-8 bg-white/20" />
-            </div>
+    <section id="achievements" className="relative py-24">
+      <div className="container mx-auto px-4">
+        <div className="mb-12 text-center flex flex-col items-center">
+          <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter glow-white mb-2">
+            Technical Archive
+          </h2>
+          <div className="flex items-center gap-4">
+            <div className="h-[1px] w-8 bg-white/20" />
+            <p className="text-[10px] font-black text-white/40 uppercase tracking-[0.5em]">
+              Verified Technical Credentials
+            </p>
+            <div className="h-[1px] w-8 bg-white/20" />
           </div>
-        }
-      >
-        <div className="relative h-full flex flex-col">
-          {/* Internal MacBook Terminal Header */}
-          <div className="sticky top-0 z-50 flex items-center px-4 py-2 bg-[#1e1e1e] border-b border-white/5">
-            <div className="flex gap-1.5 items-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
-              <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
-              <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
+        </div>
+
+        {/* Static macOS Terminal Container */}
+        <div className="max-w-6xl mx-auto rounded-xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 ring-1 ring-white/5">
+          {/* macOS Header Bar */}
+          <div className="flex items-center px-4 py-3 bg-[#1e1e1e] border-b border-white/5 relative">
+            <div className="flex gap-2 items-center">
+              <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
+              <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
+              <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
             </div>
-            <div className="flex-1 flex justify-center">
-              <div className="flex items-center gap-2 text-white/30 font-mono text-[9px] font-bold">
-                <TerminalIcon size={10} />
-                <span>credentials — archive</span>
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="flex items-center gap-2 text-white/40 font-mono text-[10px] font-bold uppercase">
+                <TerminalIcon size={12} className="opacity-50" />
+                <span className="tracking-widest">zsh — credentials</span>
               </div>
             </div>
           </div>
 
-          <div className="p-4 bg-black/40">
-            <ul className="grid grid-cols-1 gap-3 md:grid-cols-12 md:grid-rows-3 xl:grid-rows-2">
+          {/* Terminal Content Area */}
+          <div className="p-4 md:p-8 bg-black/60 backdrop-blur-md">
+            <ul className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-3 xl:grid-rows-2">
               {gridItems.map((item, index) => (
                 <GridItem
                   key={index}
@@ -94,7 +93,7 @@ const AchievementsSection = () => {
             </ul>
           </div>
         </div>
-      </MacbookScroll>
+      </div>
     </section>
   );
 };
@@ -103,14 +102,14 @@ interface GridItemProps {
   area: string;
   icon: React.ReactNode;
   title: string;
-  description: React.ReactNode;
+  description: string;
   image: string;
 }
 
 const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
   return (
-    <li className={`min-h-[12rem] list-none group ${area}`}>
-      <div className="relative h-full rounded-xl border border-white/10 p-1 md:p-1.5 bg-black/80 backdrop-blur-md overflow-hidden transition-all duration-500 hover:scale-[1.01]">
+    <li className={`min-h-[14rem] list-none group ${area}`}>
+      <div className="relative h-full rounded-2xl border border-white/10 p-1 bg-black/40 backdrop-blur-sm transition-all duration-500 hover:scale-[1.01] overflow-hidden">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -118,27 +117,27 @@ const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
           proximity={64}
           inactiveZone={0.01}
         />
-        <div className="relative flex h-full flex-col justify-between gap-3 overflow-hidden rounded-lg p-4 z-10">
-          <div className="relative flex flex-1 flex-col justify-between gap-2 z-20">
-            <div className="w-fit rounded-md border border-white/20 bg-white/5 p-1.5">
+        <div className="relative flex h-full flex-col justify-between gap-4 overflow-hidden rounded-xl p-5 z-10">
+          <div className="relative flex flex-1 flex-col justify-between gap-3 z-20">
+            <div className="w-fit rounded-lg border border-white/10 bg-white/5 p-2">
               {icon}
             </div>
             <div className="space-y-1">
-              <h3 className="text-sm font-bold text-white uppercase tracking-tight">
+              <h3 className="text-lg font-bold text-white uppercase tracking-tight">
                 {title}
               </h3>
-              <p className="text-[10px] text-neutral-400 leading-relaxed font-mono">
+              <p className="text-[11px] text-white/60 leading-relaxed font-mono">
                 {description}
               </p>
             </div>
           </div>
           
-          <div className="relative h-20 w-full mt-2 rounded-md overflow-hidden border border-white/10 z-20 shadow-xl group-hover:border-white/30 transition-colors">
+          <div className="relative h-24 w-full mt-2 rounded-lg overflow-hidden border border-white/10 z-20 shadow-xl group-hover:border-white/30 transition-colors">
             <Image 
               src={image} 
               alt={title} 
               fill 
-              className="object-cover opacity-80 group-hover:opacity-100 transition-all duration-500 scale-100 group-hover:scale-110"
+              className="object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 scale-100 group-hover:scale-105"
               unoptimized
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

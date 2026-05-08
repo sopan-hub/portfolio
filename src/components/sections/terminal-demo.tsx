@@ -42,10 +42,9 @@ const TerminalDemo = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12 relative">
           
-          {/* Futuristic Connection Wire - Adjusted to be longer and stop before text */}
+          {/* Futuristic Connection Wire */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none hidden lg:block z-0">
             <svg width="100%" height="100%" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
-              {/* Main Connection Path - Extended from 400 to 650 */}
               <path 
                 d="M400 200H650" 
                 stroke="white" 
@@ -60,19 +59,16 @@ const TerminalDemo = () => {
                 className="opacity-60 animate-pulse"
               />
               
-              {/* Terminal Connection Point */}
               <g className="animate-pulse">
                 <circle cx="400" cy="200" r="4" fill="white" />
                 <circle cx="400" cy="200" r="10" stroke="white" strokeWidth="1" className="opacity-30" />
               </g>
               
-              {/* Info Connection Point (The Stop Point - Adjusted to 650) */}
               <g className="animate-pulse">
                 <circle cx="650" cy="200" r="4" fill="white" />
                 <circle cx="650" cy="200" r="10" stroke="white" strokeWidth="1" className="opacity-30" />
               </g>
 
-              {/* Data Packet Animation - Adjusted path to match longer wire */}
               <circle r="3" fill="white" className="filter blur-[1px]">
                 <animateMotion 
                   dur="3s" 
@@ -82,21 +78,10 @@ const TerminalDemo = () => {
                   keySplines="0.4 0 0.2 1"
                 />
               </circle>
-              {/* Secondary packet */}
-              <circle r="2" fill="white" className="opacity-50">
-                <animateMotion 
-                  dur="3s" 
-                  begin="1.5s"
-                  repeatCount="indefinite" 
-                  path="M400 200H650"
-                  calcMode="spline"
-                  keySplines="0.4 0 0.2 1"
-                />
-              </circle>
             </svg>
           </div>
 
-          {/* Left Side: MacBook Terminal Window */}
+          {/* Left Side: macOS Terminal Window (Exactly as Screenshot) */}
           <div className="lg:col-span-6 relative z-10">
             <div className="rounded-xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 ring-1 ring-white/5">
               {/* macOS Header Bar */}
@@ -115,39 +100,41 @@ const TerminalDemo = () => {
               </div>
 
               {/* Terminal Body */}
-              <div className="p-6 font-mono bg-[#000000] min-h-[240px]">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <span className="text-emerald-400 font-bold">➜</span>
-                    <span className="text-blue-400 font-bold">~</span>
-                    <span className="text-white/40 text-[12px]">Last login: {new Date().toLocaleDateString()}</span>
+              <div className="p-8 font-mono bg-[#000000] min-h-[260px] leading-relaxed">
+                <div className="space-y-6">
+                  {/* Prompt: Last Login */}
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-emerald-400 font-bold">➜</span>
+                      <span className="text-blue-400 font-bold">~</span>
+                    </div>
+                    <span className="text-white/40 text-[13px]">Last login: 08/05/2026</span>
                   </div>
                   
-                  <div className="flex items-start gap-2 pt-1">
-                    <span className="text-emerald-400 font-bold">➜</span>
-                    <span className="text-blue-400 font-bold">~</span>
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-center gap-1">
-                        <span className="text-white/80 text-[13px]">open</span>
-                        <a 
-                          href={projectUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="group flex items-center gap-1 text-blue-400 transition-all break-all hover:underline ml-1"
-                        >
-                          <span className="text-[13px] font-mono">
-                            {displayText}
-                          </span>
-                          <span className="w-1.5 h-4 bg-white/70 animate-pulse shrink-0" />
-                        </a>
+                  {/* Prompt: Open Command */}
+                  <div className="flex items-start gap-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-emerald-400 font-bold">➜</span>
+                      <span className="text-blue-400 font-bold">~</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-white text-[14px] font-bold">open</span>
+                      <div className="flex items-center gap-1 text-blue-400 group">
+                        <span className="text-[14px] font-mono break-all group-hover:underline">
+                          {displayText}
+                        </span>
+                        <span className="w-2 h-5 bg-white/70 animate-pulse shrink-0" />
                       </div>
                     </div>
                   </div>
 
-                  <div className="pt-6 space-y-1">
-                    <div className="text-white/20 text-[11px] font-mono">[KERNEL] Initializing SupportAI nodes...</div>
-                    <div className="text-white/20 text-[11px] font-mono">[NET] Vercel Edge connected via SSL.</div>
-                    <div className="text-emerald-500/40 text-[11px] font-mono">[STATUS] Link established successfully.</div>
+                  {/* Kernel Logs */}
+                  <div className="pt-8 space-y-2 opacity-30">
+                    <div className="text-white text-[11px] font-mono">[KERNEL] Initializing SupportAI nodes...</div>
+                    <div className="text-white text-[11px] font-mono">[NET] Vercel Edge connected via SSL.</div>
+                    <div className="text-emerald-400 text-[11px] font-mono font-bold tracking-tight">
+                      [STATUS] Link established successfully.
+                    </div>
                   </div>
                 </div>
               </div>
