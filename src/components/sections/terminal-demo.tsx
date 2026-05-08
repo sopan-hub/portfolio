@@ -8,6 +8,7 @@ const TerminalDemo = () => {
   const projectUrl = "https://the-ai-customer-care-vyqu.vercel.app/";
   const projectTitle = "AI CUSTOMER CARE";
   const projectDescription = "Add a powerful AI chatbot to your website in minutes. Let your customers get instant answers using your own business knowledge.";
+  const scriptText = '<script src="https://the-ai-customer-care-vyqu.vercel.app/chatBot.js" data-owner-id="OhVTRLHOYUVAATgZuYKe1FYx5ME2"></script>';
   
   const [displayText, setDisplayText] = useState('');
   const [index, setIndex] = useState(0);
@@ -21,19 +22,19 @@ const TerminalDemo = () => {
     if (!mounted) return;
 
     let timeout: NodeJS.Timeout;
-    if (index < projectUrl.length) {
+    if (index < scriptText.length) {
       timeout = setTimeout(() => {
-        setDisplayText((prev) => prev + projectUrl[index]);
+        setDisplayText((prev) => prev + scriptText[index]);
         setIndex((prev) => prev + 1);
-      }, 50); // Typing speed
+      }, 30); // Typing speed
     } else {
       timeout = setTimeout(() => {
         setDisplayText('');
         setIndex(0);
-      }, 4000);
+      }, 4000); // Wait before restarting
     }
     return () => clearTimeout(timeout);
-  }, [index, projectUrl, mounted]);
+  }, [index, scriptText, mounted]);
 
   if (!mounted) return null;
 
@@ -74,7 +75,7 @@ const TerminalDemo = () => {
                 </div>
                 <div className="text-[9px] font-mono text-white/30 tracking-[0.4em] uppercase font-bold flex items-center gap-2">
                   <TerminalIcon size={10} />
-                  <span>PROCESS_EXEC</span>
+                  <span>SupportAI</span>
                 </div>
                 <div className="w-12" />
               </div>
@@ -89,24 +90,18 @@ const TerminalDemo = () => {
                   </div>
                   
                   <div className="pt-2">
-                    <a 
-                      href={projectUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-2 text-white/90 hover:text-white transition-all break-all"
-                    >
-                      <span className="text-sm md:text-base font-medium underline decoration-white/10 group-hover:decoration-white/40 underline-offset-4">
+                    <div className="group flex items-start gap-2 text-white/90 transition-all break-all">
+                      <span className="text-xs md:text-sm font-mono text-blue-400">
                         {displayText}
                       </span>
-                      <span className="w-1.5 h-5 bg-white/80 animate-pulse shrink-0" />
-                      <ExternalLink size={14} className="text-white/20 group-hover:text-white/50 transition-colors shrink-0 ml-1" />
-                    </a>
+                      <span className="w-1.5 h-4 bg-white/80 animate-pulse shrink-0 mt-0.5" />
+                    </div>
                   </div>
 
                   <div className="pt-6 mt-6 border-t border-white/5">
                     <div className="flex items-center gap-4">
                       <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-ping" />
-                      <span className="text-[10px] text-white/40 uppercase tracking-[0.2em]">Live Connection Ready</span>
+                      <span className="text-[10px] text-white/40 uppercase tracking-[0.2em]">Deployment Stream Active</span>
                     </div>
                   </div>
                 </div>
