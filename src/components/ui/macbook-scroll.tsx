@@ -8,11 +8,13 @@ export const MacbookScroll = ({
   showGradient,
   title,
   badge,
+  children,
 }: {
   src?: string;
   showGradient?: boolean;
   title?: string | React.ReactNode;
   badge?: React.ReactNode;
+  children?: React.ReactNode;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -23,7 +25,7 @@ export const MacbookScroll = ({
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (window && window.innerWidth < 768) {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
       setIsMobile(true);
     }
   }, []);
@@ -45,18 +47,18 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="min-h-[150vh] flex flex-col items-start py-20 md:py-40 justify-start [perspective:800px] transform md:scale-100 scale-75"
+      className="min-h-[140vh] flex flex-col items-center py-20 md:py-40 justify-start [perspective:1000px] transform md:scale-100 scale-75"
     >
       <motion.div
         style={{
           opacity: textOpacity,
         }}
-        className="mb-20 text-left pl-4 md:pl-20"
+        className="mb-20 text-center w-full"
       >
         {title}
       </motion.div>
       
-      <div className="relative pl-4 md:pl-20">
+      <div className="relative">
         {/* Lid */}
         <Lid
           src={src}
@@ -64,10 +66,12 @@ export const MacbookScroll = ({
           scaleY={scaleY}
           rotate={rotate}
           translate={translate}
-        />
+        >
+          {children}
+        </Lid>
         {/* Base */}
         <div className="h-[22rem] w-[32rem] bg-gray-200 dark:bg-[#272729] rounded-2xl overflow-hidden relative shadow-2xl">
-          <div className="h-10 w-full relative">
+          <div className="h-10 w-full relative border-t border-white/5">
             <div className="absolute inset-x-0 mx-auto w-[80%] h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
           </div>
           <div className="flex relative">
@@ -93,18 +97,20 @@ export const Lid = ({
   rotate,
   translate,
   src,
+  children,
 }: {
   scaleX: any;
   scaleY: any;
   rotate: any;
   translate: any;
   src?: string;
+  children?: React.ReactNode;
 }) => {
   return (
-    <div className="relative [perspective:800px]">
+    <div className="relative [perspective:1000px]">
       <div
         style={{
-          transform: "perspective(800px) rotateX(-25deg) translateZ(0px)",
+          transform: "perspective(1000px) rotateX(-25deg) translateZ(0px)",
           transformOrigin: "bottom",
           transformStyle: "preserve-3d",
         }}
@@ -126,14 +132,22 @@ export const Lid = ({
           transformStyle: "preserve-3d",
           transformOrigin: "top",
         }}
-        className="h-64 w-[32rem] bg-[#010101] rounded-2xl p-2 absolute inset-0"
+        className="h-64 w-[32rem] bg-[#010101] rounded-2xl p-1 absolute inset-0 z-50 overflow-hidden"
       >
         <div className="absolute inset-0 bg-[#272729] rounded-lg" />
-        <img
-          src={src || "https://picsum.photos/seed/macbook/800/600"}
-          alt="macbook screen"
-          className="object-cover object-center absolute inset-0 h-full w-full rounded-lg"
-        />
+        <div className="relative h-full w-full bg-black rounded-lg overflow-hidden border border-white/10">
+          {src ? (
+            <img
+              src={src}
+              alt="macbook screen"
+              className="object-cover object-center absolute inset-0 h-full w-full rounded-lg"
+            />
+          ) : (
+            <div className="absolute inset-0 h-full w-full overflow-y-auto overflow-x-hidden bg-black/95 custom-scrollbar">
+              {children}
+            </div>
+          )}
+        </div>
       </motion.div>
     </div>
   );
@@ -153,29 +167,22 @@ export const Trackpad = () => {
 export const Keypad = () => {
   return (
     <div className="h-full w-full p-1">
-      {/* Function Row */}
       <div className="flex gap-[2px] justify-center">
         {[...Array(13)].map((_, i) => (
           <KybButton key={i} className={i === 0 ? "w-10" : "w-6"} />
         ))}
       </div>
-
-      {/* Number Row */}
       <div className="flex gap-[2px] justify-center mt-[2px]">
         {[...Array(13)].map((_, i) => (
           <KybButton key={i} className={i === 12 ? "w-10" : "w-6"} />
         ))}
       </div>
-
-      {/* Row 3 */}
       <div className="flex gap-[2px] justify-center mt-[2px]">
         <KybButton className="w-10" />
         {[...Array(13)].map((_, i) => (
           <KybButton key={i} className="w-6" />
         ))}
       </div>
-
-      {/* Row 4 */}
       <div className="flex gap-[2px] justify-center mt-[2px]">
         <KybButton className="w-[2.8rem]" />
         {[...Array(11)].map((_, i) => (
@@ -183,8 +190,6 @@ export const Keypad = () => {
         ))}
         <KybButton className="w-[2.85rem]" />
       </div>
-
-      {/* Row 5 */}
       <div className="flex gap-[2px] justify-center mt-[2px]">
         <KybButton className="w-[3.65rem]" />
         {[...Array(10)].map((_, i) => (
@@ -192,8 +197,6 @@ export const Keypad = () => {
         ))}
         <KybButton className="w-[3.65rem]" />
       </div>
-
-      {/* Bottom Row */}
       <div className="flex gap-[2px] justify-center mt-[2px]">
         <KybButton className="w-6" />
         <KybButton className="w-8" />
