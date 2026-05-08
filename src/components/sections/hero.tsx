@@ -1,15 +1,41 @@
-
 'use client';
 
 import React from 'react';
 import { Github, Linkedin } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import Image from 'next/image';
 
 export default function HeroSection() {
+  const { scrollYProgress } = useScroll();
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  // Hero specific background fades out as we scroll down
+  const opacity = useTransform(smoothProgress, [0, 0.2], [1, 0]);
+  const heroBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png";
+
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-transparent">
+      {/* Hero-specific background layer */}
+      <motion.div 
+        style={{ opacity }}
+        className="absolute inset-0 z-[-1] pointer-events-none"
+      >
+        <Image
+          src={heroBgUrl}
+          alt="Sopan Patil Hero Background"
+          fill
+          className="object-cover"
+          priority
+          quality={100}
+          unoptimized
+        />
+      </motion.div>
+
       <div className="container mx-auto px-4 h-full flex flex-col justify-between relative z-10 py-32">
-        
         {/* Top Header Row (HUD style) */}
         <div className="flex justify-end items-start w-full mb-12">
           <div className="flex items-center gap-4 text-white/80">
@@ -21,7 +47,6 @@ export default function HeroSection() {
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
-          
           {/* Left Side: Branding, Description & Buttons */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}

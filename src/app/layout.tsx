@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import ScrollZoomBackground from '@/components/ui/scroll-zoom-background';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Portfolio | Sopan Patil',
@@ -14,10 +14,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Hero background (portrait)
-  const heroBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png";
-  // Content background (High-res tech texture for all sections)
-  const contentBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/0fa7baf05422f321bedaa05b2ba52ca8dc4e0d0f/bg3.png";
+  // Global technical background for all sections
+  const globalBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/cc9ab6bc54267d56fd982100b2e228a2e980c8d2/bg.png";
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -34,11 +32,18 @@ export default function RootLayout({
         />
       </head>
       <body className="relative min-h-screen bg-black overflow-x-hidden">
-        {/* Responsive background that transitions between hero and global tech background */}
-        <ScrollZoomBackground 
-          heroSrc={heroBgUrl} 
-          contentSrc={contentBgUrl} 
-        />
+        {/* Global base background layer */}
+        <div className="fixed inset-0 z-[-2] pointer-events-none">
+          <Image
+            src={globalBgUrl}
+            alt="Technical Background"
+            fill
+            className="object-cover opacity-50"
+            quality={100}
+            priority
+            unoptimized
+          />
+        </div>
         
         <div className="relative z-10">
           {children}

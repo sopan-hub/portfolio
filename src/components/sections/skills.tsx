@@ -1,8 +1,11 @@
 'use client';
+import React, { useRef } from 'react';
 import { skills } from '@/lib/data';
 import * as Icons from '@/components/icons';
 import ScrollFloat from '@/components/ui/scroll-float';
 import GlassSurface from '@/components/ui/glass-surface';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import Image from 'next/image';
 
 const skillCategories: (keyof typeof skills)[] = [
   'Frontend',
@@ -31,8 +34,41 @@ const iconMap: { [key: string]: React.FC<{ className?: string }> } = {
 };
 
 const SkillsSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  // Skills specific background fades in when the section is in view
+  const opacity = useTransform(smoothProgress, [0.1, 0.3, 0.7, 0.9], [0, 1, 1, 0]);
+  const skillsBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/cc9ab6bc54267d56fd982100b2e228a2e980c8d2/the%20backgrounf.png";
+
   return (
-    <section id="skills" className="relative py-40 bg-transparent">
+    <section ref={containerRef} id="skills" className="relative py-40 bg-transparent overflow-hidden">
+      {/* Skills-specific background layer */}
+      <motion.div 
+        style={{ opacity }}
+        className="absolute inset-0 z-[-1] pointer-events-none"
+      >
+        <Image
+          src={skillsBgUrl}
+          alt="Skills Background"
+          fill
+          className="object-cover"
+          quality={100}
+          unoptimized
+        />
+        {/* Subtle masks for smooth transition into global bg */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-40" />
+      </motion.div>
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="mb-24 text-center flex flex-col items-center">
           <ScrollFloat
