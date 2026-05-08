@@ -5,19 +5,24 @@ import React, { useState, useEffect } from 'react';
 import { navLinks } from '@/lib/data';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Image from 'next/image';
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState('#home');
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const { scrollY } = useScroll();
+  const { scrollYProgress } = useScroll();
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
-  // Animate the profile icon appearing as we scroll
-  // It starts hidden and becomes full scale/opacity after 100px of scroll
-  const profileOpacity = useTransform(scrollY, [0, 150], [0, 1]);
-  const profileScale = useTransform(scrollY, [0, 150], [0.5, 1]);
-  const navPaddingLeft = useTransform(scrollY, [0, 150], ["2.5rem", "1rem"]);
+  // Animate the profile icon appearing as the background finishes its shrink
+  // We use a slight delay so it "takes over" from the shrinking BG
+  const profileOpacity = useTransform(smoothProgress, [0.15, 0.25], [0, 1]);
+  const profileScale = useTransform(smoothProgress, [0.15, 0.25], [0.8, 1]);
+  const navPaddingLeft = useTransform(smoothProgress, [0.1, 0.25], ["2.5rem", "1rem"]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +54,7 @@ const Header = () => {
         style={{ paddingLeft: navPaddingLeft }}
         className="pointer-events-auto transition-all duration-500 rounded-full pr-10 py-2 flex items-center gap-8 bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden"
       >
-        {/* Profile Icon - Appears on Scroll */}
+        {/* Profile Icon - Appears on Scroll and "catches" the shrinking Hero BG */}
         <motion.div 
           style={{ opacity: profileOpacity, scale: profileScale }}
           className="flex items-center gap-3 shrink-0"
