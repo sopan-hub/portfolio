@@ -3,16 +3,16 @@
 import React from 'react';
 import Image from 'next/image';
 import { achievements } from '@/lib/data';
-import { Code2, Database, Sparkles, BarChart3, Award } from 'lucide-react';
+import { Box, Lock, Search, Settings, Sparkles } from 'lucide-react';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 import ScrollFloat from '@/components/ui/scroll-float';
 
 const iconMap = [
-  <Code2 className="h-4 w-4 text-neutral-400" />,
-  <Database className="h-4 w-4 text-neutral-400" />,
-  <Award className="h-4 w-4 text-neutral-400" />,
-  <Sparkles className="h-4 w-4 text-neutral-400" />,
-  <BarChart3 className="h-4 w-4 text-neutral-400" />,
+  <Box className="h-4 w-4 text-black dark:text-neutral-400" />,
+  <Settings className="h-4 w-4 text-black dark:text-neutral-400" />,
+  <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
+  <Sparkles className="h-4 w-4 text-black dark:text-neutral-400" />,
+  <Search className="h-4 w-4 text-black dark:text-neutral-400" />,
 ];
 
 const gridAreas = [
@@ -24,14 +24,14 @@ const gridAreas = [
 ];
 
 const AchievementsSection = () => {
-  // We have 4 items in data.ts, let's create a 5th placeholder to match the layout from the demo
+  // We have 4 items in data.ts, let's create a 5th placeholder to match the bento layout
   const allItems = [
     ...achievements,
     {
       title: "Technical Excellence Continuous Learning",
       year: "2025",
-      description: "Constantly expanding neural network architectures and agentic workflow simulations through rigorous self-directed research.",
-      image: "https://picsum.photos/seed/cert/600/400"
+      description: "Constantly expanding neural network architectures and agentic workflow simulations through rigorous research.",
+      image: "https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate.png"
     }
   ];
 
@@ -94,24 +94,24 @@ const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
           proximity={64}
           inactiveZone={0.01}
         />
-        <div className="relative flex h-full flex-col overflow-hidden rounded-xl shadow-[0px_0px_27px_0px_#1a1a1a]">
+        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 shadow-[0px_0px_27px_0px_#1a1a1a]">
           
-          <div className="relative flex flex-1 flex-col justify-between gap-3 p-6 z-10">
-            <div className="space-y-4">
-              <div className="w-fit rounded-lg border border-white/10 bg-white/5 p-2">
-                {icon}
-              </div>
-              <h3 className="tracking-tight pt-0.5 font-bold text-xl/[1.375rem] text-balance text-white md:text-2xl/[1.875rem] uppercase">
+          <div className="relative flex flex-1 flex-col justify-between gap-3 z-10">
+            <div className="w-fit rounded-lg border border-white/10 bg-white/5 p-2">
+              {icon}
+            </div>
+            <div className="space-y-3">
+              <h3 className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-semibold text-balance text-white md:text-2xl/[1.875rem] uppercase">
                 {title}
               </h3>
-              <p className="font-sans text-sm/[1.125rem] text-neutral-400 md:text-base/[1.375rem] leading-relaxed">
+              <div className="font-sans text-sm/[1.125rem] text-neutral-400 md:text-base/[1.375rem] leading-relaxed">
                 {description}
-              </p>
+              </div>
             </div>
           </div>
 
           {image && (
-            <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
+            <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none">
               <Image 
                 src={image} 
                 alt={title} 
@@ -119,7 +119,7 @@ const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
                 className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
                 unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
             </div>
           )}
         </div>
