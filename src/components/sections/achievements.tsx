@@ -24,19 +24,18 @@ const gridAreas = [
 ];
 
 const AchievementsSection = () => {
-  // We have 4 items in data.ts, let's create a 5th placeholder to match the bento layout
   const allItems = [
     ...achievements,
     {
       title: "Technical Excellence Continuous Learning",
       year: "2025",
-      description: "Constantly expanding neural network architectures and agentic workflow simulations through rigorous research.",
+      description: "Constantly expanding neural network architectures and agentic workflow simulations through rigorous self-directed research.",
       image: "https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate.png"
     }
   ];
 
   return (
-    <section id="achievements" className="py-32 relative">
+    <section id="achievements" className="py-32 relative bg-black">
       <div className="container mx-auto px-4">
         <div className="mb-20 text-center flex flex-col items-center">
           <ScrollFloat
@@ -85,7 +84,7 @@ interface GridItemProps {
 
 const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
   return (
-    <li className={`min-h-[14rem] list-none group ${area}`}>
+    <li className={`min-h-[16rem] list-none group ${area}`}>
       <div className="relative h-full rounded-2xl border border-white/10 p-2 md:rounded-3xl md:p-3 bg-[#050505] overflow-hidden">
         <GlowingEffect
           spread={40}
@@ -94,32 +93,32 @@ const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
           proximity={64}
           inactiveZone={0.01}
         />
-        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 shadow-[0px_0px_27px_0px_#1a1a1a]">
+        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 shadow-[0px_0px_27px_0px_#1a1a1a] z-10 bg-black/40 backdrop-blur-[2px]">
           
-          <div className="relative flex flex-1 flex-col justify-between gap-3 z-10">
-            <div className="w-fit rounded-lg border border-white/10 bg-white/5 p-2">
+          <div className="relative flex flex-1 flex-col justify-between gap-3 z-20">
+            <div className="w-fit rounded-lg border border-white/10 bg-white/5 p-2 backdrop-blur-md">
               {icon}
             </div>
             <div className="space-y-3">
-              <h3 className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-semibold text-balance text-white md:text-2xl/[1.875rem] uppercase">
+              <h3 className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-bold text-balance text-white md:text-2xl/[1.875rem] uppercase drop-shadow-md">
                 {title}
               </h3>
-              <div className="font-sans text-sm/[1.125rem] text-neutral-400 md:text-base/[1.375rem] leading-relaxed">
+              <div className="font-sans text-sm/[1.125rem] text-neutral-300 md:text-base/[1.375rem] leading-relaxed drop-shadow-sm">
                 {description}
               </div>
             </div>
           </div>
 
           {image && (
-            <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none">
+            <div className="absolute inset-0 z-0 opacity-50 group-hover:opacity-80 transition-all duration-700 pointer-events-none">
               <Image 
                 src={image} 
                 alt={title} 
                 fill 
-                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+                className="object-cover transition-all duration-700 scale-100 group-hover:scale-110"
                 unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20 group-hover:via-black/30 transition-all duration-700" />
             </div>
           )}
         </div>

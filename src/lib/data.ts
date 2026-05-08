@@ -93,14 +93,6 @@ export const achievements = [
       'https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate.png',
   },
   {
-    title: 'GenAI Powered Data Analytics Job Simulation – Forage',
-    year: '2024',
-    description:
-      'Completed the GenAI Powered Data Analytics Job Simulation on Forage, developing skills in exploratory data analysis, risk profiling, business report writing, and implementing AI-driven collection strategies.',
-    image:
-      'https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate3.png',
-  },
-  {
     title: 'GenAI Job Simulation – BCG X (via Forage)',
     year: '2023',
     description:
@@ -115,5 +107,13 @@ export const achievements = [
       'Completed the Deloitte Data Analytics Job Simulation on Forage, gaining practical knowledge in data analysis and forensic technology applications.',
     image:
       'https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate5.png',
+  },
+  {
+    title: 'GenAI Powered Data Analytics Job Simulation – Forage',
+    year: '2024',
+    description:
+      'Completed the GenAI Powered Data Analytics Job Simulation on Forage, developing skills in exploratory data analysis, risk profiling, business report writing, and implementing AI-driven collection strategies.',
+    image:
+      'https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate3.png',
   },
 ];
