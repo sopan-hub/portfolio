@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Cpu, ArrowRight } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -11,9 +10,9 @@ export default function HeroSection() {
         
         {/* Top Header Row (HUD style) */}
         <div className="flex justify-end items-start w-full mb-8">
-          <div className="flex items-center gap-4 text-white/60">
+          <div className="flex items-center gap-4 text-white/80">
             <span className="text-[15px] font-bold tracking-[0.4em] uppercase">SYSTEM_ID // SP.2026</span>
-            <div className="h-[1px] w-12 bg-white/40" />
+            <div className="h-[1px] w-12 bg-white/60" />
             <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-white">CORE_ACTIVE</span>
           </div>
         </div>
@@ -27,7 +26,7 @@ export default function HeroSection() {
               <h1 className="text-4xl md:text-5xl lg:text-[76px] font-black text-white tracking-tighter uppercase leading-[0.9] drop-shadow-2xl">
                 SOPAN<br />PATIL //
               </h1>
-              <p className="max-w-md text-white/80 text-[12px] md:text-[14px] leading-relaxed uppercase tracking-wider font-medium">
+              <p className="max-w-md text-white text-[12px] md:text-[14px] leading-relaxed uppercase tracking-wider font-bold">
                 Full-Stack AI Developer. Engineered with Agentic AI and high-res MERN stacks for those who don't just watch the future—they architect it. Expert in autonomous workflows and neural RAG pipelines.
               </p>
             </div>
@@ -40,28 +39,28 @@ export default function HeroSection() {
             <div className="w-full max-w-xs space-y-8">
               <div className="space-y-2">
                 <p className="text-[10px] font-black text-white tracking-[0.3em] uppercase opacity-100">TECHNICAL SPECS</p>
-                <div className="h-[1px] w-full bg-white/30" />
+                <div className="h-[1px] w-full bg-white/60" />
               </div>
               
               <div className="space-y-4">
                 <div className="flex justify-between items-center group cursor-default">
-                  <span className="text-[15px] font-bold text-white/60 uppercase tracking-widest">INTELLIGENCE </span>
+                  <span className="text-[15px] font-bold text-white/80 uppercase tracking-widest">INTELLIGENCE </span>
                   <span className="text-[15px] font-bold text-white uppercase tracking-tight text-right">Agentic • GenAI • AI/ML</span>
                 </div>
                 <div className="flex justify-between items-center group cursor-default">
-                  <span className="text-[15px] font-bold text-white/60 uppercase tracking-widest">NEURAL </span>
+                  <span className="text-[15px] font-bold text-white/80 uppercase tracking-widest">NEURAL </span>
                   <span className="text-[15px] font-bold text-white uppercase tracking-tight text-right"> Multi-Agent RAG • Custom LLMs</span>
                 </div>
                 <div className="flex justify-between items-center group cursor-default">
-                  <span className="text-[15px] font-bold text-white/60 uppercase tracking-widest">WEB_STACK </span>
+                  <span className="text-[15px] font-bold text-white/80 uppercase tracking-widest">WEB_STACK </span>
                   <span className="text-[15px] font-bold text-white uppercase tracking-tight text-right">Next.js 15 • Scalable MERN</span>
                 </div>
                 <div className="flex justify-between items-center group cursor-default">
-                  <span className="text-[15px] font-bold text-white/60 uppercase tracking-widest">INFRA </span>
+                  <span className="text-[15px] font-bold text-white/80 uppercase tracking-widest">INFRA </span>
                   <span className="text-[15px] font-bold text-white uppercase tracking-tight text-right"> Serverless • Firebase • Cloud</span>
                 </div>
                 <div className="flex justify-between items-center group cursor-default">
-                  <span className="text-[15px] font-bold text-white/60 uppercase tracking-widest">BUILD </span>
+                  <span className="text-[15px] font-bold text-white/80 uppercase tracking-widest">BUILD </span>
                   <span className="text-[15px] font-bold text-white uppercase tracking-tight text-right">Autonomous Architectures</span>
                 </div>
               </div>
@@ -70,29 +69,15 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom HUD Row */}
-        <div className="flex flex-col md:flex-row justify-between items-end w-full mt-12 gap-8">
+        <div className="flex justify-end items-end w-full mt-12">
           
-          {/* Featured Module (Glass Card) */}
-          <div className="liquid-glass p-5 rounded-3xl max-w-xs flex gap-5 items-center bg-white/10">
-            <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-white/20 flex items-center justify-center border border-white/20">
-              <Cpu className="text-white h-8 w-8" />
-            </div>
-            <div className="space-y-2">
-              <p className="text-[10px] font-black text-white uppercase tracking-wider">NEURAL CORE // ACTIVE</p>
-              <p className="text-[9px] text-white/80 leading-tight uppercase font-bold">High-performance AI agents for enterprise automation.</p>
-              <Button size="sm" variant="outline" className="h-7 text-[8px] px-4 rounded-full border-white/40 text-white uppercase font-bold hover:bg-white hover:text-black transition-all">
-                EXPLORE <ArrowRight className="ml-2 h-2 w-2" />
-              </Button>
-            </div>
-          </div>
-
           {/* Social Icons (Capsule Buttons) */}
           <div className="flex items-center gap-4">
             <a 
               href="https://github.com/sopan-hub" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/30 bg-white/10 text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all backdrop-blur-md"
+              className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/60 bg-white/10 text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all backdrop-blur-md"
             >
               <Github size={16} /> GitHub
             </a>
@@ -100,7 +85,7 @@ export default function HeroSection() {
               href="https://www.linkedin.com/in/sopan-patil-24b2a1380" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/30 bg-white/10 text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all backdrop-blur-md"
+              className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/60 bg-white/10 text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all backdrop-blur-md"
             >
               <Linkedin size={16} /> LinkedIn
             </a>
