@@ -1,10 +1,8 @@
-
 'use client';
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Cpu, Zap, Box, Share2, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
+import { Github, Linkedin, Cpu, Share2, ArrowRight } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -14,7 +12,7 @@ export default function HeroSection() {
         {/* Top Header Row (HUD style) */}
         <div className="flex justify-end items-start w-full mb-8">
           <div className="flex items-center gap-4 text-white/40">
-            <span className="text-[10px] font-bold tracking-[0.4em] uppercase">SYSTEM_ID // SP.2026</span>
+            <span className="text-[15px] font-bold tracking-[0.4em] uppercase">SYSTEM_ID // SP.2026</span>
             <div className="h-[1px] w-12 bg-white/20" />
             <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-white/80">CORE_ACTIVE</span>
           </div>
@@ -33,19 +31,6 @@ export default function HeroSection() {
                 Full-Stack AI Developer. Engineered with Agentic AI and high-res MERN stacks for those who don't just watch the future—they architect it. Expert in autonomous workflows and neural RAG pipelines.
               </p>
             </div>
-            
-            {/* Social Icons (Circular HUD style) */}
-            <div className="flex items-center gap-4">
-              <a href="https://github.com/sopan-hub" className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/50 transition-all backdrop-blur-sm">
-                <Github size={16} />
-              </a>
-              <a href="https://www.linkedin.com/in/sopan-patil-24b2a1380" className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/50 transition-all backdrop-blur-sm">
-                <Linkedin size={16} />
-              </a>
-              <button className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/50 transition-all backdrop-blur-sm">
-                <Share2 size={16} />
-              </button>
-            </div>
           </div>
 
           <div className="lg:col-span-2 hidden lg:block" /> {/* Face Clearance Spacer */}
@@ -60,24 +45,24 @@ export default function HeroSection() {
               
               <div className="space-y-4">
                 <div className="flex justify-between items-center group cursor-default">
-                  <span className="text-[11px] font-bold text-white/40 uppercase tracking-widest">INTELLIGENCE</span>
-                  <span className="text-[11px] font-bold text-white/90 uppercase tracking-tight text-right">Agentic • GenAI • AI/ML</span>
+                  <span className="text-[15px] font-bold text-white/40 uppercase tracking-widest">INTELLIGENCE </span>
+                  <span className="text-[15px] font-bold text-white/90 uppercase tracking-tight text-right">Agentic • GenAI • AI/ML</span>
                 </div>
                 <div className="flex justify-between items-center group cursor-default">
-                  <span className="text-[11px] font-bold text-white/40 uppercase tracking-widest">NEURAL</span>
-                  <span className="text-[11px] font-bold text-white/90 uppercase tracking-tight text-right">Multi-Agent RAG • Custom LLMs</span>
+                  <span className="text-[15px] font-bold text-white/40 uppercase tracking-widest">NEURAL </span>
+                  <span className="text-[15px] font-bold text-white/90 uppercase tracking-tight text-right"> Multi-Agent RAG • Custom LLMs</span>
                 </div>
                 <div className="flex justify-between items-center group cursor-default">
-                  <span className="text-[11px] font-bold text-white/40 uppercase tracking-widest">WEB_STACK</span>
-                  <span className="text-[11px] font-bold text-white/90 uppercase tracking-tight text-right">Next.js 15 • Scalable MERN</span>
+                  <span className="text-[15px] font-bold text-white/40 uppercase tracking-widest">WEB_STACK </span>
+                  <span className="text-[15px] font-bold text-white/90 uppercase tracking-tight text-right">Next.js 15 • Scalable MERN</span>
                 </div>
                 <div className="flex justify-between items-center group cursor-default">
-                  <span className="text-[11px] font-bold text-white/40 uppercase tracking-widest">INFRA</span>
-                  <span className="text-[11px] font-bold text-white/90 uppercase tracking-tight text-right">Serverless • Firebase • Cloud</span>
+                  <span className="text-[15px] font-bold text-white/40 uppercase tracking-widest">INFRA </span>
+                  <span className="text-[15px] font-bold text-white/90 uppercase tracking-tight text-right"> Serverless • Firebase • Cloud</span>
                 </div>
                 <div className="flex justify-between items-center group cursor-default">
-                  <span className="text-[11px] font-bold text-white/40 uppercase tracking-widest">BUILD</span>
-                  <span className="text-[11px] font-bold text-white/90 uppercase tracking-tight text-right">Autonomous Architectures</span>
+                  <span className="text-[15px] font-bold text-white/40 uppercase tracking-widest">BUILD </span>
+                  <span className="text-[15px] font-bold text-white/90 uppercase tracking-tight text-right">Autonomous Architectures</span>
                 </div>
               </div>
             </div>
@@ -101,12 +86,28 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Tech Tags */}
-          <div className="flex flex-wrap justify-end gap-3">
-            <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">8K_RAW</span>
-            <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">A+ //</span>
-            <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">ULTRA-WIDE</span>
-            <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">NEURAL-SYNC</span>
+          {/* Social Icons & Tech Tags */}
+          <div className="flex flex-col items-end gap-6">
+            {/* Social Icons Grouped */}
+            <div className="flex items-center gap-3">
+              <a href="https://github.com/sopan-hub" className="flex items-center justify-center w-9 h-9 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
+                <Github size={14} />
+              </a>
+              <a href="https://www.linkedin.com/in/sopan-patil-24b2a1380" className="flex items-center justify-center w-9 h-9 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
+                <Linkedin size={14} />
+              </a>
+              <button className="flex items-center justify-center w-9 h-9 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-white/30 transition-all backdrop-blur-md">
+                <Share2 size={14} />
+              </button>
+            </div>
+
+            {/* Tech Tags Grouped */}
+            <div className="flex flex-wrap justify-end gap-3">
+              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">8K_RAW</span>
+              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">A+ //</span>
+              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">ULTRA-WIDE</span>
+              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-white/60 tracking-widest uppercase backdrop-blur-md">NEURAL-SYNC</span>
+            </div>
           </div>
 
         </div>
