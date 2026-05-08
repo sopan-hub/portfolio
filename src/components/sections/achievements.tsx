@@ -60,8 +60,8 @@ const AchievementsSection = () => {
           </div>
         </div>
 
-        {/* Static macOS Terminal Container */}
-        <div className="max-w-6xl mx-auto rounded-xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 ring-1 ring-white/5">
+        {/* macOS Terminal Container - Completely Black Body */}
+        <div className="max-w-6xl mx-auto rounded-xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)] border border-white/10 ring-1 ring-white/5">
           {/* macOS Header Bar */}
           <div className="flex items-center px-4 py-3 bg-[#1e1e1e] border-b border-white/5 relative">
             <div className="flex gap-2 items-center">
@@ -77,8 +77,8 @@ const AchievementsSection = () => {
             </div>
           </div>
 
-          {/* Terminal Content Area */}
-          <div className="p-4 md:p-8 bg-black/60 backdrop-blur-md">
+          {/* Terminal Content Area - Pure Black */}
+          <div className="p-4 md:p-8 bg-black">
             <ul className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-3 xl:grid-rows-2">
               {gridItems.map((item, index) => (
                 <GridItem
@@ -109,7 +109,7 @@ interface GridItemProps {
 const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
   return (
     <li className={`min-h-[14rem] list-none group ${area}`}>
-      <div className="relative h-full rounded-2xl border border-white/10 p-1 bg-black/40 backdrop-blur-sm transition-all duration-500 hover:scale-[1.01] overflow-hidden">
+      <div className="relative h-full rounded-2xl border border-white/10 p-1 bg-[#050505] transition-all duration-500 hover:scale-[1.01] overflow-hidden">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -132,15 +132,15 @@ const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
             </div>
           </div>
           
-          <div className="relative h-24 w-full mt-2 rounded-lg overflow-hidden border border-white/10 z-20 shadow-xl group-hover:border-white/30 transition-colors">
+          {/* Certificate Image - HD Visibility, No Fade */}
+          <div className="relative h-36 w-full mt-2 rounded-lg overflow-hidden border border-white/20 z-20 shadow-2xl group-hover:border-white/40 transition-colors">
             <Image 
               src={image} 
               alt={title} 
               fill 
-              className="object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 scale-100 group-hover:scale-105"
+              className="object-cover opacity-100 transition-all duration-500 scale-100 group-hover:scale-105"
               unoptimized
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           </div>
         </div>
       </div>
