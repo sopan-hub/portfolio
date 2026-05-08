@@ -16,12 +16,13 @@ export default function HeroSection() {
   });
 
   // Hero specific background fades out smoothly as we scroll down
-  const opacity = useTransform(smoothProgress, [0, 0.25], [1, 0]);
+  // Range is set to 0.2 to ensure it fades out before the next section-specific background takes over
+  const opacity = useTransform(smoothProgress, [0, 0.2], [1, 0]);
   const heroBg = placeholderImages['hero-bg'];
 
   return (
     <section id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* Hero-specific background layer */}
+      {/* Hero-specific background layer - Using fixed positioning for seamless depth */}
       <motion.div 
         style={{ opacity }}
         className="fixed inset-0 z-[-1] pointer-events-none"
@@ -35,8 +36,8 @@ export default function HeroSection() {
           quality={100}
           unoptimized
         />
-        {/* Very subtle gradient to ensure smooth blend into global base */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20" />
+        {/* Subtle shadow to blend into the base black background */}
+        <div className="absolute inset-0 bg-black/10" />
       </motion.div>
 
       <div className="container mx-auto px-4 h-full flex flex-col justify-between relative z-10 py-32">

@@ -49,16 +49,17 @@ const SkillsSection = () => {
     restDelta: 0.001
   });
 
-  // Smooth cross-fade transition: Fades in as the section approaches center, fades out as it leaves
-  const opacity = useTransform(smoothProgress, [0.1, 0.4, 0.6, 0.9], [0, 1, 1, 0]);
+  // Smooth cross-fade transition: Matches the HeroSection pattern but relative to its scroll position
+  // Fades in as it enters viewport and fades out as it leaves
+  const opacity = useTransform(smoothProgress, [0.1, 0.35, 0.65, 0.9], [0, 1, 1, 0]);
   const skillsBg = placeholderImages['skills-specific-bg'];
 
   return (
     <section ref={sectionRef} id="skills" className="relative py-40 overflow-hidden">
-      {/* Skills-specific background layer - Transitions over global base */}
+      {/* Skills-specific background layer - Using fixed positioning for seamless depth */}
       <motion.div 
         style={{ opacity }}
-        className="absolute inset-0 z-[-1] pointer-events-none"
+        className="fixed inset-0 z-[-1] pointer-events-none"
       >
         <Image
           src={skillsBg.url}
@@ -68,9 +69,8 @@ const SkillsSection = () => {
           quality={100}
           unoptimized
         />
-        {/* Transparent blend masks for smooth integration with global base */}
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/0 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/0 to-transparent" />
+        {/* Subtle radial mask to keep focus on the center and blend edges */}
+        <div className="absolute inset-0 bg-black/10 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
       </motion.div>
 
       <div className="container mx-auto px-4 relative z-10">
