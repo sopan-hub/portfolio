@@ -60,7 +60,7 @@ const AchievementsSection = () => {
           </div>
         </div>
 
-        {/* macOS Terminal Container - Completely Black Body */}
+        {/* macOS Terminal Container */}
         <div className="max-w-6xl mx-auto rounded-xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)] border border-white/10 ring-1 ring-white/5">
           {/* macOS Header Bar */}
           <div className="flex items-center px-4 py-3 bg-[#1e1e1e] border-b border-white/5 relative">
@@ -108,39 +108,43 @@ interface GridItemProps {
 
 const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
   return (
-    <li className={`min-h-[14rem] list-none group ${area}`}>
-      <div className="relative h-full rounded-2xl border border-white/10 p-1 bg-[#050505] transition-all duration-500 hover:scale-[1.01] overflow-hidden">
+    <li className={`min-h-[16rem] list-none group ${area}`}>
+      <div className="relative h-full rounded-2xl border border-white/10 transition-all duration-500 hover:scale-[1.01] overflow-hidden">
+        {/* Full Card Certificate Image - HD Background */}
+        <Image 
+          src={image} 
+          alt={title} 
+          fill 
+          className="object-cover opacity-100 transition-all duration-500 scale-100 group-hover:scale-105 z-0"
+          unoptimized
+        />
+        
+        {/* Dark Overlays for Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80 z-10" />
+
         <GlowingEffect
           spread={40}
           glow={true}
           disabled={false}
           proximity={64}
           inactiveZone={0.01}
+          className="z-30"
         />
-        <div className="relative flex h-full flex-col justify-between gap-4 overflow-hidden rounded-xl p-5 z-10">
-          <div className="relative flex flex-1 flex-col justify-between gap-3 z-20">
-            <div className="w-fit rounded-lg border border-white/10 bg-white/5 p-2">
-              {icon}
-            </div>
-            <div className="space-y-1">
-              <h3 className="text-lg font-bold text-white uppercase tracking-tight">
-                {title}
-              </h3>
-              <p className="text-[11px] text-white/60 leading-relaxed font-mono">
+        
+        {/* Content Overlapping the Certificate */}
+        <div className="relative flex h-full flex-col justify-between p-6 z-20">
+          <div className="w-fit rounded-lg border border-white/20 bg-black/40 backdrop-blur-md p-2 shadow-2xl">
+            {icon}
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-lg font-bold text-white uppercase tracking-tight drop-shadow-2xl">
+              {title}
+            </h3>
+            <div className="bg-black/30 backdrop-blur-[2px] rounded-md p-2 border border-white/5">
+              <p className="text-[11px] text-white/90 leading-relaxed font-mono font-medium drop-shadow-lg">
                 {description}
               </p>
             </div>
-          </div>
-          
-          {/* Certificate Image - HD Visibility, No Fade */}
-          <div className="relative h-36 w-full mt-2 rounded-lg overflow-hidden border border-white/20 z-20 shadow-2xl group-hover:border-white/40 transition-colors">
-            <Image 
-              src={image} 
-              alt={title} 
-              fill 
-              className="object-cover opacity-100 transition-all duration-500 scale-100 group-hover:scale-105"
-              unoptimized
-            />
           </div>
         </div>
       </div>
