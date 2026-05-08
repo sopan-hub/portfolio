@@ -20,7 +20,7 @@ export default function HeroSection() {
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
           
-          {/* Left Side: Branding & Description */}
+          {/* Left Side: Branding, Description & Buttons */}
           <div className="lg:col-span-5 space-y-10">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-[76px] font-black text-white tracking-tighter uppercase leading-[0.9] drop-shadow-2xl">
@@ -29,6 +29,26 @@ export default function HeroSection() {
               <p className="max-w-md text-white text-[12px] md:text-[14px] leading-relaxed uppercase tracking-wider font-bold">
                 Full-Stack AI Developer. Engineered with Agentic AI and high-res MERN stacks for those who don't just watch the future—they architect it. Expert in autonomous workflows and neural RAG pipelines.
               </p>
+            </div>
+
+            {/* Social Icons (Capsule Buttons) - Now below description */}
+            <div className="flex items-center gap-4">
+              <a 
+                href="https://github.com/sopan-hub" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/60 bg-white/10 text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all backdrop-blur-md"
+              >
+                <Github size={16} /> GitHub
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/sopan-patil-24b2a1380" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/60 bg-white/10 text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all backdrop-blur-md"
+              >
+                <Linkedin size={16} /> LinkedIn
+              </a>
             </div>
           </div>
 
@@ -66,31 +86,6 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Bottom HUD Row */}
-        <div className="flex justify-start items-end w-full mt-12">
-          
-          {/* Social Icons (Capsule Buttons) */}
-          <div className="flex items-center gap-4">
-            <a 
-              href="https://github.com/sopan-hub" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/60 bg-white/10 text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all backdrop-blur-md"
-            >
-              <Github size={16} /> GitHub
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/sopan-patil-24b2a1380" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/60 bg-white/10 text-[10px] font-bold text-white uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all backdrop-blur-md"
-            >
-              <Linkedin size={16} /> LinkedIn
-            </a>
-          </div>
-
         </div>
       </div>
     </section>
