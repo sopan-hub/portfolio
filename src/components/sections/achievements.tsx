@@ -45,41 +45,42 @@ const gridItems = [
 
 const AchievementsSection = () => {
   return (
-    <section id="achievements" className="relative py-24 overflow-hidden">
+    <section id="achievements" className="relative py-32 overflow-hidden">
       <div className="container mx-auto px-4 flex flex-col items-end">
-        <div className="mb-16 self-start flex flex-col items-start px-2 lg:px-12">
-          <h2 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter glow-white mb-2">
+        {/* Header - Aligned Left */}
+        <div className="mb-20 self-start flex flex-col items-start px-2 lg:px-12">
+          <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter glow-white mb-4">
             Technical Archive
           </h2>
           <div className="flex items-center gap-4">
-            <div className="h-[1px] w-8 bg-white/20" />
-            <p className="text-[11px] font-black text-white/40 uppercase tracking-[0.5em]">
+            <div className="h-[1px] w-12 bg-white/20" />
+            <p className="text-[11px] font-black text-white/40 uppercase tracking-[0.6em]">
               Verified Technical Credentials
             </p>
-            <div className="h-[1px] w-8 bg-white/20" />
+            <div className="h-[1px] w-12 bg-white/20" />
           </div>
         </div>
 
-        {/* Ultra-Wide Terminal Window - Shifted Right */}
-        <div className="w-full max-w-[1650px] ml-auto rounded-xl overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,1)] border border-white/10 ring-1 ring-white/5 transition-all duration-700 hover:shadow-[0_50px_100px_-20px_rgba(0,0,0,1)]">
+        {/* Ultra-Wide Terminal Window - Shifted Right and Down */}
+        <div className="w-full max-w-[1700px] ml-auto rounded-xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,1)] border border-white/10 ring-1 ring-white/5 transition-all duration-700 hover:shadow-[0_60px_120px_-20px_rgba(0,0,0,1)]">
           {/* macOS Header Bar */}
-          <div className="flex items-center px-6 py-4 bg-[#1e1e1e] border-b border-white/5 relative">
+          <div className="flex items-center px-6 py-5 bg-[#1e1e1e] border-b border-white/5 relative">
             <div className="flex gap-2.5 items-center">
-              <div className="w-3.5 h-3.5 rounded-full bg-[#FF5F56] border border-black/10" />
-              <div className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E] border border-black/10" />
-              <div className="w-3.5 h-3.5 rounded-full bg-[#27C93F] border border-black/10" />
+              <div className="w-4 h-4 rounded-full bg-[#FF5F56] border border-black/10" />
+              <div className="w-4 h-4 rounded-full bg-[#FFBD2E] border border-black/10" />
+              <div className="w-4 h-4 rounded-full bg-[#27C93F] border border-black/10" />
             </div>
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="flex items-center gap-2 text-white/40 font-mono text-[11px] font-bold uppercase">
-                <TerminalIcon size={14} className="opacity-50" />
-                <span className="tracking-widest">zsh — credential_manager</span>
+              <div className="flex items-center gap-2 text-white/30 font-mono text-[12px] font-bold uppercase">
+                <TerminalIcon size={14} className="opacity-40" />
+                <span className="tracking-[0.3em]">zsh — credential_manager</span>
               </div>
             </div>
           </div>
 
           {/* Terminal Content Area - Pure Black */}
-          <div className="p-6 md:p-10 bg-black">
-            <ul className="grid grid-cols-1 gap-6 md:grid-cols-12 md:grid-rows-3 xl:grid-rows-2">
+          <div className="p-8 md:p-14 bg-black">
+            <ul className="grid grid-cols-1 gap-8 md:grid-cols-12 md:grid-rows-3 xl:grid-rows-2">
               {gridItems.map((item, index) => (
                 <GridItem
                   key={index}
@@ -108,37 +109,37 @@ interface GridItemProps {
 
 const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
   return (
-    <li className={`min-h-[18rem] list-none group ${area}`}>
+    <li className={`min-h-[22rem] list-none group ${area}`}>
       <div className="relative h-full rounded-2xl border border-white/10 transition-all duration-500 hover:scale-[1.01] overflow-hidden bg-black shadow-2xl">
-        {/* HD Certificate Image - Full Clarity */}
+        {/* HD Certificate Image - Full Clarity, No Fades */}
         <Image 
           src={image} 
           alt={title} 
           fill 
-          className="object-cover opacity-100 transition-all duration-700 scale-100 group-hover:scale-110 z-0"
+          className="object-cover opacity-100 transition-all duration-700 scale-100 group-hover:scale-105 z-0"
           unoptimized
         />
 
-        {/* Interaction Glow */}
+        {/* Interaction Glow Border */}
         <GlowingEffect
-          spread={60}
+          spread={80}
           glow={true}
           disabled={false}
-          proximity={80}
+          proximity={100}
           inactiveZone={0.01}
           className="z-30"
         />
         
-        {/* Content Overlay - Overlapping without fades */}
-        <div className="relative flex h-full flex-col justify-between p-8 z-20 pointer-events-none">
-          <div className="w-fit rounded-xl border border-white/40 bg-black/30 backdrop-blur-md p-3 shadow-2xl transition-transform duration-500 group-hover:scale-110">
+        {/* Content Overlay - Overlapping without backgrounds */}
+        <div className="relative flex h-full flex-col justify-between p-10 z-20 pointer-events-none">
+          <div className="w-fit rounded-xl border border-white/30 bg-black/40 backdrop-blur-md p-4 shadow-2xl transition-transform duration-500 group-hover:scale-110">
             {icon}
           </div>
-          <div className="space-y-2">
-            <h3 className="text-xl font-black text-white uppercase tracking-tight drop-shadow-[0_4px_8px_rgba(0,0,0,1)] group-hover:text-white transition-colors">
+          <div className="space-y-3">
+            <h3 className="text-2xl font-black text-white uppercase tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,1)] group-hover:text-white transition-colors">
               {title}
             </h3>
-            <p className="text-[12px] text-white leading-relaxed font-mono font-bold drop-shadow-[0_3px_6px_rgba(0,0,0,1)] opacity-90">
+            <p className="text-[13px] text-white/90 leading-relaxed font-mono font-bold drop-shadow-[0_3px_8px_rgba(0,0,0,1)]">
               {description}
             </p>
           </div>
