@@ -60,8 +60,8 @@ const AchievementsSection = () => {
           </div>
         </div>
 
-        {/* Expanded macOS Terminal Container */}
-        <div className="max-w-[1400px] mx-auto rounded-xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)] border border-white/10 ring-1 ring-white/5">
+        {/* Expanded macOS Terminal Container - Completly Black Body */}
+        <div className="max-w-[1500px] mx-auto rounded-xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)] border border-white/10 ring-1 ring-white/5">
           {/* macOS Header Bar */}
           <div className="flex items-center px-4 py-3 bg-[#1e1e1e] border-b border-white/5 relative">
             <div className="flex gap-2 items-center">
@@ -110,12 +110,12 @@ const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
   return (
     <li className={`min-h-[16rem] list-none group ${area}`}>
       <div className="relative h-full rounded-2xl border border-white/10 transition-all duration-500 hover:scale-[1.01] overflow-hidden bg-black">
-        {/* Full Card Certificate Image - No Fade */}
+        {/* Full Card Certificate Image - No Fade, HD Visibility */}
         <Image 
           src={image} 
           alt={title} 
           fill 
-          className="object-cover opacity-90 transition-all duration-500 scale-100 group-hover:scale-105 z-0"
+          className="object-cover opacity-100 transition-all duration-500 scale-100 group-hover:scale-105 z-0"
           unoptimized
         />
 
@@ -128,20 +128,18 @@ const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
           className="z-30"
         />
         
-        {/* Content Overlapping the Certificate directly */}
+        {/* Content Overlapping the Certificate directly - No background fades */}
         <div className="relative flex h-full flex-col justify-between p-6 z-20">
-          <div className="w-fit rounded-lg border border-white/40 bg-black/60 backdrop-blur-md p-2 shadow-2xl">
+          <div className="w-fit rounded-lg border border-white/40 bg-black/20 backdrop-blur-sm p-2 shadow-2xl">
             {icon}
           </div>
-          <div className="space-y-2">
-            <h3 className="text-lg font-bold text-white uppercase tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          <div className="space-y-1">
+            <h3 className="text-lg font-bold text-white uppercase tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
               {title}
             </h3>
-            <div className="bg-black/60 backdrop-blur-md rounded-md p-2 border border-white/20">
-              <p className="text-[11px] text-white leading-relaxed font-mono font-bold">
-                {description}
-              </p>
-            </div>
+            <p className="text-[11px] text-white leading-relaxed font-mono font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+              {description}
+            </p>
           </div>
         </div>
       </div>
