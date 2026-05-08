@@ -8,35 +8,35 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 const gridItems = [
   {
     area: "md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
-    icon: <Box className="h-4 w-4 text-white/70" />,
+    icon: <Box className="h-4 w-4 text-white" />,
     title: "Software Engineering",
     description: "Simulation covering project scoping and REST API development via Forage.",
     image: "https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate.png"
   },
   {
     area: "md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]",
-    icon: <Settings className="h-4 w-4 text-white/70" />,
+    icon: <Settings className="h-4 w-4 text-white" />,
     title: "GenAI Analytics",
     description: "Mastered exploratory data analysis and risk profiling through Forage simulation.",
     image: "https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate3.png"
   },
   {
     area: "md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]",
-    icon: <Lock className="h-4 w-4 text-white/70" />,
+    icon: <Lock className="h-4 w-4 text-white" />,
     title: "BCG X Strategy",
     description: "Developed financial chatbots and data extraction strategies with BCG X.",
     image: "https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate4.png"
   },
   {
     area: "md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]",
-    icon: <Sparkles className="h-4 w-4 text-white/70" />,
+    icon: <Sparkles className="h-4 w-4 text-white" />,
     title: "Deloitte Analytics",
     description: "Practical insights into forensic technology and data-driven forensic analytics.",
     image: "https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate5.png"
   },
   {
     area: "md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]",
-    icon: <Search className="h-4 w-4 text-white/70" />,
+    icon: <Search className="h-4 w-4 text-white" />,
     title: "Neural Research",
     description: "Autonomous multi-agent workflows and neural network optimizations.",
     image: "https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate.png"
@@ -60,8 +60,8 @@ const AchievementsSection = () => {
           </div>
         </div>
 
-        {/* macOS Terminal Container */}
-        <div className="max-w-6xl mx-auto rounded-xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)] border border-white/10 ring-1 ring-white/5">
+        {/* Expanded macOS Terminal Container */}
+        <div className="max-w-[1400px] mx-auto rounded-xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)] border border-white/10 ring-1 ring-white/5">
           {/* macOS Header Bar */}
           <div className="flex items-center px-4 py-3 bg-[#1e1e1e] border-b border-white/5 relative">
             <div className="flex gap-2 items-center">
@@ -109,18 +109,15 @@ interface GridItemProps {
 const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
   return (
     <li className={`min-h-[16rem] list-none group ${area}`}>
-      <div className="relative h-full rounded-2xl border border-white/10 transition-all duration-500 hover:scale-[1.01] overflow-hidden">
-        {/* Full Card Certificate Image - HD Background */}
+      <div className="relative h-full rounded-2xl border border-white/10 transition-all duration-500 hover:scale-[1.01] overflow-hidden bg-black">
+        {/* Full Card Certificate Image - No Fade */}
         <Image 
           src={image} 
           alt={title} 
           fill 
-          className="object-cover opacity-100 transition-all duration-500 scale-100 group-hover:scale-105 z-0"
+          className="object-cover opacity-90 transition-all duration-500 scale-100 group-hover:scale-105 z-0"
           unoptimized
         />
-        
-        {/* Dark Overlays for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80 z-10" />
 
         <GlowingEffect
           spread={40}
@@ -131,17 +128,17 @@ const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
           className="z-30"
         />
         
-        {/* Content Overlapping the Certificate */}
+        {/* Content Overlapping the Certificate directly */}
         <div className="relative flex h-full flex-col justify-between p-6 z-20">
-          <div className="w-fit rounded-lg border border-white/20 bg-black/40 backdrop-blur-md p-2 shadow-2xl">
+          <div className="w-fit rounded-lg border border-white/40 bg-black/60 backdrop-blur-md p-2 shadow-2xl">
             {icon}
           </div>
           <div className="space-y-2">
-            <h3 className="text-lg font-bold text-white uppercase tracking-tight drop-shadow-2xl">
+            <h3 className="text-lg font-bold text-white uppercase tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               {title}
             </h3>
-            <div className="bg-black/30 backdrop-blur-[2px] rounded-md p-2 border border-white/5">
-              <p className="text-[11px] text-white/90 leading-relaxed font-mono font-medium drop-shadow-lg">
+            <div className="bg-black/60 backdrop-blur-md rounded-md p-2 border border-white/20">
+              <p className="text-[11px] text-white leading-relaxed font-mono font-bold">
                 {description}
               </p>
             </div>
