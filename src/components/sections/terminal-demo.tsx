@@ -42,19 +42,19 @@ const TerminalDemo = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12 relative">
           
-          {/* Futuristic Connection Wire - Visible on Large Screens */}
+          {/* Futuristic Connection Wire - Adjusted to stop before text */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none hidden lg:block z-0">
             <svg width="100%" height="100%" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
-              {/* Main Connection Path */}
+              {/* Main Connection Path - Shortened end point to 620 */}
               <path 
-                d="M480 200H720" 
+                d="M480 200H620" 
                 stroke="white" 
                 strokeWidth="2" 
                 strokeDasharray="4 4"
                 className="opacity-20"
               />
               <path 
-                d="M480 200H720" 
+                d="M480 200H620" 
                 stroke="white" 
                 strokeWidth="1.5" 
                 className="opacity-60 animate-pulse"
@@ -66,18 +66,18 @@ const TerminalDemo = () => {
                 <circle cx="480" cy="200" r="10" stroke="white" strokeWidth="1" className="opacity-30" />
               </g>
               
-              {/* Info Connection Point (The Stop Point) */}
+              {/* Info Connection Point (The Stop Point - Adjusted to 620) */}
               <g className="animate-pulse">
-                <circle cx="720" cy="200" r="4" fill="white" />
-                <circle cx="720" cy="200" r="10" stroke="white" strokeWidth="1" className="opacity-30" />
+                <circle cx="620" cy="200" r="4" fill="white" />
+                <circle cx="620" cy="200" r="10" stroke="white" strokeWidth="1" className="opacity-30" />
               </g>
 
-              {/* Data Packet Animation */}
+              {/* Data Packet Animation - Adjusted path to match */}
               <circle r="3" fill="white" className="filter blur-[1px]">
                 <animateMotion 
                   dur="3s" 
                   repeatCount="indefinite" 
-                  path="M480 200H720"
+                  path="M480 200H620"
                   calcMode="spline"
                   keySplines="0.4 0 0.2 1"
                 />
@@ -88,7 +88,7 @@ const TerminalDemo = () => {
                   dur="3s" 
                   begin="1.5s"
                   repeatCount="indefinite" 
-                  path="M480 200H720"
+                  path="M480 200H620"
                   calcMode="spline"
                   keySplines="0.4 0 0.2 1"
                 />
