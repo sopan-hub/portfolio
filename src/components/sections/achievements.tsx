@@ -109,18 +109,34 @@ interface GridItemProps {
 
 const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
   return (
-    <li className={`min-h-[22rem] list-none group ${area}`}>
-      <div className="relative h-full rounded-2xl border border-white/10 transition-all duration-500 hover:scale-[1.01] overflow-hidden bg-black shadow-2xl">
-        {/* HD Certificate Image - Full Clarity, No Fades */}
-        <Image 
-          src={image} 
-          alt={title} 
-          fill 
-          className="object-cover opacity-100 transition-all duration-700 scale-100 group-hover:scale-105 z-0"
-          unoptimized
-        />
+    <li className={`min-h-[28rem] list-none group ${area}`}>
+      <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 bg-gradient-to-br from-[#1a1a1a] to-black border border-white/10 shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+        <div className="relative z-20 flex flex-col h-full pointer-events-none">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-fit rounded-xl border border-white/20 bg-black/40 p-3 shadow-xl">
+              {icon}
+            </div>
+            <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tighter drop-shadow-lg">
+              {title}
+            </h3>
+          </div>
+          
+          <p className="text-sm md:text-base text-white/60 font-medium max-w-sm leading-relaxed drop-shadow-md">
+            {description}
+          </p>
 
-        {/* Interaction Glow Border */}
+          <div className="relative flex-grow mt-12 w-full">
+            <Image
+              src={image}
+              alt={title}
+              width={1000}
+              height={1000}
+              className="object-cover object-top h-[75%] md:h-[90%] absolute -bottom-16 inset-x-0 w-full rounded-xl mx-auto shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 transition-transform duration-700 group-hover:scale-[1.03]"
+              unoptimized
+            />
+          </div>
+        </div>
+
         <GlowingEffect
           spread={80}
           glow={true}
@@ -129,21 +145,6 @@ const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
           inactiveZone={0.01}
           className="z-30"
         />
-        
-        {/* Content Overlay - Overlapping without backgrounds */}
-        <div className="relative flex h-full flex-col justify-between p-10 z-20 pointer-events-none">
-          <div className="w-fit rounded-xl border border-white/30 bg-black/40 backdrop-blur-md p-4 shadow-2xl transition-transform duration-500 group-hover:scale-110">
-            {icon}
-          </div>
-          <div className="space-y-3">
-            <h3 className="text-2xl font-black text-white uppercase tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,1)] group-hover:text-white transition-colors">
-              {title}
-            </h3>
-            <p className="text-[13px] text-white/90 leading-relaxed font-mono font-bold drop-shadow-[0_3px_8px_rgba(0,0,0,1)]">
-              {description}
-            </p>
-          </div>
-        </div>
       </div>
     </li>
   );
