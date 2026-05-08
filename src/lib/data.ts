@@ -2,7 +2,6 @@ import { Github, Linkedin } from 'lucide-react';
 
 export const navLinks = [
   { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
   { href: '#achievements', label: 'Certificates' },
