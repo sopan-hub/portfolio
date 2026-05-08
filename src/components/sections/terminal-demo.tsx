@@ -8,7 +8,7 @@ const TerminalDemo = () => {
   const projectUrl = "https://the-ai-customer-care-vyqu.vercel.app/";
   const projectTitle = "AI CUSTOMER CARE";
   const projectDescription = "Add a powerful AI chatbot to your website in minutes. Let your customers get instant answers using your own business knowledge.";
-  const scriptText = '<script src="https://the-ai-customer-care-vyqu.vercel.app/chatBot.js" data-owner-id="OhVTRLHOYUVAATgZuYKe1FYx5ME2"></script>';
+  const displayUrl = "https://the-ai-customer-care-vyqu.vercel.app/";
   
   const [displayText, setDisplayText] = useState('');
   const [index, setIndex] = useState(0);
@@ -22,19 +22,19 @@ const TerminalDemo = () => {
     if (!mounted) return;
 
     let timeout: NodeJS.Timeout;
-    if (index < scriptText.length) {
+    if (index < displayUrl.length) {
       timeout = setTimeout(() => {
-        setDisplayText((prev) => prev + scriptText[index]);
+        setDisplayText((prev) => prev + displayUrl[index]);
         setIndex((prev) => prev + 1);
-      }, 30); // Typing speed
+      }, 50); // Typing speed
     } else {
       timeout = setTimeout(() => {
         setDisplayText('');
         setIndex(0);
-      }, 4000); // Wait before restarting
+      }, 5000); // Wait before restarting
     }
     return () => clearTimeout(timeout);
-  }, [index, scriptText, mounted]);
+  }, [index, displayUrl, mounted]);
 
   if (!mounted) return null;
 
@@ -90,12 +90,17 @@ const TerminalDemo = () => {
                   </div>
                   
                   <div className="pt-2">
-                    <div className="group flex items-start gap-2 text-white/90 transition-all break-all">
-                      <span className="text-xs md:text-sm font-mono text-blue-400">
+                    <a 
+                      href={projectUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="group flex items-start gap-2 text-white/90 transition-all break-all hover:text-blue-400"
+                    >
+                      <span className="text-xs md:text-sm font-mono">
                         {displayText}
                       </span>
                       <span className="w-1.5 h-4 bg-white/80 animate-pulse shrink-0 mt-0.5" />
-                    </div>
+                    </a>
                   </div>
 
                   <div className="pt-6 mt-6 border-t border-white/5">
