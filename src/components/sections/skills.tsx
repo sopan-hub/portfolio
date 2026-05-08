@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useRef } from 'react';
 import { skills } from '@/lib/data';
@@ -6,6 +7,7 @@ import ScrollFloat from '@/components/ui/scroll-float';
 import GlassSurface from '@/components/ui/glass-surface';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Image from 'next/image';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 const skillCategories: (keyof typeof skills)[] = [
   'Frontend',
@@ -34,9 +36,10 @@ const iconMap: { [key: string]: React.FC<{ className?: string }> } = {
 };
 
 const SkillsSection = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: sectionRef,
     offset: ["start end", "end start"]
   });
 
@@ -46,27 +49,28 @@ const SkillsSection = () => {
     restDelta: 0.001
   });
 
-  // Skills specific background fades in when the section is in view
-  const opacity = useTransform(smoothProgress, [0.1, 0.3, 0.7, 0.9], [0, 1, 1, 0]);
-  const skillsBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/cc9ab6bc54267d56fd982100b2e228a2e980c8d2/the%20backgrounf.png";
+  // Smooth cross-fade transition: Fades in as the section approaches center, fades out as it leaves
+  const opacity = useTransform(smoothProgress, [0.1, 0.4, 0.6, 0.9], [0, 1, 1, 0]);
+  const skillsBg = placeholderImages['skills-specific-bg'];
 
   return (
-    <section ref={containerRef} id="skills" className="relative py-40 bg-transparent overflow-hidden">
-      {/* Skills-specific background layer */}
+    <section ref={sectionRef} id="skills" className="relative py-40 overflow-hidden">
+      {/* Skills-specific background layer - Transitions over global base */}
       <motion.div 
         style={{ opacity }}
         className="absolute inset-0 z-[-1] pointer-events-none"
       >
         <Image
-          src={skillsBgUrl}
-          alt="Skills Background"
+          src={skillsBg.url}
+          alt={skillsBg.alt}
           fill
           className="object-cover"
           quality={100}
           unoptimized
         />
-        {/* Subtle masks for smooth transition into global bg */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-40" />
+        {/* Transparent blend masks for smooth integration with global base */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/0 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/0 to-transparent" />
       </motion.div>
 
       <div className="container mx-auto px-4 relative z-10">

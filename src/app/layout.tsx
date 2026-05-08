@@ -1,7 +1,9 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Image from 'next/image';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'Portfolio | Sopan Patil',
@@ -14,8 +16,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Global technical background for all sections
-  const globalBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/cc9ab6bc54267d56fd982100b2e228a2e980c8d2/bg.png";
+  const globalBg = placeholderImages['global-bg'];
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -31,14 +32,14 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="relative min-h-screen bg-black overflow-x-hidden">
-        {/* Global base background layer */}
-        <div className="fixed inset-0 z-[-2] pointer-events-none">
+      <body className="relative min-h-screen bg-black overflow-x-hidden antialiased">
+        {/* Global base technical background - Persistent everywhere */}
+        <div className="fixed inset-0 z-[-5] pointer-events-none">
           <Image
-            src={globalBgUrl}
-            alt="Technical Background"
+            src={globalBg.url}
+            alt={globalBg.alt}
             fill
-            className="object-cover opacity-50"
+            className="object-cover opacity-60"
             quality={100}
             priority
             unoptimized

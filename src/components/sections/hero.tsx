@@ -1,9 +1,11 @@
+
 'use client';
 
 import React from 'react';
 import { Github, Linkedin } from 'lucide-react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Image from 'next/image';
+import placeholderImages from '@/app/lib/placeholder-images.json';
 
 export default function HeroSection() {
   const { scrollYProgress } = useScroll();
@@ -13,26 +15,28 @@ export default function HeroSection() {
     restDelta: 0.001
   });
 
-  // Hero specific background fades out as we scroll down
-  const opacity = useTransform(smoothProgress, [0, 0.2], [1, 0]);
-  const heroBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png";
+  // Hero specific background fades out smoothly as we scroll down
+  const opacity = useTransform(smoothProgress, [0, 0.25], [1, 0]);
+  const heroBg = placeholderImages['hero-bg'];
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-transparent">
+    <section id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Hero-specific background layer */}
       <motion.div 
         style={{ opacity }}
-        className="absolute inset-0 z-[-1] pointer-events-none"
+        className="fixed inset-0 z-[-1] pointer-events-none"
       >
         <Image
-          src={heroBgUrl}
-          alt="Sopan Patil Hero Background"
+          src={heroBg.url}
+          alt={heroBg.alt}
           fill
           className="object-cover"
           priority
           quality={100}
           unoptimized
         />
+        {/* Very subtle gradient to ensure smooth blend into global base */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20" />
       </motion.div>
 
       <div className="container mx-auto px-4 h-full flex flex-col justify-between relative z-10 py-32">
