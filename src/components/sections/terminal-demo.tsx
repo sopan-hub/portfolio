@@ -45,27 +45,47 @@ const TerminalDemo = () => {
           
           {/* Connection Wire (SVG) - Visible on Large Screens */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none hidden lg:block z-0">
-            <svg width="100%" height="100%" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-20">
+            <svg width="100%" height="100%" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
+              {/* Background Path */}
               <path 
-                d="M500 200C600 200 600 200 700 200" 
+                d="M450 200H750" 
                 stroke="white" 
-                strokeWidth="1" 
-                strokeDasharray="4 4"
+                strokeWidth="1.5" 
+                strokeDasharray="8 8"
+                className="opacity-20"
               />
-              <circle cx="500" cy="200" r="3" fill="white" />
-              <circle cx="700" cy="200" r="3" fill="white" />
+              {/* Active Connection Path */}
               <path 
-                d="M500 200H700" 
+                d="M450 200H750" 
                 stroke="white" 
-                strokeWidth="1" 
-                className="animate-pulse"
+                strokeWidth="1.5" 
+                className="opacity-80 animate-pulse"
               />
+              
+              {/* Terminal Anchor */}
+              <circle cx="450" cy="200" r="4" fill="white" className="animate-pulse" />
+              <circle cx="450" cy="200" r="8" stroke="white" strokeWidth="1" className="opacity-30" />
+              
+              {/* Info Anchor */}
+              <circle cx="750" cy="200" r="4" fill="white" className="animate-pulse" />
+              <circle cx="750" cy="200" r="8" stroke="white" strokeWidth="1" className="opacity-30" />
+
+              {/* Data Packet Animation */}
+              <circle r="3" fill="white">
+                <animateMotion 
+                  dur="4s" 
+                  repeatCount="indefinite" 
+                  path="M450 200H750"
+                  calcMode="spline"
+                  keySplines="0.4 0 0.2 1"
+                />
+              </circle>
             </svg>
           </div>
 
           {/* Left Side: Terminal Window */}
           <div className="lg:col-span-6 relative z-10">
-            <GlassSurface borderRadius={24} className="shadow-2xl border-white/5">
+            <GlassSurface borderRadius={24} className="shadow-2xl border-white/10 ring-1 ring-white/5">
               {/* Header Bar */}
               <div className="flex items-center justify-between px-6 py-4 bg-white/5 border-b border-white/10">
                 <div className="flex gap-2">
@@ -81,7 +101,7 @@ const TerminalDemo = () => {
               </div>
 
               {/* Terminal Body */}
-              <div className="p-8 font-mono bg-black/40">
+              <div className="p-8 font-mono bg-black/40 min-h-[160px]">
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <span className="text-green-500 font-bold shrink-0">➜</span>
@@ -96,7 +116,7 @@ const TerminalDemo = () => {
                       rel="noopener noreferrer"
                       className="group flex items-start gap-2 text-white/90 transition-all break-all hover:text-blue-400"
                     >
-                      <span className="text-xs md:text-sm font-mono">
+                      <span className="text-xs md:text-sm font-mono leading-relaxed">
                         {displayText}
                       </span>
                       <span className="w-1.5 h-4 bg-white/80 animate-pulse shrink-0 mt-0.5" />
@@ -135,7 +155,7 @@ const TerminalDemo = () => {
                 href={projectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-10 py-4 rounded-full border border-white/20 bg-white/5 text-[10px] font-bold text-white uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all backdrop-blur-md"
+                className="inline-flex items-center gap-3 px-10 py-4 rounded-full border border-white/20 bg-white/5 text-[10px] font-bold text-white uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.05)]"
               >
                 Launch Application <ExternalLink size={14} />
               </a>
