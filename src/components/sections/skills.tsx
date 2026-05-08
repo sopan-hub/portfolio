@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import { skills } from '@/lib/data';
 import * as Icons from '@/components/icons';
 import ScrollFloat from '@/components/ui/scroll-float';
@@ -33,23 +32,7 @@ const iconMap: { [key: string]: React.FC<{ className?: string }> } = {
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="relative py-40 overflow-hidden">
-      {/* High-Fidelity Background Layer - Matches Hero Clarity */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image
-          src="https://raw.githubusercontent.com/sopan-hub/my-acces/0fa7baf05422f321bedaa05b2ba52ca8dc4e0d0f/bg3.png"
-          alt="Skills Technical Background"
-          fill
-          className="object-cover"
-          quality={100}
-          priority
-          unoptimized
-        />
-        {/* Smooth section blending gradients - no heavy "faded" look, just clean edges */}
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
-      </div>
-
+    <section id="skills" className="relative py-40 bg-transparent">
       <div className="container mx-auto px-4 relative z-10">
         <div className="mb-24 text-center flex flex-col items-center">
           <ScrollFloat

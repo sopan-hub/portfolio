@@ -2,43 +2,35 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Box, Search, Settings, Sparkles, Terminal as TerminalIcon } from "lucide-react";
-import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { Box, Search, Settings, Terminal as TerminalIcon } from "lucide-react";
 
 const gridItems = [
   {
-    area: "md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/7]",
+    area: "md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
     icon: <Box className="h-4 w-4 text-white" />,
     title: "Software Engineering",
     description: "Simulation covering project scoping and REST API development via Forage.",
     image: "https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate.png"
   },
   {
-    area: "md:[grid-area:1/7/2/13] xl:[grid-area:1/8/2/13]",
+    area: "md:[grid-area:1/7/2/13] xl:[grid-area:1/6/2/13]",
     icon: <Settings className="h-4 w-4 text-white" />,
     title: "GenAI Analytics",
     description: "Mastered exploratory data analysis and risk profiling through Forage simulation.",
     image: "https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate3.png"
   },
   {
-    area: "md:[grid-area:2/1/3/7] xl:[grid-area:2/1/3/6]",
-    icon: <Sparkles className="h-4 w-4 text-white" />,
+    area: "md:[grid-area:2/1/3/7] xl:[grid-area:2/1/3/13]",
+    icon: <Search className="h-4 w-4 text-white" />,
     title: "Deloitte Analytics",
     description: "Practical insights into forensic technology and data-driven forensic analytics.",
     image: "https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate5.png"
-  },
-  {
-    area: "md:[grid-area:2/7/3/13] xl:[grid-area:2/7/3/13]",
-    icon: <Search className="h-4 w-4 text-white" />,
-    title: "Neural Research",
-    description: "Autonomous multi-agent workflows and neural network optimizations.",
-    image: "https://raw.githubusercontent.com/sopan-hub/my-acces/2e999047f27399c5aae0caece6ab26e7441a0d37/certificate.png"
   }
 ];
 
 const AchievementsSection = () => {
   return (
-    <section id="achievements" className="relative py-32 overflow-hidden">
+    <section id="achievements" className="relative py-24 bg-transparent overflow-hidden">
       <div className="container mx-auto px-4 flex flex-col items-end">
         {/* Header - Aligned Left */}
         <div className="mb-20 self-start flex flex-col items-start px-2 lg:px-12">
@@ -55,7 +47,7 @@ const AchievementsSection = () => {
         </div>
 
         {/* Ultra-Wide Terminal Window */}
-        <div className="w-full max-w-[1700px] ml-auto rounded-xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,1)] border border-white/10 ring-1 ring-white/5 transition-all duration-700 hover:shadow-[0_60px_120px_-20px_rgba(0,0,0,1)]">
+        <div className="w-full max-w-[1500px] ml-auto rounded-xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,1)] border border-white/10 ring-1 ring-white/5 transition-all duration-700 hover:shadow-[0_60px_120px_-20px_rgba(0,0,0,1)]">
           {/* macOS Header Bar */}
           <div className="flex items-center px-6 py-5 bg-[#1e1e1e] border-b border-white/5 relative">
             <div className="flex gap-2.5 items-center">
@@ -71,9 +63,9 @@ const AchievementsSection = () => {
             </div>
           </div>
 
-          {/* Terminal Content Area */}
-          <div className="p-8 md:p-14 bg-black">
-            <ul className="grid grid-cols-1 gap-8 md:grid-cols-12 md:grid-rows-2">
+          {/* Terminal Content Area - Completely Black */}
+          <div className="p-6 md:p-10 bg-black">
+            <ul className="grid grid-cols-1 gap-6 md:grid-cols-12 md:grid-rows-2">
               {gridItems.map((item, index) => (
                 <GridItem
                   key={index}
@@ -102,42 +94,31 @@ interface GridItemProps {
 
 const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
   return (
-    <li className={`min-h-[28rem] list-none group relative overflow-hidden rounded-2xl ${area}`}>
-      <div className="w-full h-full relative border border-white/10 shadow-2xl transition-all duration-500 hover:scale-[1.02]">
-        
-        {/* Certificate Image filling whole card */}
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity duration-700"
-          unoptimized
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-
-        <div className="relative z-20 flex flex-col h-full p-10 justify-between pointer-events-none">
-          <div className="space-y-4">
-            <div className="w-fit rounded-xl border border-white/20 bg-black/60 p-3 shadow-xl backdrop-blur-md">
-              {icon}
-            </div>
-            <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tighter drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
-              {title}
-            </h3>
-            <p className="text-sm md:text-base text-white/90 font-bold max-w-sm leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
-              {description}
-            </p>
-          </div>
+    <li className={`min-h-[30rem] list-none group relative overflow-hidden rounded-2xl ${area} bg-black border border-white/10`}>
+      {/* Description Header Section */}
+      <div className="p-10 relative z-20 space-y-4">
+        <div className="w-fit rounded-xl border border-white/20 bg-black/40 p-3 shadow-xl backdrop-blur-sm">
+          {icon}
         </div>
+        <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter drop-shadow-md">
+          {title}
+        </h3>
+        <p className="text-sm md:text-base text-white/80 font-bold leading-relaxed max-w-xl drop-shadow-sm">
+          {description}
+        </p>
+      </div>
 
-        <GlowingEffect
-          spread={80}
-          glow={true}
-          disabled={false}
-          proximity={100}
-          inactiveZone={0.01}
-          className="z-30"
-        />
+      {/* Certificate Image - Popping out from bottom like Tabs Demo */}
+      <div className="absolute -bottom-10 inset-x-0 w-[92%] h-[65%] mx-auto transform transition-transform duration-500 group-hover:translate-y-[-10px] group-hover:scale-[1.02]">
+        <div className="relative w-full h-full rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.8)] border border-white/20">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover object-top"
+            unoptimized
+          />
+        </div>
       </div>
     </li>
   );

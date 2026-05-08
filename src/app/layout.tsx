@@ -16,8 +16,8 @@ export default function RootLayout({
 }>) {
   // Hero background (portrait)
   const heroBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png";
-  // Content background (tech texture for below hero)
-  const contentBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/ca0012b3d0edc65f0fb81b41dbedf4ac750eb549/bg.png";
+  // Content background (High-res tech texture for all sections)
+  const contentBgUrl = "https://raw.githubusercontent.com/sopan-hub/my-acces/0fa7baf05422f321bedaa05b2ba52ca8dc4e0d0f/bg3.png";
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -34,7 +34,7 @@ export default function RootLayout({
         />
       </head>
       <body className="relative min-h-screen bg-black overflow-x-hidden">
-        {/* Responsive background that transitions between images */}
+        {/* Responsive background that transitions between hero and global tech background */}
         <ScrollZoomBackground 
           heroSrc={heroBgUrl} 
           contentSrc={contentBgUrl} 
