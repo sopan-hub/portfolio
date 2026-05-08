@@ -24,7 +24,7 @@ const gridAreas = [
 ];
 
 const AchievementsSection = () => {
-  // We have 4 items in data.ts, let's create a 5th placeholder to match the layout
+  // We have 4 items in data.ts, let's create a 5th placeholder to match the layout from the demo
   const allItems = [
     ...achievements,
     {
@@ -54,7 +54,7 @@ const AchievementsSection = () => {
           </div>
         </div>
 
-        <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:grid-rows-2">
+        <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
           {allItems.map((item, index) => (
             <GridItem
               key={index}
@@ -111,15 +111,15 @@ const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
           </div>
 
           {image && (
-            <div className="relative w-full h-32 md:h-40 mt-auto opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden">
+            <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
               <Image 
                 src={image} 
                 alt={title} 
                 fill 
-                className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
                 unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent" />
             </div>
           )}
         </div>
