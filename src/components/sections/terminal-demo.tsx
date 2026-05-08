@@ -83,55 +83,59 @@ const TerminalDemo = () => {
             </svg>
           </div>
 
-          {/* Left Side: Terminal Window */}
+          {/* Left Side: MacBook Terminal Window */}
           <div className="lg:col-span-6 relative z-10">
-            <GlassSurface borderRadius={24} className="shadow-2xl border-white/10 bg-black/40 ring-1 ring-white/5">
-              {/* Header Bar */}
-              <div className="flex items-center justify-between px-6 py-4 bg-black/60 border-b border-white/10">
-                <div className="flex gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+            <div className="rounded-xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] border border-white/10 ring-1 ring-white/5">
+              {/* macOS Header Bar */}
+              <div className="flex items-center px-4 py-3 bg-[#1e1e1e] border-b border-white/5 relative">
+                <div className="flex gap-2 items-center">
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#FF5F56] border border-black/10" />
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E] border border-black/10" />
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#27C93F] border border-black/10" />
                 </div>
-                <div className="text-[9px] font-mono text-white/40 tracking-[0.4em] uppercase font-bold flex items-center gap-2">
-                  <TerminalIcon size={10} />
-                  <span>SupportAI</span>
+                {/* Centered Title */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="flex items-center gap-2 text-white/40 font-mono text-[11px] font-bold">
+                    <TerminalIcon size={12} className="opacity-50" />
+                    <span className="tracking-wide">zsh — 80x24</span>
+                  </div>
                 </div>
-                <div className="w-12" />
               </div>
 
               {/* Terminal Body */}
-              <div className="p-8 font-mono bg-[#050505] min-h-[160px] rounded-b-3xl">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <span className="text-green-500 font-bold shrink-0">➜</span>
-                    <span className="text-white/60 shrink-0">~</span>
-                    <span className="text-white/30 uppercase text-[9px] tracking-widest bg-white/5 px-2 py-0.5 rounded border border-white/10">SHELL</span>
+              <div className="p-6 font-mono bg-[#000000] min-h-[220px]">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span className="text-emerald-400 font-bold">➜</span>
+                    <span className="text-blue-400 font-bold">~</span>
+                    <span className="text-white/80 text-[13px]">Last login: {new Date().toLocaleDateString()} on ttys001</span>
                   </div>
                   
-                  <div className="pt-2">
+                  <div className="flex items-center gap-2 pt-1">
+                    <span className="text-emerald-400 font-bold">➜</span>
+                    <span className="text-blue-400 font-bold">~</span>
+                    <span className="text-white/60 text-[13px]">open</span>
                     <a 
                       href={projectUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="group flex items-start gap-2 text-white/90 transition-all break-all hover:text-blue-400"
+                      className="group flex items-center gap-1 text-blue-400 transition-all break-all hover:underline ml-1"
                     >
-                      <span className="text-xs md:text-sm font-mono leading-relaxed">
+                      <span className="text-[13px] font-mono">
                         {displayText}
                       </span>
-                      <span className="w-1.5 h-4 bg-white/80 animate-pulse shrink-0 mt-0.5" />
+                      <span className="w-2 h-5 bg-white/70 animate-pulse shrink-0" />
                     </a>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-white/5">
-                    <div className="flex items-center gap-4">
-                      <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-ping" />
-                      <span className="text-[10px] text-white/40 uppercase tracking-[0.2em]">Deployment Stream Active</span>
-                    </div>
+                  <div className="pt-8 text-white/20 text-[11px] leading-relaxed">
+                    [SYSTEM] Initializing SupportAI kernel...<br/>
+                    [NETWORK] Connected to Vercel production edge.<br/>
+                    [STATUS] Transmission active at 1.2 GB/s.
                   </div>
                 </div>
               </div>
-            </GlassSurface>
+            </div>
           </div>
 
           {/* Right Side: Project Info */}
