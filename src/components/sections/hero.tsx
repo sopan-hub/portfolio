@@ -16,7 +16,7 @@ export default function HeroSection() {
           {/* Left Side: Name & Branding */}
           <div className="lg:col-span-6 space-y-10">
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase whitespace-nowrap leading-none drop-shadow-2xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[76px] font-black text-white tracking-tighter uppercase whitespace-nowrap leading-none drop-shadow-2xl">
                 SOPAN PATIL
               </h1>
               <p className="max-w-xl text-white/90 text-[8px] sm:text-[9px] md:text-[10px] font-bold leading-relaxed uppercase tracking-[0.25em] border-l-2 border-white/20 pl-6">
@@ -58,35 +58,35 @@ export default function HeroSection() {
             <div className="space-y-10 max-w-2xl">
               <div className="space-y-6">
                 <div className="group">
-                  <p className="text-lg md:text-xl font-bold text-white/90 uppercase tracking-tighter leading-tight">
+                  <p className="text-sm md:text-base font-bold text-white/90 uppercase tracking-tighter leading-tight">
                     <span className="text-white/30 font-black text-[9px] md:text-[10px] mr-4 tracking-widest font-mono">INTELLIGENCE:</span> 
                     Agentic AI • GenAI • AI/ML
                   </p>
                 </div>
 
                 <div className="group">
-                  <p className="text-lg md:text-xl font-bold text-white/90 uppercase tracking-tighter leading-tight">
+                  <p className="text-sm md:text-base font-bold text-white/90 uppercase tracking-tighter leading-tight">
                     <span className="text-white/30 font-black text-[9px] md:text-[10px] mr-4 tracking-widest font-mono">NEURAL:</span> 
                     Multi-Agent RAG • Custom LLMs
                   </p>
                 </div>
 
                 <div className="group">
-                  <p className="text-lg md:text-xl font-bold text-white/90 uppercase tracking-tighter leading-tight">
+                  <p className="text-sm md:text-base font-bold text-white/90 uppercase tracking-tighter leading-tight">
                     <span className="text-white/30 font-black text-[9px] md:text-[10px] mr-4 tracking-widest font-mono">WEB_STACK:</span> 
                     Next.js 15 • Scalable MERN
                   </p>
                 </div>
 
                 <div className="group">
-                  <p className="text-lg md:text-xl font-bold text-white/90 uppercase tracking-tighter leading-tight">
+                  <p className="text-sm md:text-base font-bold text-white/90 uppercase tracking-tighter leading-tight">
                     <span className="text-white/30 font-black text-[9px] md:text-[10px] mr-4 tracking-widest font-mono">INFRA:</span> 
                     Serverless • Firebase • Cloud Ops
                   </p>
                 </div>
 
                 <div className="group">
-                  <p className="text-lg md:text-xl font-bold text-white/90 uppercase tracking-tighter leading-tight">
+                  <p className="text-sm md:text-base font-bold text-white/90 uppercase tracking-tighter leading-tight">
                     <span className="text-white/30 font-black text-[9px] md:text-[10px] mr-4 tracking-widest font-mono">CORE:</span> 
                     Autonomous System Architecture
                   </p>
