@@ -22,11 +22,11 @@
     "dataAiHint": "tech background"
   },
   "skills-specific-bg": {
-    "url": "https://raw.githubusercontent.com/sopan-hub/my-acces/cc9ab6bc54267d56fd982100b2e228a2e980c8d2/the%20backgrounf.png",
+    "url": "https://github.com/sopan-hub/my-acces/blob/main/skillbg2.png?raw=true",
     "width": 1920,
     "height": 1080,
-    "alt": "Skills Specific Background",
-    "dataAiHint": "circuitry background"
+    "alt": "New Skills Background",
+    "dataAiHint": "cybernetic background"
   },
   "hero-bg": {
     "url": "https://raw.githubusercontent.com/sopan-hub/my-acces/16fec689f27922f5d63ac2b8475019034a54106d/image.png",
