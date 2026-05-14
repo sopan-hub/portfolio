@@ -3,18 +3,10 @@
 import React, { useRef } from 'react';
 import { skills } from '@/lib/data';
 import * as Icons from '@/components/icons';
-import ScrollFloat from '@/components/ui/scroll-float';
-import GlassSurface from '@/components/ui/glass-surface';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Image from 'next/image';
 import placeholderImages from '@/app/lib/placeholder-images.json';
-
-const skillCategories: (keyof typeof skills)[] = [
-  'Frontend',
-  'Backend',
-  'AI/ML',
-  'Tools',
-];
+import { cn } from '@/lib/utils';
 
 const iconMap: { [key: string]: React.FC<{ className?: string }> } = {
   React: Icons.ReactJs,
@@ -35,65 +27,119 @@ const iconMap: { [key: string]: React.FC<{ className?: string }> } = {
   Webpack: Icons.Webpack,
 };
 
+const HudCard = ({ category, items, className }: { category: string, items: any[], className?: string }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8 }}
+      className={cn(
+        "relative z-20 w-full max-w-[320px] p-6 rounded-xl border border-white/20 bg-black/40 backdrop-blur-2xl shadow-[0_0_40px_rgba(255,255,255,0.05)]",
+        className
+      )}
+    >
+      <div className="absolute -top-3 left-6 px-3 py-1 bg-white/10 border border-white/20 rounded-md backdrop-blur-md">
+        <h3 className="text-xs font-black text-white uppercase tracking-[0.3em]">
+          {category}
+        </h3>
+      </div>
+      
+      <div className="mt-4 space-y-4">
+        {items.map((skill) => {
+          const Icon = iconMap[skill.name];
+          return (
+            <div key={skill.name} className="flex items-center justify-between group">
+              <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest group-hover:text-white transition-colors">
+                {skill.name}
+              </span>
+              <div className="p-1.5 rounded-md bg-white/5 border border-white/10 group-hover:bg-white/20 transition-all">
+                {Icon && <Icon className="h-4 w-4 text-white/80 group-hover:text-white" />}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      
+      {/* HUD decorative corners */}
+      <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/40 rounded-tl-sm" />
+      <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/40 rounded-tr-sm" />
+      <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/40 rounded-bl-sm" />
+      <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/40 rounded-br-sm" />
+    </motion.div>
+  );
+};
+
 const NeuralWires = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none z-0 hidden lg:block overflow-visible">
-      <svg width="100%" height="100%" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div className="absolute inset-0 pointer-events-none z-10 overflow-visible">
+      <svg width="100%" height="100%" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60">
         <defs>
-          <linearGradient id="wireGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(255,255,255,0)" />
-            <stop offset="50%" stopColor="rgba(255,255,255,0.4)" />
-            <stop offset="100%" stopColor="rgba(255,255,255,0.1)" />
-          </linearGradient>
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
         </defs>
-        
-        {/* Wire to Top Card */}
+
+        {/* TOP WIRE - Frontend */}
         <motion.path
-          d="M 360 400 C 450 400, 500 200, 700 150"
-          stroke="url(#wireGradient)"
+          d="M 600 400 C 600 350, 600 250, 600 180"
+          stroke="rgba(255,255,255,0.3)"
           strokeWidth="1.5"
-          strokeDasharray="4 8"
-          initial={{ pathLength: 0, opacity: 0 }}
-          whileInView={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
+          strokeDasharray="4 6"
+          initial={{ pathLength: 0 }}
+          whileInView={{ pathLength: 1 }}
+          transition={{ duration: 2 }}
         />
-        <motion.circle r="3" fill="white" className="filter blur-[1px]">
-          <animateMotion dur="4s" repeatCount="indefinite" path="M 360 400 C 450 400, 500 200, 700 150" />
+        <motion.circle r="3" fill="white" filter="url(#glow)">
+          <animateMotion dur="3s" repeatCount="indefinite" path="M 600 400 C 600 350, 600 250, 600 180" />
         </motion.circle>
 
-        {/* Wire to Mid-Top Card */}
+        {/* LEFT WIRE - Backend */}
         <motion.path
-          d="M 360 420 C 500 420, 550 450, 700 480"
-          stroke="url(#wireGradient)"
+          d="M 580 400 C 500 400, 350 400, 280 400"
+          stroke="rgba(255,255,255,0.3)"
           strokeWidth="1.5"
-          strokeDasharray="4 8"
-          initial={{ pathLength: 0, opacity: 0 }}
-          whileInView={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 2.5, ease: "easeInOut" }}
+          strokeDasharray="4 6"
+          initial={{ pathLength: 0 }}
+          whileInView={{ pathLength: 1 }}
+          transition={{ duration: 2 }}
         />
-        <motion.circle r="3" fill="white" className="filter blur-[1px]">
-          <animateMotion dur="5s" repeatCount="indefinite" path="M 360 420 C 500 420, 550 450, 700 480" />
+        <motion.circle r="3" fill="white" filter="url(#glow)">
+          <animateMotion dur="4s" repeatCount="indefinite" path="M 580 400 C 500 400, 350 400, 280 400" />
         </motion.circle>
 
-        {/* Wire to Lower Card */}
+        {/* RIGHT WIRE - AI/ML */}
         <motion.path
-          d="M 360 440 C 450 440, 500 650, 700 750"
-          stroke="url(#wireGradient)"
+          d="M 620 400 C 700 400, 850 400, 920 400"
+          stroke="rgba(255,255,255,0.3)"
           strokeWidth="1.5"
-          strokeDasharray="4 8"
-          initial={{ pathLength: 0, opacity: 0 }}
-          whileInView={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 3, ease: "easeInOut" }}
+          strokeDasharray="4 6"
+          initial={{ pathLength: 0 }}
+          whileInView={{ pathLength: 1 }}
+          transition={{ duration: 2 }}
         />
-        <motion.circle r="3" fill="white" className="filter blur-[1px]">
-          <animateMotion dur="6s" repeatCount="indefinite" path="M 360 440 C 450 440, 500 650, 700 750" />
+        <motion.circle r="3" fill="white" filter="url(#glow)">
+          <animateMotion dur="4s" repeatCount="indefinite" path="M 620 400 C 700 400, 850 400, 920 400" />
         </motion.circle>
 
-        {/* Neural Core Origin Point */}
-        <g className="animate-pulse">
-          <circle cx="360" cy="420" r="6" fill="white" className="opacity-40" />
-          <circle cx="360" cy="420" r="12" stroke="white" strokeWidth="1" className="opacity-20" />
-        </g>
+        {/* BOTTOM WIRE - Tools */}
+        <motion.path
+          d="M 600 440 C 600 500, 600 600, 600 680"
+          stroke="rgba(255,255,255,0.3)"
+          strokeWidth="1.5"
+          strokeDasharray="4 6"
+          initial={{ pathLength: 0 }}
+          whileInView={{ pathLength: 1 }}
+          transition={{ duration: 2 }}
+        />
+        <motion.circle r="3" fill="white" filter="url(#glow)">
+          <animateMotion dur="5s" repeatCount="indefinite" path="M 600 440 C 600 500, 600 600, 600 680" />
+        </motion.circle>
+
+        {/* Central Core Nodes */}
+        <circle cx="600" cy="400" r="6" fill="white" className="animate-pulse opacity-40" />
+        <circle cx="600" cy="400" r="12" stroke="white" strokeWidth="1" className="opacity-20" />
+        <circle cx="600" cy="430" r="4" fill="white" className="animate-pulse opacity-40" />
       </svg>
     </div>
   );
@@ -117,7 +163,7 @@ const SkillsSection = () => {
   const skillsBg = placeholderImages['skills-specific-bg'];
 
   return (
-    <section ref={sectionRef} id="skills" className="relative py-40 overflow-hidden">
+    <section ref={sectionRef} id="skills" className="relative min-h-[140vh] py-40 overflow-hidden flex items-center justify-center">
       {/* Skills-specific background layer */}
       <motion.div 
         style={{ opacity }}
@@ -127,62 +173,45 @@ const SkillsSection = () => {
           src={skillsBg.url}
           alt={skillsBg.alt}
           fill
-          className="object-cover object-[45%_center]"
+          className="object-cover object-center"
           quality={100}
           unoptimized
         />
-        <div className="absolute inset-0 bg-black/10 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+        <div className="absolute inset-0 bg-black/20 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
       </motion.div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative min-h-[1000px] w-full flex items-center justify-center">
         <NeuralWires />
 
-        <div className="mb-24 text-center flex flex-col items-center">
-          <ScrollFloat
-            containerClassName="text-5xl font-black tracking-tighter sm:text-7xl mb-6"
-            textClassName="text-white uppercase glow-white"
-          >
-            My Skills
-          </ScrollFloat>
-          <div className="flex items-center gap-6">
-            <div className="h-[1px] w-16 bg-white/20" />
-            <p className="text-[12px] font-black text-white/50 uppercase tracking-[0.7em]">
-              Tech Stack & Neural Tools
-            </p>
-            <div className="h-[1px] w-16 bg-white/20" />
-          </div>
-        </div>
-
-        {/* Grid adjusted to push cards away from the subject on the left */}
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:px-12">
-          <div className="hidden lg:block lg:col-span-5" /> {/* Spacer for background person */}
+        {/* HUD Layout Positioning */}
+        <div className="relative w-full max-w-6xl h-full flex items-center justify-center">
           
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-10">
-            {skillCategories.map((category) => (
-              <GlassSurface
-                key={category}
-                borderRadius={40}
-                className="p-10 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.9)] border-white/10 bg-black/40 backdrop-blur-3xl hover:border-white/20 transition-all duration-500"
-              >
-                <h3 className="mb-10 text-xl font-black text-white uppercase tracking-[0.4em] border-b border-white/10 pb-6">
-                  {category}
-                </h3>
-                <div className="grid grid-cols-2 gap-8">
-                  {skills[category].map((skill) => {
-                    const Icon = iconMap[skill.name];
-                    return (
-                      <div className="flex items-center gap-4 group" key={skill.name}>
-                        <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500 shadow-xl">
-                          {Icon && <Icon className="h-6 w-6 text-white/90 group-hover:text-white transition-transform duration-500 group-hover:scale-110" />}
-                        </div>
-                        <span className="text-[11px] font-bold text-white/70 uppercase tracking-widest group-hover:text-white transition-colors duration-300">{skill.name}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </GlassSurface>
-            ))}
+          {/* Frontend - TOP */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2">
+            <HudCard category="Frontend" items={skills['Frontend']} />
           </div>
+
+          {/* Backend - LEFT */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2">
+            <HudCard category="Backend" items={skills['Backend']} />
+          </div>
+
+          {/* AI / ML - RIGHT */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2">
+            <HudCard category="AI / ML" items={skills['AI/ML']} />
+          </div>
+
+          {/* Tools - BOTTOM */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
+            <HudCard category="Tools" items={skills['Tools']} />
+          </div>
+
+          {/* Decorative Section Title (HUD Style) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[200px] opacity-20 pointer-events-none text-center">
+            <span className="text-[10px] font-black text-white uppercase tracking-[1em]">SYSTEM_CAPABILITIES</span>
+            <div className="h-px w-32 bg-white/20 mx-auto mt-2" />
+          </div>
+
         </div>
       </div>
     </section>
