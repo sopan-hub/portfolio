@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Image from 'next/image';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 import { cn } from '@/lib/utils';
+import { Code2, Database, Brain, Settings2 } from 'lucide-react';
 
 const iconMap: { [key: string]: React.FC<{ className?: string }> } = {
   React: Icons.ReactJs,
@@ -27,119 +28,135 @@ const iconMap: { [key: string]: React.FC<{ className?: string }> } = {
   Webpack: Icons.Webpack,
 };
 
-const HudCard = ({ category, items, className }: { category: string, items: any[], className?: string }) => {
+const categoryIconMap: { [key: string]: React.ReactNode } = {
+  'Frontend': <Code2 className="w-8 h-8" />,
+  'Backend': <Database className="w-8 h-8" />,
+  'AI / ML': <Brain className="w-8 h-8" />,
+  'Tools': <Settings2 className="w-8 h-8" />,
+};
+
+const HudCard = ({ category, items, glowColor, className }: { category: string, items: any[], glowColor: string, className?: string }) => {
+  const CategoryIcon = categoryIconMap[category];
+  
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8 }}
       className={cn(
-        "relative z-20 w-full max-w-[320px] p-6 rounded-xl border border-white/20 bg-black/40 backdrop-blur-2xl shadow-[0_0_40px_rgba(255,255,255,0.05)]",
+        "relative z-20 w-[300px] p-8 rounded-[2rem] border-2 bg-black/40 backdrop-blur-md shadow-2xl transition-all duration-500 hover:scale-105",
         className
       )}
+      style={{ 
+        borderColor: glowColor,
+        boxShadow: `0 0 30px ${glowColor}44, inset 0 0 20px ${glowColor}22`
+      }}
     >
-      <div className="absolute -top-3 left-6 px-3 py-1 bg-white/10 border border-white/20 rounded-md backdrop-blur-md">
-        <h3 className="text-xs font-black text-white uppercase tracking-[0.3em]">
+      {/* Header */}
+      <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4">
+        <div style={{ color: glowColor }}>
+          {CategoryIcon}
+        </div>
+        <h3 className="text-2xl font-black text-white uppercase tracking-tighter">
           {category}
         </h3>
       </div>
       
-      <div className="mt-4 space-y-4">
+      {/* Items */}
+      <div className="space-y-6">
         {items.map((skill) => {
           const Icon = iconMap[skill.name];
           return (
-            <div key={skill.name} className="flex items-center justify-between group">
-              <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest group-hover:text-white transition-colors">
+            <div key={skill.name} className="flex items-center gap-4 group">
+              <div className="p-2 rounded-lg bg-white/5 border border-white/10 transition-all group-hover:bg-white/10">
+                {Icon && <Icon className="h-6 w-6 text-white" />}
+              </div>
+              <span className="text-sm font-black text-white/80 uppercase tracking-widest group-hover:text-white transition-colors">
                 {skill.name}
               </span>
-              <div className="p-1.5 rounded-md bg-white/5 border border-white/10 group-hover:bg-white/20 transition-all">
-                {Icon && <Icon className="h-4 w-4 text-white/80 group-hover:text-white" />}
-              </div>
             </div>
           );
         })}
       </div>
-      
-      {/* HUD decorative corners */}
-      <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/40 rounded-tl-sm" />
-      <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/40 rounded-tr-sm" />
-      <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/40 rounded-bl-sm" />
-      <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/40 rounded-br-sm" />
     </motion.div>
   );
 };
 
 const NeuralWires = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none z-10 overflow-visible">
-      <svg width="100%" height="100%" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60">
+    <div className="absolute inset-0 pointer-events-none z-10">
+      <svg width="100%" height="100%" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
+          <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+          <filter id="glow-orange" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
           </filter>
         </defs>
 
-        {/* TOP WIRE - Frontend */}
+        {/* LEFT SIDE WIRES (Red/Pink) */}
+        {/* Top Left - Frontend */}
         <motion.path
-          d="M 600 400 C 600 350, 600 250, 600 180"
-          stroke="rgba(255,255,255,0.3)"
-          strokeWidth="1.5"
-          strokeDasharray="4 6"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 2 }}
+          d="M 600 550 L 520 550 L 520 250 L 400 250"
+          stroke="#ff2d55"
+          strokeWidth="3"
+          filter="url(#glow-red)"
+          initial={{ pathLength: 0, opacity: 0 }}
+          whileInView={{ pathLength: 1, opacity: 0.6 }}
+          transition={{ duration: 1.5 }}
         />
-        <motion.circle r="3" fill="white" filter="url(#glow)">
-          <animateMotion dur="3s" repeatCount="indefinite" path="M 600 400 C 600 350, 600 250, 600 180" />
-        </motion.circle>
+        <circle r="4" fill="#ff2d55">
+          <animateMotion dur="3s" repeatCount="indefinite" path="M 600 550 L 520 550 L 520 250 L 400 250" />
+        </circle>
 
-        {/* LEFT WIRE - Backend */}
+        {/* Bottom Left - AI / ML */}
         <motion.path
-          d="M 580 400 C 500 400, 350 400, 280 400"
-          stroke="rgba(255,255,255,0.3)"
-          strokeWidth="1.5"
-          strokeDasharray="4 6"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 2 }}
+          d="M 600 570 L 540 570 L 540 700 L 400 700"
+          stroke="#ff2d55"
+          strokeWidth="3"
+          filter="url(#glow-red)"
+          initial={{ pathLength: 0, opacity: 0 }}
+          whileInView={{ pathLength: 1, opacity: 0.6 }}
+          transition={{ duration: 1.5 }}
         />
-        <motion.circle r="3" fill="white" filter="url(#glow)">
-          <animateMotion dur="4s" repeatCount="indefinite" path="M 580 400 C 500 400, 350 400, 280 400" />
-        </motion.circle>
+        <circle r="4" fill="#ff2d55">
+          <animateMotion dur="4s" repeatCount="indefinite" path="M 600 570 L 540 570 L 540 700 L 400 700" />
+        </circle>
 
-        {/* RIGHT WIRE - AI/ML */}
+        {/* RIGHT SIDE WIRES (Orange/Yellow) */}
+        {/* Top Right - Backend */}
         <motion.path
-          d="M 620 400 C 700 400, 850 400, 920 400"
-          stroke="rgba(255,255,255,0.3)"
-          strokeWidth="1.5"
-          strokeDasharray="4 6"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 2 }}
+          d="M 600 550 L 680 550 L 680 250 L 800 250"
+          stroke="#ffb347"
+          strokeWidth="3"
+          filter="url(#glow-orange)"
+          initial={{ pathLength: 0, opacity: 0 }}
+          whileInView={{ pathLength: 1, opacity: 0.6 }}
+          transition={{ duration: 1.5 }}
         />
-        <motion.circle r="3" fill="white" filter="url(#glow)">
-          <animateMotion dur="4s" repeatCount="indefinite" path="M 620 400 C 700 400, 850 400, 920 400" />
-        </motion.circle>
+        <circle r="4" fill="#ffb347">
+          <animateMotion dur="3.5s" repeatCount="indefinite" path="M 600 550 L 680 550 L 680 250 L 800 250" />
+        </circle>
 
-        {/* BOTTOM WIRE - Tools */}
+        {/* Bottom Right - Tools */}
         <motion.path
-          d="M 600 440 C 600 500, 600 600, 600 680"
-          stroke="rgba(255,255,255,0.3)"
-          strokeWidth="1.5"
-          strokeDasharray="4 6"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 2 }}
+          d="M 600 570 L 660 570 L 660 700 L 800 700"
+          stroke="#ffb347"
+          strokeWidth="3"
+          filter="url(#glow-orange)"
+          initial={{ pathLength: 0, opacity: 0 }}
+          whileInView={{ pathLength: 1, opacity: 0.6 }}
+          transition={{ duration: 1.5 }}
         />
-        <motion.circle r="3" fill="white" filter="url(#glow)">
-          <animateMotion dur="5s" repeatCount="indefinite" path="M 600 440 C 600 500, 600 600, 600 680" />
-        </motion.circle>
+        <circle r="4" fill="#ffb347">
+          <animateMotion dur="4.5s" repeatCount="indefinite" path="M 600 570 L 660 570 L 660 700 L 800 700" />
+        </circle>
 
-        {/* Central Core Nodes */}
-        <circle cx="600" cy="400" r="6" fill="white" className="animate-pulse opacity-40" />
-        <circle cx="600" cy="400" r="12" stroke="white" strokeWidth="1" className="opacity-20" />
-        <circle cx="600" cy="430" r="4" fill="white" className="animate-pulse opacity-40" />
+        {/* Central Core Point */}
+        <circle cx="600" cy="560" r="8" fill="#fff" className="animate-pulse" filter="url(#glow-red)" />
       </svg>
     </div>
   );
@@ -159,12 +176,12 @@ const SkillsSection = () => {
     restDelta: 0.001
   });
 
-  const opacity = useTransform(smoothProgress, [0.1, 0.35, 0.65, 0.9], [0, 1, 1, 0]);
+  const opacity = useTransform(smoothProgress, [0.1, 0.3, 0.7, 0.9], [0, 1, 1, 0]);
   const skillsBg = placeholderImages['skills-specific-bg'];
 
   return (
-    <section ref={sectionRef} id="skills" className="relative min-h-[140vh] py-40 overflow-hidden flex items-center justify-center">
-      {/* Skills-specific background layer */}
+    <section ref={sectionRef} id="skills" className="relative min-h-screen py-32 overflow-hidden flex items-center justify-center bg-black">
+      {/* Background Image Layer */}
       <motion.div 
         style={{ opacity }}
         className="fixed inset-0 z-[-1] pointer-events-none"
@@ -173,43 +190,56 @@ const SkillsSection = () => {
           src={skillsBg.url}
           alt={skillsBg.alt}
           fill
-          className="object-cover object-center"
+          className="object-cover object-top"
+          style={{ objectPosition: 'center 20%' }}
           quality={100}
           unoptimized
         />
-        <div className="absolute inset-0 bg-black/20 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+        {/* Dynamic Vignette / Gradient Overlays to match screenshot */}
+        <div className="absolute inset-0 bg-gradient-to-r from-red-900/40 via-transparent to-orange-900/40" />
+        <div className="absolute inset-0 bg-black/20" />
       </motion.div>
 
-      <div className="container mx-auto px-4 relative min-h-[1000px] w-full flex items-center justify-center">
+      <div className="container mx-auto px-4 relative h-[900px] w-full flex items-center justify-center">
         <NeuralWires />
 
         {/* HUD Layout Positioning */}
-        <div className="relative w-full max-w-6xl h-full flex items-center justify-center">
+        <div className="relative w-full max-w-7xl h-full">
           
-          {/* Frontend - TOP */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2">
-            <HudCard category="Frontend" items={skills['Frontend']} />
+          {/* Top Left: Frontend */}
+          <div className="absolute top-0 left-0 lg:left-20">
+            <HudCard 
+              category="Frontend" 
+              items={skills['Frontend']} 
+              glowColor="#ff2d55"
+            />
           </div>
 
-          {/* Backend - LEFT */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2">
-            <HudCard category="Backend" items={skills['Backend']} />
+          {/* Top Right: Backend */}
+          <div className="absolute top-0 right-0 lg:right-20">
+            <HudCard 
+              category="Backend" 
+              items={skills['Backend']} 
+              glowColor="#ffb347"
+            />
           </div>
 
-          {/* AI / ML - RIGHT */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2">
-            <HudCard category="AI / ML" items={skills['AI/ML']} />
+          {/* Bottom Left: AI / ML */}
+          <div className="absolute bottom-0 left-0 lg:left-20">
+            <HudCard 
+              category="AI / ML" 
+              items={skills['AI/ML']} 
+              glowColor="#ff2d55"
+            />
           </div>
 
-          {/* Tools - BOTTOM */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-            <HudCard category="Tools" items={skills['Tools']} />
-          </div>
-
-          {/* Decorative Section Title (HUD Style) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[200px] opacity-20 pointer-events-none text-center">
-            <span className="text-[10px] font-black text-white uppercase tracking-[1em]">SYSTEM_CAPABILITIES</span>
-            <div className="h-px w-32 bg-white/20 mx-auto mt-2" />
+          {/* Bottom Right: Tools */}
+          <div className="absolute bottom-0 right-0 lg:right-20">
+            <HudCard 
+              category="Tools" 
+              items={skills['Tools']} 
+              glowColor="#ffb347"
+            />
           </div>
 
         </div>
