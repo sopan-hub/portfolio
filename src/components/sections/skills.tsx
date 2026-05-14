@@ -1,51 +1,56 @@
-
 'use client';
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import Image from 'next/image';
-import placeholderImages from '@/app/lib/placeholder-images.json';
+import React from 'react';
+import { skills } from '@/lib/data';
+import GlassSurface from '@/components/ui/glass-surface';
+import ScrollFloat from '@/components/ui/scroll-float';
 
 const SkillsSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
-  // Smooth cross-fade transition consistent with other sections
-  const opacity = useTransform(smoothProgress, [0.1, 0.3, 0.7, 0.9], [0, 1, 1, 0]);
-  const skillsBg = placeholderImages['skills-specific-bg'];
-
   return (
-    <section ref={sectionRef} id="skills" className="relative min-h-screen py-32 overflow-hidden flex items-center justify-center bg-transparent">
-      {/* High-Fidelity Fixed Background Layer */}
-      <motion.div 
-        style={{ opacity }}
-        className="fixed inset-0 z-[-1] pointer-events-none"
-      >
-        <Image
-          src={skillsBg.url}
-          alt={skillsBg.alt}
-          fill
-          className="object-cover"
-          quality={100}
-          priority
-          unoptimized
-        />
-        {/* Subtle overlay to ensure smooth blending with the global black background */}
-        <div className="absolute inset-0 bg-black/10" />
-      </motion.div>
+    <section id="skills" className="py-24 relative z-10">
+      <div className="container mx-auto px-4">
+        <div className="mb-16 text-center flex flex-col items-center">
+          <ScrollFloat
+            containerClassName="text-4xl md:text-5xl font-black mb-4"
+            textClassName="text-white uppercase tracking-tighter"
+          >
+            My Skills
+          </ScrollFloat>
+          <div className="h-[1px] w-24 bg-white/20" />
+        </div>
 
-      {/* Content area reset as requested */}
-      <div className="container mx-auto px-4 relative z-20 flex flex-col items-center justify-center">
-        {/* Section is currently empty as requested to focus on the new background transition */}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {Object.entries(skills).map(([category, items]) => (
+            <GlassSurface
+              key={category}
+              borderRadius={24}
+              className="p-8 group hover:border-white/20 transition-all"
+            >
+              <h3 className="text-xl font-black text-white uppercase tracking-widest mb-6 glow-white">
+                {category}
+              </h3>
+              <ul className="space-y-4">
+                {items.map((skill) => (
+                  <li key={skill.name} className="flex flex-col gap-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm font-bold text-white/80 uppercase">
+                        {skill.name}
+                      </span>
+                      <span className="text-[10px] font-mono text-white/40">
+                        {skill.level}%
+                      </span>
+                    </div>
+                    <div className="h-[2px] w-full bg-white/5 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-white transition-all duration-1000 ease-out"
+                        style={{ width: `${skill.level}%` }}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </GlassSurface>
+          ))}
+        </div>
       </div>
     </section>
   );
