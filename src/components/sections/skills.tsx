@@ -43,7 +43,7 @@ const HudCard = ({ category, items, glowColor, className }: { category: string, 
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8 }}
       className={cn(
-        "relative z-20 w-[220px] p-5 rounded-[1.5rem] border bg-black/40 backdrop-blur-md shadow-2xl transition-all duration-500 hover:scale-105",
+        "relative z-20 w-[190px] p-4 rounded-[1.25rem] border bg-black/40 backdrop-blur-md shadow-2xl transition-all duration-500 hover:scale-105",
         className
       )}
       style={{ 
@@ -52,25 +52,25 @@ const HudCard = ({ category, items, glowColor, className }: { category: string, 
       }}
     >
       {/* Header */}
-      <div className="flex items-center gap-3 mb-4 border-b border-white/10 pb-2">
+      <div className="flex items-center gap-2 mb-3 border-b border-white/10 pb-2">
         <div style={{ color: glowColor }}>
-          {CategoryIcon}
+          {React.cloneElement(CategoryIcon as React.ReactElement, { className: 'w-4 h-4' })}
         </div>
-        <h3 className="text-sm font-black text-white uppercase tracking-tighter">
+        <h3 className="text-[12px] font-black text-white uppercase tracking-tighter">
           {category}
         </h3>
       </div>
       
       {/* Items */}
-      <div className="space-y-3">
+      <div className="space-y-2">
         {items.map((skill) => {
           const Icon = iconMap[skill.name];
           return (
-            <div key={skill.name} className="flex items-center gap-3 group">
-              <div className="p-1.5 rounded-lg bg-white/5 border border-white/10 transition-all group-hover:bg-white/10">
-                {Icon && <Icon className="h-4 w-4 text-white" />}
+            <div key={skill.name} className="flex items-center gap-2 group">
+              <div className="p-1 rounded-lg bg-white/5 border border-white/10 transition-all group-hover:bg-white/10">
+                {Icon && <Icon className="h-3 w-3 text-white" />}
               </div>
-              <span className="text-[10px] font-black text-white/80 uppercase tracking-widest group-hover:text-white transition-colors">
+              <span className="text-[9px] font-black text-white/80 uppercase tracking-widest group-hover:text-white transition-colors">
                 {skill.name}
               </span>
             </div>
@@ -175,7 +175,7 @@ const SkillsSection = () => {
   const skillsBg = placeholderImages['skills-specific-bg'];
 
   return (
-    <section ref={sectionRef} id="skills" className="relative min-h-screen py-32 overflow-hidden flex items-center justify-center bg-black">
+    <section ref={sectionRef} id="skills" className="relative min-h-screen py-32 overflow-hidden flex items-center justify-center bg-transparent">
       {/* Background Image Layer */}
       <motion.div 
         style={{ opacity }}
